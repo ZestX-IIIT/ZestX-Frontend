@@ -1,0 +1,377 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main {
+  background-image: url("./SVG/background.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.glow {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+}
+#g1 {
+  bottom: 23%;
+  left: 18%;
+}
+#g2 {
+  bottom: 19.5%;
+  left: 30%;
+}
+#g3 {
+  bottom: 41%;
+  left: 33%;
+}
+#g4 {
+  top: 42%;
+  left: 15%;
+}
+.square {
+  position: absolute;
+  mix-blend-mode: overlay;
+}
+#sq1 {
+    height: 550px;
+    width: 550px;
+    top: 27%;
+    right: 0;
+}
+
+#sq2 {
+  height: 70px;
+  width: 70px;
+  top: 3%;
+  left: 18%;
+}
+#sq3 {
+  height: 120px;
+  top: 3%;
+  right: 35%;
+  width: 120px;
+}
+#sq4 {
+  height: 100px;
+  width: 100px;
+  top: 75%;
+  left: 3%;
+}
+#sq5 {
+  height: 130px;
+  width: 130px;
+  bottom: 4%;
+  right: 40%;
+}
+#sq6 {
+  height: 25px;
+  width: 25px;
+  top: 64%;
+  left: 30%;
+}
+#sq7 {
+  height: 35px;
+  width: 35px;
+  top: 72%;
+  left: 34%;
+}
+#sq8 {
+  height: 35px;
+  width: 35px;
+  top: 44%;
+  left: 37%;
+}
+#sq9 {
+  height: 15px;
+  width: 15px;
+  top: 41%;
+  left: 13%;
+}
+#sq10 {
+  height: 15px;
+  width: 15px;
+  top: 52%;
+  left: 15%;
+}
+#sq11 {
+  height: 25px;
+  width: 25px;
+  top: 42%;
+  left: 20%;
+}
+#sq12 {
+  height: 20px;
+  width: 20px;
+  top: 77%;
+  left: 17%;
+}
+#sq13 {
+  height: 20px;
+  width: 20px;
+  top: 63%;
+  left: 21%;
+}
+#sq14 {
+  height: 30px;
+  width: 30px;
+  top: 72%;
+  left: 23%;
+}
+#sq15 {
+  height: 10px;
+  width: 10px;
+  top: 75%;
+  left: 24%;
+}
+.line{
+    position: absolute;
+    height: 10px;
+}
+#l1{
+    top: 81%;
+    left: 4%;
+    width: 135px;
+}
+#l2{
+    height: 8px;
+    top: 11%;
+    left: 48%;
+    width: 204px
+}
+#l3{
+    transform: rotate(90deg);
+    right: -3%;
+    top: 45%;
+    width: 169px;
+}
+.girl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  position: relative;
+  height: auto;
+  /* overflow: hidden; */
+  /* background-color: green; */
+}
+
+#ph2 {
+  position: absolute;
+  top: 32%;
+  left: 0%;
+  width: 97%;
+  margin: auto;
+  mix-blend-mode: overlay;
+}
+.text {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  font-size: 1.5rem;
+  justify-content: space-evenly;
+  color: white;
+  font-family: 'Now';
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+#ph3 {
+  width: 65%;
+  margin: auto;
+  height: 10%;
+}
+#ph1 {
+  height: 90%;
+}
+.content {
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+#upperContent,
+#lowerContent {
+  height: 10%;
+}
+.btn {
+  width: 30%;
+  height: 100%;
+  font-size: 25px;
+  border: 0;
+}
+#signin {
+  background: transparent;
+  font-family: 'Now';
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+}
+#signup {
+  font-family: 'Now Alt';
+  font-weight: bold;
+  font-style: normal;
+  background: linear-gradient(
+    105.64deg,
+    #ffffff -20.33%,
+    rgba(221, 186, 255, 0.76) 113.08%
+  );
+  border: 1px solid #162378;
+  box-shadow: 0px 0px 35px rgba(253, 225, 255, 0.52);
+  border-radius: 42px;
+  padding: 10px;
+  margin-top: -6px;
+}
+.text h1 {
+  font-size: 3rem;
+  font-family: 'Now';
+    font-weight: 900;
+    font-style: normal;
+  display: inline-block;
+  margin: auto;
+}
+.head h1 {
+  margin: 33px 0px;
+}
+.head {
+  height: 20%;
+  position: relative;
+  text-align: center;
+}
+.head img {
+  height: 150px;
+  width: 150px;
+}
+#ph4 {
+  position: absolute;
+  left: 50%;
+  bottom: -10%;
+}
+#ph5 {
+  position: absolute;
+  top: -14%;
+  right: 16%;
+}
+#outline{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    left: 43%;
+    mix-blend-mode: overlay;
+}
+@keyframes girl {
+    from{
+        transform: translateY(0) rotate(0deg);
+    }
+    to{
+        transform: translateY(10px) rotate(1deg);
+    }
+}
+@keyframes square {
+    from{
+        transform: translateY(0) translateX(0);
+    }
+    to{
+    transform: translateY(10px) translateX(5px);
+    }
+}
+@keyframes circle {
+    from{
+        transform: translateY(0) translateX(0);
+    }
+    to{
+    transform: translateY(10px) translateX(5px);
+    }
+}
+@keyframes cross {
+    from{
+        transform: translateY(0) translateX(0);
+    }
+    to{
+    transform: translateY(10px) translateX(-5px);
+    }
+}
+#ph1{
+    animation-name: girl;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+#g4{
+    animation-name: square;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+#g1{
+    animation-name: circle;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+#g3 , #g2{
+    animation-name: cross;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes extender {
+    from{
+        transform: translateX(0) scaleX(1);
+    }
+    to{
+        transform: translateX(15px) scaleX(1.4);
+    }
+}
+@keyframes extenderpart2 {
+    from{
+        transform: translateX(0) scaleX(1);
+    }
+    to{
+        transform: translateX(15px) scaleX(1.3);
+    }
+}
+@keyframes extenderpart3 {
+    from{
+        transform: translateY(0) scaleY(1) rotate(90deg);
+    }
+    to{
+        transform: translateY(15px) scaleY(1.3) rotate(90deg);
+    }
+}
+#l3 {
+    animation-name: extenderpart3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+#l1 {
+    animation-name: extender;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+#l2{
+    animation-name: extenderpart2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
