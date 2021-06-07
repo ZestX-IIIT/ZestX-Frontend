@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .main {
-  background-image: url("./background.jpg");
+  background-image: url("../assets/signin_signup_Page/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -32,7 +32,7 @@ h1 {
   /* background-color: black; */
   width: 400px;
   padding: 20px;
-  background: url("./containerbg.svg");
+  background: url("../assets/signin_signup_Page/containerbg.svg");
   height: auto;
   background-color: rgba(0, 0, 0, 0);
   background-blend-mode: lighten;
