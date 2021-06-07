@@ -15,19 +15,27 @@
 }
 
 h1{
+    margin: 30px auto;
+    font-family: 'Now';
+    font-weight: bold;
+    font-style: normal;
     color: white;
-    margin: 40px auto;
+    mix-blend-mode: overlay;
+    font-size: 35px;
+    
 }
 .form-container{
     position: absolute;
-    top: 30%;
+    top: 10%;
     left: 10%;
     display: flex;
     flex-direction: column;
     /* background-color: black; */
     width: 500px;
+    background: url("./containerbg.svg");
     height: auto;
     background-color:  rgba(0,0,0,0);
+    border-radius: 15px;
 box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.5);
 }
 form{
@@ -38,5 +46,17 @@ form{
     margin-bottom: 30px;
 }
 input{
-    margin: 5px;
+    margin: 10px;
+    padding: 12px;
+    border: 1px solid #020B60;
+    background: transparent;
+    border-radius: 5px;
+}
+input::placeholder{
+    color: white;
+    opacity: 0.6;
+    font-family: 'Now';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
 }
