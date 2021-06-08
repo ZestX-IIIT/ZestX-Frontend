@@ -5,7 +5,7 @@ require("dotenv").config();
 
 exports.signUp = (req,res) => {
 
-    const {username, email, password, mobile} = req.body;
+    const {user_name, email, password, mobile} = req.body;
 
     client.query(`SELECT *FROM users where email = '${email}'`).then((data) => {
 
@@ -24,13 +24,14 @@ exports.signUp = (req,res) => {
                     })
                 }else{
                     const user = {
-                        username,
+                        username: user_name,
                         email,
                         password: hash,
-                        mobile
+                        mobile,
                     };
                     
-                    client.query(`INSERT INTO users (username, email, password, mobile  ) VALUES ('${user.username}', '${user.email}', '${user.password}', '${user.mobile}')`).then((data1) => {
+
+                    client.query(`INSERT INTO users (user_name, email, password, mobile, is_verified) VALUES ('${user.username}', '${user.email}', '${user.password}', '${user.mobile}', false);`).then((data1) => {
 
                         const token = jwt.sign(
                             {
@@ -46,10 +47,11 @@ exports.signUp = (req,res) => {
                     })
                     .catch((err1) => {
                         res.status(500).json({
-                            error: 'database error occured !',
+                            error: `${err1}`,
+                            
                         });
                     });
-                }
+                };
             });
         }
 
