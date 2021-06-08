@@ -5,9 +5,13 @@ let signupcontainer = document.getElementById("signupcontainer");
 
 signin.addEventListener("click",()=>{
     signincontainer.classList.toggle("display-class");
+    signincontainer.classList.toggle("opacity-class");
+    signupcontainer.classList.toggle("opacity-class");
     signupcontainer.classList.toggle("display-class");
 });
 signup.addEventListener("click",()=>{
     signincontainer.classList.toggle("display-class");
     signupcontainer.classList.toggle("display-class");
+    signincontainer.classList.toggle("opacity-class");
+    signupcontainer.classList.toggle("opacity-class");    
 });

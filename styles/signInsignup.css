@@ -41,6 +41,21 @@ h1 {
 }
 .display-class{
   display: none !important;
+  transition: display 200ms ease-in-out;
+}
+.opacity-class{
+  animation-name: fade;
+  animation-timing-function: ease-in-out;
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
+}
+@keyframes fade {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 .form-container {
   position: absolute;
