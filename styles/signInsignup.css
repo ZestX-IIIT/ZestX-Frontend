@@ -59,16 +59,7 @@ input {
   font-family: "Now";
   font-weight: 500;
   font-style: normal;
-  font-size: 16px;
-  
-}
-input::placeholder {
-  color: white;
-  opacity: 0.6;
-  font-family: "Now";
-  font-weight: 500;
-  font-style: normal;
-  font-size: 16px;
+  font-size: 16px;  
 }
 .btn {
   width: 35%;
@@ -85,27 +76,14 @@ input::placeholder {
   color: white;
   margin-top: 15px;
   cursor: pointer;
-  outline: none;
+  /* border: 5px solid transparent; */
+  transition: box-shadow 200ms ease-in-out;
 }
+.btn:hover{
+  /* border: 5px solid white; */
+  /* box-shadow: none; */
+  box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 1);
 
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  border: 1px solid white;
-  transition: top, left, right, bottom, 500ms ease-in-out;
-}
-
-.btn:hover::before,
-.btn:focus::before {
-  top: -50px;
-  left: -50px;
-  right: -5px;
-  bottom: -5px;
 }
 
 .form-container div {
@@ -154,4 +132,7 @@ input:not(:focus):valid ~ .floating
   top: -30%;
   left: 0%;
   font-size: 12px !important;
+}
+input:focus{
+  outline: none;
 }
