@@ -14,7 +14,9 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "heroku": "^7.54.0",
     "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.6.1",
     "nodemon": "^2.0.7",
     "pg": "^8.6.0"
   }
