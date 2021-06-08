@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="./styles/signInsignup.css">
     <link rel="stylesheet" href="./assets/fonts/now/stylesheet.css">
 </head>
+
 <body>
     <section class="main">
         <div class="lol">
@@ -16,15 +18,31 @@
         <div class="form-container">
             <h1>SIGN UP </h1>
             <form action="/" method="post">
-                <input type="email" name="email" id="email" placeholder="E-MAIL">
-                <input type="text" name="name" id="name" placeholder="NAME">
-                <input type="number" name="mobile" id="mobile" placeholder="MOBILE NUMBER">
-                <input type="password" name="password" id="password" placeholder="PASSWORD">
-                <input type="password" name="confirmpassword" id="confirm" placeholder="CONFIRM PASSWORD">
-                <button type="submit" class = "btn">CONTINUE</button>
+                <div class="form-label">
+                    <input type="email" name="email" id="email" required>
+                    <div class="floating">EMAIL</div>
+                </div>
+                <div class="form-label">
+                    <input type="text" name="name" id="name" required>
+                    <div class="floating">NAME</div>
+                </div>
+                <div class="form-label">
+                    <input type="number" name="mobile" id="mobile" required>
+                    <div class="floating">MOBILE NUMBER</div>
+                </div>
+                <div class="form-label">
+                    <input type="password" name="password" id="password" required>
+                    <div class="floating">PASSWORD</div>
+                </div>
+                <div class="form-label">
+                    <input type="password" name="confirmpassword" id="confirm" required>
+                    <div class="floating">CONFIRM PASSWORD</div>
+                </div>
+                <button type="submit" class="btn">CONTINUE</button>
             </form>
-            <div>DON'T HAVE A ACCOUNT? <span>SIGN UP</span></div> 
+            <div>DON'T HAVE A ACCOUNT? <span>SIGN UP</span></div>
         </div>
     </section>
 </body>
+
 </html>

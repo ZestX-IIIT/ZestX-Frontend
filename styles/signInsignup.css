@@ -52,6 +52,15 @@ input {
   border: 1px solid #020b60;
   background: transparent;
   border-radius: 5px;
+  width: 100%;
+  margin: auto;
+  color: white;
+  opacity: 0.8;
+  font-family: "Now";
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  
 }
 input::placeholder {
   color: white;
@@ -63,6 +72,7 @@ input::placeholder {
 }
 .btn {
   width: 35%;
+  position: relative;
   margin: auto;
   padding: 10px;
   font-family: "Now";
@@ -74,7 +84,30 @@ input::placeholder {
   border-radius: 6px;
   color: white;
   margin-top: 15px;
+  cursor: pointer;
+  outline: none;
 }
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border: 1px solid white;
+  transition: top, left, right, bottom, 100ms ease-in-out;
+}
+
+.btn:hover::before,
+.btn:focus::before {
+  top: -50px;
+  left: -50px;
+  right: -5px;
+  bottom: -5px;
+}
+
 .form-container div {
   margin: auto;
   color: white;
@@ -88,4 +121,37 @@ div span {
   font-family: "Now";
   font-weight: bold;
   font-style: normal;
+}
+.form-label {
+  width: 100%;
+  position: relative;
+  margin: 10px !important;
+}
+.floating {
+  display: inline;
+  position: absolute;
+  top: 28%;
+  left: 6%;
+  color: white;
+  opacity: 0.6;
+  font-family: "Now";
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px !important;
+  transition: all 0.2s ease-in-out;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input:focus ~ .floating,
+input:not(:focus):valid ~ .floating
+{
+  top: -30%;
+  left: 0%;
+  font-size: 12px !important;
 }
