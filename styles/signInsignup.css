@@ -97,7 +97,7 @@ input::placeholder {
   bottom: 0;
   z-index: -1;
   border: 1px solid white;
-  transition: top, left, right, bottom, 100ms ease-in-out;
+  transition: top, left, right, bottom, 500ms ease-in-out;
 }
 
 .btn:hover::before,
