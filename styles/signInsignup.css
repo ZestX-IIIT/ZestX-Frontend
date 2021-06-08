@@ -23,6 +23,25 @@ h1 {
   mix-blend-mode: overlay;
   font-size: 35px;
 }
+.form-container2{
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: black; */
+  width: 400px;
+  padding: 20px;
+  background: url("../assets/signin_signup_Page/containerbg.svg");
+  height: auto;
+  background-color: rgba(0, 0, 0, 0);
+  background-blend-mode: lighten;
+  border-radius: 15px;
+  box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.5);
+}
+.display-class{
+  display: none !important;
+}
 .form-container {
   position: absolute;
   top: 10%;
@@ -86,7 +105,7 @@ input {
 
 }
 
-.form-container div {
+.form-container div , .form-container2 div{
   margin: auto;
   color: white;
   font-family: "Now";
@@ -99,6 +118,7 @@ div span {
   font-family: "Now";
   font-weight: bold;
   font-style: normal;
+  cursor: pointer;
 }
 .form-label {
   width: 100%;
