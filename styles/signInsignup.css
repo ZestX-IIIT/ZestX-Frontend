@@ -20,8 +20,9 @@ h1 {
   font-weight: bold;
   font-style: normal;
   color: white;
-  mix-blend-mode: overlay;
+  mix-blend-mode: lighten;
   font-size: 35px;
+  opacity: 0.8;
 }
 .form-container2{
   position: absolute;
@@ -57,6 +58,32 @@ h1 {
     opacity: 1;
   }
 }
+.background{
+  background: url("../assets/signin_signup_Page/containerbg.svg");
+  height: 400px;
+  width: 400px;
+  top: 10%;
+  left: 10%;
+  position: absolute;
+  border-radius: 15px;
+  height: 565px;
+  mix-blend-mode: hard-light;
+  opacity: 0.7;
+  box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.15);
+}
+.background2{
+  background: url("../assets/signin_signup_Page/containerbg.svg");
+  height: 400px;
+  width: 400px;
+  top: 10%;
+  left: 10%;
+  position: absolute;
+  border-radius: 15px;
+  mix-blend-mode: overlay;
+  opacity: 1;
+  height: 565px;
+  z-index: -1;
+}
 .form-container {
   position: absolute;
   top: 10%;
@@ -66,12 +93,11 @@ h1 {
   /* background-color: black; */
   width: 400px;
   padding: 20px;
-  background: url("../assets/signin_signup_Page/containerbg.svg");
+  /* background: url("../assets/signin_signup_Page/containerbg.svg"); */
   height: auto;
-  background-color: rgba(0, 0, 0, 0);
-  background-blend-mode: lighten;
+  /* background-color: rgba(0, 0, 0, 0); */
   border-radius: 15px;
-  box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.5);
+  /* box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.4); */
 }
 form {
   display: flex;
@@ -105,7 +131,7 @@ input {
   font-style: normal;
   font-size: 12px;
   background: linear-gradient(51.67deg, #020b61 -25.3%, #2a3cae 123.28%);
-  box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.8);
   border-radius: 6px;
   color: white;
   margin-top: 15px;
@@ -116,7 +142,7 @@ input {
 .btn:hover{
   /* border: 5px solid white; */
   /* box-shadow: none; */
-  box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.9);
 
 }
 
