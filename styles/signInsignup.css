@@ -90,14 +90,10 @@ h1 {
   left: 10%;
   display: flex;
   flex-direction: column;
-  /* background-color: black; */
   width: 400px;
   padding: 20px;
-  /* background: url("../assets/signin_signup_Page/containerbg.svg"); */
   height: auto;
-  /* background-color: rgba(0, 0, 0, 0); */
   border-radius: 15px;
-  /* box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.4); */
 }
 form {
   display: flex;
@@ -136,14 +132,10 @@ input {
   color: white;
   margin-top: 15px;
   cursor: pointer;
-  /* border: 5px solid transparent; */
   transition: box-shadow 200ms ease-in-out;
 }
 .btn:hover{
-  /* border: 5px solid white; */
-  /* box-shadow: none; */
   box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.9);
-
 }
 
 .form-container div , .form-container2 div{
