@@ -24,21 +24,27 @@ h1 {
   font-size: 35px;
   opacity: 0.8;
 }
+.form-container {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px;
+  height: auto;
+  border-radius: 15px;
+}
 .form-container2{
   position: absolute;
   top: 25%;
   left: 10%;
   display: flex;
   flex-direction: column;
-  /* background-color: black; */
   width: 400px;
   padding: 20px;
-  background: url("../assets/signin_signup_Page/containerbg.svg");
   height: auto;
-  background-color: rgba(0, 0, 0, 0);
-  background-blend-mode: lighten;
   border-radius: 15px;
-  box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.5);
 }
 .display-class{
   display: none !important;
@@ -49,18 +55,18 @@ h1 {
   animation-timing-function: ease-in-out;
   animation-duration: 300ms;
   animation-iteration-count: 1;
+  /* animation-fill-mode:both; */
 }
 @keyframes fade {
   from{
     opacity: 0;
   }
   to{
-    opacity: 1;
+    opacity: 0.5;
   }
 }
 .background{
   background: url("../assets/signin_signup_Page/containerbg.svg");
-  height: 400px;
   width: 400px;
   top: 10%;
   left: 10%;
@@ -73,7 +79,6 @@ h1 {
 }
 .background2{
   background: url("../assets/signin_signup_Page/containerbg.svg");
-  height: 400px;
   width: 400px;
   top: 10%;
   left: 10%;
@@ -84,16 +89,29 @@ h1 {
   height: 565px;
   z-index: -1;
 }
-.form-container {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  display: flex;
-  flex-direction: column;
+.background3{
+  background: url("../assets/signin_signup_Page/containerbg.svg");
   width: 400px;
-  padding: 20px;
-  height: auto;
+  top: 25%;
+  left: 10%;
+  position: absolute;
   border-radius: 15px;
+  height: 371px;
+  mix-blend-mode: hard-light;
+  opacity: 0.7;
+  box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.15);
+}
+.background4{
+  background: url("../assets/signin_signup_Page/containerbg.svg");
+  width: 400px;
+  top: 25%;
+  left: 10%;
+  position: absolute;
+  border-radius: 15px;
+  mix-blend-mode: overlay;
+  opacity: 1;
+  height: 371px;
+  z-index: -1;
 }
 form {
   display: flex;
