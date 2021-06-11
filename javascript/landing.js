@@ -9,15 +9,24 @@ arrow[0].addEventListener("click", () => {
 
 window.onkeydown = function (e) {
   if (e.keyCode === 27) {
-    // Key code for ESC key
-    e.preventDefault();
+    // ESC key trigger to collpase
     if (!down) {
+      downArrowButtonTriggred();
+    }
+  } else if (e.keyCode === 70) {
+    // F key trigger to Expand
+    if (down) {
       downArrowButtonTriggred();
     }
   }
 };
 
 function downArrowButtonTriggred() {
+  if (down) {
+    down = false;
+  } else {
+    down = true;
+  }
   main[0].classList.toggle("main-opacity");
   count++;
   if (count % 4 == 1) {
@@ -41,7 +50,7 @@ function downArrowButtonTriggred() {
       arrow[0].classList.toggle("scale");
     }, 700);
   }
-  if (down) {
+  if (!down) {
     footer[0].classList.toggle("display-none");
     let distance = 275;
     let a = setInterval(() => {
@@ -51,7 +60,6 @@ function downArrowButtonTriggred() {
       console.log(distance);
       if (distance <= 0) {
         clearInterval(a);
-        down = false;
       }
     }, 8);
   } else {
@@ -63,7 +71,6 @@ function downArrowButtonTriggred() {
       console.log(upwards);
       if (upwards <= 0) {
         clearInterval(b);
-        down = true;
         footer[0].classList.toggle("display-none");
       }
     }, 8);
