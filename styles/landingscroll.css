@@ -12,14 +12,20 @@ html{
 .rotate{
     animation: rotate 600ms ease-in-out 1 alternate forwards;
 }
-
+.rotate2{
+    animation: rotate2 550ms ease-in-out 1 forwards;
+}
 .scale{
-    animation: scale 1000ms ease-in-out infinite alternate-reverse;   
+    animation: scale 1000ms ease-in-out infinite alternate;   
 }
 
 @keyframes rotate {
     from{transform: rotate(0deg);}
     to{transform: rotate(180deg);}
+}
+@keyframes rotate2 {
+    from{transform: rotate(180deg);}
+    to{transform: rotate(0deg);}
 }
 .arrow{
     position: absolute;
@@ -74,4 +80,12 @@ a{
 }
 .follow img{
     margin-left: 15px;
+}
+.main{
+    filter:brightness(100%);
+    transition: filter 600ms ease-in-out;
+}
+.main-opacity{
+    filter: brightness(50%);
+    transition: filter 600ms ease-in-out;
 }

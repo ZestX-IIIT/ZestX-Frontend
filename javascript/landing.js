@@ -1,16 +1,35 @@
 let footer = document.getElementsByClassName("footer");
 let arrow = document.getElementsByClassName("arrow");
+let main = document.getElementsByClassName("main");
 let down = true;
 let count = 0;
 arrow[0].addEventListener("click", () => {
-    if(count == 0){arrow[0].classList.toggle("scale");
-    arrow[0].classList.toggle("rotate");
-    count++;    }
-    else{
-    arrow[0].classList.toggle("rotate");
-
+    main[0].classList.toggle("main-opacity");
+    count++;
+    if(count%4==1){
+        arrow[0].classList.toggle("scale");
+        arrow[0].classList.toggle("rotate");
+        arrow[0].classList.toggle("rotate2");
     }
-
+    else if(count%4==2){
+        arrow[0].classList.toggle("rotate");
+        arrow[0].classList.toggle("rotate2");
+        setTimeout(()=>{
+            arrow[0].classList.toggle("scale");
+        },700)
+    }
+    else if(count%4==3){
+        arrow[0].classList.toggle("scale");
+        arrow[0].classList.toggle("rotate2");
+        arrow[0].classList.toggle("rotate");
+    }
+    else if(count%4==0){
+        arrow[0].classList.toggle("rotate");
+        arrow[0].classList.toggle("rotate2");
+        setTimeout(()=>{
+            arrow[0].classList.toggle("scale");
+        },700)
+    }
     if (down) {
         footer[0].classList.toggle("display-none");
         let distance = 275;
