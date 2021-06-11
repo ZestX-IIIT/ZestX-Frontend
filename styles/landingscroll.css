@@ -29,10 +29,10 @@ html{
 }
 .arrow{
     position: absolute;
-    width: 110px;
-    height: 110px;
+    width: 6%;
+    height: auto;
     bottom: 4%;
-    left: 45%;
+    left: 47%;
 }
 *{
     margin: 0;
