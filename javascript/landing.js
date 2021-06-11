@@ -14,10 +14,8 @@ window.onkeydown = function (e) {
       downArrowButtonTriggred();
     }
   } else if (e.keyCode === 70) {
-    // F key trigger to Expand
-    if (down) {
+    // F key trigger to Expand/collpase both
       downArrowButtonTriggred();
-    }
   }
 };
 
