@@ -1,11 +1,16 @@
 let footer = document.getElementsByClassName("footer");
 let arrow = document.getElementsByClassName("arrow");
 let down = true;
-
+let count = 0;
 arrow[0].addEventListener("click", () => {
-    arrow[0].classList.toggle("scale");
+    if(count == 0){arrow[0].classList.toggle("scale");
     arrow[0].classList.toggle("rotate");
-    
+    count++;    }
+    else{
+    arrow[0].classList.toggle("rotate");
+
+    }
+
     if (down) {
         footer[0].classList.toggle("display-none");
         let distance = 275;

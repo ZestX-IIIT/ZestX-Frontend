@@ -12,9 +12,11 @@ html{
 .rotate{
     animation: rotate 600ms ease-in-out 1 alternate forwards;
 }
+
 .scale{
-    animation: scale 1000ms ease-in-out infinite alternate-reverse;
+    animation: scale 1000ms ease-in-out infinite alternate-reverse;   
 }
+
 @keyframes rotate {
     from{transform: rotate(0deg);}
     to{transform: rotate(180deg);}
