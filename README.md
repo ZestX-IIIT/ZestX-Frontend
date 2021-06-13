@@ -1,2 +1,2 @@
 # ZestX
-https://rajvarsani.github.io/ZestX/
+https://zestx.netlify.app
