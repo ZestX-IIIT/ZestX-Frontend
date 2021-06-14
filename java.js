@@ -5,7 +5,7 @@ var a = setInterval(()=>{
     slider[index].checked = true;
     index++;
     index = index%5;
-},500)
+},2500)
 var slide = document.getElementById("slider");
 slide.addEventListener('mouseover' , ()=>{
     console.log('hello')
@@ -17,5 +17,5 @@ slide.addEventListener('mouseout' , ()=>{
         slider[index].checked = true;
         index++;
         index = index%5;
-    },1500)
+    },2500)
 })
