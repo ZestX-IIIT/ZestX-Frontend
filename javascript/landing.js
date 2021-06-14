@@ -1,7 +1,13 @@
+let signupbutton = document.getElementById("signupbutton");
 let footer = document.getElementsByClassName("footer");
 let arrow = document.getElementsByClassName("arrow");
 let main = document.getElementsByClassName("main");
 let down = true;
+
+signupbutton.addEventListener("click" , ()=>{
+  window.location.href='./signupsignin.html'
+});
+
 arrow[0].addEventListener("click", () => {
   toggleFooterStates();
 });
