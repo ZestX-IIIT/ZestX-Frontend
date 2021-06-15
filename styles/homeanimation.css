@@ -8,10 +8,10 @@
 }
 .frontright img{
     position: relative;
-    width: 60%;
+    width: auto;
     height: 60%;
     top: 18%;
-    left: 18%;
+    left: 35%;
     z-index: 10;
     animation: girl 1s ease-in-out alternate infinite;
 }
@@ -88,7 +88,8 @@
     left: 64%;
     z-index: 1;
 }
-#pic10 {
+
+#pic10_1, #pic10_2 {
     width: 304px;
     height: 257px;
     top: 45%;
@@ -96,7 +97,19 @@
     z-index: 30;
     animation: girl 1s ease-in-out alternate infinite;
 }
-#pic11 {
+
+#pic10_1{
+    mix-blend-mode: normal;
+    z-index: 25;
+    opacity: 0.3;
+}
+
+#pic10_2{
+    mix-blend-mode: overlay;
+}
+
+
+#pic11_1, #pic11_2 {
     width: 297px;
     height: 257px;
     top: 53%;
@@ -104,6 +117,18 @@
     z-index: 30;
     animation: girl 1s ease-in-out alternate infinite;
 }
+
+#pic11_1{
+    mix-blend-mode: normal;
+    z-index: 25;
+    opacity: 0.3;
+}
+
+#pic11_2{
+    mix-blend-mode: overlay;
+}
+
+
 #pic12 {
     width: 170px;
     height: 180px;

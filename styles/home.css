@@ -14,7 +14,7 @@
   display: flex;
 }
 .frontleft {
-  width: 45%;
+  width: 42%;
   height: 100%;
   margin-left: 60px;
   border-right: 1px solid #ffffff;
@@ -29,8 +29,8 @@
   font-family: "Now";
   font-style: normal;
   font-weight: 900;
-  font-size: 59px;
-  line-height: 70px;
+  font-size: 50px;
+  margin-right: 50px;
   text-transform: uppercase;
   color: #ece7ff;
   margin-bottom: 10px;
@@ -39,30 +39,29 @@
   font-family: "Now";
   font-style: normal;
   font-weight: normal;
-  font-size: 21px;
-  line-height: 24px;
+  font-size: 18px;
+  opacity: 0.8;
   text-transform: uppercase;
   color: #ece7ff;
   margin-right: 50px;
 }
 .image-container {
-    position: relative;
+  position: relative;
   width: 593px;
-  height: 298px;
-  margin-top: 33px;
+  height: 344px;
+  margin-top: 25px;
   overflow: hidden;
 }
 .image-container img {
-    position: absolute;
-    top: 0;
-    right: 8%;
+  position: absolute;
+  top: 0;
   width: auto;
   height: 100%;
   filter: drop-shadow(4px 4px 30px rgba(1, 55, 52, 0.1));
   border-radius: 15px;
-  opacity: 1 ;
+  opacity: 1;
   transition: opacity 1000ms ease-in-out;
 }
-.fade-class{
-    opacity: 0 !important;
+.fade-class {
+  opacity: 0 !important;
 }
