@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.frontright{
+    position: relative;
+}
+.frontright img{
+    position: relative;
+    width: 60%;
+    height: 60%;
+    top: 18%;
+    left: 18%;
+    z-index: 10;
+    animation: girl 1s ease-in-out alternate infinite;
+}
+.image{
+    position: absolute;
+}
+#pic1{
+    top: 16%;
+    left: 54%;
+    width: 580px;
+    height: 500px;
+    z-index: 11;
+}
+#pic2{
+    top: 18%;
+    left: 47.5%;
+    width: 718px;
+    height: 589px;
+    z-index: 5;
+    mix-blend-mode: multiply;
+}
+#pic3{
+    top: 24%;
+    left: 57%;
+    width: 500px;
+    height: 500px;
+    z-index: 0;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+}
+#pic4{
+    width: 360px;
+    height: 265px;
+    top: 31%;
+    left: 63%;
+    z-index: 9;
+}
+#pic5{
+    width: 100px;
+    height: 101px;
+    top: 62%;
+    left: 59%;
+    z-index: 20;
+    animation: square 1s ease-in-out alternate-reverse infinite;
+}
+#pic6{
+    width: 50px;
+    height: 51px;
+    top: 71%;
+    left: 82%;
+    z-index: 20;
+    animation: cross 1s ease-in-out alternate infinite;
+}
+#pic7{
+    width: 75px;
+    height: 76px;
+    top: 35%;
+    left: 77%;
+    z-index: 20;
+    animation: cross 1s ease-in-out alternate infinite;
+}
+#pic8{
+    width: 60px;
+    height: 61px;
+    top: 43%;
+    left: 64%;
+    z-index: 20;
+    animation: square 1s ease-in-out alternate-reverse infinite;
+}
+#pic9{
+    width: 273px;
+    height: 257px;
+    top: 59%;
+    left: 64%;
+    z-index: 1;
+}
+#pic10 {
+    width: 304px;
+    height: 257px;
+    top: 45%;
+    left: 64%;
+    z-index: 30;
+    animation: girl 1s ease-in-out alternate infinite;
+}
+#pic11 {
+    width: 297px;
+    height: 257px;
+    top: 53%;
+    left: 64.5%;
+    z-index: 30;
+    animation: girl 1s ease-in-out alternate infinite;
+}
+#pic12 {
+    width: 170px;
+    height: 180px;
+    top: 46%;
+    left: 56%;
+    z-index: 6;
+}
+#pic13 {
+    width: 170px;
+    height: 180px;
+    top: 36%;
+    left: 78%;
+    z-index: 6;
+}
+@keyframes cross {
+    from{
+        transform: translateY(0) translateX(0);
+    }
+    to{
+    transform: translateY(10px) translateX(-5px) rotate(-5deg);
+    }
+}
+@keyframes square {
+    from{
+        transform: translateY(0) translateX(0);
+    }
+    to{
+    transform: translateY(10px) translateX(5px) rotate(3deg);
+    }
+}
+@keyframes girl {
+    from{
+        transform: translateY(0) rotate(0deg);
+    }
+    to{
+        transform: translateY(10px) rotate(1deg);
+    }
+}

@@ -55,8 +55,8 @@
 .image-container img {
     position: absolute;
     top: 0;
-    right: 0;
-  width: 100%;
+    right: 8%;
+  width: auto;
   height: 100%;
   filter: drop-shadow(4px 4px 30px rgba(1, 55, 52, 0.1));
   border-radius: 15px;
