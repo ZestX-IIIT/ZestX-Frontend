@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.home{
+    background: linear-gradient(180deg, #0E1391 0%, #0E0045 100%);
+    width: 100%;
+    height: 100vh;
+}

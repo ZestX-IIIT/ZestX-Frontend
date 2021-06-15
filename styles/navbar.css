@@ -14,6 +14,13 @@
   height: 154px;
   display: flex;
   text-transform: capitalize;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.logo{
+    margin: 25px 0px 23px 59px;
 }
 .logo img {
   width: 114px;
@@ -33,6 +40,11 @@
   font-style: normal;
   font-weight: 500;
   color: #fdfdfd;
+  margin: 59px 30px 70px 30px;
+  text-transform:uppercase;
+}
+.navactive{
+    color:  #F1BBFF !important;
 }
 .profile {
   width: 72px;
@@ -41,6 +53,7 @@
   box-shadow: inset 0px 0px 30px rgba(255, 242, 250, 0.1);
   backdrop-filter: blur(4px);
   border-radius: 26px;
+  margin: 34px 112px 49px 5px;
 }
 .character-container {
   width: 64px;
