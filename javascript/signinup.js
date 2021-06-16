@@ -13,7 +13,6 @@ const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 
 signinBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  console.log("submitted...");
 
   const email = document.getElementById("signinemail").value;
   const password = document.getElementById("signinpassword").value;
@@ -36,8 +35,6 @@ signinBtn.addEventListener("click", (event) => {
         } else {
           alert("Please Sign-In again...");
         }
-
-        console.log(data);
       })
       .catch((err) => {
         alert("Error signing in... Re-try...");
@@ -50,7 +47,6 @@ signinBtn.addEventListener("click", (event) => {
 
 signupBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  console.log("submitted...");
 
   const email = document.getElementById("signupemail").value;
   const name = document.getElementById("name").value;
@@ -81,8 +77,6 @@ signupBtn.addEventListener("click", (event) => {
         } else {
           alert("Please Sign-Up again...");
         }
-
-        console.log(data);
       })
       .catch((err) => {
         alert("Error signing up... Re-try...");

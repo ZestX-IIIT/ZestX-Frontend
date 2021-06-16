@@ -13,6 +13,13 @@ signinButton.addEventListener("click", () => {
   window.location.href = "./signupsignin.html" + "#" + "signin";
 });
 
+window.addEventListener("load", () => {
+  const token = localStorage.getItem("jwt");
+  if (token) {
+    location.href = "/homepage.html";
+  }
+});
+
 arrow[0].addEventListener("click", () => {
   toggleFooterStates();
 });
