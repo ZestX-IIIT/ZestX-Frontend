@@ -18,30 +18,34 @@ signinBtn.addEventListener("click", (event) => {
   const email = document.getElementById("signinemail").value;
   const password = document.getElementById("signinpassword").value;
 
-  fetch(`${apiURL}/auth/signin`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, password }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      const { token } = data;
-
-      if (token) {
-        localStorage.setItem("jwt", token);
-        window.location.href = "./homepage.html";
-      } else {
-        alert("Please Sign-In again...");
-      }
-
-      console.log(data);
+  if (email && password) {
+    fetch(`${apiURL}/auth/signin`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
     })
-    .catch((err) => {
-      alert("Error signing in... Re-try...");
-      console.log(err);
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        const { token } = data;
+
+        if (token) {
+          localStorage.setItem("jwt", token);
+          window.location.href = "./homepage.html";
+        } else {
+          alert("Please Sign-In again...");
+        }
+
+        console.log(data);
+      })
+      .catch((err) => {
+        alert("Error signing in... Re-try...");
+        console.log(err);
+      });
+  } else {
+    alert("Please fill all details...");
+  }
 });
 
 signupBtn.addEventListener("click", (event) => {
@@ -59,30 +63,34 @@ signupBtn.addEventListener("click", (event) => {
     return;
   }
 
-  fetch(`${apiURL}/auth/signup`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ name, email, password, mobile }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      const token = data.data;
-
-      if (token) {
-        localStorage.setItem("jwt", token);
-        window.location.href = "./homepage.html";
-      } else {
-        alert("Please Sign-Up again...");
-      }
-
-      console.log(data);
+  if (email && password && name && mobile) {
+    fetch(`${apiURL}/auth/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, password, mobile }),
     })
-    .catch((err) => {
-      alert("Error signing up... Re-try...");
-      console.log(err);
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        const token = data.data;
+
+        if (token) {
+          localStorage.setItem("jwt", token);
+          window.location.href = "./homepage.html";
+        } else {
+          alert("Please Sign-Up again...");
+        }
+
+        console.log(data);
+      })
+      .catch((err) => {
+        alert("Error signing up... Re-try...");
+        console.log(err);
+      });
+  } else {
+    alert("Please fill all details...");
+  }
 });
 
 if (text == "signin") {

@@ -20,8 +20,8 @@
   align-items: center;
   left: 0;
 }
-.logo{
-    margin: 25px 0px 23px 59px;
+.logo {
+  margin: 25px 0px 23px 59px;
 }
 .logo img {
   width: 114px;
@@ -42,10 +42,10 @@
   font-weight: 500;
   color: #fdfdfd;
   margin: 59px 30px 70px 30px;
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
-.navactive{
-    color:  #F1BBFF !important;
+.navactive {
+  color: #f1bbff !important;
 }
 .profile {
   width: auto;
@@ -57,6 +57,7 @@
   margin: 34px 112px 49px 5px;
 }
 .character-container {
+  user-select: none;
   width: auto;
   height: auto;
   background: rgba(255, 255, 255, 0.2);
@@ -64,7 +65,7 @@
   backdrop-filter: blur(4px);
   border-radius: 27px;
   margin: 6px;
-  font-family: 'Now';
+  font-family: "Now";
   font-style: normal;
   font-weight: bold;
   font-size: 44px;
@@ -74,4 +75,3 @@
   opacity: 0.7;
   padding: 14px 22px 4px 22px;
 }
-
