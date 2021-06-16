@@ -27,25 +27,25 @@
         </div>
         <div class="form-container2 display-class" id="signupcontainer">
             <h1>SIGN IN</h1>
-            <form action="/po" method="post">
+            <form>
                 <div class="form-label">
-                    <input type="email" name="email" id="email" required />
+                    <input type="email" name="email" id="signinemail" required />
                     <div class="floating">EMAIL</div>
                 </div>
                 <div class="form-label">
-                    <input type="password" name="password" id="password" required />
+                    <input type="password" name="password" id="signinpassword" required />
                     <div class="floating">PASSWORD</div>
                 </div>
-                <button type="submit" class="btn">CONTINUE</button>
+                <button type="submit" class="btn" id="signinButton">CONTINUE</button>
             </form>
             <div>DON'T HAVE A ACCOUNT? <span id="signup">SIGN UP</span></div>
         </div>
     </div>
     <div class="form-container opacity-class" id="signincontainer">
         <h1>SIGN UP</h1>
-        <form action="/" method="post">
+        <form>
             <div class="form-label">
-                <input type="email" name="email" id="email" required />
+                <input type="email" name="email" id="signupemail" required />
                 <div class="floating">EMAIL</div>
             </div>
             <div class="form-label">
@@ -57,14 +57,14 @@
                 <div class="floating">MOBILE NUMBER</div>
             </div>
             <div class="form-label">
-                <input type="password" name="password" id="password" required />
+                <input type="password" name="password" id="signuppassword" required />
                 <div class="floating">PASSWORD</div>
             </div>
             <div class="form-label">
                 <input type="password" name="confirmpassword" id="confirm" required />
                 <div class="floating">CONFIRM PASSWORD</div>
             </div>
-            <button type="submit" class="btn">CONTINUE</button>
+            <button type="submit" class="btn" id="signupButton">CONTINUE</button>
         </form>
         <div>ALREADY HAVE A ACCOUNT? <span id="signin">SIGN IN</span></div>
     </div>

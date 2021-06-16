@@ -1,11 +1,16 @@
-let signupbutton = document.getElementById("signupbutton");
+let signupButton = document.getElementById("signupbutton");
+let signinButton = document.getElementById("signin");
 let footer = document.getElementsByClassName("footer");
 let arrow = document.getElementsByClassName("arrow");
 let main = document.getElementsByClassName("main");
 let down = true;
 
-signupbutton.addEventListener("click" , ()=>{
-  window.location.href='./signupsignin.html'
+signupButton.addEventListener("click", () => {
+  window.location.href = "./signupsignin.html" + "#" + "signup";
+});
+
+signinButton.addEventListener("click", () => {
+  window.location.href = "./signupsignin.html" + "#" + "signin";
 });
 
 arrow[0].addEventListener("click", () => {
@@ -16,28 +21,26 @@ window.onkeydown = function (e) {
   if (e.keyCode === 27) {
     // ESC key trigger to collpase
     if (!down) {
-      collapseFooter()
+      collapseFooter();
     }
   } else if (e.keyCode === 70) {
     // F key trigger to Expand/collpase both
-   toggleFooterStates()
+    toggleFooterStates();
   }
 };
 
-
 function toggleFooterStates() {
   if (down) {
-   expandFooter()
+    expandFooter();
   } else {
-   collapseFooter()
+    collapseFooter();
   }
 }
-
 
 function collapseFooter() {
   down = true;
 
-  main[0].classList.toggle("main-opacity");  
+  main[0].classList.toggle("main-opacity");
   arrow[0].classList.toggle("rotate2");
   arrow[0].classList.toggle("rotate");
   setTimeout(() => {
@@ -55,7 +58,6 @@ function collapseFooter() {
       footer[0].classList.toggle("display-none");
     }
   }, 8);
-
 }
 
 function expandFooter() {

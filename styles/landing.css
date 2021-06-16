@@ -40,11 +40,11 @@
   mix-blend-mode: overlay;
 }
 #sq1 {
-    height: 505px;
-    width: 505px;
-    top: 27%;
-    right: 0;
-    z-index: -20;
+  height: 505px;
+  width: 505px;
+  top: 27%;
+  right: 0;
+  z-index: -20;
 }
 
 #sq2 {
@@ -131,26 +131,26 @@
   top: 75%;
   left: 24%;
 }
-.line{
-    position: absolute;
-    height: 10px;
+.line {
+  position: absolute;
+  height: 10px;
 }
-#l1{
-    top: 77%;
-    left: 6%;
-    width: 120px;
+#l1 {
+  top: 77%;
+  left: 6%;
+  width: 120px;
 }
-#l2{
-    height: 8px;
-    top: 15.5%;
-    left: 48%;
-    width: 204px
+#l2 {
+  height: 8px;
+  top: 15.5%;
+  left: 48%;
+  width: 204px;
 }
-#l3{
-    transform: rotate(90deg);
-    right: -3%;
-    top: 35%;
-    width: 169px;
+#l3 {
+  transform: rotate(90deg);
+  right: -3%;
+  top: 35%;
+  width: 169px;
 }
 .girl {
   display: flex;
@@ -179,7 +179,7 @@
   font-size: 1.5rem;
   justify-content: space-evenly;
   color: white;
-  font-family: 'Now';
+  font-family: "Now";
   font-weight: 500;
   font-style: normal;
   text-transform: uppercase;
@@ -212,12 +212,13 @@
 }
 #signin {
   background: transparent;
-  font-family: 'Now';
+  font-family: "Now";
   font-weight: 400;
   color: white;
+  cursor: pointer;
 }
 #signupbutton {
-  font-family: 'Now';
+  font-family: "Now";
   font-weight: 500;
   background: linear-gradient(
     105.64deg,
@@ -233,9 +234,9 @@
 }
 .text h1 {
   font-size: 3rem;
-  font-family: 'Now';
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Now";
+  font-weight: 900;
+  font-style: normal;
   display: inline-block;
   margin: auto;
 }
@@ -261,118 +262,119 @@
   top: -14%;
   right: 16%;
 }
-#outline{
-    position: absolute;
-    height: 300px;
-    width: 300px;
-    left: 43%;
-    mix-blend-mode: overlay;
-    margin-top: -15px;
+#outline {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  left: 43%;
+  mix-blend-mode: overlay;
+  margin-top: -15px;
 }
 @keyframes girl {
-    from{
-        transform: translateY(0) rotate(0deg);
-    }
-    to{
-        transform: translateY(10px) rotate(1deg);
-    }
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(10px) rotate(1deg);
+  }
 }
 @keyframes square {
-    from{
-        transform: translateY(0) translateX(0);
-    }
-    to{
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
     transform: translateY(10px) translateX(5px) rotate(3deg);
-    }
+  }
 }
 @keyframes circle {
-    from{
-        transform: translateY(0) translateX(0);
-    }
-    to{
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
     transform: translateY(10px) translateX(5px);
-    }
+  }
 }
 @keyframes cross {
-    from{
-        transform: translateY(0) translateX(0);
-    }
-    to{
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
     transform: translateY(10px) translateX(-5px) rotate(-5deg);
-    }
+  }
 }
-#ph1{
-    animation-name: girl;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    animation-direction: alternate;
+#ph1 {
+  animation-name: girl;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
 }
-#g4{
-    animation-name: square;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    animation-direction: alternate;
+#g4 {
+  animation-name: square;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
 }
-#g1{
-    animation-name: circle;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-direction: alternate;
+#g1 {
+  animation-name: circle;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
 }
-#g3 , #g2{
-    animation-name: cross;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-direction: alternate;
+#g3,
+#g2 {
+  animation-name: cross;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
 }
 @keyframes extender {
-    from{
-        transform: translateX(0) scaleX(1);
-    }
-    to{
-        transform: translateX(15px) scaleX(1.1);
-    }
+  from {
+    transform: translateX(0) scaleX(1);
+  }
+  to {
+    transform: translateX(15px) scaleX(1.1);
+  }
 }
 @keyframes extenderpart2 {
-    from{
-        transform: translateX(0) scaleX(1);
-    }
-    to{
-        transform: translateX(-35px) scaleX(1.2);
-    }
+  from {
+    transform: translateX(0) scaleX(1);
+  }
+  to {
+    transform: translateX(-35px) scaleX(1.2);
+  }
 }
 @keyframes extenderpart3 {
-    from{
-        transform: translateY(0) scaleY(1) rotate(90deg);
-    }
-    to{
-        transform: translateY(-40px) scaleY(1.3) rotate(90deg);
-    }
+  from {
+    transform: translateY(0) scaleY(1) rotate(90deg);
+  }
+  to {
+    transform: translateY(-40px) scaleY(1.3) rotate(90deg);
+  }
 }
 #l3 {
-    animation-name: extenderpart3;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-direction: alternate;
+  animation-name: extenderpart3;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
 }
 #l1 {
-    animation-name: extender;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-direction: alternate;
+  animation-name: extender;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
 }
-#l2{
-    animation-name: extenderpart2;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-direction: alternate;
+#l2 {
+  animation-name: extenderpart2;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
 }
