@@ -103,10 +103,10 @@ if (text == "signin") {
 }
 
 signin.addEventListener("click", () => {
-  signincontainer.classList.toggle("display-class");
-  signincontainer.classList.toggle("opacity-class");
-  signupcontainer.classList.toggle("opacity-class");
   signupcontainer.classList.toggle("display-class");
+  signupcontainer.classList.toggle("opacity-class");
+  signincontainer.classList.toggle("opacity-class");
+  signincontainer.classList.toggle("display-class");
   bg1.classList.toggle("opacity-class");
   bg2.classList.toggle("opacity-class");
   bg3.classList.toggle("opacity-class");
@@ -117,10 +117,10 @@ signin.addEventListener("click", () => {
   bg4.classList.toggle("display-class");
 });
 signup.addEventListener("click", () => {
-  signincontainer.classList.toggle("display-class");
   signupcontainer.classList.toggle("display-class");
-  signincontainer.classList.toggle("opacity-class");
+  signincontainer.classList.toggle("display-class");
   signupcontainer.classList.toggle("opacity-class");
+  signincontainer.classList.toggle("opacity-class");
   bg1.classList.toggle("opacity-class");
   bg2.classList.toggle("opacity-class");
   bg3.classList.toggle("opacity-class");
