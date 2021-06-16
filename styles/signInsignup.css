@@ -55,14 +55,15 @@ h1 {
   animation-timing-function: ease-in-out;
   animation-duration: 300ms;
   animation-iteration-count: 1;
-  /* animation-fill-mode:both; */
+  animation-direction: alternate;
+  animation-fill-mode:both;
 }
 @keyframes fade {
   from{
     opacity: 0;
   }
   to{
-    opacity: 0.5;
+    opacity: 1;
   }
 }
 .background{
