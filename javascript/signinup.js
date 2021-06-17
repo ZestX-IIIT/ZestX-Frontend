@@ -4,6 +4,7 @@ let signincontainer = document.getElementById("signincontainer");
 let signupcontainer = document.getElementById("signupcontainer");
 let signupBtn = document.getElementById("signupButton");
 let signinBtn = document.getElementById("signinButton");
+let preloader = document.getElementById("preloader_container");
 let bg1 = document.getElementById("bg1");
 let bg2 = document.getElementById("bg2");
 let bg3 = document.getElementById("bg3");
@@ -11,9 +12,13 @@ let bg4 = document.getElementById("bg4");
 let text = window.location.hash.substring(1);
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 
+window.addEventListener("load", () => {
+  preloader.style.display = "none";
+});
+
 signinBtn.addEventListener("click", (event) => {
   event.preventDefault();
-
+  preloader.style.display = "block";
   const email = document.getElementById("signinemail").value;
   const password = document.getElementById("signinpassword").value;
 
@@ -33,15 +38,18 @@ signinBtn.addEventListener("click", (event) => {
           localStorage.setItem("jwt", token);
           window.location.href = "./homepage.html";
         } else {
-          alert("Please Sign-In again...");
+          alert("Enter correct password !");
+          preloader.style.display = "none";
         }
       })
       .catch((err) => {
         alert("Error signing in... Re-try...");
         console.log(err);
+        preloader.style.display = "none";
       });
   } else {
-    alert("Please fill all details...");
+    alert("Please fill all details !");
+    preloader.style.display = "none";
   }
 });
 
@@ -58,6 +66,7 @@ signupBtn.addEventListener("click", (event) => {
     alert("Passwords don't match!");
     return;
   }
+  preloader.style.display = "block";
 
   if (email && password && name && mobile) {
     fetch(`${apiURL}/auth/signup`, {
@@ -75,15 +84,18 @@ signupBtn.addEventListener("click", (event) => {
           localStorage.setItem("jwt", token);
           window.location.href = "./homepage.html";
         } else {
-          alert("Please Sign-Up again...");
+          alert("User already exist! Please Sign In!");
+          preloader.style.display = "none";
         }
       })
       .catch((err) => {
         alert("Error signing up... Re-try...");
         console.log(err);
+        preloader.style.display = "none";
       });
   } else {
-    alert("Please fill all details...");
+    alert("Please fill all the details properly!");
+    preloader.style.display = "none";
   }
 });
 
