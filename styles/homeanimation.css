@@ -1,169 +1,268 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-.frontright{
+#animation_container {
     position: relative;
-}
-.frontright img{
-    position: relative;
-    width: auto;
-    height: 60%;
-    top: 18%;
-    left: 35%;
-    z-index: 10;
-    animation: girl 1s ease-in-out alternate infinite;
-}
-.image{
-    position: absolute;
-}
-#pic1{
-    top: 16%;
-    left: 54%;
-    width: 580px;
-    height: 500px;
-    z-index: 11;
-}
-#pic2{
-    top: 18%;
-    left: 47.5%;
-    width: 718px;
-    height: 589px;
-    z-index: 5;
-    mix-blend-mode: multiply;
-}
-#pic3{
-    top: 24%;
-    left: 57%;
-    width: 500px;
-    height: 500px;
-    z-index: 0;
-    border-radius: 50%;
-    mix-blend-mode: screen;
-}
-#pic4{
-    width: 360px;
-    height: 265px;
-    top: 31%;
-    left: 63%;
-    z-index: 9;
-}
-#pic5{
     width: 100px;
-    height: 101px;
-    top: 62%;
+    height: 100px;
+  }
+  
+  .image {
+    position: absolute;
+    user-select: none;
+  }
+  
+  #bg {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    top: 0%;
+    left: 0%;
+  }
+  
+  #overlay {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    top: 0%;
+    user-select: none;
+    left: 0%;
+    mix-blend-mode: overlay;
+  }
+  
+  #bg_light {
+    height: 85%;
+    width: 85%;
+    border-radius: 50%;
+    top: 8%;
+    left: 7.5%;
+    animation: bg_light 1s ease-out alternate infinite;
+  }
+  
+  #girl {
+    height: auto;
+    width: 46%;
+    top: 25%;
+    left: 25%;
+    animation: girl 1s ease-in-out alternate infinite;
+  }
+  
+  #stage {
+    height: auto;
+    width: 28.35%;
+    top: 76.56%;
+    left: 34%;
+  }
+  
+  #light {
+    height: auto;
+    width: 61%;
+    top: 33.49%;
+    left: 17.69%;
+  }
+  
+  #floating_objects {
+    height: auto;
+    width: 63.38%;
+    top: 24.32%;
+    left: 17.31%;
+    animation: floating_objects_group 1s ease-in-out alternate infinite;
+  }
+  
+  #obj_1 {
+    height: auto;
+    width: 3.95%;
+    top: 51%;
+    left: 22%;
+    animation: long_obj_1 1s ease-in-out alternate infinite;
+  }
+  
+  #obj_2 {
+    height: auto;
+    width: 3.95%;
+    top: 30.5%;
+    left: 72%;
+    animation: long_obj_2 1s ease-in-out alternate infinite;
+  }
+  
+  #ring_1_b {
+    height: auto;
+    width: 49%;
+    top: 57%;
+    left: 25.5%;
+    opacity: 0.6;
+    animation: ring_1 1s ease-in-out alternate infinite;
+  }
+  #ring_1_t {
+    height: auto;
+    width: 49%;
+    top: 57%;
+    left: 25.5%;
+    mix-blend-mode: overlay;
+    animation: ring_1 1s ease-in-out alternate infinite;
+  }
+  
+  #ring_2_b {
+    height: auto;
+    width: 54%;
+    top: 65%;
+    left: 23.5%;
+    opacity: 0.6;
+    animation: ring_2 1s ease-in-out alternate infinite;
+  }
+  #ring_2_t {
+    height: auto;
+    width: 54%;
+    top: 65%;
+    left: 23.5%;
+    mix-blend-mode: overlay;
+    animation: ring_2 1s ease-in-out alternate infinite;
+  }
+  
+  #white_obj_1 {
+    height: auto;
+    width: 12%;
+    top: 69%;
+    left: 21%;
+    animation: white_obj_1 1s ease-in-out alternate infinite;
+  }
+  
+  #white_obj_2 {
+    height: auto;
+    width: 8.2%;
+    top: 29%;
     left: 59%;
-    z-index: 20;
-    animation: square 1s ease-in-out alternate-reverse infinite;
-}
-#pic6{
-    width: 50px;
-    height: 51px;
-    top: 71%;
-    left: 82%;
-    z-index: 20;
-    animation: cross 1s ease-in-out alternate infinite;
-}
-#pic7{
-    width: 75px;
-    height: 76px;
-    top: 35%;
-    left: 77%;
-    z-index: 20;
-    animation: cross 1s ease-in-out alternate infinite;
-}
-#pic8{
-    width: 60px;
-    height: 61px;
-    top: 43%;
-    left: 64%;
-    z-index: 20;
-    animation: square 1s ease-in-out alternate-reverse infinite;
-}
-#pic9{
-    width: 273px;
-    height: 257px;
-    top: 59%;
-    left: 64%;
-    z-index: 1;
-}
-
-#pic10_1, #pic10_2 {
-    width: 304px;
-    height: 257px;
-    top: 45%;
-    left: 64%;
-    z-index: 30;
-    animation: girl 1s ease-in-out alternate infinite;
-}
-
-#pic10_1{
-    mix-blend-mode: normal;
-    z-index: 25;
-    opacity: 0.3;
-}
-
-#pic10_2{
-    mix-blend-mode: overlay;
-}
-
-
-#pic11_1, #pic11_2 {
-    width: 297px;
-    height: 257px;
-    top: 53%;
-    left: 64.5%;
-    z-index: 30;
-    animation: girl 1s ease-in-out alternate infinite;
-}
-
-#pic11_1{
-    mix-blend-mode: normal;
-    z-index: 25;
-    opacity: 0.3;
-}
-
-#pic11_2{
-    mix-blend-mode: overlay;
-}
-
-
-#pic12 {
-    width: 170px;
-    height: 180px;
-    top: 46%;
-    left: 56%;
-    z-index: 6;
-}
-#pic13 {
-    width: 170px;
-    height: 180px;
-    top: 36%;
-    left: 78%;
-    z-index: 6;
-}
-@keyframes cross {
-    from{
-        transform: translateY(0) translateX(0);
+    animation: white_obj_2 1s ease-in-out alternate infinite;
+  }
+  
+  #white_obj_3 {
+    height: auto;
+    width: 4%;
+    top: 69%;
+    left: 55%;
+    animation: white_obj_3 1s ease-in-out alternate infinite;
+  }
+  
+  #white_obj_4_outlined {
+    height: auto;
+    width: 7%;
+    top: 42%;
+    left: 23%;
+    animation: white_obj_4 1s ease-in-out alternate infinite;
+  }
+  
+  #white_obj_5 {
+    height: auto;
+    width: 4%;
+    top: 76%;
+    left: 74%;
+    animation: white_obj_5 1s ease-in-out alternate infinite;
+  }
+  
+  /* Keyframes */
+  
+  /* Girl keyframes */
+  @keyframes girl {
+    from {
+      transform: translateY(0) rotate(0deg) scale(1);
     }
-    to{
-    transform: translateY(10px) translateX(-5px) rotate(-5deg);
+    to {
+      transform: translateY(2%) rotate(1deg) scale(1.01);
     }
-}
-@keyframes square {
-    from{
-        transform: translateY(0) translateX(0);
+  }
+  
+  /* Rings keyframes */
+  @keyframes ring_1 {
+    from {
+      transform: translateY(0) rotate(0deg) scale(1);
     }
-    to{
-    transform: translateY(10px) translateX(5px) rotate(3deg);
+    to {
+      transform: translateY(18%) rotate(1deg) scale(0.99);
     }
-}
-@keyframes girl {
-    from{
-        transform: translateY(0) rotate(0deg);
+  }
+  @keyframes ring_2 {
+    from {
+      transform: translateY(0) rotate(0deg) scale(1);
     }
-    to{
-        transform: translateY(10px) rotate(1deg);
+    to {
+      transform: translateY(20%) rotate(1deg) scale(1.01);
     }
-}
+  }
+  
+  /* Long Objects Keyframes */
+  @keyframes long_obj_1 {
+    from {
+      transform: translateY(0) scale(1);
+    }
+    to {
+      transform: translateY(10%) scale(1.01);
+    }
+  }
+  @keyframes long_obj_2 {
+    from {
+      transform: translateY(0) scale(1);
+    }
+    to {
+      transform: translateY(4%) scale(1.01);
+    }
+  }
+  
+  /* objects group keyframes */
+  @keyframes floating_objects_group {
+    from {
+      transform: translateY(0) rotate(0deg);
+    }
+    to {
+      transform: translateY(3%) rotate(0.1deg);
+    }
+  }
+  
+  /* bg light keyframes */
+  @keyframes bg_light {
+    from {
+      transform: translateY(0) scale(1);
+    }
+    to {
+      transform: translateY(1%) scale(1.01);
+    }
+  }
+  
+  /* white objs keyframes */
+  @keyframes white_obj_1 {
+    from {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+    to {
+      transform: translateY(15%) rotate(2deg) scale(1.01);
+    }
+  }
+  @keyframes white_obj_2 {
+    from {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+    to {
+      transform: translateY(30%) rotate(-2deg) scale(1.01);
+    }
+  }
+  @keyframes white_obj_3 {
+    from {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+    to {
+      transform: translateY(80%) rotate(-3deg) scale(1.01);
+    }
+  }
+  @keyframes white_obj_4 {
+    from {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+    to {
+      transform: translateY(20%) rotate(2deg) scale(1.01);
+    }
+  }
+  @keyframes white_obj_5 {
+    from {
+      transform: translateY(-50%) rotate(0deg) scale(1);
+    }
+    to {
+      transform: translateY(20%) rotate(3deg) scale(1.01);
+    }
+  }
+  

@@ -4,6 +4,8 @@ let poster3 = document.getElementById("poster3");
 let preloader = document.getElementById("preloader_container");
 let index = 0;
 
+let animationContainer = document.getElementById("preloader_container");
+
 window.addEventListener("load", () => {
   preloader.style.display = "none";
 });
