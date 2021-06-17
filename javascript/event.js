@@ -1,15 +1,14 @@
 var slider = document.getElementsByClassName("slide")
-let index = 0;
+let index_slider = 0;
 var isNotHovering = true
 
 var a = setInterval(() => {
     if (isNotHovering) {
-        slider[index].checked = true;
-        index++;
-        index = index % 5;
+        slider[index_slider].checked = true;
+        index_slider++;
+        index_slider = index_slider % 5;
     }
 }, 2500)
-
 
 var slide = document.getElementById("slider");
 slide.addEventListener('mouseover', () => {
