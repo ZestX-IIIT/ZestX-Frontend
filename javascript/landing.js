@@ -1,19 +1,23 @@
 let signupButton = document.getElementById("signupbutton");
 let signinButton = document.getElementById("signin");
 let footer = document.getElementsByClassName("footer");
+let preloader = document.getElementById("preloader_container");
 let arrow = document.getElementsByClassName("arrow");
 let main = document.getElementsByClassName("main");
 let down = true;
 
 signupButton.addEventListener("click", () => {
+  preloader.style.display = "block";
   window.location.href = "./signupsignin.html" + "#" + "signup";
 });
 
 signinButton.addEventListener("click", () => {
+  preloader.style.display = "block";
   window.location.href = "./signupsignin.html" + "#" + "signin";
 });
 
 window.addEventListener("load", () => {
+  preloader.style.display = "none";
   const token = localStorage.getItem("jwt");
   if (token) {
     location.href = "/homepage.html";
