@@ -8,6 +8,7 @@
     180deg,
     #0e1491 0%,
     #0e1186 83.44%,
+    /* #0e1186 83.44%, */
     rgba(19, 20, 133, 0) 107.28%
   );
   width: 100%;
@@ -19,6 +20,7 @@
   top: 0;
   align-items: center;
   left: 0;
+  z-index: 200;
 }
 .logo {
   margin: 25px 0px 23px 59px;
