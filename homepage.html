@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZESTX</title>
-    <link rel="stylesheet" href="./assets/fonts/now/stylesheet.css">
-    <link rel="stylesheet" href="./styles/navbar.css">
-    <link rel="stylesheet" href="./styles/home.css">
-    <link rel="stylesheet" href="./styles/homeanimation.css">
-    <link rel="stylesheet" href="./styles/event.css">
-    <link rel="stylesheet" href="./styles/team.css">
-    <script src="./javascript/html_include.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZESTX</title>
+  <link rel="stylesheet" href="./assets/fonts/now/stylesheet.css">
+  <link rel="stylesheet" href="./styles/navbar.css">
+  <link rel="stylesheet" href="./styles/home.css">
+  <link rel="stylesheet" href="./styles/homeanimation.css">
+  <link rel="stylesheet" href="./styles/event.css">
+  <link rel="stylesheet" href="./styles/team.css">
+  <script src="./javascript/html_include.js"></script>
 </head>
 
 <body>
-    <div
-      html_container="./general/loader.html"
-      style="position: fixed; width: 100vw; z-index: 50000"
-      id="preloader_container"
-    ></div>
-    <nav class="navbar">
-        <div class="logo">
-          <img src="./assets/_general/zestx_icon.svg" alt="navlogo" />
-        </div>
-        <div class="navelements">
-          <ul>
-            <li class="navactive">home</li>
-            <li>events</li>
-            <li>team</li>
-            <li>sponsers</li>
-            <li>FAQ</li>
-          </ul>
-          <div class="profile">
-            <div class="character-container">F</div>
-          </div>
-        </div>
+  <div html_container="./general/loader.html" style="position: fixed; width: 100vw; z-index: 50000"
+    id="preloader_container"></div>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="./assets/_general/zestx_icon.svg" alt="navlogo" />
+    </div>
+    <div class="navelements">
+      <ul>
+        <li class="navactive">home</li>
+        <li>events</li>
+        <li>team</li>
+        <li>sponsers</li>
+        <li>FAQ</li>
+      </ul>
+      <div class="profile">
+        <div class="character-container">F</div>
       </div>
-    </nav>
-    <section class="home">
+    </div>
+    </div>
+  </nav>
+  <section class="home">
     <img src="./assets/home_page/animation/SVG/light.svg" class="image" id="pic1" alt="" />
     <img src="./assets/home_page/animation/SVG/overlay.svg" class="image" id="pic2" alt="" />
     <img src="./assets/home_page/animation/SVG/bg_light.svg" class="image" id="pic3" alt="" />
@@ -76,25 +74,34 @@
 
   <section class="events">
     <section id="slider">
-      <input type="radio" name="slider" class="slide" id="s1" checked>
-      <input type="radio" name="slider" class="slide" id="s2">
-      <input type="radio" name="slider" class="slide" id="s3">
-      <input type="radio" name="slider" class="slide" id="s4">
-      <input type="radio" name="slider" class="slide" id="s5">
+      <input type="radio" name="slider" class="slide" id="s1" checked />
+      <input type="radio" name="slider" class="slide" id="s2" />
+      <input type="radio" name="slider" class="slide" id="s3" />
+      <input type="radio" name="slider" class="slide" id="s4" />
+      <input type="radio" name="slider" class="slide" id="s5" />
       <label class="event_poster_image" for="s1" id="slide1">
-        <img src="./assets/_events_assets/posters/2x/hot_stepper.png" height="100%" width="100%">
+        <img src="./assets/_events_assets/posters/2x/compressed_for_preloading/hot_stepper.jpg"
+          data-src="./assets/_events_assets/posters/2x/hot_stepper.png" class="lazyload" height="100%" width="100%" />
+
+        <!-- <canvas class="progressiveMedia-canvas js-progressiveMedia-canvas" width="1700px" height="750px"></canvas> -->
+
       </label>
       <label class="event_poster_image" for="s2" id="slide2">
-        <img src="./assets/_events_assets/posters/2x/one_mic_stand.png" height="100%" width="100%">
+        <img src="./assets/_events_assets/posters/2x/compressed_for_preloading/one_mic_stand.jpg"
+          data-src="./assets/_events_assets/posters/2x/one_mic_stand.png" class="lazyload" height="100%" width="100%" />
       </label>
       <label class="event_poster_image" for="s3" id="slide3">
-        <img src="./assets/_events_assets/posters/2x/raise_your_mic.png" height="100%" width="100%">
+        <img src="./assets/_events_assets/posters/2x/compressed_for_preloading/raise_your_mic.jpg"
+          data-src="./assets/_events_assets/posters/2x/raise_your_mic.png" class="lazyload" height="100%"
+          width="100%" />
       </label>
       <label class="event_poster_image" for="s4" id="slide4">
-        <img src="./assets/_events_assets/posters/2x/rangshala.png" height="100%" width="100%">
+        <img src="./assets/_events_assets/posters/2x/compressed_for_preloading/rangshala.jpg"
+          data-src="./assets/_events_assets/posters/2x/rangshala.png" class="lazyload" height="100%" width="100%" />
       </label>
       <label class="event_poster_image" for="s5" id="slide5">
-        <img src="./assets/_events_assets/posters/2x/strokes.png" height="100%" width="100%">
+        <img src="./assets/_events_assets/posters/2x/compressed_for_preloading/strokes.jpg"
+          data-src="./assets/_events_assets/posters/2x/strokes.png" class="lazyload" height="100%" width="100%" />
       </label>
     </section>
   </section>
@@ -110,6 +117,8 @@
 </body>
 <script src="./javascript/home.js"></script>
 <script src="./javascript/event.js"></script>
+<script src="./javascript/lazysizes.min.js" async=""></script>
+
 </body>
 
 </html>
