@@ -11,9 +11,16 @@
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/homeanimation.css">
     <link rel="stylesheet" href="./styles/event.css">
+    <link rel="stylesheet" href="./styles/team.css">
+    <script src="./javascript/html_include.js"></script>
 </head>
 
 <body>
+    <div
+      html_container="./general/loader.html"
+      style="position: fixed; width: 100vw; z-index: 50000"
+      id="preloader_container"
+    ></div>
     <nav class="navbar">
         <div class="logo">
                 <img src="./assets/_general/zestx_icon.svg" alt="navlogo">
@@ -72,7 +79,6 @@
     </section>
 
     <section class="events">
-        <!-- <div class="tp"> -->
         <section id="slider">
             <input type="radio" name="slider" class="slide" id="s1" checked>
             <input type="radio" name="slider" class="slide" id="s2">
@@ -95,10 +101,17 @@
                 <img src="./assets/_events_assets/posters/2x/strokes.png" height="100%" width="100%">
             </label>
         </section>
-    <!-- </div> -->
+    </section>
+     
+    <!-- Team Implementation -->
 
+    <section class="team">
+
+    </section>
+    <script>
+        includeHTML();
+    </script>
 </body>
-</section>
 <script src="./javascript/home.js"></script>
 <script src="./javascript/event.js"></script>
 </body>

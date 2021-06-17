@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.team{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(
+180deg
+, #0E1391 0%, #0E0045 100%);
+}
