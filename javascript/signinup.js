@@ -13,8 +13,12 @@ let text = window.location.hash.substring(1);
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 
 window.addEventListener("load", () => {
-  preloader.style.display = "none";
+  closeLoader()
 });
+
+function closeLoader() {
+  preloader.style.display = "none";
+}
 
 signinBtn.addEventListener("click", (event) => {
   event.preventDefault();
