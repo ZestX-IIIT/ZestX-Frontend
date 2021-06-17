@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="./assets/fonts/now/stylesheet.css" />
     <link rel="stylesheet" href="./styles/landing.css" />
     <link rel="stylesheet" href="./styles/landingscroll.css" />
+    <script src="./javascript/html_include.js"></script>
   </head>
 
   <body>
-    
+    <div
+      html_container="./general/loader.html"
+      style="position: fixed; width: 100vw; z-index: 50000"
+      id="preloader_container"
+    ></div>
     <section class="main">
       <img
         src="./assets/landing_page/SVG/white_glowing_circle.svg"
@@ -204,5 +209,9 @@
       </div>
     </div>
     <script src="./javascript/landing.js"></script>
+    <script>
+      includeHTML();
+      </script>
+  </body>
   </body>
 </html>
