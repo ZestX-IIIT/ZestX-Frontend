@@ -4,8 +4,64 @@
     box-sizing: border-box;
 }
 .sponsers{
-    position: relative;
-    padding-top: 150px;
+    /* position: relative; */
+    padding-top: 125px;
     height: 100vh;
     width: 100%;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.sponserImages{
+    /* position: absolute; */
+    height: 75%;
+    width: 75%;
+    user-select: none;
+    filter: drop-shadow(32px 21px 11px rgba(4, 0, 19, 0.4));
+}
+.sponserContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* #sponserpic4{
+    left: 50%;
+}
+#sponserpic1{
+    left: 13%;
+    top: 38%;
+}
+#sponserpic15{
+    left: 21%;
+    top: 38%;
+}
+#sponserpic11{
+    left: 42%;
+    top: 38%;
+}
+#sponserpic16{
+    left: 59.8%;
+    top: 38%;
+}
+#sponserpic6{
+    left: 68%;
+    top: 38%;
+}
+#sponserpic2{
+    left: 8%;
+    top: 56.5%;
+}
+#sponserpic5{
+    left: 16.2%;
+    top: 56.5%;
+}
+#sponserpic9{
+    left: 48.2%;
+    top: 56.5%;
+}
+#sponserpic3{
+    left: 81%;
+    top: 56.5%;
+} */
