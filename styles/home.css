@@ -8,6 +8,10 @@
   height: 100vh;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #bg_blend {
   height: 100vh;
   width: 100vw;
