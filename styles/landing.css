@@ -196,7 +196,7 @@
 }
 
 .text {
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   width: 40%;
@@ -214,6 +214,7 @@
   height: 80%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-left: 10%;
   margin-right: 10%;
 }
