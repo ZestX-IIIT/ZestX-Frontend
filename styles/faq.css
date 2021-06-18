@@ -32,10 +32,8 @@
   height: 3.2rem;
   margin-top: 3rem;
   flex-direction: column;
-  border-bottom: 1px solid #f8e6ff;
-  transition: height 400ms ease-in-out;
 }
-.FAQQuestionsContainerHeight {
+.FAQQuestionsContainerHeight{
   height: 6.4rem;
 }
 .QuestionDiv {
@@ -51,6 +49,7 @@
   font-size: 1.83rem;
   text-transform: uppercase;
   color: #bfbeff;
+  padding-bottom: 1rem;
 }
 .arrowDiv {
   display: flex;
@@ -58,6 +57,7 @@
   align-items: center;
   width: 10%;
   height: 6.2rem;
+  padding-top: 1rem;
 }
 .arrowDiv img {
   height: auto;
@@ -73,16 +73,22 @@
   font-size: 1.42rem;
   text-transform: uppercase;
   color: #cdcee6;
-  transition: opacity 400ms ease-in-out, height 400ms ease-in-out;
+  transition: opacity 500ms ease-out, height 500ms ease-in-out;
 }
 .AnswerOfQuestionOpacity {
   opacity: 1;
   height: auto;
 }
-.FAQOuterContainer{
-    width: 91%;
-    height: 6.2rem;
-    display: flex;
-    margin-left: auto;
-  transition: height 400ms ease-in-out;
+.FAQOuterContainer {
+  width: 91%;
+  height: 6.2rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  border-bottom: 1px solid #f8e6ff;
+  transition: height 300ms ease-in-out;
+}
+.FAQOuterContainerHeight {
+  height: 11rem;
 }
