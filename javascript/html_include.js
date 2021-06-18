@@ -16,7 +16,6 @@ function includehtmlbyID(containerid) {
         }
 
         elmnt.removeAttribute("html_container");
-        includeHTML();
       }
     };
     xhttp.open("GET", file, true);
