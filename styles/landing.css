@@ -16,20 +16,20 @@
 }
 .glow {
   position: absolute;
-  height: 50px;
-  width: 50px;
+  height: 8%;
+  width: auto;
 }
 #g1 {
-  bottom: 23%;
+  bottom: 25%;
   left: 18%;
 }
 #g2 {
   bottom: 19.5%;
-  left: 30%;
+  left: 62%;
 }
 #g3 {
-  bottom: 41%;
-  left: 33%;
+  bottom: 39%;
+  left: 74%;
 }
 #g4 {
   top: 42%;
@@ -72,64 +72,64 @@
   right: 40%;
 }
 #sq6 {
-  height: 25px;
-  width: 25px;
+  height: 3.5%;
+  width: auto;
   top: 64%;
-  left: 30%;
+  left: 63%;
 }
 #sq7 {
-  height: 35px;
-  width: 35px;
+  height: 4.5%;
+  width: auto;
+  top: 75%;
+  left: 72%;
+}
+#sq8 {
+  height: 5%;
+  width: auto;
+  top: 45%;
+  left: 79%;
+}
+#sq9 {
+  height: 2%;
+  width: auto;
+  top: 41%;
+  left: 10%;
+}
+#sq10 {
+  height: 2.5%;
+  width: auto;
+  top: 52%;
+  left: 11%;
+}
+#sq11 {
+  height: 3.5%;
+  width: auto;
+  top: 44%;
+  left: 32%;
+}
+#sq12 {
+  height: 4.5%;
+  width: auto;
+  top: 81%;
+  left: 22%;
+}
+#sq13 {
+  height: 1.8%;
+  width: auto;
+  top: 63%;
+  left: 36%;
+}
+#sq14 {
+  height: 5.5%;
+  width: auto;
   top: 72%;
   left: 34%;
 }
-#sq8 {
-  height: 35px;
-  width: 35px;
-  top: 44%;
-  left: 37%;
-}
-#sq9 {
-  height: 15px;
-  width: 15px;
-  top: 41%;
-  left: 13%;
-}
-#sq10 {
-  height: 15px;
-  width: 15px;
-  top: 52%;
-  left: 15%;
-}
-#sq11 {
-  height: 25px;
-  width: 25px;
-  top: 42%;
-  left: 20%;
-}
-#sq12 {
-  height: 20px;
-  width: 20px;
-  top: 77%;
-  left: 17%;
-}
-#sq13 {
-  height: 20px;
-  width: 20px;
-  top: 63%;
-  left: 21%;
-}
-#sq14 {
-  height: 30px;
-  width: 30px;
-  top: 72%;
-  left: 23%;
-}
 #sq15 {
-  height: 10px;
-  width: 10px;
-  top: 75%;
-  left: 24%;
+  height: 2%;
+  width: auto;
+  top: 76.3%;
+  left: 39.2%;
 }
 .line {
   position: absolute;
@@ -159,6 +159,7 @@
   width: 30vw;
   position: relative;
   height: 39vw;
+  margin-top: 2%;
   /* overflow: hidden; */
   /* background-color: green; */
 }
@@ -169,12 +170,16 @@
   left: 0%;
   width: 97%;
   margin: auto;
+  z-index: 1000;
   mix-blend-mode: overlay;
 }
 
-#ph3 {
+#landing_page_animation_stage {
   width: 65%;
-  margin: auto;
+  z-index: -10;
+  position: absolute;
+  top: 86.9%;
+  left: 17.28%;
   height: 10%;
 }
 #landing_page_animation_girl {
