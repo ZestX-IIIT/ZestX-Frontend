@@ -27,7 +27,7 @@
 }
 #UserContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 45% 55%;
   margin-top: 1rem;
 }
 .UserLeftContainer {
@@ -48,7 +48,7 @@
   font-family: "Now";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.625rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   color: #efd5ff;
 }
@@ -73,7 +73,7 @@ input:focus {
   outline: none;
 }
 #EditButton {
-  width: 9.8rem;
+  width: 9rem;
   height: 3.54rem;
   background: linear-gradient(
     270deg,
@@ -91,8 +91,91 @@ input:focus {
   text-transform: uppercase;
   color: #ffffff;
 }
-#EditButton img{
-    width: 20px;
-    margin-left: 5px;
-    height: auto;
+#EditButton img {
+  width: 20px;
+  margin-left: 5px;
+  height: auto;
+}
+.UserRightContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.OngoingEvents,
+.Pastevents {
+  width: 90%;
+  /* height: 18rem; */
+  margin-left: auto;
+  margin-right: auto;
+}
+.OngoingEvents h2,
+.Pastevents h2 {
+  height: 10%;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #fdfdfd;
+  opacity: 0.8;
+  margin-bottom: .8rem;
+}
+#OngoingEventsList,
+#PastEventsList {
+  height: 15rem;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 349px 4px 250px rgba(255, 242, 250, 0.1);
+  border-radius: 12px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;margin-bottom: 1rem;
+}
+#OngoingEventsList::-webkit-scrollbar,
+#PastEventsList::-webkit-scrollbar {
+  display: none;
+}
+.EventList {
+  width: 46rem;
+  margin: auto;
+  margin-top: 20px;
+  height: 7rem;
+  background: linear-gradient(
+    270.46deg,
+    rgba(255, 79, 206, 0.7) -24.06%,
+    rgba(86, 6, 255, 0.7) 105.66%
+  );
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 10px;
+}
+.EventList h2 {
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.8;
+  height: auto;
+}
+.EventList h4 {
+  font-family: "Now";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.8;
+}
+.EventContent {
+  max-width: 100%;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.8;
 }
