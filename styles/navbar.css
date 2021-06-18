@@ -45,7 +45,19 @@
   margin: 59px 30px 70px 30px;
   text-transform: uppercase;
 }
-.navactive {
+
+.navelements ul li a {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 21px;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  color: #fdfdfd;
+  margin: 59px 30px 70px 30px;
+  text-transform: uppercase;
+}
+.navactive a {
   color: #f1bbff !important;
 }
 .profile {
