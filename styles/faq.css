@@ -56,14 +56,20 @@
   align-items: center;
   width: 10%;
   height: 6.2rem;
-  padding-top: 1rem;
+  /* transform: rotate(0deg);
+  transition: transform 400ms ease-in-out;
+  padding-top: 1rem; */
 }
 .arrowDiv img {
   height: auto;
   width: 60%;
   cursor: pointer;
+  
+  padding-top: 1rem;
+}
+.faq_down_arrow{
   transform: rotate(0deg);
-  transition: transfrom 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
 .arrowDivRotate{
   transform: rotate(180deg);

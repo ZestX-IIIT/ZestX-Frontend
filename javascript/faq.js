@@ -6,10 +6,10 @@ let FAQOuterContainer = document.getElementsByClassName("FAQOuterContainer");
 
 for(let i=0; i<faq_down_arrow.length;i++){
 faq_down_arrow[i].addEventListener("click" , ()=>{
-    faq_down_arrow[i].classList.toggle(".arrowDivRotate")
+    faq_down_arrow[i].classList.toggle("arrowDivRotate")
     FAQQuestionsContainer[i].classList.toggle("FAQQuestionsContainerHeight")
     AnswerOfQuestion[i].classList.toggle("AnswerOfQuestionOpacity")
     FAQOuterContainer[i].classList.toggle("FAQOuterContainerHeight")
 });
-console.log("hellp");
+console.log("hello");
 }
