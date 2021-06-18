@@ -81,14 +81,14 @@
 } */
 
 .navelements ul .dot {
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   background: #f1bbff;
   border-radius: 50%;
   opacity: 1;
   z-index: 1;
   position: absolute;
-  top: 50%;
+  top: 50.5%;
   right: 57.5%;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;

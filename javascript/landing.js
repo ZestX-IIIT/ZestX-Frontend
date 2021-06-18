@@ -20,6 +20,7 @@ window.addEventListener("load", () => {
   preloader.style.display = "none";
   const token = localStorage.getItem("jwt");
   if (token) {
+    preloader.style.display = "block";
     location.href = "/homepage.html";
   }
 });
