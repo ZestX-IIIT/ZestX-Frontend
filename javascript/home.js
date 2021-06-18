@@ -33,34 +33,132 @@ window.addEventListener("scroll", () => {
   }
 });
 
-$("li").on("click", function (event) {
-  // Make sure this.hash has a value before overriding default behavior
+var nav = document.getElementById("navelements");
+var line = $("<div />").addClass("line");
 
-  // Prevent default anchor click behavior
-  event.preventDefault();
+line.appendTo(nav);
 
-  // Store hash
-  var hash = this.hash;
+var active = nav.find(".active");
+var pos = 0;
+var wid = 0;
 
-  // Using jQuery's animate() method to add smooth page scroll
-  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-  $("html, body").animate(
-    {
-      scrollTop: 500,
-    },
-    800,
-    function () {
-      // Add hash (#) to URL when done scrolling (default click behavior)
-      window.location.hash = homeSection;
+if (active.length) {
+  pos = active.position().left;
+  wid = active.width();
+  line.css({
+    left: pos,
+    width: wid,
+  });
+}
+
+nav.find("ul li a").click(function (e) {
+  e.preventDefault();
+  if (!$(this).parent().hasClass("active") && !nav.hasClass("animate")) {
+    nav.addClass("animate");
+
+    var _this = $(this);
+
+    nav.find("ul li").removeClass("active");
+
+    var position = _this.parent().position();
+    var width = _this.parent().width();
+
+    if (position.left >= pos) {
+      line.animate(
+        {
+          width: position.left - pos + width,
+        },
+        300,
+        function () {
+          line.animate(
+            {
+              width: width,
+              left: position.left,
+            },
+            150,
+            function () {
+              nav.removeClass("animate");
+            }
+          );
+          _this.parent().addClass("active");
+        }
+      );
+    } else {
+      line.animate(
+        {
+          left: position.left,
+          width: pos - position.left + wid,
+        },
+        300,
+        function () {
+          line.animate(
+            {
+              width: width,
+            },
+            150,
+            function () {
+              nav.removeClass("animate");
+            }
+          );
+          _this.parent().addClass("active");
+        }
+      );
     }
-  );
-  // End if
+
+    pos = position.left;
+    wid = width;
+  }
 });
 
+home.addEventListener("click", () => {});
+
 events.addEventListener("click", () => {});
-sponsers.addEventListener("click", () => {});
 team.addEventListener("click", () => {});
+sponsers.addEventListener("click", () => {});
 faq.addEventListener("click", () => {});
+
+$('a[href^="#"]').on("click", function (e) {
+  // e.preventDefault();
+
+  var target = this.hash,
+    $target = $(target);
+
+  $("html, body")
+    .stop()
+    .animate(
+      {
+        scrollTop: $target.offset().top - 70,
+      },
+      900,
+      "swing",
+      function () {
+        window.location.hash = target;
+      }
+    );
+});
+
+function toggleActiveTab(tabIndex) {
+  switch (activeTab) {
+    case 0:
+      home.classList.toggle("navactive");
+      break;
+    case 1:
+      events.classList.toggle("navactive");
+      break;
+    case 2:
+      team.classList.toggle("navactive");
+
+      break;
+    case 3:
+      sponsers.classList.toggle("navactive");
+
+      break;
+    case 4:
+      faq.classList.toggle("navactive");
+
+      break;
+  }
+}
 
 setInterval(() => {
   if (index == 0) {

@@ -31,6 +31,14 @@
 .navelements {
   display: flex;
 }
+
+.navelements .line {
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  margin: 10px 0 0 0;
+  background: #ff1847;
+}
 .navelements ul {
   list-style: none;
   display: flex;
@@ -42,20 +50,40 @@
   font-style: normal;
   font-weight: 500;
   color: #fdfdfd;
-  margin: 59px 30px 70px 30px;
+  /* margin: 59px 30px 70px 30px; */
   text-transform: uppercase;
+  margin: 0 40px 0 0;
+  opacity: 0.4;
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a:active {
+  opacity: 1;
+}
+
+a:last-child {
+  margin-right: 0;
 }
 
 .navelements ul li a {
   text-decoration: none;
   cursor: pointer;
-  font-size: 21px;
+  /* font-size: 21px; */
   font-family: "Now";
   font-style: normal;
-  font-weight: 500;
-  color: #fdfdfd;
-  margin: 59px 30px 70px 30px;
+  /* font-weight: 500; */
+  /* color: #fdfdfd; */
+  margin: 59px 10px 70px 10px;
   text-transform: uppercase;
+  color: #fff;
+  display: block;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-size: 14px;
 }
 .navactive a {
   color: #f1bbff !important;
