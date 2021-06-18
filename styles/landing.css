@@ -301,7 +301,7 @@
     transform: translateY(0) translateX(0);
   }
   to {
-    transform: translateY(23%) translateX(10%) rotate(3deg);
+    transform: translateY(28%) translateX(26%) rotate(3deg);
   }
 }
 @keyframes circle {
