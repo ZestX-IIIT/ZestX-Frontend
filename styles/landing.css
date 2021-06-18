@@ -293,7 +293,7 @@
     transform: translateY(0) rotate(0deg);
   }
   to {
-    transform: translateY(10px) rotate(1deg);
+    transform: translateY(2%) rotate(1deg);
   }
 }
 @keyframes square {
@@ -301,7 +301,7 @@
     transform: translateY(0) translateX(0);
   }
   to {
-    transform: translateY(10px) translateX(5px) rotate(3deg);
+    transform: translateY(23%) translateX(10%) rotate(3deg);
   }
 }
 @keyframes circle {
@@ -309,7 +309,7 @@
     transform: translateY(0) translateX(0);
   }
   to {
-    transform: translateY(10px) translateX(5px);
+    transform: translateY(20%) translateX(16%);
   }
 }
 @keyframes cross {
@@ -317,7 +317,7 @@
     transform: translateY(0) translateX(0);
   }
   to {
-    transform: translateY(10px) translateX(-5px) rotate(-5deg);
+    transform: translateY(22%) translateX(-11%) rotate(-5deg);
   }
 }
 
