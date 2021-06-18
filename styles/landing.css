@@ -153,17 +153,17 @@
   width: 169px;
 }
 .girl {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 40%;
+  align-items: center; */
+  width: 30vw;
   position: relative;
-  height: auto;
+  height: 39vw;
   /* overflow: hidden; */
   /* background-color: green; */
 }
 
-#ph2 {
+#landing_page_animation_light {
   position: absolute;
   top: 32%;
   left: 0%;
@@ -171,6 +171,25 @@
   margin: auto;
   mix-blend-mode: overlay;
 }
+
+#ph3 {
+  width: 65%;
+  margin: auto;
+  height: 10%;
+}
+#landing_page_animation_girl {
+  height: 90%;
+}
+
+#landing_page_animation_girl {
+  animation-name: girl;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
 .text {
   height: auto;
   display: flex;
@@ -185,14 +204,7 @@
   text-transform: uppercase;
   text-align: center;
 }
-#ph3 {
-  width: 65%;
-  margin: auto;
-  height: 10%;
-}
-#ph1 {
-  height: 90%;
-}
+
 .content {
   height: 80%;
   display: flex;
@@ -302,14 +314,7 @@
     transform: translateY(10px) translateX(-5px) rotate(-5deg);
   }
 }
-#ph1 {
-  animation-name: girl;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  animation-direction: alternate;
-}
+
 #g4 {
   animation-name: square;
   animation-duration: 1s;
