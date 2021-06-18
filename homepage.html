@@ -25,11 +25,12 @@
     </div>
     <div class="navelements" id="navelements">
       <ul>
-        <li class="active" id="home"><a href="#homesec ">home</a> </li>
-        <li id="events"><a href="#eventssec">events</a> </li>
-        <li id="team"><a href="#teamsec">team</a> </li>
-        <li id="sponsers"><a href="#sponser_container">sponsers</a> </li>
-        <li id="faq"><a href="#homesec">FAQ</a> </li>
+        <li class="navactive" id="home"><a>home</a> </li>
+        <li id="events"><a>events</a> </li>
+        <li id="team"><a>team</a> </li>
+        <li id="sponsers"><a>sponsers</a> </li>
+        <li id="faq"><a>FAQ</a> </li>
+        <div class="dot" id="dot"></div>
       </ul>
       <div class="profile">
         <div class="character-container">F</div>
@@ -148,14 +149,22 @@
   </section>
 
   <!-- Sponsers Implementation -->
-  <div html_container="./general/sponser_page.html" id="sponser_container"></div>
+  <section id="main_sponsers_container" style="height: 100vh; width: 100%; padding-top: 125px; display: flex; align-items: center; justify-content: center;">
+    <div html_container="./general/sponser_page.html" id="sponser_container" style=" height: 75%; width: 60%;"
+      ></div>
+  </section>
+
+
+
 
   <!-- FAQ Implementation -->
+  <section html_container="./general/faq_page.html" id="faqsec"></section>
 
   <script>
     includehtmlbyID("preloader_container")
     includehtmlbyID("animation_container")
     includehtmlbyID("sponser_container")
+    includehtmlbyID("faqsec")
   </script>
 </body>
 <script src="./javascript/home.js"></script>
