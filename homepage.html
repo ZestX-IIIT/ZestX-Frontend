@@ -9,10 +9,9 @@
   <link rel="stylesheet" href="./assets/fonts/now/stylesheet.css">
   <link rel="stylesheet" href="./styles/navbar.css">
   <link rel="stylesheet" href="./styles/home.css">
-  <!-- <link rel="stylesheet" href="./styles/homeanimation.css"> -->
   <link rel="stylesheet" href="./styles/event.css">
   <link rel="stylesheet" href="./styles/team.css">
-  <!-- <link rel="stylesheet" href="./styles/primary_home_animation.css" /> -->
+  <link rel="stylesheet" href="./styles/sponsers.css">
   <script src="./javascript/html_include.js"></script>
 </head>
 
@@ -26,11 +25,11 @@
     </div>
     <div class="navelements">
       <ul>
-        <li class="navactive">home</li>
-        <li>events</li>
-        <li>team</li>
-        <li>sponsers</li>
-        <li>FAQ</li>
+        <li class="navactive" id="home"><a href="#homesec">home</a> </li>
+        <li id="events">events</li>
+        <li id="team">team</li>
+        <li id="sponsers">sponsers</li>
+        <li id="faq">FAQ</li>
       </ul>
       <div class="profile">
         <div class="character-container">F</div>
@@ -38,7 +37,7 @@
     </div>
     </div>
   </nav>
-  <section class="home">
+  <section class="home" id="homesec">
     <div class="front">
       <div class="frontleft">
         <h2>Feel Something Zesty</h2>
@@ -54,12 +53,12 @@
         </div>
       </div>
       <div class="frontright">
-        <div html_container="./general/primary_home_animation.html"   id="animation_container"></div>
+        <div html_container="./general/primary_home_animation.html" id="animation_container"></div>
       </div>
     </div>
   </section>
 
-  <section class="events">
+  <section class="events" id="eventssec">
     <section id="slider">
       <input type="radio" name="slider" class="slide" id="s1" checked />
       <input type="radio" name="slider" class="slide" id="s2" />
@@ -92,7 +91,7 @@
 
   <!-- Team Implementation -->
 
-  <section class="team">
+  <section class="team" id="teamsec">
     <div class="teamPanel">
       <div class="teamContent teamContentActive">Core</div>
       <div class="teamContent">Core support</div>
@@ -101,11 +100,11 @@
     </div>
 
     <div class="teamMembers" id="teamMembers">
-      
+
       <div class="topContainer">
         <div class="outerContainer">
           <div class="imageHolder" id="member1">
-            <img src="./assets/home_page/team_section/hover.svg" alt="">
+
           </div>
         </div>
         <h2>KUNAL JAIN</h2>
@@ -138,7 +137,7 @@
         <h2>HARSH SHARMA</h2>
       </div>
 
-      <div class="topContainer" id="top5">
+      <div class="topContainer">
         <div class="outerContainer">
           <div class="imageHolder" id="member5">
 
@@ -146,11 +145,15 @@
         </div>
         <h2>PARTH LAWANIA</h2>
       </div>
-
   </section>
+
+  <!-- Sponsers Implementation -->
+  <div html_container="./general/sponser_page.html" id="sponser_container"></div>
+
   <script>
     includehtmlbyID("preloader_container")
     includehtmlbyID("animation_container")
+    includehtmlbyID("sponser_container")
   </script>
 </body>
 <script src="./javascript/home.js"></script>

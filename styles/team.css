@@ -49,8 +49,8 @@
   font-size: 30px;
 }
 .topContainer {
-  width: 43%;
-  height: 64%;
+  width: 41%;
+  height: 62%;
   margin-top: 60px;
 }
 .topContainer h2 {
@@ -83,28 +83,24 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  opacity: 1;
-  transition: opacity 400ms ease-out;
+  transition: background-image 400ms ease-out;
 }
 .imageHolder:hover{
-  opacity: 0.1;
+  background-image: url('../assets/home_page/team_section/hover.svg') !important;
+  cursor: pointer;
 }
 #member1 {
-  background: url("../assets/home_page/team_section/kunal_sir.png");
+  background-image: url("../assets/home_page/team_section/kunal_sir.png");
 }
 #member2{
-  background: url('../assets/home_page/team_section/manish_sir.png');
+  background-image: url('../assets/home_page/team_section/manish_sir.png');
 }
 #member3{
-  background: url('../assets/home_page/team_section/nikhil_sir.png');
+  background-image: url('../assets/home_page/team_section/nikhil_sir.png');
 }
 #member4{
-  background: url('../assets/home_page/team_section/harsh_sir.png');
+  background-image: url('../assets/home_page/team_section/harsh_sir.png');
 }
 #member5{
-  background: url('../assets/home_page/team_section/parth_sir_1.jpg');
-}
-#top5{
-  width: 47%;
+  background-image: url('../assets/home_page/team_section/parth_sir_1.jpg');
 }
