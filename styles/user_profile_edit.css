@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+}
+#zestxlogoeditpage {
+  position: absolute;
+  bottom: 1%;
+  right: 5%;
+  width: 6rem;
+  height: 6rem;
+}
+.Main_Edit_Container {
+  background: url("../assets/home_page/events_details/rangshala_bg.svg"),
+    Linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+  width: 100%;
+  height: 100vh;
+  padding-top: 4rem;
+}
+#BackEditButton a {
+  text-decoration: none;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+#BackEditButton {
+  padding-left: 1rem;
+}
+#BackEditButton img {
+  cursor: pointer;
+  padding-right: 1rem;
+}
+.UserEditContainer {
+  height: 75vh;
+  padding-left: 5rem;
+  padding-top: 5rem;
+  border-right: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+.UserDetailsInput {
+  width: 40%;
+  background: transparent;
+  border: 0px;
+  border-bottom: 2px solid #efd5ff;
+  padding: 0.8rem;
+  margin-bottom: 2rem;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #efd5ff;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input:focus {
+  outline: none;
+}
+#EditButton {
+  width: 9rem;
+  height: 3.54rem;
+  background: linear-gradient(
+    270deg,
+    rgba(150, 4, 163, 0.6) 10%,
+    rgba(49, 2, 149, 0.6) 99%
+  );
+  mix-blend-mode: normal;
+  border: 2px solid #f9e8ff;
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4375rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+}
+.form-label {
+  position: relative;
+}
+.floating {
+  position: absolute;
+  top: 20%;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #efd5ff;
+  opacity: 0.7;
+  transform: translateY(0px);
+  transition: all 400ms ease-in-out;
+}
+.UserDetailsInput:focus ~ .floating,
+.UserDetailsInput:not(:focus):valid ~ .floating {
+  transform:  translateY(-2rem);
+  font-size: 1rem;
+}
