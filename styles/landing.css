@@ -40,34 +40,34 @@
   mix-blend-mode: overlay;
 }
 #sq1 {
-  height: 505px;
-  width: 505px;
-  top: 27%;
+  height: 70%;
+  width: 32%;
+  top: 25%;
   right: 0;
   z-index: -20;
 }
 
 #sq2 {
-  height: 70px;
-  width: 70px;
+  height: 10%;
+  width: auto;
   top: 3%;
   left: 18%;
 }
 #sq3 {
-  height: 120px;
+  height: 16%;
   top: 3%;
   right: 35%;
-  width: 120px;
+  width: auto;
 }
 #sq4 {
-  height: 100px;
-  width: 100px;
+  height: 13%;
+  width: auto;
   top: 75%;
   left: 3%;
 }
 #sq5 {
-  height: 130px;
-  width: 130px;
+  height: 18%;
+  width: auto;
   bottom: 4%;
   right: 40%;
 }
@@ -138,19 +138,19 @@
 #l1 {
   top: 77%;
   left: 6%;
-  width: 120px;
+  width: 8%;
 }
 #l2 {
-  height: 8px;
+  height: 2%;
   top: 15.5%;
   left: 48%;
-  width: 204px;
+  width: 13%;
 }
 #l3 {
   transform: rotate(90deg);
   right: -3%;
   top: 35%;
-  width: 169px;
+  width: 10%;
 }
 .girl {
   /* display: flex;
@@ -259,8 +259,8 @@
   margin: auto;
 }
 .head h1 {
-  margin:  0px;
-  position: absolute; 
+  margin: 0px;
+  position: absolute;
   left: 40%;
   margin-top: 5%;
 }
@@ -271,7 +271,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin-top:13.5%;
+  margin-top: 13.5%;
   width: 100%;
 }
 .head img {
@@ -283,7 +283,7 @@
   margin-top: 25%;
 }
 
-.btn-div{
+.btn-div {
   margin-top: 20%;
   display: flex;
   align-items: center;
@@ -301,8 +301,8 @@
 }
 #outline {
   position: absolute;
-  height: 300px;
-  width: 300px;
+  height: 40%;
+  width: 20%;
   left: 43%;
   mix-blend-mode: overlay;
   margin-top: -15px;
@@ -408,3 +408,5 @@
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
 }
+
+
