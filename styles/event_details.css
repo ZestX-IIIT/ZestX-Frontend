@@ -8,18 +8,44 @@
   height: 100vh;
   background: url("../assets/home_page/events_details/rangshala_bg.svg"),
     linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
-  padding-top: 7.82rem;
   text-transform: uppercase;
-  padding-left: 5.375rem;
   display: flex;
   flex-direction: column;
 }
+
+#header_container_for_title_in_event_detail_page {
+  width: 100%;
+  height: 20%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#date_and_title_container_at_events_details_page {
+  display: flex;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  align-self: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#back_btn_from_festival_details_page {
+  width: 2%;
+  position: absolute;
+  left: 5%;
+  margin-top: -1%;
+  cursor: pointer;
+}
+
 #EventName {
   font-family: "Now";
   font-style: normal;
   font-weight: bold;
   font-size: 2.4rem;
   color: #fdfdfd;
+  margin: auto;
   height: 7%;
 }
 #EventDate {
@@ -27,6 +53,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
+  margin: auto;
   color: rgba(253, 253, 253, 0.7);
   height: 3%;
 }
@@ -37,26 +64,37 @@
   font-style: normal;
   font-weight: 500;
   font-size: 1.2rem;
+  padding: 0% 5%;
   color: rgba(253, 253, 253, 0.9);
 }
 #EventDetailsLeftContainer {
-  width: 45%;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   border-right: 1px solid #ffffff;
 }
 #EventDetailsRightContainer {
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding-left: 5.375rem;
+  padding-left: 5%;
 }
 
-#EventDescription,
-#EventVenue {
+#EventDescription {
   width: 85%;
+  margin-top: 3%;
+}
+#EventVenue {
+  width: 95%;
+  margin-top: 5%;
+}
+
+#EventPrizes {
+  margin-top: 3%;
+}
+
+#EventRules{
+  margin-top: 5%;
 }
 #EventDetailsRightContainer h3,
 #EventDetailsLeftContainer h3 {
@@ -80,12 +118,13 @@
   cursor: pointer;
   animation: bg_transition 0.4s ease-in-out alternate infinite;
 
+margin-top: 8%;
+
 }
 
 #EventRegister:hover {
   /* background: linear-gradient(269.14deg, #310295 9.63%  ,#9604a3 99.1%); */
   animation: bg_transition 0.4s ease-out alternate-reverse 0;
-
 }
 
 @keyframes bg_transition {
@@ -93,7 +132,7 @@
   }
   to {
     transform: scale(1.05);
-    border-width: 4.5px ;
+    border-width: 4.5px;
     border-color: #e8aaff;
     box-shadow: 0px 0px 35px rgba(253, 225, 255, 0.329);
   }
