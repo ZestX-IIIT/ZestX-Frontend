@@ -3,6 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  position: relative;
+}
+
+#zestxlogoadminpage {
+  position: absolute;
+  top: 0;
+  right: 4%;
+  width: 6rem;
+  height: 6rem;
+}
 .main_admin_container {
   padding: 3rem;
   padding-bottom: 0;
@@ -70,35 +81,73 @@
   text-transform: uppercase;
   color: rgba(253, 253, 253, 0.9);
 }
-.right_h3{
-    font-size: 1.2rem !important;
-    margin-bottom: .8rem;
-    padding-top: .5rem;
+.right_h3 {
+  font-size: 1.2rem !important;
+  margin-bottom: 0.8rem;
+  padding-top: 0.5rem;
 }
 .outer_left {
-    height: 93vh;
+  height: 93vh;
 }
 .outer_middle {
-    height: 93vh;
+  height: 93vh;
 }
 .outer_right {
-    height: 93vh;
+  height: 93vh;
 }
-.outer_right .inner_list{
-    border: 0;
+.outer_right .inner_list {
+  border: 0;
 }
-.outer_middle h2{
-    display: flex;
-    justify-content: space-between;
+.outer_middle h2 {
+  display: flex;
+  justify-content: space-between;
 }
-.inner_h2 img{
-    width: 25px;
+.inner_h2 img {
+  width: 25px;
 }
-#firsth2{
-    width: 40%;
+#firsth2 {
+  width: 40%;
 }
-#secondh2{
-    display: flex;
-    justify-content: space-between;
-    width: 22%;
+#secondh2 {
+  display: flex;
+  justify-content: space-between;
+  width: 22%;
+}
+.internal_users , .outer_users{
+  height: 47.5%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.internal_users::-webkit-scrollbar,
+.outer_users::-webkit-scrollbar {
+  display: none;
+}
+.internal_users h3, .outer_users h3{
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #cdcee6;
+}
+.internal_list .inner_list h3{
+  padding-left: 0;
+}
+.internal_list .inner_list{
+  border: 0px;
+  border-top: 1px solid #f8e6ff;
+  display: flex;
+  justify-content: space-between;
+}
+#internal_users_h3{
+  padding: 1rem;
+}
+#userListContainer{
+  justify-content: space-between;
 }
