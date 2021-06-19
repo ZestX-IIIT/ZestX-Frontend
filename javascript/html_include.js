@@ -3,7 +3,7 @@ function includehtmlbyID(containerid) {
 
   elmnt = document.getElementById(containerid);
 
-  file = elmnt.getAttribute("html_container");
+  file = elmnt.getAttribute("include_file_path");
   if (file) {
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -15,7 +15,7 @@ function includehtmlbyID(containerid) {
           elmnt.innerHTML = "Page not found.";
         }
 
-        elmnt.removeAttribute("html_container");
+        // elmnt.removeAttribute("html_container");
       }
     };
     xhttp.open("GET", file, true);
