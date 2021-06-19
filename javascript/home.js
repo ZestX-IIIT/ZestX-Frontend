@@ -1,8 +1,8 @@
 let primaryContainer = document.getElementById("primary_container_for_home_page_content");
 let primaryEventsPageContainer = document.getElementById("primnary_event_details_container");
 
-let slide1 = document.getElementById("slide1")
-let slide2 = document.getElementById("slide2")
+let slide1;
+let slide2;
 
 let poster1 = document.getElementById("poster1");
 let poster2 = document.getElementById("poster2");
@@ -25,22 +25,30 @@ let activeTab = 0;
 let primary_events_posters = document.getElementsByClassName("event_poster_image")
 let animationContainer = document.getElementById("preloader_container");
 
-setTimeout(function () {
-  let registerEventButton = document.getElementById("EventRegister")
+let backBtnFromEventsPage;
 
-  registerEventButton.addEventListener("click", () => {
+setTimeout(function () {
+  backBtnFromEventsPage = document.getElementById("back_btn_from_festival_details_page")
+
+  slide1 = document.getElementById("slide1")
+  slide2 = document.getElementById("slide2")
+
+
+  backBtnFromEventsPage.addEventListener("click", () => {
     displayMainContainer()
+  });
+
+  slide1.addEventListener("click", () => {
+    displayEvenetspage()
+  });
+  slide2.addEventListener("click", () => {
+    displayEvenetspage()
   });
 
 }, 200);
 
 
-slide1.addEventListener("click", () => {
-  displayEvenetspage()
-});
-slide2.addEventListener("click", () => {
-  displayEvenetspage()
-});
+
 
 
 window.addEventListener("load", () => {
@@ -90,7 +98,7 @@ home.addEventListener("click", () => {
   window.scrollTo(0, homeSection.offsetTop - 125);
 });
 events.addEventListener("click", () => {
-  window.scrollTo(0, eventsSection.offsetTop - 50);
+  window.scrollTo(0, eventsSection.offsetTop -75);
 });
 team.addEventListener("click", () => {
   window.scrollTo(0, teamSection.offsetTop);

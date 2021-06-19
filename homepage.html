@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="./assets/fonts/now/stylesheet.css">
   <link rel="stylesheet" href="./styles/navbar.css">
   <link rel="stylesheet" href="./styles/home.css">
-  <link rel="stylesheet" href="./styles/event.css">
   <link rel="stylesheet" href="./styles/team.css">
   <link rel="stylesheet" href="./styles/sponsers.css">
   <script src="./javascript/html_include.js"></script>
@@ -64,36 +63,10 @@
       </div>
     </section>
 
+    <!-- Events Include -->
+
     <section class="events" id="eventssec">
-      <section id="slider">
-        <input type="radio" name="slider" class="slide" id="s1" checked />
-        <input type="radio" name="slider" class="slide" id="s2" />
-        <input type="radio" name="slider" class="slide" id="s3" />
-        <input type="radio" name="slider" class="slide" id="s4" />
-        <input type="radio" name="slider" class="slide" id="s5" />
-        <label class="event_poster_image" for="s1" id="slide1">
-          <img src="./assets/_events_assets/posters/2x/compressed_for_preloading/hot_stepper.jpg"
-            data-src="./assets/_events_assets/posters/2x/hot_stepper.png" class="lazyload" height="100%" width="100%" />
-        </label>
-        <label class="event_poster_image" for="s2" id="slide2">
-          <img src="./assets/_events_assets/posters/2x/compressed_for_preloading/one_mic_stand.jpg"
-            data-src="./assets/_events_assets/posters/2x/one_mic_stand.png" class="lazyload" height="100%"
-            width="100%" />
-        </label>
-        <label class="event_poster_image" for="s3" id="slide3">
-          <img src="./assets/_events_assets/posters/2x/compressed_for_preloading/raise_your_mic.jpg"
-            data-src="./assets/_events_assets/posters/2x/raise_your_mic.png" class="lazyload" height="100%"
-            width="100%" />
-        </label>
-        <label class="event_poster_image" for="s4" id="slide4">
-          <img src="./assets/_events_assets/posters/2x/compressed_for_preloading/rangshala.jpg"
-            data-src="./assets/_events_assets/posters/2x/rangshala.png" class="lazyload" height="100%" width="100%" />
-        </label>
-        <label class="event_poster_image" for="s5" id="slide5">
-          <img src="./assets/_events_assets/posters/2x/compressed_for_preloading/strokes.jpg"
-            data-src="./assets/_events_assets/posters/2x/strokes.png" class="lazyload" height="100%" width="100%" />
-        </label>
-      </section>
+      <div include_file_path="./general/slider_event.html" id="slider_container"></div>
     </section>
 
     <!-- Team Include -->
@@ -157,7 +130,8 @@
     <!-- Sponsers Include -->
     <section id="main_sponsers_container"
       style="height: 100vh; width: 100%; padding-top: 125px; display: flex; align-items: center; justify-content: center;">
-      <div include_file_path="./general/sponser_page.html" id="sponser_container" style=" height: 75%; width: 60%;"></div>
+      <div include_file_path="./general/sponser_page.html" id="sponser_container" style=" height: 75%; width: 60%;">
+      </div>
     </section>
 
     <!-- FAQ Include -->
@@ -166,7 +140,7 @@
 
   <div id="primnary_event_details_container">
     <section include_file_path="./general/event_details.html" id="sub_event_details_page_container"></section>
-  
+
   </div>
 
   <script>
@@ -175,6 +149,7 @@
     includehtmlbyID("sponser_container")
     includehtmlbyID("faqsec")
     includehtmlbyID("sub_event_details_page_container")
+    includehtmlbyID("slider_container")
   </script>
 </body>
 <script src="./javascript/home.js"></script>
