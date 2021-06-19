@@ -98,7 +98,7 @@ home.addEventListener("click", () => {
   window.scrollTo(0, homeSection.offsetTop - 125);
 });
 events.addEventListener("click", () => {
-  window.scrollTo(0, eventsSection.offsetTop );
+  window.scrollTo(0, eventsSection.offsetTop -75);
 });
 team.addEventListener("click", () => {
   window.scrollTo(0, teamSection.offsetTop);
