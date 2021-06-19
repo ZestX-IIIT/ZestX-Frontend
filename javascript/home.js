@@ -1,13 +1,8 @@
 let primaryContainer = document.getElementById("primary_container_for_home_page_content");
 let primaryEventsPageContainer = document.getElementById("primnary_event_details_container");
 
-
 let slide1 = document.getElementById("slide1")
 let slide2 = document.getElementById("slide2")
-
-
-
-
 
 let poster1 = document.getElementById("poster1");
 let poster2 = document.getElementById("poster2");
@@ -38,6 +33,15 @@ setTimeout(function () {
   });
 
 }, 200);
+
+
+slide1.addEventListener("click", () => {
+  displayEvenetspage()
+});
+slide2.addEventListener("click", () => {
+  displayEvenetspage()
+});
+
 
 window.addEventListener("load", () => {
   preloader.style.display = "none";
@@ -177,6 +181,7 @@ function displayEvenetspage(data) {
 }
 
 
+// Functions for cleaner APIs for toggeling beetween pages
 
 function checkAndCloseContainer(container) {
 
@@ -203,9 +208,3 @@ function checkAndDisplayContainer(container) {
   container.classList.add("display_to_block")
 }
 
-slide1.addEventListener("click", () => {
-  displayEvenetspage()
-});
-slide2.addEventListener("click", () => {
-  displayEvenetspage()
-});
