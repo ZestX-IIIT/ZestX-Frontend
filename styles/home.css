@@ -12,6 +12,51 @@ html {
   scroll-behavior: smooth;
 }
 
+/* #primary_container_for_home_page_content {
+  display: block;
+  opacity: 1;
+} */
+
+#primnary_event_details_container {
+  display: none;
+  /* opacity: 0; */
+
+  position: absolute;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  z-index: 1000000;
+}
+
+.display_to_none {
+  animation: to_opacity_none 0.5s ease-in-out 1;
+  display: none;
+}
+
+@keyframes to_opacity_none {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.display_to_block {
+  display: block;
+  animation: to_display_block 1s ease-in-out 1;
+}
+
+@keyframes to_display_block {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 #bg_blend {
   height: 100vh;
   width: 100vw;

@@ -1,3 +1,9 @@
+let primaryContainer = document.getElementById("primary_container_for_home_page_content");
+let primaryEventsPageContainer = document.getElementById("primnary_event_details_container");
+
+let slide1 = document.getElementById("slide1")
+let slide2 = document.getElementById("slide2")
+
 let poster1 = document.getElementById("poster1");
 let poster2 = document.getElementById("poster2");
 let poster3 = document.getElementById("poster3");
@@ -16,7 +22,26 @@ let faqSection = document.getElementById("faqsec");
 let index = 0;
 let activeTab = 0;
 
+let primary_events_posters = document.getElementsByClassName("event_poster_image")
 let animationContainer = document.getElementById("preloader_container");
+
+setTimeout(function () {
+  let registerEventButton = document.getElementById("EventRegister")
+
+  registerEventButton.addEventListener("click", () => {
+    displayMainContainer()
+  });
+
+}, 200);
+
+
+slide1.addEventListener("click", () => {
+  displayEvenetspage()
+});
+slide2.addEventListener("click", () => {
+  displayEvenetspage()
+});
+
 
 window.addEventListener("load", () => {
   preloader.style.display = "none";
@@ -29,6 +54,7 @@ window.addEventListener("scroll", () => {
       activeTab = 0;
       setActive(0);
       deActive(1);
+      deActive(2);
     }
   } else if (window.pageYOffset <= (h * 3) / 2) {
     if (activeTab != 1) {
@@ -70,7 +96,7 @@ team.addEventListener("click", () => {
   window.scrollTo(0, teamSection.offsetTop);
 });
 sponsers.addEventListener("click", () => {
-  window.scrollTo(0, sponsersSection.offsetTop - 150);
+  window.scrollTo(0, sponsersSection.offsetTop - 160);
 });
 faq.addEventListener("click", () => {
   window.scrollTo(0, faqSection.offsetTop);
@@ -142,3 +168,43 @@ setInterval(() => {
   index++;
   index = index % 3;
 }, 4000);
+
+
+function displayMainContainer() {
+  checkAndDisplayContainer(primaryContainer)
+  checkAndCloseContainer(primaryEventsPageContainer)
+}
+
+function displayEvenetspage(data) {
+  checkAndDisplayContainer(primaryEventsPageContainer)
+  checkAndCloseContainer(primaryContainer)
+}
+
+
+// Functions for cleaner APIs for toggeling beetween pages
+
+function checkAndCloseContainer(container) {
+
+  if (container.classList.contains("display_to_block")) {
+    container.classList.remove("display_to_block")
+  }
+  container.classList.add("display_to_none")
+
+  setTimeout(function () {
+    container.style.display = "none";
+    container.style.opacity = 0;
+  }, 500);
+
+}
+
+function checkAndDisplayContainer(container) {
+
+  container.style.display = "block"
+  container.style.opacity = 1
+
+  if (container.classList.contains("display_to_none")) {
+    container.classList.remove("display_to_none")
+  }
+  container.classList.add("display_to_block")
+}
+
