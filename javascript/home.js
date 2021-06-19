@@ -26,9 +26,8 @@ let primary_events_posters = document.getElementsByClassName("event_poster_image
 let animationContainer = document.getElementById("preloader_container");
 
 setTimeout(function () {
-  let registerEventButton = document.getElementById("EventRegister")
-
-  registerEventButton.addEventListener("click", () => {
+  let backBtnFromEventsPage = document.getElementById("back_btn_from_festival_details_page")
+  backBtnFromEventsPage.addEventListener("click", () => {
     displayMainContainer()
   });
 
