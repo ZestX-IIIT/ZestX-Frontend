@@ -1,5 +1,5 @@
 function includehtmlbyID(containerid) {
-  var i, elmnt, file, xhttp;
+  var elmnt, file, xhttp;
 
   elmnt = document.getElementById(containerid);
 
@@ -14,8 +14,6 @@ function includehtmlbyID(containerid) {
         if (this.status == 404) {
           elmnt.innerHTML = "Page not found.";
         }
-
-        // elmnt.removeAttribute("html_container");
       }
     };
     xhttp.open("GET", file, true);
