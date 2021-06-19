@@ -3,6 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  position: relative;
+}
+#zestxlogo{
+  position: absolute;
+  top: 0;
+  right: 4%;
+  width: 6rem;
+  height: 6rem;
+}
 #MainUserContainer {
   background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
   width: 100%;
@@ -123,9 +133,9 @@ input:focus {
 #OngoingEventsList,
 #PastEventsList {
   height: 15rem;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: inset 349px 4px 250px rgba(255, 242, 250, 0.1);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 17.91rem 3px 12rem rgba(255, 242, 250, 0.1);
+  border-radius: 10px;
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;margin-bottom: 1rem;
