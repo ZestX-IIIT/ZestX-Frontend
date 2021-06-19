@@ -201,7 +201,6 @@
   flex-direction: column;
   width: 40%;
   font-size: 1.5rem;
-  justify-content: space-evenly;
   color: white;
   font-family: "Now";
   font-weight: 500;
@@ -259,26 +258,42 @@
   margin: auto;
 }
 .head h1 {
-  margin: 33px 0px;
+  margin:  0px;
+  position: absolute; 
+  left: 40%;
+  margin-top: 5%;
 }
 .head {
   height: 20%;
   position: relative;
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top:13.5%;
+  width: 100%;
 }
 .head img {
-  height: 150px;
-  width: 150px;
+  height: 130%;
+  width: auto;
 }
+
+#slogan_text {
+  margin-top: 30%;
+}
+
+.btn-div{
+  margin-top: 25%;
+}
+
 #ph4 {
   position: absolute;
-  left: 50%;
-  bottom: -10%;
+  left: 52%;
+  z-index: -10;
 }
 #ph5 {
   position: absolute;
-  top: -14%;
-  right: 16%;
+  left: 53%;
 }
 #outline {
   position: absolute;
