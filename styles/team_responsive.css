@@ -1,0 +1,67 @@
+@media only screen and (max-width: 1200px) {
+  .teamContent {
+    margin-left: 10px;
+  }
+  .topContainer {
+    width: 40%;
+  }
+  .teamMembers {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .teamContent {
+    margin-left: 0px;
+    margin-right: 10px;
+    font-size: 15px;
+  }
+  .teamMembers {
+    width: 65%;
+  }
+  .teamPanel {
+    width: 25%;
+  }
+  .topContainer h2 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .teamMembers {
+    flex-direction: row;
+  }
+  .topContainer {
+    width: 90%;
+    height: 400px;
+  }
+  .outerContainer {
+    width: 90%;
+    height: 75%;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .teamMembers {
+    width: 60%;
+  }
+  .teamPanel {
+    width: 30%;
+  }
+  .topContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .topContainer h2 {
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 570px) {
+    .teamContent{
+        margin: 0;
+        margin-top: 20px;
+        margin-right: 5px;
+    }
+}
