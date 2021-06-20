@@ -34,7 +34,7 @@ let faqSection = document.getElementById("faqsec");
 
 let index = 0;
 let activeTab = 0;
-let isRegister = [];
+// let isRegister = [];
 let festData;
 let userData;
 
@@ -58,7 +58,7 @@ setTimeout(function () {
   slide5 = document.getElementById("slide5");
 
   registerBtn.addEventListener("click", () => {
-    if (!isRegister[eventId - 6]) {
+    if (!isRegister(eventId)) {
       fetch(`${apiURL}/fest/register`, {
         method: "POST",
         headers: {
@@ -74,9 +74,13 @@ setTimeout(function () {
             alert("Please re-try...");
           } else {
             alert("User registered successfully!");
+            let userarray = festData.find(
+              (event) => (event.fest_id = eventId)
+            ).user_id;
+            userarray[userarray.length] = userData.user_id;
+            console.log(userarray);
             registerBtn.innerHTML = `Unregister`;
             registerBtn.style.animation = "none";
-            isRegister[eventId - 6] = 1;
           }
         })
         .catch((err) => {
@@ -98,9 +102,15 @@ setTimeout(function () {
           } else if (res.status == 500) {
             alert("Please re-try...");
           } else {
+            let userarray = festData.find(
+              (event) => (event.fest_id = eventId)
+            ).user_id;
+            const userIndex = userarray.indexOf(userData.user_id);
+            if (userIndex > -1) {
+              userarray.splice(userIndex, 1);
+            }
             alert("User unregistered successfully!");
             setRegisterBtnText(eventId);
-            isRegister[eventId - 6] = 0;
           }
         })
         .catch((err) => {
@@ -304,6 +314,12 @@ function setRegisterBtnText(id) {
   } else {
     registerBtn.innerHTML = `register(${data.price})`;
   }
+}
+
+function isRegister(id) {
+  const data = festData.find((item) => item.fest_id == id).user_id;
+  if (data == null || !data.includes(userData.user_id)) return false;
+  return true;
 }
 
 function setDetails(id) {
