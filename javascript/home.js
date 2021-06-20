@@ -33,7 +33,7 @@ let index = 0;
 let activeTab = 0;
 let festData;
 let userData;
-backBtnFromEventsPage = document.getElementById(
+let backBtnFromEventsPage = document.getElementById(
   "back_btn_from_festival_details_page"
 );
 let registerBtn = document.getElementById("EventRegister");
@@ -45,8 +45,6 @@ let event_ids = [8, 9, 7, 6, 10];
 let primary_events_posters =
   document.getElementsByClassName("event_poster_image");
 let animationContainer = document.getElementById("preloader_container");
-
-let backBtnFromEventsPage;
 
 fetch(`${apiURL}/fest/getlist`, {
   method: "GET",
