@@ -48,13 +48,12 @@ setTimeout(function () {
   let registerBtn = document.getElementById("EventRegister");
   let eventId = 0;
 
-
   slider_event_list = document.getElementsByClassName("slide");
-  event_poster_list = document.getElementsByClassName("event_poster_image")
+  event_poster_list = document.getElementsByClassName("event_poster_image");
   let event_ids = [8, 9, 7, 6, 10];
 
   registerBtn.addEventListener("click", () => {
-    displayPreloder()
+    displayPreloder();
     if (!isRegister(eventId)) {
       fetch(`${apiURL}/fest/register`, {
         method: "POST",
@@ -66,11 +65,13 @@ setTimeout(function () {
       })
         .then(function (res) {
           if (res.status == 400) {
+            displayEvenetspage();
             alert("Please verify your email!");
           } else if (res.status == 500) {
+            displayEvenetspage();
             alert("Please re-try...");
           } else {
-            displayEvenetspage()
+            displayEvenetspage();
             alert("User registered successfully!");
             let userarray = festData.find(
               (event) => (event.fest_id = eventId)
@@ -80,7 +81,6 @@ setTimeout(function () {
             registerBtn.innerHTML = `Unregister`;
             registerBtn.style.animation = "none";
           }
-
         })
         .catch((err) => {
           console.log(err);
@@ -97,10 +97,13 @@ setTimeout(function () {
       })
         .then(function (res) {
           if (res.status == 400) {
+            displayEvenetspage();
             alert("Please verify your email!");
           } else if (res.status == 500) {
+            displayEvenetspage();
             alert("Please re-try...");
           } else {
+            displayEvenetspage();
             let userarray = festData.find(
               (event) => (event.fest_id = eventId)
             ).user_id;
@@ -125,6 +128,7 @@ setTimeout(function () {
   for (let i = 0; i < 5; i++) {
     event_poster_list[i].addEventListener("click", () => {
       if (slider_event_list[i].checked == true) {
+        eventId = event_ids[i];
         setDetails(event_ids[i]);
         displayEvenetspage();
       }
