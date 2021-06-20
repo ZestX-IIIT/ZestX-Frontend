@@ -5,11 +5,8 @@ let primaryEventsPageContainer = document.getElementById(
   "primnary_event_details_container"
 );
 
-let slide1;
-let slide2;
-let slide3;
-let slide4;
-let slide5;
+let slider_event_list;
+let event_poster_list;
 
 let poster1 = document.getElementById("poster1");
 let poster2 = document.getElementById("poster2");
@@ -51,11 +48,10 @@ setTimeout(function () {
   let registerBtn = document.getElementById("EventRegister");
   let eventId = 0;
 
-  slide1 = document.getElementById("slide1");
-  slide2 = document.getElementById("slide2");
-  slide3 = document.getElementById("slide3");
-  slide4 = document.getElementById("slide4");
-  slide5 = document.getElementById("slide5");
+  
+  slider_event_list = document.getElementsByClassName("slide");
+  event_poster_list = document.getElementsByClassName("event_poster_image")
+  let event_ids = [8,9,7,6,10];
 
   registerBtn.addEventListener("click", () => {
     if (!isRegister(eventId)) {
@@ -123,32 +119,14 @@ setTimeout(function () {
   backBtnFromEventsPage.addEventListener("click", () => {
     displayMainContainer();
   });
-
-  slide1.addEventListener("click", () => {
-    eventId = 8;
-    setDetails(eventId);
-    displayEvenetspage();
-  });
-  slide2.addEventListener("click", () => {
-    eventId = 9;
-    setDetails(eventId);
-    displayEvenetspage();
-  });
-  slide3.addEventListener("click", () => {
-    eventId = 7;
-    setDetails(eventId);
-    displayEvenetspage();
-  });
-  slide4.addEventListener("click", () => {
-    eventId = 6;
-    setDetails(eventId);
-    displayEvenetspage();
-  });
-  slide5.addEventListener("click", () => {
-    eventId = 10;
-    setDetails(eventId);
-    displayEvenetspage();
-  });
+  for(let i = 0;i<5;i++){
+    event_poster_list[i].addEventListener("click", () => {
+      if(slider_event_list[i].checked == true){ 
+      setDetails(event_ids[i]);
+      displayEvenetspage();
+      }
+    });
+  }
 }, 200);
 
 fetch(`${apiURL}/fest/getlist`, {
