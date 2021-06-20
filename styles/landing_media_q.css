@@ -1,0 +1,321 @@
+@media screen and (min-width: 1026px) and (max-width: 1266px) {
+  #sq1 {
+    height: 63%;
+    width: auto;
+    top: 26%;
+  }
+  #sq5 {
+    height: 13%;
+    right: 41%;
+  }
+  .content {
+    height: 73%;
+    margin-left: 16%;
+    margin-right: 10%;
+    margin-top: 3%;
+  }
+  .text {
+    margin-top: -5%;
+    margin-right: 5%;
+  }
+  .girl {
+    width: 33vw;
+    position: relative;
+    height: 42.9vw;
+  }
+  .head h1 {
+    font-size: 2.8rem;
+    left: 36%;
+  }
+  #outline {
+    height: 32%;
+    width: auto;
+    left: 45%;
+    margin-top: -15px;
+  }
+
+  .text {
+    font-size: 1.4rem;
+  }
+  #sq3 {
+    height: 14%;
+    top: 4%;
+    right: 35%;
+    width: auto;
+  }
+  #l2 {
+    height: 2%;
+    top: 14.5%;
+    left: 48%;
+    width: 13%;
+  }
+}
+
+@media screen and (min-width: 926px) and (max-width: 1026px) {
+  #sq1 {
+    height: 58%;
+    width: auto;
+    top: 25%;
+  }
+  #sq2 {
+    height: 7%;
+    top: 4%;
+    left: 16%;
+  }
+  #sq4 {
+    height: 11%;
+  }
+  #sq5 {
+    height: 10%;
+    right: 41%;
+  }
+  .girl {
+    width: 36vw;
+    position: relative;
+    height: 46.8vw;
+  }
+  .head {
+    height: 18%;
+    margin-top: 17.5%;
+  }
+  .btn-div {
+    margin-top: 22%;
+  }
+  .content {
+    height: 73%;
+    margin-left: 14%;
+    margin-right: 10%;
+    margin-top: 3%;
+  }
+  .text {
+    margin-top: -5%;
+    margin-right: 5%;
+  }
+
+  .head h1 {
+    font-size: 2.4rem;
+    left: 36%;
+  }
+  #outline {
+    height: 32%;
+    width: auto;
+    left: 45%;
+    margin-top: -15px;
+  }
+
+  .text {
+    font-size: 1.3rem;
+  }
+  #sq3 {
+    height: 14%;
+    top: 4%;
+    right: 35%;
+    width: auto;
+  }
+  #l2 {
+    height: 2%;
+    top: 14.5%;
+    left: 48%;
+    width: 13%;
+  }
+}
+
+@media screen and (min-width: 826px) and (max-width: 926px) {
+  body {
+    overflow: hidden;
+  }
+  #sq1 {
+    height: 56%;
+    width: auto;
+    top: 24%;
+    right: -3%;
+  }
+  #sq2 {
+    height: 7%;
+    top: 4%;
+    left: 16%;
+  }
+  #sq4 {
+    height: 11%;
+    top: 83%;
+  }
+  #sq5 {
+    height: 8%;
+    right: 43%;
+    bottom: 7%;
+  }
+
+  .girl {
+    width: 39vw;
+    position: relative;
+    height: 50.7vw;
+  }
+  .head {
+    height: 18%;
+    margin-top: 17.5%;
+  }
+  #ph5 {
+    left: 37%;
+  }
+  #ph4 {
+    left: 35%;
+  }
+
+  .btn-div {
+    margin-top: 22%;
+  }
+  .content {
+    height: 73%;
+    margin-left: 7%;
+    margin-right: 10%;
+    margin-top: 3%;
+  }
+  .text {
+    margin-top: -5%;
+    margin-right: 5%;
+  }
+
+  .head h1 {
+    font-size: 2.4rem;
+    left: 20%;
+  }
+  #outline {
+    height: 20%;
+    width: auto;
+    left: 45%;
+    margin-top: 0px;
+  }
+  #signupbutton {
+    padding-top: 4.2%;
+  }
+  .text {
+    font-size: 1.2rem;
+  }
+  #sq3 {
+    height: 11%;
+    top: 3%;
+    right: 39%;
+    width: auto;
+  }
+  #l1 {
+    top: 84%;
+    left: 7%;
+    width: 10%;
+  }
+  #l2 {
+    height: 1.8%;
+    top: 11.5%;
+    left: 46%;
+    width: 12%;
+  }
+  .follow img {
+    width: 28px;
+  }
+}
+
+@media screen and (min-width: 526px) and (max-width: 826px) {
+  body {
+    overflow: hidden;
+  }
+  #sq1 {
+    height: 56%;
+    width: auto;
+    top: 24%;
+    right: -3%;
+  }
+
+  #sq2 {
+    height: 6%;
+    top: 6%;
+    left: 8%;
+  }
+
+  #sq4 {
+    height: 8%;
+    top: 87%;
+    left: 3%;
+  }
+  #sq5 {
+    height: 8%;
+    right: 43%;
+    bottom: 7%;
+  }
+
+  .girl {
+    width: 39vw;
+    position: relative;
+    height: 50.7vw;
+  }
+  .head {
+    height: 18%;
+    margin-top: 17.5%;
+  }
+  #ph5 {
+    left: 37%;
+  }
+  #ph4 {
+    left: 35%;
+  }
+
+  .btn-div {
+    margin-top: 22%;
+  }
+  .content {
+    height: 73%;
+    margin-left: 7%;
+    margin-right: 1%;
+    margin-top: 3%;
+  }
+  .text {
+    margin-top: -5%;
+    margin-right: 5%;
+  }
+
+  .head h1 {
+    font-size: 2.4rem;
+    left: 20%;
+  }
+  #outline {
+    height: 20%;
+    width: auto;
+    left: 45%;
+    margin-top: 0px;
+  }
+  #signupbutton {
+    padding-top: 4.2%;
+  }
+  .text {
+    font-size: 1.2rem;
+    margin-right: 5%;
+  }
+  #sq3 {
+    height: 9%;
+    top: 3%;
+    right: 48%;
+    width: auto;
+  }
+  #l1 {
+    top: 88%;
+    left: 5%;
+    width: 9%;
+  }
+  #l2 {
+    height: 1.6%;
+    top: 9.5%;
+    left: 39%;
+    width: 11%;
+  }
+  .follow img {
+    width: 28px;
+  }
+  .arrow {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    bottom: 4%;
+    left: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+}

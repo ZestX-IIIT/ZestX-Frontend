@@ -26,7 +26,16 @@
   height: 40%;
   /* flex-wrap: wrap; */
 }
-
+.sponsers_heading {
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ece7ff;
+  opacity: 0.9;
+}
 /* footer
 .footer{
     background: #002091;

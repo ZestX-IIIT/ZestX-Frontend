@@ -10,8 +10,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
+html::-webkit-scrollbar {
+  display: none;
+}
 /* #primary_container_for_home_page_content {
   display: block;
   opacity: 1;

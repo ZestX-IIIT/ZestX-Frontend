@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./styles/home.css">
   <link rel="stylesheet" href="./styles/team.css">
   <link rel="stylesheet" href="./styles/sponsers.css">
+  <link rel="stylesheet" href="./styles/navbar_responsive.css">
   <script src="./javascript/html_include.js"></script>
 </head>
 
@@ -39,7 +40,7 @@
     </div>
     </div>
   </nav>
-
+ <!-- responsive till here -->
   <div id="primary_container_for_home_page_content">
 
     <section class="home" id="homesec">
@@ -136,11 +137,11 @@
 
     <!-- FAQ Include -->
     <section include_file_path="./general/faq_page.html" id="faqsec"></section>
+    <section include_file_path="./general/footer.html" id="footersection"></section>
   </div>
 
   <div id="primnary_event_details_container">
     <section include_file_path="./general/event_details.html" id="sub_event_details_page_container"></section>
-
   </div>
 
   <script>
@@ -150,6 +151,7 @@
     includehtmlbyID("faqsec")
     includehtmlbyID("sub_event_details_page_container")
     includehtmlbyID("slider_container")
+    includehtmlbyID("footersection")
   </script>
 </body>
 <script src="./javascript/home.js"></script>
