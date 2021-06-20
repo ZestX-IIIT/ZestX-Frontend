@@ -1,45 +1,52 @@
-@media only screen and (max-width: 1200px) {
-  .FAQOuterContainer {
-    height: 7rem;
-    transition: height 400ms ease-in-out;
+@media only screen and (max-width: 1000px) {
+  .FAQQuestion {
+    font-size: 1rem;
   }
-  .FAQOuterContainerHeight {
-    height: 13rem;
-  }
-  .FAQQuestionsContainer {
-    margin-top: 2rem;
+  .FAQAnswer{
+    font-size: 1rem;
   }
 }
-@media only screen and (max-width: 870px) {
-  .AnswerOfQuestion {
-    font-size: 1.1rem;
+@media only screen and (max-width: 670px) {
+  .FAQQuestion {
+    font-size: .9rem;
+  }
+  .FAQAnswer{
+    font-size: .9rem;
   }
 }
-@media only screen and (max-width: 650px) {
-  .QuestionDiv h2 {
-    font-size: 1.2rem;
+@media only screen and (max-width: 475px) {
+  .FAQQuestion {
+    font-size: .7rem;
   }
-  .AnswerOfQuestion {
-    font-size: 0.9rem;
+  .FAQAnswer{
+    font-size: .7rem;
+  }
+  .FAQArrowDown{
+    width: 3rem;
+    height: 3rem;
   }
 }
-@media only screen and (max-width: 490px) {
-    .QuestionDiv h2 {
-      font-size: 1.1rem;
-    }
-    .AnswerOfQuestion {
-      font-size: 0.85rem;
-    }
+@media only screen and (max-width: 370px) {
+  .FAQQuestion {
+    font-size: .6rem;
   }
-  @media only screen and (max-width: 400px) {
-    .FAQOuterContainer {
-        height: 8rem;
-        transition: height 400ms ease-in-out;
-      }
-      .FAQOuterContainerHeight {
-        height: 14rem;
-      }
-      .FAQQuestionsContainer {
-        margin-top: 1rem;
-      }
+  .FAQAnswer{
+    font-size: .6rem;
   }
+  .FAQArrowDown{
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .FAQQuestion {
+    font-size: .5rem;
+  }
+  .FAQAnswer{
+    font-size: .5rem;
+  }
+  .FAQArrowDown{
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}
