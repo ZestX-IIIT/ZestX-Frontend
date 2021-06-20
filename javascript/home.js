@@ -31,7 +31,6 @@ let faqSection = document.getElementById("faqsec");
 
 let index = 0;
 let activeTab = 0;
-// let isRegister = [];
 let festData;
 let userData;
 
@@ -107,7 +106,6 @@ window.addEventListener("load", () => {
                 (event) => (event.fest_id = eventId)
               ).user_id;
               userarray[userarray.length] = userData.user_id;
-              console.log(userarray);
               registerBtn.innerHTML = `Unregister`;
               registerBtn.style.animation = "none";
             }
@@ -308,7 +306,10 @@ function isRegister(id) {
 }
 
 function setDetails(id) {
-  const data = festData.find((item) => item.fest_id == id);
+  const data = festData.find((item) => (item.fest_id = id));
+  console.log(id);
+  console.log(data);
+  console.log(festData);
 
   let detailsContainer = document.getElementById("EventDetailsContainer");
   let name = document.getElementById("EventName");
