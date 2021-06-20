@@ -1,0 +1,28 @@
+@media only screen and (max-width: 1000px) {
+    
+  .sponserImages {
+    height: 80%;
+    margin-left: 10px;
+  }
+  .sponserContainer {
+    height: 20%;
+  }
+}
+@media only screen and (max-width: 640px) {
+    .sponserImages {
+      height: 70%;
+      margin-left: 10px;
+    }
+    .sponserContainer {
+      height: 15%;
+    }
+  }
+  @media only screen and (max-width: 360px) {
+    .sponserImages {
+      height: 70%;
+      margin-left: 10px;
+    }
+    .sponserContainer {
+      height: 10%;
+    }
+  }
