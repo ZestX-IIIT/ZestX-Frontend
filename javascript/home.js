@@ -4,6 +4,10 @@ let primaryContainer = document.getElementById(
 let primaryEventsPageContainer = document.getElementById(
   "primnary_event_details_container"
 );
+let primaryProfilePageContainer = document.getElementById(
+  "primnary_profile_details_container"
+);
+let preloader = document.getElementById("preloader_container");
 
 let slider_event_list;
 let event_poster_list;
@@ -12,7 +16,6 @@ let poster1 = document.getElementById("poster1");
 let poster2 = document.getElementById("poster2");
 let poster3 = document.getElementById("poster3");
 
-let preloader = document.getElementById("preloader_container");
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 const token = localStorage.getItem("jwt");
 
@@ -31,110 +34,19 @@ let faqSection = document.getElementById("faqsec");
 
 let index = 0;
 let activeTab = 0;
-// let isRegister = [];
 let festData;
 let userData;
 
 let primary_events_posters =
   document.getElementsByClassName("event_poster_image");
-let animationContainer = document.getElementById("preloader_container");
 
 let backBtnFromEventsPage;
+let backBtnFromProfilePage;
+let profileBtn = document.getElementById("profile_button");
 
-setTimeout(function () {
-  backBtnFromEventsPage = document.getElementById(
-    "back_btn_from_festival_details_page"
-  );
-  let registerBtn = document.getElementById("EventRegister");
-  let eventId = 0;
-
-  slider_event_list = document.getElementsByClassName("slide");
-  event_poster_list = document.getElementsByClassName("event_poster_image");
-  let event_ids = [8, 9, 7, 6, 10];
-
-  registerBtn.addEventListener("click", () => {
-    displayPreloder();
-    if (!isRegister(eventId)) {
-      fetch(`${apiURL}/fest/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: token,
-        },
-        body: JSON.stringify({ id: eventId }),
-      })
-        .then(function (res) {
-          if (res.status == 400) {
-            displayEvenetspage();
-            alert("Please verify your email!");
-          } else if (res.status == 500) {
-            displayEvenetspage();
-            alert("Please re-try...");
-          } else {
-            displayEvenetspage();
-            alert("User registered successfully!");
-            let userarray = festData.find(
-              (event) => (event.fest_id = eventId)
-            ).user_id;
-            userarray[userarray.length] = userData.user_id;
-            console.log(userarray);
-            registerBtn.innerHTML = `Unregister`;
-            registerBtn.style.animation = "none";
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          preloader.style.display = "none";
-        });
-    } else {
-      fetch(`${apiURL}/fest/unregister`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: token,
-        },
-        body: JSON.stringify({ id: eventId }),
-      })
-        .then(function (res) {
-          if (res.status == 400) {
-            displayEvenetspage();
-            alert("Please verify your email!");
-          } else if (res.status == 500) {
-            displayEvenetspage();
-            alert("Please re-try...");
-          } else {
-            displayEvenetspage();
-            let userarray = festData.find(
-              (event) => (event.fest_id = eventId)
-            ).user_id;
-            const userIndex = userarray.indexOf(userData.user_id);
-            if (userIndex > -1) {
-              userarray.splice(userIndex, 1);
-            }
-            alert("User unregistered successfully!");
-            setRegisterBtnText(eventId);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          preloader.style.display = "none";
-        });
-    }
-  });
-
-  backBtnFromEventsPage.addEventListener("click", () => {
-    displayMainContainer();
-  });
-  for (let i = 0; i < 5; i++) {
-    event_poster_list[i].addEventListener("click", () => {
-      if (slider_event_list[i].checked == true) {
-        eventId = event_ids[i];
-        setDetails(event_ids[i]);
-        displayEvenetspage();
-      }
-    });
-  }
-}, 200);
+profileBtn.addEventListener("click", () => {
+  displayProfilepage();
+});
 
 fetch(`${apiURL}/fest/getlist`, {
   method: "GET",
@@ -165,6 +77,106 @@ fetch(`${apiURL}/user/getdetails`, {
 
 window.addEventListener("load", () => {
   preloader.style.display = "none";
+
+  setTimeout(function () {
+    backBtnFromEventsPage = document.getElementById(
+      "back_btn_from_festival_details_page"
+    );
+    backBtnFromProfilePage = document.getElementById(
+      "back_btn_from_profile_details_page"
+    );
+    let registerBtn = document.getElementById("EventRegister");
+    let eventId = 0;
+
+    slider_event_list = document.getElementsByClassName("slide");
+    event_poster_list = document.getElementsByClassName("event_poster_image");
+    let event_ids = [8, 9, 7, 6, 10];
+
+    registerBtn.addEventListener("click", () => {
+      displayPreloder();
+      if (!isRegister(eventId)) {
+        fetch(`${apiURL}/fest/register`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: token,
+          },
+          body: JSON.stringify({ id: eventId }),
+        })
+          .then(function (res) {
+            if (res.status == 400) {
+              displayEvenetspage();
+              alert("Please verify your email!");
+            } else if (res.status == 500) {
+              displayEvenetspage();
+              alert("Please re-try...");
+            } else {
+              displayEvenetspage();
+              alert("User registered successfully!");
+              let userarray = festData.find(
+                (event) => event.fest_id == eventId
+              ).user_id;
+              userarray[userarray.length] = userData.user_id;
+              registerBtn.innerHTML = `Unregister`;
+              registerBtn.style.animation = "none";
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            preloader.style.display = "none";
+          });
+      } else {
+        fetch(`${apiURL}/fest/unregister`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: token,
+          },
+          body: JSON.stringify({ id: eventId }),
+        })
+          .then(function (res) {
+            if (res.status == 400) {
+              displayEvenetspage();
+              alert("Please verify your email!");
+            } else if (res.status == 500) {
+              displayEvenetspage();
+              alert("Please re-try...");
+            } else {
+              displayEvenetspage();
+              let userarray = festData.find(
+                (event) => event.fest_id == eventId
+              ).user_id;
+              const userIndex = userarray.indexOf(userData.user_id);
+              if (userIndex > -1) {
+                userarray.splice(userIndex, 1);
+              }
+              alert("User unregistered successfully!");
+              setRegisterBtnText(eventId);
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            preloader.style.display = "none";
+          });
+      }
+    });
+
+    backBtnFromEventsPage.addEventListener("click", () => {
+      displayMainContainer();
+    });
+    backBtnFromProfilePage.addEventListener("click", () => {
+      displayMainContainer();
+    });
+    for (let i = 0; i < 5; i++) {
+      event_poster_list[i].addEventListener("click", () => {
+        if (slider_event_list[i].checked == true) {
+          eventId = event_ids[i];
+          setDetails(event_ids[i]);
+          displayEvenetspage();
+        }
+      });
+    }
+  }, 500);
 });
 
 window.addEventListener("scroll", () => {
@@ -309,7 +321,6 @@ function isRegister(id) {
 
 function setDetails(id) {
   const data = festData.find((item) => item.fest_id == id);
-
   let detailsContainer = document.getElementById("EventDetailsContainer");
   let name = document.getElementById("EventName");
   let date = document.getElementById("EventDate");
@@ -372,18 +383,28 @@ function displayMainContainer() {
   checkAndDisplayContainer(primaryContainer);
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(preloader);
+  checkAndCloseContainer(primaryProfilePageContainer);
 }
 
 function displayPreloder() {
   checkAndDisplayContainer(preloader);
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(primaryContainer);
+  checkAndCloseContainer(primaryProfilePageContainer);
 }
 
-function displayEvenetspage(data) {
+function displayEvenetspage() {
   checkAndDisplayContainer(primaryEventsPageContainer);
   checkAndCloseContainer(primaryContainer);
   checkAndCloseContainer(preloader);
+  checkAndCloseContainer(primaryProfilePageContainer);
+}
+
+function displayProfilepage() {
+  checkAndDisplayContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(primaryContainer);
+  checkAndCloseContainer(preloader);
+  checkAndCloseContainer(primaryEventsPageContainer);
 }
 
 // Functions for cleaner APIs for toggeling beetween pages

@@ -59,9 +59,37 @@
   }
 }
 @media only screen and (max-width: 570px) {
-    .teamContent{
-        margin: 0;
-        margin-top: 20px;
-        margin-right: 5px;
-    }
+  .teamContent {
+    margin: 0;
+    margin-top: 20px;
+    margin-right: 5px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .outerContainer {
+    height: 75%;
+    width: 80%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .topContainer {
+    height: 15rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .outerContainer {
+    height: 65%;
+  }
+  .topContainer h2 {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 250px) {
+  .outerContainer {
+    height: 65%;
+  }
+  .topContainer {
+    height: 10rem;
+  }
 }
