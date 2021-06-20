@@ -3,10 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   position: relative;
 }
-#zestxlogo{
+#zestxlogo {
   position: absolute;
   top: 0;
   right: 4%;
@@ -83,6 +83,7 @@ input:focus {
   outline: none;
 }
 #EditButton {
+  cursor: pointer;
   width: 9rem;
   height: 3.54rem;
   background: linear-gradient(
@@ -128,7 +129,7 @@ input:focus {
   text-transform: uppercase;
   color: #fdfdfd;
   opacity: 0.8;
-  margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
 }
 #OngoingEventsList,
 #PastEventsList {
@@ -138,7 +139,8 @@ input:focus {
   border-radius: 10px;
   overflow-y: scroll;
   scrollbar-width: none;
-  -ms-overflow-style: none;margin-bottom: 1rem;
+  -ms-overflow-style: none;
+  margin-bottom: 1rem;
 }
 #OngoingEventsList::-webkit-scrollbar,
 #PastEventsList::-webkit-scrollbar {

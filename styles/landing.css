@@ -52,18 +52,21 @@
   width: auto;
   top: 3%;
   left: 18%;
+  transform: rotate(180deg);
 }
 #sq3 {
   height: 16%;
   top: 3%;
   right: 35%;
   width: auto;
+  transform: rotate(180deg);
 }
 #sq4 {
   height: 13%;
   width: auto;
   top: 75%;
   left: 3%;
+  transform: rotate(90deg);
 }
 #sq5 {
   height: 18%;
@@ -408,5 +411,3 @@
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
 }
-
-

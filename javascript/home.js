@@ -4,6 +4,13 @@ let primaryContainer = document.getElementById(
 let primaryEventsPageContainer = document.getElementById(
   "primnary_event_details_container"
 );
+let primaryProfilePageContainer = document.getElementById(
+  "primnary_profile_details_container"
+);
+let primaryEditProfileContainer = document.getElementById(
+  "primnary_edit_profile_container"
+);
+let preloader = document.getElementById("preloader_container");
 
 let slider_event_list;
 let event_poster_list;
@@ -12,7 +19,6 @@ let poster1 = document.getElementById("poster1");
 let poster2 = document.getElementById("poster2");
 let poster3 = document.getElementById("poster3");
 
-let preloader = document.getElementById("preloader_container");
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 const token = localStorage.getItem("jwt");
 
@@ -36,9 +42,16 @@ let userData;
 
 let primary_events_posters =
   document.getElementsByClassName("event_poster_image");
-let animationContainer = document.getElementById("preloader_container");
 
 let backBtnFromEventsPage;
+let backBtnFromProfilePage;
+let backBtnFromEditProfilePage;
+let editBtn;
+let profileBtn = document.getElementById("profile_button");
+
+profileBtn.addEventListener("click", () => {
+  displayProfilepage();
+});
 
 fetch(`${apiURL}/fest/getlist`, {
   method: "GET",
@@ -74,6 +87,13 @@ window.addEventListener("load", () => {
     backBtnFromEventsPage = document.getElementById(
       "back_btn_from_festival_details_page"
     );
+    backBtnFromProfilePage = document.getElementById(
+      "back_btn_from_profile_details_page"
+    );
+    backBtnFromEditProfilePage = document.getElementById(
+      "back_btn_from_edit_profile_page"
+    );
+    editBtn = document.getElementById("EditButton");
     let registerBtn = document.getElementById("EventRegister");
     let eventId = 0;
 
@@ -152,6 +172,15 @@ window.addEventListener("load", () => {
 
     backBtnFromEventsPage.addEventListener("click", () => {
       displayMainContainer();
+    });
+    backBtnFromProfilePage.addEventListener("click", () => {
+      displayMainContainer();
+    });
+    backBtnFromEditProfilePage.addEventListener("click", () => {
+      displayProfilepage();
+    });
+    editBtn.addEventListener("click", () => {
+      displayEditProfilepage();
     });
     for (let i = 0; i < 5; i++) {
       event_poster_list[i].addEventListener("click", () => {
@@ -369,18 +398,40 @@ function displayMainContainer() {
   checkAndDisplayContainer(primaryContainer);
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(preloader);
+  checkAndCloseContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(primaryEditProfileContainer);
 }
 
 function displayPreloder() {
   checkAndDisplayContainer(preloader);
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(primaryContainer);
+  checkAndCloseContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(primaryEditProfileContainer);
 }
 
-function displayEvenetspage(data) {
+function displayEvenetspage() {
   checkAndDisplayContainer(primaryEventsPageContainer);
   checkAndCloseContainer(primaryContainer);
   checkAndCloseContainer(preloader);
+  checkAndCloseContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(primaryEditProfileContainer);
+}
+
+function displayProfilepage() {
+  checkAndDisplayContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(primaryContainer);
+  checkAndCloseContainer(preloader);
+  checkAndCloseContainer(primaryEventsPageContainer);
+  checkAndCloseContainer(primaryEditProfileContainer);
+}
+
+function displayEditProfilepage() {
+  checkAndDisplayContainer(primaryEditProfileContainer);
+  checkAndCloseContainer(primaryContainer);
+  checkAndCloseContainer(preloader);
+  checkAndCloseContainer(primaryEventsPageContainer);
+  checkAndCloseContainer(primaryProfilePageContainer);
 }
 
 // Functions for cleaner APIs for toggeling beetween pages
