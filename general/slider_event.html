@@ -1,51 +1,71 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Slider</title>
+    <link rel="stylesheet" href="../styles/event.css" />
+    <link rel="stylesheet" href="../styles/event_responsive.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3D Slider</title>
-  <link rel="stylesheet" href="../styles/event.css">
-  <link rel="stylesheet" href="../styles/event_responsive.css">
-
-</head>
-
-<body>
-  <div class="tp">
-    <section id="slider">
-      <input type="radio" name="slider" class="slide" id="s1" checked />
-      <input type="radio" name="slider" class="slide" id="s2" />
-      <input type="radio" name="slider" class="slide" id="s3" />
-      <input type="radio" name="slider" class="slide" id="s4" />
-      <input type="radio" name="slider" class="slide" id="s5" />
-      <label class="event_poster_image" for="s1" id="slide1">
-        <img src="../assets/_events_assets/posters/2x/compressed_for_preloading/hot_stepper.jpg"
-          data-src="../assets/_events_assets/posters/2x/hot_stepper.png" class="lazyload" height="100%" width="100%" />
-
-      </label>
-      <label class="event_poster_image" for="s2" id="slide2">
-        <img src="../assets/_events_assets/posters/2x/compressed_for_preloading/one_mic_stand.jpg"
-          data-src="../assets/_events_assets/posters/2x/one_mic_stand.png" class="lazyload" height="100%"
-          width="100%" />
-      </label>
-      <label class="event_poster_image" for="s3" id="slide3">
-        <img src="../assets/_events_assets/posters/2x/compressed_for_preloading/raise_your_mic.jpg"
-          data-src="../assets/_events_assets/posters/2x/raise_your_mic.png" class="lazyload" height="100%"
-          width="100%" />
-      </label>
-      <label class="event_poster_image" for="s4" id="slide4">
-        <img src="../assets/_events_assets/posters/2x/compressed_for_preloading/rangshala.jpg"
-          data-src="../assets/_events_assets/posters/2x/rangshala.png" class="lazyload" height="100%" width="100%" />
-      </label>
-      <label class="event_poster_image" for="s5" id="slide5">
-        <img src="../assets/_events_assets/posters/2x/compressed_for_preloading/strokes.jpg"
-          data-src="../assets/_events_assets/posters/2x/strokes.png" class="lazyload" height="100%" width="100%" />
-      </label>
-    </section>
-  </div>
-</body>
-<script src="../javascript/lazysizes.min.js" async=""></script>
-<script src="../java.js"></script>
-
+  <body>
+    <div class="tp">
+      <section id="slider">
+        <input type="radio" name="slider" class="slide" id="s1" checked />
+        <input type="radio" name="slider" class="slide" id="s2" />
+        <input type="radio" name="slider" class="slide" id="s3" />
+        <input type="radio" name="slider" class="slide" id="s4" />
+        <input type="radio" name="slider" class="slide" id="s5" />
+        <label class="event_poster_image" for="s1" id="slide1">
+          <img
+            src="../assets/_events_assets/posters/2x/compressed_for_preloading/hot_stepper.jpg"
+            data-src="../assets/_events_assets/posters/2x/hot_stepper.png"
+            class="lazyload"
+            height="100%"
+            width="100%"
+          />
+        </label>
+        <label class="event_poster_image" for="s2" id="slide2">
+          <img
+            src="../assets/_events_assets/posters/2x/compressed_for_preloading/one_mic_stand.jpg"
+            data-src="../assets/_events_assets/posters/2x/one_mic_stand.png"
+            class="lazyload"
+            height="100%"
+            width="100%"
+          />
+        </label>
+        <label class="event_poster_image" for="s3" id="slide3">
+          <img
+            src="../assets/_events_assets/posters/2x/compressed_for_preloading/raise_your_mic.jpg"
+            data-src="../assets/_events_assets/posters/2x/raise_your_mic.png"
+            class="lazyload"
+            height="100%"
+            width="100%"
+          />
+        </label>
+        <label class="event_poster_image" for="s4" id="slide4">
+          <img
+            src="../assets/_events_assets/posters/2x/compressed_for_preloading/rangshala.jpg"
+            data-src="../assets/_events_assets/posters/2x/rangshala.png"
+            class="lazyload"
+            height="100%"
+            width="100%"
+          />
+        </label>
+        <label class="event_poster_image" for="s5" id="slide5">
+          <img
+            src="../assets/_events_assets/posters/2x/compressed_for_preloading/strokes.jpg"
+            data-src="../assets/_events_assets/posters/2x/strokes.png"
+            class="lazyload"
+            height="100%"
+            width="100%"
+          />
+        </label>
+      </section>
+    </div>
+  </body>
+  <script src="../javascript/lazysizes.min.js" async=""></script>
+  <script src="../java.js"></script>
+  <script src="../javascript/event.js"></script>
 </html>
