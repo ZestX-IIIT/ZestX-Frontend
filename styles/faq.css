@@ -45,7 +45,7 @@
   font-family: "Now";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.83rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   color: #bfbeff;
   padding-bottom: 1rem;
@@ -80,7 +80,7 @@
   font-family: Now;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.42rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   color: #cdcee6;
   transition: opacity 500ms ease-out, height 500ms ease-in-out;
@@ -100,5 +100,5 @@
   transition: height 300ms ease-in-out;
 }
 .FAQOuterContainerHeight {
-  height: 11rem;
+  height: 9rem;
 }
