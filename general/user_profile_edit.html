@@ -1,58 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/fonts/now/stylesheet.css">
-    <link rel="stylesheet" href="../styles/user_profile_edit.css">
-</head>
+    <link rel="stylesheet" href="../assets/fonts/now/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/user_profile_edit.css" />
+  </head>
 
-<body>
-    <img src="../assets/_general/zestx_icon.svg" alt="" id="zestxlogoeditpage">
+  <body>
+    <img
+      src="../assets/_general/zestx_icon.svg"
+      alt=""
+      id="zestxlogoeditpage"
+    />
 
     <section class="Main_Edit_Container">
-        <h2 id="BackEditButton">
-            <img src="../assets/home_page/User_Profile/arrow_profile.svg" alt="">
-            <a href="#">Edit Profile</a>
-        </h2>
-        <div class="UserEditContainer">
-            <div class="form-label">
-                <input type="text" name="Name" id="name" class="UserDetailsInput" required>
-                <div class="floating">name</div>
-            </div>
-            <div class="form-label">
-                <input type="number" name="Phone Number" id="phone_number" class="UserDetailsInput"
-                     required>
-                <div class="floating">Phone number</div>
-            </div>
-
-            <div class="form-label">
-                <input type="email" name="Email" id="email" class="UserDetailsInput" required>
-                <div class="floating">Email</div>
-            </div>
-
-            <div class="form-label">
-                <input type="password" name="password" id="password" class="UserDetailsInput" required>
-                <div class="floating">password</div>
-            </div>
-
-            <div class="form-label">
-                <input type="password" name="confirm password" id="confirm password" class="UserDetailsInput"
-                     required>
-                <div class="floating">confirm password</div>
-            </div>
-
-
-
-
-            <button id="EditButton">
-                SAVE
-            </button>
+      <h2 id="BackEditButton">
+        <img
+          src="../assets/home_page/User_Profile/arrow_profile.svg"
+          alt="back btn"
+          id="back_btn_from_edit_profile_page"
+        />
+        <a href="#">Edit Profile</a>
+      </h2>
+      <div class="UserEditContainer">
+        <div class="form-label">
+          <input
+            type="text"
+            name="Name"
+            id="name"
+            class="UserDetailsInput"
+            required
+          />
+          <div class="floating">name</div>
         </div>
-    </section>
-</body>
+        <div class="form-label">
+          <input
+            type="number"
+            name="Phone Number"
+            id="phone_number"
+            class="UserDetailsInput"
+            required
+          />
+          <div class="floating">Phone number</div>
+        </div>
 
+        <div class="form-label">
+          <input
+            type="email"
+            name="Email"
+            id="email"
+            class="UserDetailsInput"
+            required
+          />
+          <div class="floating">Email</div>
+        </div>
+
+        <div class="form-label">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="UserDetailsInput"
+            required
+          />
+          <div class="floating">password</div>
+        </div>
+
+        <div class="form-label">
+          <input
+            type="password"
+            name="confirm password"
+            id="confirm password"
+            class="UserDetailsInput"
+            required
+          />
+          <div class="floating">confirm password</div>
+        </div>
+
+        <button id="EditButton">SAVE</button>
+      </div>
+    </section>
+  </body>
 </html>

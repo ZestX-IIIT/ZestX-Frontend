@@ -7,6 +7,9 @@ let primaryEventsPageContainer = document.getElementById(
 let primaryProfilePageContainer = document.getElementById(
   "primnary_profile_details_container"
 );
+let primaryEditProfileContainer = document.getElementById(
+  "primnary_edit_profile_container"
+);
 let preloader = document.getElementById("preloader_container");
 
 let slider_event_list;
@@ -42,6 +45,8 @@ let primary_events_posters =
 
 let backBtnFromEventsPage;
 let backBtnFromProfilePage;
+let backBtnFromEditProfilePage;
+let editBtn;
 let profileBtn = document.getElementById("profile_button");
 
 profileBtn.addEventListener("click", () => {
@@ -85,6 +90,10 @@ window.addEventListener("load", () => {
     backBtnFromProfilePage = document.getElementById(
       "back_btn_from_profile_details_page"
     );
+    backBtnFromEditProfilePage = document.getElementById(
+      "back_btn_from_edit_profile_page"
+    );
+    editBtn = document.getElementById("EditButton");
     let registerBtn = document.getElementById("EventRegister");
     let eventId = 0;
 
@@ -166,6 +175,12 @@ window.addEventListener("load", () => {
     });
     backBtnFromProfilePage.addEventListener("click", () => {
       displayMainContainer();
+    });
+    backBtnFromEditProfilePage.addEventListener("click", () => {
+      displayProfilepage();
+    });
+    editBtn.addEventListener("click", () => {
+      displayEditProfilepage();
     });
     for (let i = 0; i < 5; i++) {
       event_poster_list[i].addEventListener("click", () => {
@@ -384,6 +399,7 @@ function displayMainContainer() {
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(preloader);
   checkAndCloseContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(primaryEditProfileContainer);
 }
 
 function displayPreloder() {
@@ -391,6 +407,7 @@ function displayPreloder() {
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(primaryContainer);
   checkAndCloseContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(primaryEditProfileContainer);
 }
 
 function displayEvenetspage() {
@@ -398,6 +415,7 @@ function displayEvenetspage() {
   checkAndCloseContainer(primaryContainer);
   checkAndCloseContainer(preloader);
   checkAndCloseContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(primaryEditProfileContainer);
 }
 
 function displayProfilepage() {
@@ -405,6 +423,15 @@ function displayProfilepage() {
   checkAndCloseContainer(primaryContainer);
   checkAndCloseContainer(preloader);
   checkAndCloseContainer(primaryEventsPageContainer);
+  checkAndCloseContainer(primaryEditProfileContainer);
+}
+
+function displayEditProfilepage() {
+  checkAndDisplayContainer(primaryEditProfileContainer);
+  checkAndCloseContainer(primaryContainer);
+  checkAndCloseContainer(preloader);
+  checkAndCloseContainer(primaryEventsPageContainer);
+  checkAndCloseContainer(primaryProfilePageContainer);
 }
 
 // Functions for cleaner APIs for toggeling beetween pages
