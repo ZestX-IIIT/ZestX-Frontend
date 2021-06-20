@@ -33,18 +33,12 @@ let index = 0;
 let activeTab = 0;
 let festData;
 let userData;
-let backBtnFromEventsPage = document.getElementById(
-  "back_btn_from_festival_details_page"
-);
-let registerBtn = document.getElementById("EventRegister");
-let eventId = 0;
-slider_event_list = document.getElementsByClassName("slide");
-event_poster_list = document.getElementsByClassName("event_poster_image");
-let event_ids = [8, 9, 7, 6, 10];
 
 let primary_events_posters =
   document.getElementsByClassName("event_poster_image");
 let animationContainer = document.getElementById("preloader_container");
+
+let backBtnFromEventsPage;
 
 fetch(`${apiURL}/fest/getlist`, {
   method: "GET",
@@ -77,6 +71,16 @@ window.addEventListener("load", () => {
   preloader.style.display = "none";
 
   setTimeout(function () {
+    backBtnFromEventsPage = document.getElementById(
+      "back_btn_from_festival_details_page"
+    );
+    let registerBtn = document.getElementById("EventRegister");
+    let eventId = 0;
+
+    slider_event_list = document.getElementsByClassName("slide");
+    event_poster_list = document.getElementsByClassName("event_poster_image");
+    let event_ids = [8, 9, 7, 6, 10];
+
     registerBtn.addEventListener("click", () => {
       displayPreloder();
       if (!isRegister(eventId)) {
@@ -302,7 +306,10 @@ function isRegister(id) {
 }
 
 function setDetails(id) {
-  const data = festData.find((item) => item.fest_id == id);
+  const data = festData.find((item) => (item.fest_id = id));
+  console.log(id);
+  console.log(data);
+  console.log(festData);
 
   let detailsContainer = document.getElementById("EventDetailsContainer");
   let name = document.getElementById("EventName");
