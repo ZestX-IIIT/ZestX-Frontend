@@ -41,101 +41,6 @@ let animationContainer = document.getElementById("preloader_container");
 
 let backBtnFromEventsPage;
 
-setTimeout(function () {
-  backBtnFromEventsPage = document.getElementById(
-    "back_btn_from_festival_details_page"
-  );
-  let registerBtn = document.getElementById("EventRegister");
-  let eventId = 0;
-
-  slider_event_list = document.getElementsByClassName("slide");
-  event_poster_list = document.getElementsByClassName("event_poster_image");
-  let event_ids = [8, 9, 7, 6, 10];
-
-  registerBtn.addEventListener("click", () => {
-    displayPreloder();
-    if (!isRegister(eventId)) {
-      fetch(`${apiURL}/fest/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: token,
-        },
-        body: JSON.stringify({ id: eventId }),
-      })
-        .then(function (res) {
-          if (res.status == 400) {
-            displayEvenetspage();
-            alert("Please verify your email!");
-          } else if (res.status == 500) {
-            displayEvenetspage();
-            alert("Please re-try...");
-          } else {
-            displayEvenetspage();
-            alert("User registered successfully!");
-            let userarray = festData.find(
-              (event) => (event.fest_id = eventId)
-            ).user_id;
-            userarray[userarray.length] = userData.user_id;
-            console.log(userarray);
-            registerBtn.innerHTML = `Unregister`;
-            registerBtn.style.animation = "none";
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          preloader.style.display = "none";
-        });
-    } else {
-      fetch(`${apiURL}/fest/unregister`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: token,
-        },
-        body: JSON.stringify({ id: eventId }),
-      })
-        .then(function (res) {
-          if (res.status == 400) {
-            displayEvenetspage();
-            alert("Please verify your email!");
-          } else if (res.status == 500) {
-            displayEvenetspage();
-            alert("Please re-try...");
-          } else {
-            displayEvenetspage();
-            let userarray = festData.find(
-              (event) => (event.fest_id = eventId)
-            ).user_id;
-            const userIndex = userarray.indexOf(userData.user_id);
-            if (userIndex > -1) {
-              userarray.splice(userIndex, 1);
-            }
-            alert("User unregistered successfully!");
-            setRegisterBtnText(eventId);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          preloader.style.display = "none";
-        });
-    }
-  });
-
-  backBtnFromEventsPage.addEventListener("click", () => {
-    displayMainContainer();
-  });
-  for (let i = 0; i < 5; i++) {
-    event_poster_list[i].addEventListener("click", () => {
-      if (slider_event_list[i].checked == true) {
-        eventId = event_ids[i];
-        setDetails(event_ids[i]);
-        displayEvenetspage();
-      }
-    });
-  }
-}, 200);
-
 fetch(`${apiURL}/fest/getlist`, {
   method: "GET",
 })
@@ -165,6 +70,101 @@ fetch(`${apiURL}/user/getdetails`, {
 
 window.addEventListener("load", () => {
   preloader.style.display = "none";
+
+  setTimeout(function () {
+    backBtnFromEventsPage = document.getElementById(
+      "back_btn_from_festival_details_page"
+    );
+    let registerBtn = document.getElementById("EventRegister");
+    let eventId = 0;
+
+    slider_event_list = document.getElementsByClassName("slide");
+    event_poster_list = document.getElementsByClassName("event_poster_image");
+    let event_ids = [8, 9, 7, 6, 10];
+
+    registerBtn.addEventListener("click", () => {
+      displayPreloder();
+      if (!isRegister(eventId)) {
+        fetch(`${apiURL}/fest/register`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: token,
+          },
+          body: JSON.stringify({ id: eventId }),
+        })
+          .then(function (res) {
+            if (res.status == 400) {
+              displayEvenetspage();
+              alert("Please verify your email!");
+            } else if (res.status == 500) {
+              displayEvenetspage();
+              alert("Please re-try...");
+            } else {
+              displayEvenetspage();
+              alert("User registered successfully!");
+              let userarray = festData.find(
+                (event) => (event.fest_id = eventId)
+              ).user_id;
+              userarray[userarray.length] = userData.user_id;
+              console.log(userarray);
+              registerBtn.innerHTML = `Unregister`;
+              registerBtn.style.animation = "none";
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            preloader.style.display = "none";
+          });
+      } else {
+        fetch(`${apiURL}/fest/unregister`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: token,
+          },
+          body: JSON.stringify({ id: eventId }),
+        })
+          .then(function (res) {
+            if (res.status == 400) {
+              displayEvenetspage();
+              alert("Please verify your email!");
+            } else if (res.status == 500) {
+              displayEvenetspage();
+              alert("Please re-try...");
+            } else {
+              displayEvenetspage();
+              let userarray = festData.find(
+                (event) => (event.fest_id = eventId)
+              ).user_id;
+              const userIndex = userarray.indexOf(userData.user_id);
+              if (userIndex > -1) {
+                userarray.splice(userIndex, 1);
+              }
+              alert("User unregistered successfully!");
+              setRegisterBtnText(eventId);
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            preloader.style.display = "none";
+          });
+      }
+    });
+
+    backBtnFromEventsPage.addEventListener("click", () => {
+      displayMainContainer();
+    });
+    for (let i = 0; i < 5; i++) {
+      event_poster_list[i].addEventListener("click", () => {
+        if (slider_event_list[i].checked == true) {
+          eventId = event_ids[i];
+          setDetails(event_ids[i]);
+          displayEvenetspage();
+        }
+      });
+    }
+  }, 500);
 });
 
 window.addEventListener("scroll", () => {
