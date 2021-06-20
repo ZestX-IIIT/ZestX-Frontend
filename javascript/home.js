@@ -48,12 +48,13 @@ setTimeout(function () {
   let registerBtn = document.getElementById("EventRegister");
   let eventId = 0;
 
-  
+
   slider_event_list = document.getElementsByClassName("slide");
   event_poster_list = document.getElementsByClassName("event_poster_image")
-  let event_ids = [8,9,7,6,10];
+  let event_ids = [8, 9, 7, 6, 10];
 
   registerBtn.addEventListener("click", () => {
+    displayPreloder()
     if (!isRegister(eventId)) {
       fetch(`${apiURL}/fest/register`, {
         method: "POST",
@@ -69,6 +70,7 @@ setTimeout(function () {
           } else if (res.status == 500) {
             alert("Please re-try...");
           } else {
+            displayEvenetspage()
             alert("User registered successfully!");
             let userarray = festData.find(
               (event) => (event.fest_id = eventId)
@@ -78,6 +80,7 @@ setTimeout(function () {
             registerBtn.innerHTML = `Unregister`;
             registerBtn.style.animation = "none";
           }
+
         })
         .catch((err) => {
           console.log(err);
@@ -119,11 +122,11 @@ setTimeout(function () {
   backBtnFromEventsPage.addEventListener("click", () => {
     displayMainContainer();
   });
-  for(let i = 0;i<5;i++){
+  for (let i = 0; i < 5; i++) {
     event_poster_list[i].addEventListener("click", () => {
-      if(slider_event_list[i].checked == true){ 
-      setDetails(event_ids[i]);
-      displayEvenetspage();
+      if (slider_event_list[i].checked == true) {
+        setDetails(event_ids[i]);
+        displayEvenetspage();
       }
     });
   }
@@ -364,11 +367,19 @@ function setDetails(id) {
 function displayMainContainer() {
   checkAndDisplayContainer(primaryContainer);
   checkAndCloseContainer(primaryEventsPageContainer);
+  checkAndCloseContainer(preloader);
+}
+
+function displayPreloder() {
+  checkAndDisplayContainer(preloader);
+  checkAndCloseContainer(primaryEventsPageContainer);
+  checkAndCloseContainer(primaryContainer);
 }
 
 function displayEvenetspage(data) {
   checkAndDisplayContainer(primaryEventsPageContainer);
   checkAndCloseContainer(primaryContainer);
+  checkAndCloseContainer(preloader);
 }
 
 // Functions for cleaner APIs for toggeling beetween pages
