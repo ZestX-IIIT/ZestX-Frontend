@@ -1,7 +1,7 @@
 @media only screen and (max-width: 1200px) {
   .FAQOuterContainer {
     height: 7rem;
-    transition: height 300ms ease-in-out;
+    transition: height 400ms ease-in-out;
   }
   .FAQOuterContainerHeight {
     height: 13rem;
@@ -34,7 +34,7 @@
   @media only screen and (max-width: 400px) {
     .FAQOuterContainer {
         height: 8rem;
-        transition: height 300ms ease-in-out;
+        transition: height 400ms ease-in-out;
       }
       .FAQOuterContainerHeight {
         height: 14rem;
