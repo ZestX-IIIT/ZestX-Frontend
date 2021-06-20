@@ -956,7 +956,7 @@
     font-size: 0.9rem;
   }
 }
-@media screen and (min-width: 200px) and (max-width: 426px) {
+@media screen and  (max-width: 426px) {
   body {
     overflow: scroll;
   }
