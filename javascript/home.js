@@ -31,9 +31,16 @@ let faqSection = document.getElementById("faqsec");
 
 let index = 0;
 let activeTab = 0;
-// let isRegister = [];
 let festData;
 let userData;
+backBtnFromEventsPage = document.getElementById(
+  "back_btn_from_festival_details_page"
+);
+let registerBtn = document.getElementById("EventRegister");
+let eventId = 0;
+slider_event_list = document.getElementsByClassName("slide");
+event_poster_list = document.getElementsByClassName("event_poster_image");
+let event_ids = [8, 9, 7, 6, 10];
 
 let primary_events_posters =
   document.getElementsByClassName("event_poster_image");
@@ -72,16 +79,6 @@ window.addEventListener("load", () => {
   preloader.style.display = "none";
 
   setTimeout(function () {
-    backBtnFromEventsPage = document.getElementById(
-      "back_btn_from_festival_details_page"
-    );
-    let registerBtn = document.getElementById("EventRegister");
-    let eventId = 0;
-
-    slider_event_list = document.getElementsByClassName("slide");
-    event_poster_list = document.getElementsByClassName("event_poster_image");
-    let event_ids = [8, 9, 7, 6, 10];
-
     registerBtn.addEventListener("click", () => {
       displayPreloder();
       if (!isRegister(eventId)) {
@@ -107,7 +104,6 @@ window.addEventListener("load", () => {
                 (event) => (event.fest_id = eventId)
               ).user_id;
               userarray[userarray.length] = userData.user_id;
-              console.log(userarray);
               registerBtn.innerHTML = `Unregister`;
               registerBtn.style.animation = "none";
             }
