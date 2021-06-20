@@ -49,10 +49,6 @@ let backBtnFromEditProfilePage;
 let editBtn;
 let profileBtn = document.getElementById("profile_button");
 
-profileBtn.addEventListener("click", () => {
-  displayProfilepage();
-});
-
 fetch(`${apiURL}/fest/getlist`, {
   method: "GET",
 })
@@ -79,6 +75,11 @@ fetch(`${apiURL}/user/getdetails`, {
     console.log(err);
     preloader.style.display = "none";
   });
+
+profileBtn.addEventListener("click", () => {
+  displayProfilepage();
+  setUserDetails(userData);
+});
 
 window.addEventListener("load", () => {
   preloader.style.display = "none";
@@ -178,15 +179,17 @@ window.addEventListener("load", () => {
     });
     backBtnFromEditProfilePage.addEventListener("click", () => {
       displayProfilepage();
+      setUserDetails(userData);
     });
     editBtn.addEventListener("click", () => {
       displayEditProfilepage();
+      setUserDetailsInEditPage(userData);
     });
     for (let i = 0; i < 5; i++) {
       event_poster_list[i].addEventListener("click", () => {
         if (slider_event_list[i].checked == true) {
           eventId = event_ids[i];
-          setDetails(event_ids[i]);
+          setEventDetails(event_ids[i]);
           displayEvenetspage();
         }
       });
@@ -334,7 +337,25 @@ function isRegister(id) {
   return true;
 }
 
-function setDetails(id) {
+function setUserDetails(data) {
+  let name = document.getElementById("name");
+  name.value = `${data.user_name}`;
+  let mobile = document.getElementById("phone_number");
+  mobile.value = `${data.mobile}`;
+  let email = document.getElementById("email");
+  email.value = `${data.email}`;
+}
+
+function setUserDetailsInEditPage(data) {
+  let name = document.getElementById("edit_name");
+  name.value = `${data.user_name}`;
+  let mobile = document.getElementById("edit_phone_number");
+  mobile.value = `${data.mobile}`;
+  let email = document.getElementById("edit_email");
+  email.value = `${data.email}`;
+}
+
+function setEventDetails(id) {
   const data = festData.find((item) => item.fest_id == id);
   let detailsContainer = document.getElementById("EventDetailsContainer");
   let name = document.getElementById("EventName");
