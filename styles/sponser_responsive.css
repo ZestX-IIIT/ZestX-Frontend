@@ -5,7 +5,7 @@
     margin-left: 10px;
   }
   .sponserContainer {
-    height: 20%;
+    height: 30%;
   }
 }
 @media only screen and (max-width: 640px) {
@@ -14,12 +14,31 @@
       margin-left: 10px;
     }
     .sponserContainer {
+      height: 25%;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    
+    .sponserImages {
+      height: 70%;
+      margin-left: 10px;
+    }
+    .sponserContainer {
+      height: 20%;
+    }
+  }
+  @media only screen and (max-width: 395px) {
+    .sponserImages {
+      height: 70%;
+      margin-left: 10px;
+    }
+    .sponserContainer {
       height: 15%;
     }
   }
-  @media only screen and (max-width: 360px) {
+  @media only screen and (max-width: 295px) {
     .sponserImages {
-      height: 70%;
+      height: 80%;
       margin-left: 10px;
     }
     .sponserContainer {

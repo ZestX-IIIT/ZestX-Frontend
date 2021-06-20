@@ -1,0 +1,45 @@
+@media only screen and (max-width: 1200px) {
+  .FAQOuterContainer {
+    height: 7rem;
+    transition: height 300ms ease-in-out;
+  }
+  .FAQOuterContainerHeight {
+    height: 13rem;
+  }
+  .FAQQuestionsContainer {
+    margin-top: 2rem;
+  }
+}
+@media only screen and (max-width: 870px) {
+  .AnswerOfQuestion {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .QuestionDiv h2 {
+    font-size: 1.2rem;
+  }
+  .AnswerOfQuestion {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 490px) {
+    .QuestionDiv h2 {
+      font-size: 1.1rem;
+    }
+    .AnswerOfQuestion {
+      font-size: 0.85rem;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    .FAQOuterContainer {
+        height: 8rem;
+        transition: height 300ms ease-in-out;
+      }
+      .FAQOuterContainerHeight {
+        height: 14rem;
+      }
+      .FAQQuestionsContainer {
+        margin-top: 1rem;
+      }
+  }
