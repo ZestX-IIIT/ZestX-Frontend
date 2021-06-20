@@ -103,7 +103,7 @@ window.addEventListener("load", () => {
               displayEvenetspage();
               alert("User registered successfully!");
               let userarray = festData.find(
-                (event) => (event.fest_id = eventId)
+                (event) => event.fest_id == eventId
               ).user_id;
               userarray[userarray.length] = userData.user_id;
               registerBtn.innerHTML = `Unregister`;
@@ -133,7 +133,7 @@ window.addEventListener("load", () => {
             } else {
               displayEvenetspage();
               let userarray = festData.find(
-                (event) => (event.fest_id = eventId)
+                (event) => event.fest_id == eventId
               ).user_id;
               const userIndex = userarray.indexOf(userData.user_id);
               if (userIndex > -1) {
@@ -306,11 +306,7 @@ function isRegister(id) {
 }
 
 function setDetails(id) {
-  const data = festData.find((item) => (item.fest_id = id));
-  console.log(id);
-  console.log(data);
-  console.log(festData);
-
+  const data = festData.find((item) => item.fest_id == id);
   let detailsContainer = document.getElementById("EventDetailsContainer");
   let name = document.getElementById("EventName");
   let date = document.getElementById("EventDate");
