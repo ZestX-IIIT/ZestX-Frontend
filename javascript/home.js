@@ -49,7 +49,8 @@ let backBtnFromProfilePage;
 let backBtnFromEditProfilePage;
 let editBtn;
 let profileBtn = document.getElementById("profile_button");
-let eventContainer;
+let ongoingEventContainer;
+let pastEventContainer;
 
 fetch(`${apiURL}/fest/getlist`, {
   method: "GET",
@@ -91,7 +92,8 @@ window.addEventListener("load", () => {
     backBtnFromEditProfilePage = document.getElementById(
       "back_btn_from_edit_profile_page"
     );
-    eventContainer = document.getElementById("OngoingEventsList");
+    ongoingEventContainer = document.getElementById("OngoingEventsList");
+    pastEventContainer = document.getElementById("PastEventsList");
 
     profileBtn.addEventListener("click", () => {
       displayProfilepage();
@@ -130,6 +132,7 @@ window.addEventListener("load", () => {
                 (event) => event.fest_id == eventId
               ).user_id;
               userarray[userarray.length] = userData.user_id;
+              userData.fest_id[userData.fest_id.length] = `${eventId}`;
               registerBtn.innerHTML = `Unregister`;
               registerBtn.style.animation = "none";
             }
@@ -160,8 +163,12 @@ window.addEventListener("load", () => {
                 (event) => event.fest_id == eventId
               ).user_id;
               const userIndex = userarray.indexOf(userData.user_id);
+              const eventIndex = userData.fest_id.indexOf(`${eventId}`);
               if (userIndex > -1) {
                 userarray.splice(userIndex, 1);
+              }
+              if (eventIndex > -1) {
+                userData.fest_id.splice(eventIndex, 1);
               }
               alert("User unregistered successfully!");
               setRegisterBtnText(eventId);
@@ -347,21 +354,32 @@ function setUserDetails(data) {
   name.value = `${data.user_name}`;
   mobile.value = `${data.mobile}`;
   email.value = `${data.email}`;
-  let festArray = [];
-  festData.forEach((event) => {
-    if(data.fest_id == null){
-      return;
-    }else(data.fest_id.includes(event.fest_id) && event_ids.includes(event.fest_id)){
-      festArray[festArray.length] = event;
-    }
-  })
-  addEvents(festData);
+
+  let ongoingEventsArray = [];
+  let pastEventsArray = [];
+
+  if (data.fest_id == null) {
+    return;
+  } else {
+    festData.forEach((event) => {
+      if (data.fest_id.includes(`${event.fest_id}`)) {
+        if (Date.now() < parseInt(event.end_date)) {
+          ongoingEventsArray[ongoingEventsArray.length] = event;
+        } else {
+          pastEventsArray[pastEventsArray.length] = event;
+        }
+      }
+    });
+    console.log(data.fest_id);
+    addEvents(ongoingEventsArray, pastEventsArray);
+  }
 }
 
-function addEvents(array) {
-  eventContainer.innerHTML = "";
+function addEvents(array1, array2) {
+  ongoingEventContainer.innerHTML = "";
+  pastEventContainer.innerHTML = "";
 
-  array.forEach((item) => {
+  array1.forEach((item) => {
     const { fest_name, description, start_date, end_date } = item;
 
     var sDate = new Date(parseInt(start_date));
@@ -392,7 +410,39 @@ function addEvents(array) {
 
     event.innerHTML = insideHtml;
 
-    eventContainer.appendChild(event);
+    ongoingEventContainer.appendChild(event);
+  });
+  array2.forEach((item) => {
+    const { fest_name, description, start_date, end_date } = item;
+
+    var sDate = new Date(parseInt(start_date));
+    var eDate = new Date(parseInt(end_date));
+    let startDate =
+      sDate.getDate() +
+      "-" +
+      (sDate.getMonth() + 1) +
+      "-" +
+      sDate.getFullYear();
+    let endDate =
+      eDate.getDate() +
+      "-" +
+      (eDate.getMonth() + 1) +
+      "-" +
+      eDate.getFullYear();
+
+    const event = document.createElement("div");
+    event.classList.add("EventList");
+    event.id = "Event_1";
+
+    const insideHtml = `<h2>${fest_name}</h2>
+    <h4>${startDate} - ${endDate}</h4>
+    <div class="EventContent">
+    ${description}
+    </div>
+    `;
+
+    event.innerHTML = insideHtml;
+    pastEventContainer.appendChild(event);
   });
 }
 
