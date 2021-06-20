@@ -36,7 +36,7 @@
         <div class="dot" id="dot"></div>
       </ul>
       <div class="profile">
-        <div class="character-container">F</div>
+        <div class="character-container" id="profile_button">F</div>
       </div>
     </div>
     </div>
@@ -145,12 +145,17 @@
     <section include_file_path="./general/event_details.html" id="sub_event_details_page_container"></section>
   </div>
 
+  <div id="primnary_profile_details_container">
+    <section include_file_path="./general/user_profile.html" id="sub_profile_details_page_container"></section>
+  </div>
+
   <script>
     includehtmlbyID("preloader_container")
     includehtmlbyID("animation_container")
     includehtmlbyID("sponser_container")
     includehtmlbyID("faqsec")
     includehtmlbyID("sub_event_details_page_container")
+    includehtmlbyID("sub_profile_details_page_container")
     includehtmlbyID("slider_container")
     includehtmlbyID("footersection")
   </script>
