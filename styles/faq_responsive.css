@@ -1,0 +1,52 @@
+@media only screen and (max-width: 1000px) {
+  .FAQQuestion {
+    font-size: 1rem;
+  }
+  .FAQAnswer{
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 670px) {
+  .FAQQuestion {
+    font-size: .9rem;
+  }
+  .FAQAnswer{
+    font-size: .9rem;
+  }
+}
+@media only screen and (max-width: 475px) {
+  .FAQQuestion {
+    font-size: .7rem;
+  }
+  .FAQAnswer{
+    font-size: .7rem;
+  }
+  .FAQArrowDown{
+    width: 3rem;
+    height: 3rem;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .FAQQuestion {
+    font-size: .6rem;
+  }
+  .FAQAnswer{
+    font-size: .6rem;
+  }
+  .FAQArrowDown{
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .FAQQuestion {
+    font-size: .5rem;
+  }
+  .FAQAnswer{
+    font-size: .5rem;
+  }
+  .FAQArrowDown{
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}

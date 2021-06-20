@@ -39,6 +39,7 @@ let index = 0;
 let activeTab = 0;
 let festData;
 let userData;
+let event_ids = [8, 9, 7, 6, 10];
 
 let primary_events_posters =
   document.getElementsByClassName("event_poster_image");
@@ -48,10 +49,7 @@ let backBtnFromProfilePage;
 let backBtnFromEditProfilePage;
 let editBtn;
 let profileBtn = document.getElementById("profile_button");
-
-profileBtn.addEventListener("click", () => {
-  displayProfilepage();
-});
+let eventContainer;
 
 fetch(`${apiURL}/fest/getlist`, {
   method: "GET",
@@ -93,13 +91,19 @@ window.addEventListener("load", () => {
     backBtnFromEditProfilePage = document.getElementById(
       "back_btn_from_edit_profile_page"
     );
+    eventContainer = document.getElementById("OngoingEventsList");
+
+    profileBtn.addEventListener("click", () => {
+      displayProfilepage();
+      setUserDetails(userData);
+    });
+
     editBtn = document.getElementById("EditButton");
     let registerBtn = document.getElementById("EventRegister");
     let eventId = 0;
 
     slider_event_list = document.getElementsByClassName("slide");
     event_poster_list = document.getElementsByClassName("event_poster_image");
-    let event_ids = [8, 9, 7, 6, 10];
 
     registerBtn.addEventListener("click", () => {
       displayPreloder();
@@ -178,15 +182,17 @@ window.addEventListener("load", () => {
     });
     backBtnFromEditProfilePage.addEventListener("click", () => {
       displayProfilepage();
+      setUserDetails(userData);
     });
     editBtn.addEventListener("click", () => {
       displayEditProfilepage();
+      setUserDetailsInEditPage(userData);
     });
     for (let i = 0; i < 5; i++) {
       event_poster_list[i].addEventListener("click", () => {
         if (slider_event_list[i].checked == true) {
           eventId = event_ids[i];
-          setDetails(event_ids[i]);
+          setEventDetails(event_ids[i]);
           displayEvenetspage();
         }
       });
@@ -334,7 +340,72 @@ function isRegister(id) {
   return true;
 }
 
-function setDetails(id) {
+function setUserDetails(data) {
+  let name = document.getElementById("name");
+  let mobile = document.getElementById("phone_number");
+  let email = document.getElementById("email");
+  name.value = `${data.user_name}`;
+  mobile.value = `${data.mobile}`;
+  email.value = `${data.email}`;
+  let festArray = [];
+  festData.forEach((event) => {
+    if(data.fest_id == null){
+      return;
+    }else(data.fest_id.includes(event.fest_id) && event_ids.includes(event.fest_id)){
+      festArray[festArray.length] = event;
+    }
+  })
+  addEvents(festData);
+}
+
+function addEvents(array) {
+  eventContainer.innerHTML = "";
+
+  array.forEach((item) => {
+    const { fest_name, description, start_date, end_date } = item;
+
+    var sDate = new Date(parseInt(start_date));
+    var eDate = new Date(parseInt(end_date));
+    let startDate =
+      sDate.getDate() +
+      "-" +
+      (sDate.getMonth() + 1) +
+      "-" +
+      sDate.getFullYear();
+    let endDate =
+      eDate.getDate() +
+      "-" +
+      (eDate.getMonth() + 1) +
+      "-" +
+      eDate.getFullYear();
+
+    const event = document.createElement("div");
+    event.classList.add("EventList");
+    event.id = "Event_1";
+
+    const insideHtml = `<h2>${fest_name}</h2>
+    <h4>${startDate} - ${endDate}</h4>
+    <div class="EventContent">
+    ${description}
+    </div>
+    `;
+
+    event.innerHTML = insideHtml;
+
+    eventContainer.appendChild(event);
+  });
+}
+
+function setUserDetailsInEditPage(data) {
+  let name = document.getElementById("edit_name");
+  name.value = `${data.user_name}`;
+  let mobile = document.getElementById("edit_phone_number");
+  mobile.value = `${data.mobile}`;
+  let email = document.getElementById("edit_email");
+  email.value = `${data.email}`;
+}
+
+function setEventDetails(id) {
   const data = festData.find((item) => item.fest_id == id);
   let detailsContainer = document.getElementById("EventDetailsContainer");
   let name = document.getElementById("EventName");
