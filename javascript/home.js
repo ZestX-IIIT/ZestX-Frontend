@@ -49,6 +49,7 @@ let backBtnFromProfilePage;
 let backBtnFromEditProfilePage;
 let editBtn;
 let saveBtn;
+let logoutBtn;
 let profileBtn = document.getElementById("profile_button");
 let ongoingEventContainer;
 let pastEventContainer;
@@ -74,6 +75,7 @@ fetch(`${apiURL}/user/getdetails`, {
   .then((res) => res.json())
   .then((data) => {
     userData = data.data;
+    profileBtn.innerHTML = `${userData.user_name[0]}`;
   })
   .catch((err) => {
     console.log(err);
@@ -100,9 +102,9 @@ window.addEventListener("load", () => {
       displayProfilepage();
     });
 
-    profileBtn.innerHTML = `${userData.user_name[0]}`;
     editBtn = document.getElementById("EditButton");
     saveBtn = document.getElementById("SaveButton");
+    logoutBtn = document.getElementById("LogoutButton");
 
     let registerBtn = document.getElementById("EventRegister");
     let eventId = 0;
@@ -211,6 +213,11 @@ window.addEventListener("load", () => {
     editBtn.addEventListener("click", () => {
       displayEditProfilepage();
       setUserDetailsInEditPage(userData);
+    });
+
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("jwt");
+      location.href = "/";
     });
 
     saveBtn.addEventListener("click", () => {
