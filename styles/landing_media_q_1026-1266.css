@@ -5,7 +5,8 @@
     top: 26%;
   }
   #sq5 {
-    height: 13%;
+    height: auto;
+    width: 7%;
     right: 41%;
   }
   .content {
@@ -23,7 +24,7 @@
     position: relative;
     height: 42.9vw;
   }
-  
+
   #outline {
     height: 32%;
     width: auto;
@@ -36,10 +37,10 @@
     width: 44%;
   }
   #sq3 {
-    height: 14%;
+    height: auto;
     top: 4%;
     right: 35%;
-    width: auto;
+    width: 7%;
   }
   #l2 {
     height: 2%;
