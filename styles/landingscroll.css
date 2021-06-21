@@ -28,7 +28,7 @@ html{
     to{transform: rotate(0deg);}
 }
 .arrow{
-    position: absolute;
+    position: fixed;
     width: 7%;
     height: auto;
     bottom: 4%;
