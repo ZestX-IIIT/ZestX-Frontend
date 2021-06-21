@@ -71,7 +71,7 @@ input[type="number"] {
 input:focus {
   outline: none;
 }
-#EditButton {
+#SaveButton {
   width: 9rem;
   height: 3.54rem;
   background: linear-gradient(
@@ -109,6 +109,6 @@ input:focus {
 }
 .UserDetailsInput:focus ~ .floating,
 .UserDetailsInput:not(:focus):valid ~ .floating {
-  transform:  translateY(-2rem);
+  transform: translateY(-2rem);
   font-size: 1rem;
 }
