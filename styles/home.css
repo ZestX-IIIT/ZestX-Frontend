@@ -142,8 +142,8 @@ html::-webkit-scrollbar {
 }
 .image-container {
   position: relative;
-  width: 593px;
-  height: 344px;
+  width: 37rem;
+  height: 21rem;
   margin-top: 25px;
   overflow: hidden;
 }
