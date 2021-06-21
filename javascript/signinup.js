@@ -10,6 +10,7 @@ let bg2 = document.getElementById("bg2");
 let bg3 = document.getElementById("bg3");
 let bg4 = document.getElementById("bg4");
 let text = window.location.hash.substring(1);
+let userData;
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 
 window.addEventListener("load", () => {
@@ -40,7 +41,24 @@ signinBtn.addEventListener("click", (event) => {
 
         if (token) {
           localStorage.setItem("jwt", token);
+          //   fetch(`${apiURL}/user/getdetails`, {
+          //     method: "GET",
+          //     headers: {
+          //       authorization: token,
+          //     },
+          //   })
+          //     .then((res) => res.json())
+          //     .then((data1) => {
+          //       userData = data1.data;
+          //       if (userData.is_admin)
+          //         window.location.href = "./general/admin_main_page.html";
+          // else
           window.location.href = "./homepage.html";
+          // })
+          // .catch((err) => {
+          //   console.log(err);
+          //   preloader.style.display = "none";
+          // });
         } else {
           alert("Incorrect password or email!");
           preloader.style.display = "none";
