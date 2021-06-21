@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1200px) {
+/* @media only screen and (max-width: 1200px) {
   .teamContent {
     margin-left: 10px;
   }
@@ -97,4 +97,134 @@
   .topContainer {
     height: 10rem;
   }
+} */
+@media only screen and (max-width: 1350px) {
+  .teamContent {
+    margin-left: 10px;
+  }
+  .topContainer {
+    width: 45vh;
+    height: 45vh;
+  }
+  .teamMembers {
+    width: 65%;
+  }
 }
+@media only screen and (max-width: 1170px) {
+  .topContainer {
+    width: 35vh;
+    height: 35vh;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .teamContent {
+    margin-left: 0px;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  .teamMembers {
+    width: 65%;
+  }
+  .teamPanel {
+    width: 25%;
+  }
+  .topContainer h2 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 890px) {
+  .topContainer {
+    width: 30vh;
+    height: 30vh;
+  }
+  .teamContent {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  /* .teamMembers {
+    flex-direction: row;
+  }
+  .topContainer {
+    width: 90%;
+    height: 400px;
+  }
+  .outerContainer {
+    width: 90%;
+    height: 75%;
+    margin: auto;
+  } */
+}
+@media only screen and (max-width: 730px) {
+  .team {
+    padding-top: 0;
+  }
+}
+/* @media only screen and (max-width: 650px) {
+  .teamMembers {
+    width: 60%;
+  }
+  .teamPanel {
+    width: 30%;
+  }
+  .topContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .topContainer h2 {
+    margin-top: 0;
+  }
+} */
+@media only screen and (max-width: 570px) {
+  .teamContent {
+    margin: 0;
+    margin-top: 20px;
+    margin-right: 5px;
+    text-align: center;
+  }
+}
+/* @media only screen and (max-width: 500px) {
+  .outerContainer {
+    height: 75%;
+    width: 80%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .topContainer {
+    height: 15rem;
+  }
+} */
+@media only screen and (max-width: 448px) {
+  .topContainer {
+    height: 25vh;
+    width: 23vh;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .topContainer {
+    height: 22vh;
+    width: 20vh;
+  }
+}
+/* @media only screen and (max-width: 350px) {
+  .outerContainer {
+    height: 65%;
+  }
+  .topContainer h2 {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 250px) {
+  .outerContainer {
+    height: 65%;
+  }
+  .topContainer {
+    height: 10rem;
+  }
+} */
+

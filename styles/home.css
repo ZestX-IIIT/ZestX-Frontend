@@ -7,7 +7,11 @@
   width: 100%;
   height: 100vh;
 }
-
+#primary_container_for_home_page_content {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100vh 100vh 100vh 100vh 100vh;
+}
 html {
   scroll-behavior: smooth;
   overflow: hidden;

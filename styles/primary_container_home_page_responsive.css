@@ -1,0 +1,25 @@
+@media only screen and (max-width: 654px) {
+    #primary_container_for_home_page_content {
+      grid-template-rows: 100vh 50vh 100vh 25rem 100vh;
+    }
+  }
+  @media only screen and (max-width: 520px) {
+    #primary_container_for_home_page_content {
+      grid-template-rows: 80vh 50vh 100vh 25rem 100vh;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    #primary_container_for_home_page_content {
+      grid-template-rows: 60vh 50vh 100vh 25rem 100vh;
+    }
+  }
+  @media only screen and (max-width: 385px) {
+    #primary_container_for_home_page_content {
+      grid-template-rows: 65vh 38vh 100vh 25rem 100vh;
+    }
+  }
+  @media only screen and (max-width: 330px) {
+    #primary_container_for_home_page_content {
+      grid-template-rows: 65vh 38vh 100vh 25rem 100vh;
+    }
+  }
