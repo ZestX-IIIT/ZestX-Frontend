@@ -20,7 +20,7 @@ let poster2 = document.getElementById("poster2");
 let poster3 = document.getElementById("poster3");
 
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
-const token = localStorage.getItem("jwt");
+let token = localStorage.getItem("jwt");
 
 let home = document.getElementById("home");
 let events = document.getElementById("events");
@@ -48,6 +48,7 @@ let backBtnFromEventsPage;
 let backBtnFromProfilePage;
 let backBtnFromEditProfilePage;
 let editBtn;
+let saveBtn;
 let profileBtn = document.getElementById("profile_button");
 let ongoingEventContainer;
 let pastEventContainer;
@@ -97,10 +98,11 @@ window.addEventListener("load", () => {
 
     profileBtn.addEventListener("click", () => {
       displayProfilepage();
-      setUserDetails(userData);
     });
 
     editBtn = document.getElementById("EditButton");
+    saveBtn = document.getElementById("SaveButton");
+
     let registerBtn = document.getElementById("EventRegister");
     let eventId = 0;
 
@@ -109,6 +111,7 @@ window.addEventListener("load", () => {
 
     registerBtn.addEventListener("click", () => {
       displayPreloder();
+
       if (!isRegister(eventId)) {
         fetch(`${apiURL}/fest/register`, {
           method: "POST",
@@ -181,20 +184,6 @@ window.addEventListener("load", () => {
       }
     });
 
-    backBtnFromEventsPage.addEventListener("click", () => {
-      displayMainContainer();
-    });
-    backBtnFromProfilePage.addEventListener("click", () => {
-      displayMainContainer();
-    });
-    backBtnFromEditProfilePage.addEventListener("click", () => {
-      displayProfilepage();
-      setUserDetails(userData);
-    });
-    editBtn.addEventListener("click", () => {
-      displayEditProfilepage();
-      setUserDetailsInEditPage(userData);
-    });
     for (let i = 0; i < 5; i++) {
       event_poster_list[i].addEventListener("click", () => {
         if (slider_event_list[i].checked == true) {
@@ -204,6 +193,85 @@ window.addEventListener("load", () => {
         }
       });
     }
+
+    backBtnFromEventsPage.addEventListener("click", () => {
+      displayMainContainer();
+    });
+
+    backBtnFromProfilePage.addEventListener("click", () => {
+      displayMainContainer();
+    });
+
+    backBtnFromEditProfilePage.addEventListener("click", () => {
+      displayProfilepage();
+    });
+
+    editBtn.addEventListener("click", () => {
+      displayEditProfilepage();
+      setUserDetailsInEditPage(userData);
+    });
+
+    saveBtn.addEventListener("click", () => {
+      let email = document.getElementById("edit_email").value;
+      let user_name = document.getElementById("edit_name").value;
+      let mobile = document.getElementById("edit_phone_number").value;
+      let password = document.getElementById("password").value;
+      let confirmPassword = document.getElementById("confirm_password").value;
+
+      if (password != confirmPassword) {
+        alert("Please enter same password in password and confirm password!");
+      } else if (password && email && mobile && user_name) {
+        displayPreloder();
+        fetch(`${apiURL}/user/updatedetails`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: localStorage.getItem("jwt"),
+          },
+          body: JSON.stringify({
+            user_name,
+            email,
+            password,
+            mobile,
+          }),
+        })
+          .then(function (res1) {
+            if (res1.status == 400) {
+              displayEditProfilepage();
+              alert("Internal server error please re-try!");
+            } else if (res1.status == 500) {
+              displayEditProfilepage();
+              alert("Password hashing error please re-try!");
+            } else if (res1.status == 200) {
+              displayProfilepage();
+              alert("Your details updated successfully!");
+              userData.user_name = user_name;
+              userData.mobile = mobile;
+            } else {
+              displayProfilepage();
+              alert(
+                "Your details updated successfully! Please verify your updated email-id"
+              );
+              userData.user_name = user_name;
+              userData.email = email;
+              userData.mobile = mobile;
+            }
+            return res1.json();
+          })
+          .then((data) => {
+            if (data.token) {
+              localStorage.setItem("jwt", data.token);
+            }
+            console.log(data);
+          })
+          .catch((err) => {
+            console.log(err);
+            preloader.style.display = "none";
+          });
+      } else {
+        alert("Please enter all details properly!");
+      }
+    });
   }, 500);
 });
 
@@ -539,6 +607,7 @@ function displayEvenetspage() {
 }
 
 function displayProfilepage() {
+  setUserDetails(userData);
   checkAndDisplayContainer(primaryProfilePageContainer);
   checkAndCloseContainer(primaryContainer);
   checkAndCloseContainer(preloader);
