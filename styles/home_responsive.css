@@ -84,5 +84,15 @@
         width: 45vh;
     }
 }
-
-
+@media only screen and (max-width: 280px) {
+    #animation_container{
+        height: 40vh;
+        width: 40vh;
+    }
+}
+@media only screen and (max-width: 270px) {
+    #animation_container{
+        height: 25vh;
+        width: 25vh;
+    }
+}
