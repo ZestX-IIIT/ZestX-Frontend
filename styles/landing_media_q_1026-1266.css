@@ -23,10 +23,7 @@
     position: relative;
     height: 42.9vw;
   }
-  .head h1 {
-    font-size: 2.8rem;
-    left: 36%;
-  }
+  
   #outline {
     height: 32%;
     width: auto;
