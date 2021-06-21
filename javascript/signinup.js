@@ -41,24 +41,23 @@ signinBtn.addEventListener("click", (event) => {
 
         if (token) {
           localStorage.setItem("jwt", token);
-          //   fetch(`${apiURL}/user/getdetails`, {
-          //     method: "GET",
-          //     headers: {
-          //       authorization: token,
-          //     },
-          //   })
-          //     .then((res) => res.json())
-          //     .then((data1) => {
-          //       userData = data1.data;
-          //       if (userData.is_admin)
-          //         window.location.href = "./general/admin_main_page.html";
-          // else
-          window.location.href = "./homepage.html";
-          // })
-          // .catch((err) => {
-          //   console.log(err);
-          //   preloader.style.display = "none";
-          // });
+          fetch(`${apiURL}/user/getdetails`, {
+            method: "GET",
+            headers: {
+              authorization: token,
+            },
+          })
+            .then((res) => res.json())
+            .then((data1) => {
+              userData = data1.data;
+              if (userData.is_admin)
+                window.location.href = "./general/admin_main_page.html";
+              else window.location.href = "./homepage.html";
+            })
+            .catch((err) => {
+              console.log(err);
+              preloader.style.display = "none";
+            });
         } else {
           alert("Incorrect password or email!");
           preloader.style.display = "none";
