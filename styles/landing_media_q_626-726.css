@@ -3,25 +3,24 @@
     overflow: hidden;
   }
   #sq1 {
-    height: 52%;
-    width: auto;
-    top: 25%;
-    right: -8%;
+    width: 48%;
+    top: 32%;
+    right: 0;
   }
 
   #sq2 {
-    height: 6%;
+    width: 7%;
     top: 6%;
     left: 8%;
   }
 
   #sq4 {
-    height: 8%;
+    width: 8%;
     top: 87%;
     left: 3%;
   }
   #sq5 {
-    height: 8%;
+    width: 8%;
     right: 43%;
     bottom: 7%;
   }
@@ -32,8 +31,8 @@
     height: 54.6vw;
   }
   .head {
-    height: 15%;
-    margin-top: 25.5%;
+    height: 17vw;
+    margin-top: 11.5%;
   }
   .btn {
     font-size: 15px;
@@ -73,17 +72,16 @@
     padding-top: 4.2%;
   }
   #slogan_text {
-    margin-top: 32%;
+    margin-top: 19%;
   }
   .text {
     font-size: 1rem;
     margin-right: 5%;
   }
   #sq3 {
-    height: 9%;
+    width: 9%;
     top: 3%;
     right: 48%;
-    width: auto;
   }
   #l1 {
     top: 88%;
