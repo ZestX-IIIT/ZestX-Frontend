@@ -34,8 +34,8 @@
     margin-top: 0%;
   }
   .head {
-    height: fit-content;
-    margin-top: 29.5%;
+    height: 20vw;
+    margin-top: 11.5%;
   }
   .btn {
     font-size: 13px;
@@ -78,17 +78,17 @@
     margin-top: -4px;
   }
   #signupbutton {
-    padding-top: 5.2%;
-    padding: 4% 7%;
+    padding: 2.6% 5%;
+    padding-top: 3%;
   }
   #slogan_text {
-    margin-top: 32%;
+    margin-top: 10%;
   }
   .text {
     font-size: 0.9rem;
     margin-right: 0%;
     height: auto;
-    width: 45%;
+    width: 80%;
   }
   #sq3 {
     height: 7%;
