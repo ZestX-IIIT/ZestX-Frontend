@@ -648,10 +648,14 @@ function checkAndCloseContainer(container) {
   }
   container.classList.add("display_to_none");
 
-  setTimeout(function () {
-    container.style.display = "none";
-    container.style.opacity = 0;
-  }, 500);
+  if (container.style.display != "none") {
+    container.classList.add("display_to_none");
+
+    setTimeout(function () {
+      container.style.display = "none";
+      container.style.opacity = 0;
+    }, 500);
+  }
 }
 
 function checkAndDisplayContainer(container) {
