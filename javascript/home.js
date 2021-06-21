@@ -49,6 +49,7 @@ let backBtnFromProfilePage;
 let backBtnFromEditProfilePage;
 let editBtn;
 let saveBtn;
+let logoutBtn;
 let profileBtn = document.getElementById("profile_button");
 let ongoingEventContainer;
 let pastEventContainer;
@@ -74,6 +75,7 @@ fetch(`${apiURL}/user/getdetails`, {
   .then((res) => res.json())
   .then((data) => {
     userData = data.data;
+    profileBtn.innerHTML = `${userData.user_name[0]}`;
   })
   .catch((err) => {
     console.log(err);
@@ -102,6 +104,7 @@ window.addEventListener("load", () => {
 
     editBtn = document.getElementById("EditButton");
     saveBtn = document.getElementById("SaveButton");
+    logoutBtn = document.getElementById("LogoutButton");
 
     let registerBtn = document.getElementById("EventRegister");
     let eventId = 0;
@@ -200,6 +203,7 @@ window.addEventListener("load", () => {
 
     backBtnFromProfilePage.addEventListener("click", () => {
       displayMainContainer();
+      profileBtn.innerHTML = `${userData.user_name[0]}`;
     });
 
     backBtnFromEditProfilePage.addEventListener("click", () => {
@@ -209,6 +213,11 @@ window.addEventListener("load", () => {
     editBtn.addEventListener("click", () => {
       displayEditProfilepage();
       setUserDetailsInEditPage(userData);
+    });
+
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("jwt");
+      location.href = "/";
     });
 
     saveBtn.addEventListener("click", () => {
@@ -243,18 +252,18 @@ window.addEventListener("load", () => {
               displayEditProfilepage();
               alert("Password hashing error please re-try!");
             } else if (res1.status == 200) {
-              displayProfilepage();
               alert("Your details updated successfully!");
               userData.user_name = user_name;
               userData.mobile = mobile;
-            } else {
               displayProfilepage();
+            } else {
               alert(
                 "Your details updated successfully! Please verify your updated email-id"
               );
               userData.user_name = user_name;
               userData.email = email;
               userData.mobile = mobile;
+              displayProfilepage();
             }
             return res1.json();
           })

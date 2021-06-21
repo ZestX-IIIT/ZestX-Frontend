@@ -39,9 +39,9 @@
   mix-blend-mode: overlay;
 }
 #sq1 {
-  height: 70%;
+  height: auto;
   width: 32%;
-  top: 25%;
+  top: 28%;
   right: 0;
   z-index: -20;
 }
