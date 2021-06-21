@@ -1,20 +1,23 @@
 @media screen and (min-width: 926px) and (max-width: 1026px) {
   #sq1 {
-    height: 50vh;
-    width: auto;
+    height: auto;
+    width: 38vw;
     top: 31%;
   }
   #sq2 {
-    height: 7%;
+    height: auto;
     top: 4%;
+    width: 5%;
     left: 16%;
   }
   #sq4 {
-    height: 11%;
+    height: auto;
+    width: 7%;
+    top: 75.5%;
   }
   #sq5 {
-    height: 10%;
     right: 41%;
+    width: 8%;
   }
   .girl {
     width: 36vw;
@@ -22,8 +25,9 @@
     height: 46.8vw;
   }
   .head {
-    height: 18vh;
+    height: auto;
     margin-top: 0%;
+    width: 14vw;
   }
   .btn-div {
     margin-top: 22%;
@@ -33,8 +37,8 @@
     margin-left: 10%;
     margin-right: 8%;
     margin-top: 3%;
-  } 
-  
+  }
+
   #outline {
     height: 32%;
     width: auto;
@@ -47,10 +51,10 @@
     width: 48%;
   }
   #sq3 {
-    height: 14%;
+    height: auto;
     top: 4%;
     right: 35%;
-    width: auto;
+    width: 10%;
   }
   #l2 {
     height: 2%;
