@@ -648,7 +648,7 @@ function checkAndCloseContainer(container) {
 
 function checkAndDisplayContainer(container) {
   if (container == primaryContainer) {
-    container.style.display = "flex";
+    container.style.display = "grid";
   } else {
     container.style.display = "block";
   }
