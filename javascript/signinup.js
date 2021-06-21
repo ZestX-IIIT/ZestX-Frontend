@@ -61,7 +61,7 @@ signupBtn.addEventListener("click", (event) => {
   event.preventDefault();
 
   const email = document.getElementById("signupemail").value;
-  const name = document.getElementById("name").value;
+  const user_name = document.getElementById("name").value;
   const password = document.getElementById("signuppassword").value;
   const mobile = document.getElementById("mobile").value;
   const confirmPassword = document.getElementById("confirm").value;
@@ -70,15 +70,19 @@ signupBtn.addEventListener("click", (event) => {
     alert("Passwords don't match!");
     return;
   }
+  if (password.length < 6) {
+    alert("Password should be minimum of 6 length!");
+    return;
+  }
   preloader.style.display = "block";
 
-  if (email && password && name && mobile) {
+  if (email && password && user_name && mobile) {
     fetch(`${apiURL}/auth/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, password, mobile }),
+      body: JSON.stringify({ user_name, email, password, mobile }),
     })
       .then((res) => res.json())
       .then((data) => {
