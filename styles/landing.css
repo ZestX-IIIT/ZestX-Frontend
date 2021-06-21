@@ -47,29 +47,29 @@
 }
 
 #sq2 {
-  height: 10%;
-  width: auto;
+  height: auto;
+  width: 5%;
   top: 3%;
   left: 18%;
   transform: rotate(180deg);
 }
 #sq3 {
-  height: 16%;
+  height: auto;
   top: 3%;
   right: 35%;
-  width: auto;
+  width: 8%;
   transform: rotate(180deg);
 }
 #sq4 {
-  height: 13%;
-  width: auto;
+  height: auto;
+  width: 6%;
   top: 75%;
   left: 3%;
   transform: rotate(90deg);
 }
 #sq5 {
-  height: 18%;
-  width: auto;
+  height: auto;
+  width: 9%;
   bottom: 4%;
   right: 40%;
 }
