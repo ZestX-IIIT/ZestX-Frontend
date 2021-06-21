@@ -370,7 +370,6 @@ function setUserDetails(data) {
         }
       }
     });
-    console.log(data.fest_id);
     addEvents(ongoingEventsArray, pastEventsArray);
   }
 }
