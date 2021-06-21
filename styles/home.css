@@ -88,8 +88,8 @@ html::-webkit-scrollbar {
 }
 
 #bg_blend {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   position: fixed;
   z-index: -10000;
   background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
