@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1000px) {
+/* @media only screen and (max-width: 1000px) {
     
   .sponserImages {
     height: 80%;
@@ -49,4 +49,81 @@
     .sponserContainer {
       height: 10%;
     }
+  } */
+@media only screen and (max-width: 1340px) {
+  .sponserImages {
+    height: 70%;
   }
+}
+@media only screen and (max-width: 1110px) {
+  .sponserImages {
+    height: 60%;
+  }
+}
+@media only screen and (max-width: 935px) {
+  .sponserImages {
+    height: 50%;
+  }
+}
+@media only screen and (max-width: 791px) {
+  .sponsers {
+    height: 100vh;
+  }
+  .sponserContainer {
+    height: 75%;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 730px) {
+  #main_sponsers_container {
+    padding-top: 0 !important;
+  }
+}
+@media only screen and (max-width: 738px) {
+  .sponsers {
+    padding-top: 0;
+    height: 20rem;
+    grid-template-rows: repeat(5, 4rem);
+  }
+  .sponserImages {
+    height: 100%;
+    margin-left: 10px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .sponserContainer {
+    height: 65%;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .sponserContainer {
+    height: 50%;
+  }
+}
+@media only screen and (max-width: 365px) {
+  .sponserContainer {
+    height: 45%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .sponserContainer {
+    height: 40%;
+  }
+}
+
+/* @media only screen and (max-width: 395px) {
+    .sponserImages {
+      height: 100%;
+      margin-left: 5px;
+    }
+    .sponserContainer {
+      height: 55%;
+    }
+  }
+  */
+@media only screen and (max-width: 295px) {
+  .sponserContainer {
+    height: 30%;
+  }
+}
+
