@@ -13,7 +13,7 @@ let text = window.location.hash.substring(1);
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 
 window.addEventListener("load", () => {
-  closeLoader()
+  closeLoader();
 });
 
 function closeLoader() {
@@ -42,7 +42,7 @@ signinBtn.addEventListener("click", (event) => {
           localStorage.setItem("jwt", token);
           window.location.href = "./homepage.html";
         } else {
-          alert("Enter correct password !");
+          alert("Incorrect password or email!");
           preloader.style.display = "none";
         }
       })
@@ -52,7 +52,7 @@ signinBtn.addEventListener("click", (event) => {
         preloader.style.display = "none";
       });
   } else {
-    alert("Please fill all details !");
+    alert("Please fill all details!");
     preloader.style.display = "none";
   }
 });

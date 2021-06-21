@@ -7,9 +7,15 @@
   width: 100%;
   height: 100vh;
 }
-
+#primary_container_for_home_page_content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -88,8 +94,8 @@ html::-webkit-scrollbar {
 }
 
 #bg_blend {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   position: fixed;
   z-index: -10000;
   background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);

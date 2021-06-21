@@ -638,9 +638,12 @@ function checkAndCloseContainer(container) {
 }
 
 function checkAndDisplayContainer(container) {
-  container.style.display = "block";
+  if (container == primaryContainer) {
+    container.style.display = "flex";
+  } else {
+    container.style.display = "block";
+  }
   container.style.opacity = 1;
-
   if (container.classList.contains("display_to_none")) {
     container.classList.remove("display_to_none");
   }

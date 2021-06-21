@@ -10,6 +10,7 @@
 
 #slider {
   height: 80vh;
+  width: 100vw;
   position: relative;
   perspective: 550px;
   transform-style: preserve-3d;
