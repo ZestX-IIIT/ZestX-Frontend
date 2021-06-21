@@ -86,7 +86,6 @@ fetch(`${apiURL}/user/getdetails`, {
   });
 
 window.addEventListener("load", () => {
-  preloader.style.display = "none";
 
   setTimeout(function () {
     backBtnFromEventsPage = document.getElementById(
@@ -285,6 +284,9 @@ window.addEventListener("load", () => {
       }
     });
   }, 500);
+
+  displayMainContainer()
+
 });
 
 window.addEventListener("scroll", () => {
