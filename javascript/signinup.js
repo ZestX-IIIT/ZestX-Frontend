@@ -10,6 +10,7 @@ let bg2 = document.getElementById("bg2");
 let bg3 = document.getElementById("bg3");
 let bg4 = document.getElementById("bg4");
 let text = window.location.hash.substring(1);
+let userData;
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 
 window.addEventListener("load", () => {
@@ -40,7 +41,23 @@ signinBtn.addEventListener("click", (event) => {
 
         if (token) {
           localStorage.setItem("jwt", token);
-          window.location.href = "./homepage.html";
+          fetch(`${apiURL}/user/getdetails`, {
+            method: "GET",
+            headers: {
+              authorization: token,
+            },
+          })
+            .then((res) => res.json())
+            .then((data1) => {
+              userData = data1.data;
+              if (userData.is_admin)
+                window.location.href = "./general/admin_main_page.html";
+              else window.location.href = "./homepage.html";
+            })
+            .catch((err) => {
+              console.log(err);
+              preloader.style.display = "none";
+            });
         } else {
           alert("Incorrect password or email!");
           preloader.style.display = "none";
@@ -61,7 +78,7 @@ signupBtn.addEventListener("click", (event) => {
   event.preventDefault();
 
   const email = document.getElementById("signupemail").value;
-  const name = document.getElementById("name").value;
+  const user_name = document.getElementById("name").value;
   const password = document.getElementById("signuppassword").value;
   const mobile = document.getElementById("mobile").value;
   const confirmPassword = document.getElementById("confirm").value;
@@ -70,15 +87,19 @@ signupBtn.addEventListener("click", (event) => {
     alert("Passwords don't match!");
     return;
   }
+  if (password.length < 6) {
+    alert("Password should be minimum of 6 length!");
+    return;
+  }
   preloader.style.display = "block";
 
-  if (email && password && name && mobile) {
+  if (email && password && user_name && mobile) {
     fetch(`${apiURL}/auth/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, password, mobile }),
+      body: JSON.stringify({ user_name, email, password, mobile }),
     })
       .then((res) => res.json())
       .then((data) => {
