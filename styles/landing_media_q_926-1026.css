@@ -1,8 +1,8 @@
 @media screen and (min-width: 926px) and (max-width: 1026px) {
   #sq1 {
-    height: 50%;
+    height: 50vh;
     width: auto;
-    top: 35%;
+    top: 31%;
   }
   #sq2 {
     height: 7%;
@@ -23,7 +23,7 @@
   }
   .head {
     height: 18vh;
-    margin-top: 17.5%;
+    margin-top: 0%;
   }
   .btn-div {
     margin-top: 22%;
