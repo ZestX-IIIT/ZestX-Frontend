@@ -1,29 +1,25 @@
 @media screen and (min-width: 726px) and (max-width: 826px) {
-  body {
-    overflow: hidden;
-  }
   #sq1 {
-    height: 56%;
-    width: auto;
-    top: 24%;
-    right: -3%;
+    width: 47%;
+    top: 30%;
+    right: 0;
   }
 
   #sq2 {
-    height: 6%;
     top: 6%;
+    width: 6%;
     left: 8%;
   }
 
   #sq4 {
-    height: 8%;
     top: 87%;
     left: 3%;
+    width: 7%;
   }
   #sq5 {
-    height: 8%;
     right: 43%;
     bottom: 7%;
+    width: 8%;
   }
 
   .girl {
@@ -32,7 +28,7 @@
     height: 50.7vw;
   }
   .head {
-    height: 18%;
+    height: 16vw;
     margin-top: 17.5%;
   }
   #ph5 {
@@ -48,8 +44,8 @@
   .content {
     height: 73%;
     margin-left: 7%;
-    margin-right: 1%;
-    margin-top: 3%;
+    margin-right: 5%;
+    margin-top: 2%;
   }
   .text {
     margin-top: -5%;
@@ -72,12 +68,12 @@
   .text {
     font-size: 1.2rem;
     margin-right: 5%;
+    width: 45%;
   }
   #sq3 {
-    height: 9%;
     top: 3%;
     right: 48%;
-    width: auto;
+    width: 8.5%;
   }
   #l1 {
     top: 88%;
