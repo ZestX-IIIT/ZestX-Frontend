@@ -105,7 +105,7 @@ input:focus {
 }
 #LogoutButton {
   cursor: pointer;
-  width: 11rem;
+  width: 12rem;
   height: 3.54rem;
   background: linear-gradient(
     270deg,
@@ -122,9 +122,7 @@ input:focus {
   font-size: 1.4375rem;
   text-transform: uppercase;
   color: #ffffff;
-  position: absolute;
-  top: 366%;
-  left: 20%;
+  margin-top: 2%;
 }
 #EditButton img {
   width: 20px;
