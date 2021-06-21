@@ -1,3 +1,6 @@
+let nabar_container = document.getElementById(
+  "nabar_container"
+);
 let primaryContainer = document.getElementById(
   "primary_container_for_home_page_content"
 );
@@ -593,6 +596,7 @@ function setEventDetails(id) {
 
 function displayMainContainer() {
   checkAndDisplayContainer(primaryContainer);
+  checkAndDisplayContainer(nabar_container);
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(preloader);
   checkAndCloseContainer(primaryProfilePageContainer);
@@ -605,6 +609,7 @@ function displayPreloder() {
   checkAndCloseContainer(primaryContainer);
   checkAndCloseContainer(primaryProfilePageContainer);
   checkAndCloseContainer(primaryEditProfileContainer);
+  checkAndCloseContainer(nabar_container);
 }
 
 function displayEvenetspage() {
@@ -613,6 +618,7 @@ function displayEvenetspage() {
   checkAndCloseContainer(preloader);
   checkAndCloseContainer(primaryProfilePageContainer);
   checkAndCloseContainer(primaryEditProfileContainer);
+  checkAndCloseContainer(nabar_container);
 }
 
 function displayProfilepage() {
@@ -622,6 +628,7 @@ function displayProfilepage() {
   checkAndCloseContainer(preloader);
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(primaryEditProfileContainer);
+  checkAndCloseContainer(nabar_container);
 }
 
 function displayEditProfilepage() {
@@ -630,6 +637,7 @@ function displayEditProfilepage() {
   checkAndCloseContainer(preloader);
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(nabar_container);
 }
 
 // Functions for cleaner APIs for toggeling beetween pages
@@ -649,6 +657,8 @@ function checkAndCloseContainer(container) {
 function checkAndDisplayContainer(container) {
   if (container == primaryContainer) {
     container.style.display = "grid";
+  } else if (container == nabar_container) {
+    container.style.display = "flex";
   } else {
     container.style.display = "block";
   }
