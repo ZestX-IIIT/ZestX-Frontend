@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
