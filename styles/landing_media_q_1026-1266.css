@@ -1,7 +1,7 @@
 @media screen and (min-width: 1026px) and (max-width: 1266px) {
   #sq1 {
-    height: 63%;
-    width: auto;
+    height: auto;
+    width: 35%;
     top: 26%;
   }
   #sq5 {
@@ -10,8 +10,8 @@
   }
   .content {
     height: 73%;
-    margin-left: 16%;
-    margin-right: 10%;
+    margin-left: 13%;
+    margin-right: 2%;
     margin-top: 3%;
   }
   .text {
@@ -36,6 +36,7 @@
 
   .text {
     font-size: 1.4rem;
+    width: 44%;
   }
   #sq3 {
     height: 14%;
