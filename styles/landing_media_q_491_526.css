@@ -3,7 +3,6 @@
     overflow: scroll;
   }
   #sq1 {
-    height: 37%;
     width: 50%;
     top: 13%;
     right: 25%;
@@ -34,8 +33,8 @@
     margin-top: 3%;
   }
   .head {
-    height: fit-content;
-    margin-top: 29.5%;
+    height: 20vw;
+    margin-top: 6.5%;
   }
   .btn {
     font-size: 15px;
@@ -52,10 +51,10 @@
   }
 
   .btn-div {
-    margin-top: 14%;
+    margin-top: 8%;
   }
   .content {
-    height: auto;
+    height: 80%;
     margin-left: 0%;
     margin-right: 0%;
     margin-top: 0%;
@@ -78,15 +77,19 @@
     margin-top: -4px;
   }
   #signupbutton {
-    padding-top: 6.2%;
-    padding: 5% 9%;
+    padding: 2.6% 5%;
+    padding-top: 3%;
+  }
+  #signin {
+    margin: 0% 4% 0 0;
   }
   #slogan_text {
-    margin-top: 32%;
+    margin-top: 5%;
   }
   .text {
     font-size: 0.9rem;
     margin-right: 0%;
+    width: 80%;
     height: auto;
   }
   #sq3 {
