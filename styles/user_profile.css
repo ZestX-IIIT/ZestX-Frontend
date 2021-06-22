@@ -64,6 +64,9 @@ body {
   text-transform: uppercase;
   color: #efd5ff;
 }
+#email{
+  text-transform: lowercase;
+}
 .UserDetailsInput::placeholder {
   font-family: "Now";
   font-style: normal;
@@ -123,6 +126,9 @@ input:focus {
   font-size: 1.4375rem;
   text-transform: uppercase;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #EditButton img {
   width: 20px;
@@ -210,9 +216,6 @@ input:focus {
 .EventContent {
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  -webkit-box-orient: vertical;
   max-width: 100%;
   font-family: "Now";
   font-style: normal;
