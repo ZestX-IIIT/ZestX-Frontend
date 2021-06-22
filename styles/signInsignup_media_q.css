@@ -169,7 +169,7 @@
 }
 
 @media screen and (max-width: 376px) {
-  #text_container {
+  #swap_form_to_signin_text_container {
     font-size: 0.7rem;
   }
 }
