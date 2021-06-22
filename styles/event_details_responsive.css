@@ -39,7 +39,7 @@
     margin-top: 0;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 515px) {
   #EventDetailsContainer {
     height: 135vh;
   }
@@ -53,7 +53,7 @@
     height: 117vh;
   }
 }
-@media only screen and (max-width: 385px) {
+@media only screen and (max-width: 431px) {
   #EventDetailsContent {
     font-size: 0.9rem;
   }
