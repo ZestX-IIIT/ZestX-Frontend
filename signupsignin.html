@@ -8,20 +8,22 @@
     <title>Sign In Sign Up</title>
     <link rel="stylesheet" href="./styles/signInsignup.css" />
     <link rel="stylesheet" href="./assets/fonts/now/stylesheet.css" />
+    <link rel="stylesheet" href="./styles/signInsignup_media_q.css" />
     <script src="./javascript/html_include.js"></script>
-    
+
 </head>
 
-<body background-image ="../assets/signin_signup_Page/background.jpg" >
-    
-    <div include_file_path="./general/loader.html" style="position: fixed; width: 100vw; z-index: 50000;" id="preloader_container"></div>
+<body background-image="../assets/signin_signup_Page/background.jpg">
+
+    <div include_file_path="./general/loader.html" style="position: fixed; width: 100vw; z-index: 50000;"
+        id="preloader_container"></div>
 
     <section class="main">
         <div class="background opacity-class" id="bg1">
-        
+
         </div>
         <div class="background2 opacity-class" id="bg2">
-        
+
         </div>
         <div class="background3 display-class" id="bg3">
 
@@ -42,42 +44,42 @@
                 </div>
                 <button type="submit" class="btn" id="signinButton">CONTINUE</button>
             </form>
-            <div>DON'T HAVE A ACCOUNT? <span id="signup">SIGN UP</span></div>
+            <div id="swap_form_to_signup_text_container">DON'T HAVE A ACCOUNT? <span id="signup">SIGN UP</span></div>
         </div>
-    </div>
-    <div class="form-container opacity-class" id="signupcontainer">
-        <h1>SIGN UP</h1>
-        <form>
-            <div class="form-label">
-                <input type="email" name="email" id="signupemail" required />
-                <div class="floating">EMAIL</div>
-            </div>
-            <div class="form-label">
-                <input type="text" name="name" id="name" required />
-                <div class="floating">NAME</div>
-            </div>
-            <div class="form-label">
-                <input type="number" name="mobile" id="mobile" required />
-                <div class="floating">MOBILE NUMBER</div>
-            </div>
-            <div class="form-label">
-                <input type="password" name="password" id="signuppassword" required />
-                <div class="floating">PASSWORD</div>
-            </div>
-            <div class="form-label">
-                <input type="password" name="confirmpassword" id="confirm" required />
-                <div class="floating">CONFIRM PASSWORD</div>
-            </div>
-            <button type="submit" class="btn" id="signupButton">CONTINUE</button>
-        </form>
-        <div>ALREADY HAVE A ACCOUNT? <span id="signin">SIGN IN</span></div>
-    </div>
-</section>
-<script src="./javascript/signinup.js"></script>
+        </div>
+        <div class="form-container opacity-class" id="signupcontainer">
+            <h1>SIGN UP</h1>
+            <form>
+                <div class="form-label">
+                    <input type="email" name="email" id="signupemail" required />
+                    <div class="floating">EMAIL</div>
+                </div>
+                <div class="form-label">
+                    <input type="text" name="name" id="name" required />
+                    <div class="floating">NAME</div>
+                </div>
+                <div class="form-label">
+                    <input type="number" name="mobile" id="mobile" required />
+                    <div class="floating">MOBILE NUMBER</div>
+                </div>
+                <div class="form-label">
+                    <input type="password" name="password" id="signuppassword" required />
+                    <div class="floating">PASSWORD</div>
+                </div>
+                <div class="form-label">
+                    <input type="password" name="confirmpassword" id="confirm" required />
+                    <div class="floating">CONFIRM PASSWORD</div>
+                </div>
+                <button type="submit" class="btn" id="signupButton">CONTINUE</button>
+            </form>
+            <div id="swap_form_to_signin_text_container">ALREADY HAVE A ACCOUNT? <span id="signin">SIGN IN</span></div>
+        </div>
+    </section>
+    <script src="./javascript/signinup.js"></script>
 
-<script>
-    includehtmlbyID("preloader_container")
-</script>
+    <script>
+        includehtmlbyID("preloader_container")
+    </script>
 </body>
 
 </html>

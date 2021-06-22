@@ -1,0 +1,40 @@
+@media screen and (max-width: 768px) {
+  .background {
+    width: 50%;
+    left: 25%;
+  }
+  .background2 {
+    width: 50%;
+    left: 25%;
+  }
+  .background3 {
+    width: 50%;
+    left: 25%;
+  }
+  .background4 {
+    width: 50%;
+    left: 25%;
+  }
+  .form-container {
+    left: 25%;
+    width: 50%;
+    padding: 20px 0;
+  }
+  .form-container2 {
+    left: 25%;
+    width: 50%;
+    padding: 20px 0;
+  }
+  #signupButton {
+    margin-top: 32px;
+  }
+  #signinButton {
+    margin-top: 30px;
+  }
+  #swap_form_to_signup_text_container {
+    margin-top: -10px;
+  }
+  #swap_form_to_signin_text_container {
+    margin-top: -8px;
+  }
+}
