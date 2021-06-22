@@ -16,14 +16,61 @@ let externalUserContainer = document.getElementById("external_user_list");
 let addUserBtnFromMainPage = document.getElementById("secondh2");
 
 let backBtnFromAddUserPage;
+let addUserBtnFromAddUserPage;
+let username;
+let email;
+let mobile;
 let ongoingEvents;
 let isFirstTime = true;
 
 setTimeout(function () {
+
     backBtnFromAddUserPage = document.getElementById("back_btn_from_add_user_page");
+    addUserBtnFromAddUserPage = document.getElementById("Add_user_button");
+    username = document.getElementById("name").value;
+    email = document.getElementById("email").value;
+    mobile = document.getElementById("phone_number").value;
+
+    addUserBtnFromAddUserPage.addEventListener("click", () => {
+        console.log(username, email, mobile);
+
+        if (username && (email || mobile)) {
+            displayPreloder();
+            fetch(`${apiURL}/fest/adduser`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    authorization: token,
+                },
+                body: JSON.stringify({ username, email, mobile }),
+            })
+                .then(function (res) {
+                    if (res.status == 400) {
+                        alert("You have not access to admin panel!");
+                    } else if (res.status == 500) {
+                        alert("Internal server error please re-try!");
+                    }
+                    return res.json();
+                })
+                .then((data) => {
+                    alert("User added successfully!");
+                    displayAdminMainpage();
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+
+        } else if (username.length == 0) {
+            alert("Please fill name!");
+        } else {
+            alert("Please fill atleast one of email and phone number!");
+        }
+    })
+
     backBtnFromAddUserPage.addEventListener("click", () => {
         displayAdminMainpage();
     })
+
 }, 100);
 
 addUserBtnFromMainPage.addEventListener("click", () => {
