@@ -17,9 +17,10 @@ let addUserBtnFromMainPage = document.getElementById("secondh2");
 
 let backBtnFromAddUserPage;
 let addUserBtnFromAddUserPage;
-let username;
-let email;
-let mobile;
+let exUsername;
+let exEmail;
+let exMobile;
+let event_id;
 let ongoingEvents;
 let isFirstTime = true;
 
@@ -27,14 +28,13 @@ setTimeout(function () {
 
     backBtnFromAddUserPage = document.getElementById("back_btn_from_add_user_page");
     addUserBtnFromAddUserPage = document.getElementById("Add_user_button");
-    username = document.getElementById("name").value;
-    email = document.getElementById("email").value;
-    mobile = document.getElementById("phone_number").value;
 
     addUserBtnFromAddUserPage.addEventListener("click", () => {
-        console.log(username, email, mobile);
+        exUsername = document.getElementById("name").value;
+        exEmail = document.getElementById("email").value;
+        exMobile = document.getElementById("phone_number").value;
 
-        if (username && (email || mobile)) {
+        if (exUsername && (exEmail || exMobile)) {
             displayPreloder();
             fetch(`${apiURL}/fest/adduser`, {
                 method: "POST",
@@ -42,25 +42,42 @@ setTimeout(function () {
                     "Content-Type": "application/json",
                     authorization: token,
                 },
-                body: JSON.stringify({ username, email, mobile }),
+                body: JSON.stringify({ event_id, username: exUsername, email: exEmail, mobile: exMobile }),
             })
                 .then(function (res) {
                     if (res.status == 400) {
                         alert("You have not access to admin panel!");
+                        displayAdminAddUserPage();
                     } else if (res.status == 500) {
                         alert("Internal server error please re-try!");
+                        displayAdminAddUserPage();
+                    } else {
+                        fetch(`${apiURL}/fest/ongoingevents`, {
+                            method: "GET",
+                        })
+                            .then((res1) => res1.json())
+                            .then((data) => {
+                                ongoingEvents = data.data;
+
+                                const event = ongoingEvents.find(
+                                    (item) => item.fest_id == event_id
+                                );
+                                setUserDetails(event.user_id, event.external_user_id);
+                                alert("User added successfully!");
+                                displayAdminMainpage();
+
+                            })
+                            .catch((err) => {
+                                console.log(err);
+                            });
                     }
-                    return res.json();
                 })
-                .then((data) => {
-                    alert("User added successfully!");
-                    displayAdminMainpage();
-                })
+
                 .catch((err) => {
                     console.log(err);
                 });
 
-        } else if (username.length == 0) {
+        } else if (exUsername.length == 0) {
             alert("Please fill name!");
         } else {
             alert("Please fill atleast one of email and phone number!");
@@ -83,13 +100,14 @@ fetch(`${apiURL}/fest/ongoingevents`, {
     .then((res) => res.json())
     .then((data) => {
         ongoingEvents = data.data;
-
+        event_id = ongoingEvents[0].fest_id;
         setOngoingEvents(ongoingEvents);
         setEventDetails(ongoingEvents[0]);
         setUserDetails(ongoingEvents[0].user_id, ongoingEvents[0].external_user_id);
 
         for (let eventInstance of eventListArray) {
             eventInstance.addEventListener("click", () => {
+                event_id = eventInstance.id;
                 checkAndCloseContainer(internalUserContainer);
                 checkAndCloseContainer(externalUserContainer);
                 const event = ongoingEvents.find(
