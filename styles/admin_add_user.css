@@ -11,7 +11,7 @@ body {
 #zestxlogoadminpage {
   position: absolute;
   top: 0;
-  left: 90%;
+  left: 91%;
   width: 6rem;
   height: 6rem;
 }
@@ -37,7 +37,6 @@ body {
   height: 75vh;
   padding-left: 5rem;
   padding-top: 5rem;
-  border-right: 1px solid #ffffff;
   display: flex;
   flex-direction: column;
 }
@@ -90,7 +89,6 @@ input:focus {
   font-size: 1.4375rem;
   text-transform: uppercase;
   margin-top: 3%;
-  padding: 1%;
   color: #ffffff;
   cursor: pointer;
 }
