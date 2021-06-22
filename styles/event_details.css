@@ -107,6 +107,9 @@
 #EventDetailsLeftContainer h3 {
   margin-bottom: 0.8rem;
 }
+#EventRulesContent , #EventPrizesContent{
+  white-space: pre-line;
+}
 #EventRegister {
   height: 10%;
   width: 14.53rem;
