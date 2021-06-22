@@ -1,0 +1,100 @@
+@media only screen and (max-width: 1330px) {
+  .UserLeftContainer {
+    padding-left: 2rem;
+  }
+  #UserContainer {
+    grid-template-columns: 40% 60%;
+  }
+  /* .UserDetailsInput{
+    font-size: 1.2rem;
+  } */
+  .UserDetailsInput::placeholder {
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (max-width: 1225px) {
+  .OngoingEvents h2,
+  .Pastevents h2 {
+    font-size: 1.2rem;
+  }
+  #EditButton {
+    font-size: 1.2rem;
+  }
+  #LogoutButton img {
+    width: 66%;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .OngoingEvents h2,
+  .Pastevents h2 {
+    height: 10%;
+  }
+  .EventList h2 {
+    height: auto;
+  }
+  #BackUserButton a {
+    font-size: 1.5rem;
+  }
+  #BackUserButton a {
+    width: 5%;
+  }
+  #UserContainer {
+    grid-template-columns: 100%;
+    grid-template-rows: 70vh 110vh;
+  }
+  #MainUserContainer{
+    height: 200vh;
+  }
+  .UserLeftContainer {
+    padding-top: 0;
+    height: 70vh;
+    padding-left: 3rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .UserDetailsInput{
+    font-size: 1.2rem;
+  }
+  .UserDetailsInput::placeholder {
+    font-size: 1.2rem;
+  }
+  #EditButton {
+    width: 8rem;
+    height: 3rem;
+  }
+  #LogoutButton {
+    width: 10rem;
+    height: 3rem;
+  }
+  #LogoutButton img{
+    width: 80%;
+  }
+  .UserLeftContainer {
+    padding-left: 2rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .UserDetailsInput{
+    font-size: 1rem;
+    padding-bottom: 0.4rem;
+  }
+  .UserDetailsInput::placeholder {
+    font-size: 1rem;
+  }
+  .OngoingEvents h2,
+  .Pastevents h2 {
+    font-size: 1rem;
+  }
+  #EditButton {
+    width: 7rem;
+    height: 2.5rem;
+  }
+  #LogoutButton {
+    width: 9rem;
+    height: 2.5rem;
+  }
+  #zestxlogo {
+    width: 4rem;
+    height: 4rem;
+  }
+}
