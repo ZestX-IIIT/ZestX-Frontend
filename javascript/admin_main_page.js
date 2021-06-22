@@ -13,12 +13,20 @@ let preloader = document.getElementById("admin_preloader_container");
 let adminAddUserPage = document.getElementById("admin_add_user_page_container");
 let internalUserContainer = document.getElementById("internal_user_list");
 let externalUserContainer = document.getElementById("external_user_list");
-let addUserBtn = document.getElementById("secondh2");
+let addUserBtnFromMainPage = document.getElementById("secondh2");
 
+let backBtnFromAddUserPage;
 let ongoingEvents;
 let isFirstTime = true;
 
-addUserBtn.addEventListener("click", () => {
+setTimeout(function () {
+    backBtnFromAddUserPage = document.getElementById("back_btn_from_add_user_page");
+    backBtnFromAddUserPage.addEventListener("click", () => {
+        displayAdminMainpage();
+    })
+}, 100);
+
+addUserBtnFromMainPage.addEventListener("click", () => {
     displayAdminAddUserPage();
 })
 
