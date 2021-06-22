@@ -119,6 +119,7 @@ form {
   flex-direction: column;
   width: 80%;
   margin: auto;
+  align-items: center;
   margin-bottom: 30px;
 }
 input {
