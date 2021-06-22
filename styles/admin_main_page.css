@@ -5,6 +5,7 @@
 }
 body {
   position: relative;
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
 }
 
 #zestxlogoadminpage {
@@ -23,7 +24,6 @@ body {
   height: 100vh;
   grid-template-columns: 5fr 10fr 4fr;
   grid-template-rows: 1fr;
-  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
 }
 .main_admin_container h2 {
   height: 10%;
@@ -112,8 +112,10 @@ body {
   display: flex;
   justify-content: space-between;
   width: 22%;
+  cursor: pointer;
 }
-.internal_users , .outer_users{
+.internal_users,
+.outer_users {
   height: 47.5%;
   display: flex;
   flex-direction: column;
@@ -125,7 +127,8 @@ body {
 .outer_users::-webkit-scrollbar {
   display: none;
 }
-.internal_users h3, .outer_users h3{
+.internal_users h3,
+.outer_users h3 {
   display: flex;
   align-items: center;
   padding-left: 1rem;
@@ -136,18 +139,47 @@ body {
   text-transform: uppercase;
   color: #cdcee6;
 }
-.internal_list .inner_list h3{
+.internal_list .inner_list h3 {
   padding-left: 0;
 }
-.internal_list .inner_list{
+.internal_list .inner_list {
   border: 0px;
   border-top: 1px solid #f8e6ff;
   display: flex;
   justify-content: space-between;
 }
-#internal_users_h3{
+
+.display_to_none {
+  animation: to_opacity_none 0.5s ease-in-out 1;
+  display: none;
+}
+
+@keyframes to_opacity_none {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.display_to_block {
+  display: block;
+  animation: to_display_block 0.5s ease-in-out 1;
+}
+
+@keyframes to_display_block {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#internal_users_h3 {
   padding: 1rem;
 }
-#userListContainer{
+#userListContainer {
   justify-content: space-between;
 }
