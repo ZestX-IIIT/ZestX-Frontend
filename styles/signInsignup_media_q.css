@@ -1,27 +1,27 @@
 @media screen and (min-width: 600px) and (max-width: 768px) {
   .background {
     width: 60%;
-    left: 20%;
+    left: 17.8%;
   }
   .background2 {
     width: 60%;
-    left: 20%;
+    left: 17.8%;
   }
   .background3 {
     width: 60%;
-    left: 20%;
+    left: 17.8%;
   }
   .background4 {
     width: 60%;
-    left: 20%;
+    left: 17.8%;
   }
   .form-container {
-    left: 20%;
+    left: 17.8%;
     width: 60%;
     padding: 20px 0;
   }
   .form-container2 {
-    left: 20%;
+    left: 17.8%;
     width: 60%;
     padding: 20px 0;
   }
@@ -80,7 +80,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 426px) and (max-width: 500px) {
   .background {
     width: 80%;
     left: 10%;
