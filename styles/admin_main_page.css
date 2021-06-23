@@ -53,7 +53,10 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-#delete_button{
+.internal_user_delete_button{
+  cursor: pointer;
+}
+.external_user_delete_button{
   cursor: pointer;
 }
 .primary_event_list_admin_page{

@@ -23,9 +23,8 @@ let exEmail;
 let exMobile;
 let event_id;
 let ongoingEvents;
-let internalUserData = [];
-let externalUserData = [];
 let isFirstTime = true;
+
 
 let setup = async () => {
 
@@ -43,7 +42,9 @@ let setup = async () => {
             setEventDetails(ongoingEvents[0]);
             setUserDetails(ongoingEvents[0].user_id, ongoingEvents[0].external_user_id);
             for (let eventInstance of eventListArray) {
+
                 eventInstance.addEventListener("click", () => {
+                    event_id = eventInstance.id;
                     eventInstance.classList.add("active_event");
                     checkAndCloseContainer(internalUserContainer);
                     checkAndCloseContainer(externalUserContainer);
@@ -116,7 +117,6 @@ let setup = async () => {
 }
 
 setup();
-
 // setTimeout(function () {
 // }, 100);
 
@@ -191,14 +191,14 @@ let setUserDetails = async (array1, array2) => {
             } else {
 
                 const data1 = await res1.json();
-                setInternalUserDetails(data1.data);
+                setInternalUserDetails(data1.data, array1);
                 checkAndDisplayContainer(internalUserContainer);
             }
         } else {
             internalUserContainer.innerHTML = "";
             checkAndDisplayContainer(internalUserContainer);
         }
-        if (array2 != null) {
+        if (array2 != null && array2.length != 0) {
             const res2 = await fetch(`${apiURL}/user/exuserdetails`, {
                 method: "POST",
                 headers: {
@@ -214,8 +214,8 @@ let setUserDetails = async (array1, array2) => {
             } else {
 
                 const data2 = await res2.json();
+                setExternalUserDetails(data2.data, array2);
 
-                setExternalUserDetails(data2.data);
                 if (isFirstTime) {
                     setTimeout(function () {
                         displayAdminMainpage();
@@ -243,31 +243,59 @@ let setUserDetails = async (array1, array2) => {
     }
 }
 
-function setInternalUserDetails(data) {
+function setInternalUserDetails(data, array1) {
     internalUserContainer.innerHTML = "";
 
-    data.forEach((item) => {
+    for (let item of data) {
         const { user_name, email, mobile } = item;
 
         const user = document.createElement("div");
         user.classList.add("inner_list_content");
 
         const insideHtml = `<div class="inner_list">
-    <div class="inner_list_content">
+    <div class="inner_list_content internal_user_list_element">
         <h3 class="innerList_h3" id="user_name">${user_name}</h3>
         <h4 class="innerList_h4" id="user_details">${email} || ${mobile}</h4>
     </div>
-    <img id="delete_button" src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
+    <img class="internal_user_delete_button" src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
 </div>
     `;
 
         user.innerHTML = insideHtml;
 
         internalUserContainer.appendChild(user);
-    });
+    };
+
+    let internalUserDeleteBtnList = document.getElementsByClassName("internal_user_delete_button");
+    let internalUserDeleteBtnListLength = internalUserDeleteBtnList.length;
+
+    for (let i = 0; i < internalUserDeleteBtnListLength; i++) {
+        internalUserDeleteBtnList[i].addEventListener("click", async () => {
+            displayPreloder();
+            const res = await fetch(`${apiURL}/fest/removeuser`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    authorization: token,
+                },
+                body: JSON.stringify({ eventId: event_id, userId: array1[i] }),
+            });
+            if (res.status == 400) {
+                alert("You have not access to admin panel!");
+                displayAdminMainpage();
+            } else if (res.status == 500) {
+                alert("Internal server error please re-try!");
+                displayAdminMainpage();
+            } else {
+                alert("User removed successfully!");
+                displayAdminMainpage();
+            }
+        });
+    }
+
 }
 
-function setExternalUserDetails(data) {
+function setExternalUserDetails(data, array2) {
     externalUserContainer.innerHTML = "";
 
     data.forEach((item) => {
@@ -279,11 +307,11 @@ function setExternalUserDetails(data) {
 
         if (email && mobile) {
             insideHtml = `<div class="inner_list">
-        <div class="inner_list_content">
+        <div class="inner_list_content external_user_list_element">
             <h3 class="innerList_h3" id="user_name">${username}</h3>
             <h4 class="innerList_h4" id="user_details">${email} || ${mobile}</h4>
         </div>
-        <img id="delete_button" src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
+        <img class="external_user_delete_button" src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
     </div>
         `;
         } else {
@@ -292,7 +320,7 @@ function setExternalUserDetails(data) {
             <h3 class="innerList_h3" id="user_name">${username}</h3>
             <h4 class="innerList_h4" id="user_details">${email} ${mobile}</h4>
         </div>
-        <img src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
+        <img class="external_user_delete_button" src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
     </div>
         `;
         }
@@ -301,6 +329,33 @@ function setExternalUserDetails(data) {
 
         externalUserContainer.appendChild(user);
     });
+
+    let externalUserDeleteBtnList = document.getElementsByClassName("external_user_delete_button");
+    let externalUserDeleteBtnListLength = externalUserDeleteBtnList.length;
+
+    for (let i = 0; i < externalUserDeleteBtnListLength; i++) {
+        externalUserDeleteBtnList[i].addEventListener("click", async () => {
+            displayPreloder();
+            const res = await fetch(`${apiURL}/fest/removeexuser`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    authorization: token,
+                },
+                body: JSON.stringify({ eventId: event_id, userId: array2[i] }),
+            });
+            if (res.status == 400) {
+                alert("You have not access to admin panel!");
+                displayAdminMainpage();
+            } else if (res.status == 500) {
+                alert("Internal server error please re-try!");
+                displayAdminMainpage();
+            } else {
+                alert("User removed successfully!");
+                displayAdminMainpage();
+            }
+        });
+    }
 }
 
 function displayAdminMainpage() {
