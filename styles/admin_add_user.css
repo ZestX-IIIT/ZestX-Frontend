@@ -88,8 +88,21 @@ input:focus {
   font-weight: 500;
   font-size: 1.4375rem;
   text-transform: uppercase;
-  margin-top: 3%;
   color: #ffffff;
+  cursor: pointer;
+}
+
+.buttons_container{
+  margin-top: 6%;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#logout_button{
+  height: auto;
+  width: 10vw;
   cursor: pointer;
 }
 

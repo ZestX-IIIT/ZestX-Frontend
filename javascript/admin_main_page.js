@@ -14,6 +14,7 @@ let adminAddUserPage = document.getElementById("admin_add_user_page_container");
 let internalUserContainer = document.getElementById("internal_user_list");
 let externalUserContainer = document.getElementById("external_user_list");
 let addUserBtnFromMainPage = document.getElementById("secondh2");
+let logoutBtn;
 
 let backBtnFromAddUserPage;
 let addUserBtnFromAddUserPage;
@@ -117,12 +118,22 @@ let setup = async () => {
 }
 
 setup();
-// setTimeout(function () {
-// }, 100);
 
 addUserBtnFromMainPage.addEventListener("click", () => {
     displayAdminAddUserPage();
-})
+});
+
+
+setTimeout(function () {
+
+    logoutBtn = document.getElementById("logout_button");
+
+    logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("jwt");
+        location.href = "/";
+    });
+
+}, 100);
 
 
 function setOngoingEvents(array) {
