@@ -18,109 +18,112 @@ let addUserBtnFromMainPage = document.getElementById("secondh2");
 let backBtnFromAddUserPage;
 let addUserBtnFromAddUserPage;
 let exUsername;
+let deleteBtn;
 let exEmail;
 let exMobile;
 let event_id;
 let ongoingEvents;
+let internalUserData = [];
+let externalUserData = [];
 let isFirstTime = true;
 
-setTimeout(function () {
+let setup = async () => {
 
-    backBtnFromAddUserPage = document.getElementById("back_btn_from_add_user_page");
-    addUserBtnFromAddUserPage = document.getElementById("Add_user_button");
-
-    addUserBtnFromAddUserPage.addEventListener("click", () => {
-        exUsername = document.getElementById("name").value;
-        exEmail = document.getElementById("email").value;
-        exMobile = document.getElementById("phone_number").value;
-
-        if (exUsername && (exEmail || exMobile)) {
-            displayPreloder();
-            fetch(`${apiURL}/fest/adduser`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    authorization: token,
-                },
-                body: JSON.stringify({ event_id, username: exUsername, email: exEmail, mobile: exMobile }),
-            })
-                .then(function (res) {
-                    if (res.status == 400) {
-                        alert("You have not access to admin panel!");
-                        displayAdminAddUserPage();
-                    } else if (res.status == 500) {
-                        alert("Internal server error please re-try!");
-                        displayAdminAddUserPage();
-                    } else {
-                        fetch(`${apiURL}/fest/ongoingevents`, {
-                            method: "GET",
-                        })
-                            .then((res1) => res1.json())
-                            .then((data) => {
-                                ongoingEvents = data.data;
-
-                                const event = ongoingEvents.find(
-                                    (item) => item.fest_id == event_id
-                                );
-                                setUserDetails(event.user_id, event.external_user_id);
-                                alert("User added successfully!");
-                                displayAdminMainpage();
-
-                            })
-                            .catch((err) => {
-                                console.log(err);
-                            });
-                    }
-                })
-
-                .catch((err) => {
-                    console.log(err);
-                });
-
-        } else if (exUsername.length == 0) {
-            alert("Please fill name!");
+    try {
+        const res1 = await fetch(`${apiURL}/fest/ongoingevents`, {
+            method: "GET",
+        });
+        if (res1.status == 500) {
+            alert("Internal server error please re-try!");
         } else {
-            alert("Please fill atleast one of email and phone number!");
+            const data1 = await res1.json();
+            ongoingEvents = data1.data;
+            event_id = ongoingEvents[0].fest_id;
+            setOngoingEvents(ongoingEvents);
+            setEventDetails(ongoingEvents[0]);
+            setUserDetails(ongoingEvents[0].user_id, ongoingEvents[0].external_user_id);
+            for (let eventInstance of eventListArray) {
+                eventInstance.addEventListener("click", () => {
+                    eventInstance.classList.add("active_event");
+                    checkAndCloseContainer(internalUserContainer);
+                    checkAndCloseContainer(externalUserContainer);
+                    const event = ongoingEvents.find(
+                        (item) => item.fest_id == eventInstance.id
+                    );
+                    setEventDetails(event);
+                    setUserDetails(event.user_id, event.external_user_id);
+                });
+            }
         }
-    })
 
-    backBtnFromAddUserPage.addEventListener("click", () => {
-        displayAdminMainpage();
-    })
+        backBtnFromAddUserPage = document.getElementById("back_btn_from_add_user_page");
+        addUserBtnFromAddUserPage = document.getElementById("Add_user_button");
 
-}, 100);
+        addUserBtnFromAddUserPage.addEventListener("click", async () => {
+            exUsername = document.getElementById("name").value;
+            exEmail = document.getElementById("email").value;
+            exMobile = document.getElementById("phone_number").value;
+
+            if (exUsername && (exEmail || exMobile)) {
+                displayPreloder();
+                const res2 = await fetch(`${apiURL}/fest/adduser`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        authorization: token,
+                    },
+                    body: JSON.stringify({ event_id, username: exUsername, email: exEmail, mobile: exMobile }),
+                });
+                if (res2.status == 400) {
+                    alert("You have not access to admin panel!");
+                    displayAdminAddUserPage();
+                } else if (res2.status == 500) {
+                    alert("Internal server error please re-try!");
+                    displayAdminAddUserPage();
+                } else {
+                    const res3 = await fetch(`${apiURL}/fest/ongoingevents`, {
+                        method: "GET",
+                    })
+                    if (res3.status == 500) {
+                        alert("Internal server error please re-try!");
+                    } else {
+                        const data2 = await res1.json();
+                        ongoingEvents = data2.data;
+
+                        const event = ongoingEvents.find(
+                            (item) => item.fest_id == event_id
+                        );
+                        setUserDetails(event.user_id, event.external_user_id);
+                        alert("User added successfully!");
+                        displayAdminMainpage();
+                    }
+                }
+            } else if (exUsername.length == 0) {
+                alert("Please fill name!");
+            } else {
+                alert("Please fill atleast one of email and phone number!");
+            }
+        })
+
+        backBtnFromAddUserPage.addEventListener("click", () => {
+            displayAdminMainpage();
+        })
+
+    } catch (err) {
+        alert("error occured re-try!");
+        console.log(err);
+    }
+}
+
+setup();
+
+// setTimeout(function () {
+// }, 100);
 
 addUserBtnFromMainPage.addEventListener("click", () => {
     displayAdminAddUserPage();
 })
 
-fetch(`${apiURL}/fest/ongoingevents`, {
-    method: "GET",
-})
-    .then((res) => res.json())
-    .then((data) => {
-        ongoingEvents = data.data;
-        event_id = ongoingEvents[0].fest_id;
-        setOngoingEvents(ongoingEvents);
-        setEventDetails(ongoingEvents[0]);
-        setUserDetails(ongoingEvents[0].user_id, ongoingEvents[0].external_user_id);
-
-        for (let eventInstance of eventListArray) {
-            eventInstance.addEventListener("click", () => {
-                event_id = eventInstance.id;
-                checkAndCloseContainer(internalUserContainer);
-                checkAndCloseContainer(externalUserContainer);
-                const event = ongoingEvents.find(
-                    (item) => item.fest_id == eventInstance.id
-                );
-                setEventDetails(event);
-                setUserDetails(event.user_id, event.external_user_id);
-            });
-        }
-    })
-    .catch((err) => {
-        console.log(err);
-    });
 
 function setOngoingEvents(array) {
     ongoingEventContainer.innerHTML = "";
@@ -162,60 +165,57 @@ function setEventDetails(data) {
     let rules = document.getElementById("RulesContentinnerList");
     let description = document.getElementById("DescriptionContentinnerList");
     let prizes = document.getElementById("PrizesContentinnerList");
+    let venue = document.getElementById("VenueContentinnerList");
 
     rules.innerHTML = `${data.rules}`;
     description.innerHTML = `${data.description}`;
     prizes.innerHTML = `${data.prize}`;
+    venue.innerHTML = `${data.venue}`;
 }
 
-function setUserDetails(array1, array2) {
-    if (array1.length != 0) {
-        fetch(`${apiURL}/user/userdetails`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                authorization: token,
-            },
-            body: JSON.stringify({ ids: array1.toString() }),
-        })
-            .then(function (res) {
-                if (res.status == 400) {
-                    alert("You have not access to admin panel!");
-                } else if (res.status == 500) {
-                    alert("Internal server error please re-try!");
-                }
-                return res.json();
-            })
-            .then((data) => {
-                setInternalUserDetails(data.data);
-                checkAndDisplayContainer(internalUserContainer);
-            })
-            .catch((err) => {
-                console.log(err);
+let setUserDetails = async (array1, array2) => {
+    try {
+        if (array1.length != 0) {
+            const res1 = await fetch(`${apiURL}/user/userdetails`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    authorization: token,
+                },
+                body: JSON.stringify({ ids: array1.toString() }),
             });
-    } else {
-        internalUserContainer.innerHTML = "";
-        checkAndDisplayContainer(internalUserContainer);
-    }
-    if (array2 != null) {
-        fetch(`${apiURL}/user/exuserdetails`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                authorization: token,
-            },
-            body: JSON.stringify({ ids: array2.toString() }),
-        })
-            .then(function (res) {
-                if (res.status == 400) {
-                    alert("You have not access to admin panel!");
-                } else if (res.status == 500) {
-                    alert("Internal server error please re-try!");
-                }
-                return res.json();
-            })
-            .then((data) => {
-                setExternalUserDetails(data.data);
+            if (res1.status == 400) {
+                alert("You have not access to admin panel!");
+            } else if (res1.status == 500) {
+                alert("Internal server error please re-try!");
+            } else {
+
+                const data1 = await res1.json();
+                setInternalUserDetails(data1.data);
+                checkAndDisplayContainer(internalUserContainer);
+            }
+        } else {
+            internalUserContainer.innerHTML = "";
+            checkAndDisplayContainer(internalUserContainer);
+        }
+        if (array2 != null) {
+            const res2 = await fetch(`${apiURL}/user/exuserdetails`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    authorization: token,
+                },
+                body: JSON.stringify({ ids: array2.toString() }),
+            });
+            if (res2.status == 400) {
+                alert("You have not access to admin panel!");
+            } else if (res2.status == 500) {
+                alert("Internal server error please re-try!");
+            } else {
+
+                const data2 = await res2.json();
+
+                setExternalUserDetails(data2.data);
                 if (isFirstTime) {
                     setTimeout(function () {
                         displayAdminMainpage();
@@ -224,21 +224,22 @@ function setUserDetails(array1, array2) {
                 } else {
                     checkAndDisplayContainer(externalUserContainer);
                 }
+            }
 
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    } else {
-        externalUserContainer.innerHTML = "";
-        if (isFirstTime) {
-            setTimeout(function () {
-                displayAdminMainpage();
-            }, 100);
-            isFirstTime = false;
         } else {
-            checkAndDisplayContainer(externalUserContainer);
+            externalUserContainer.innerHTML = "";
+            if (isFirstTime) {
+                setTimeout(function () {
+                    displayAdminMainpage();
+                }, 100);
+                isFirstTime = false;
+            } else {
+                checkAndDisplayContainer(externalUserContainer);
+            }
         }
+    } catch (err) {
+        alert("error occured re-try!");
+        console.log(err);
     }
 }
 
@@ -256,7 +257,7 @@ function setInternalUserDetails(data) {
         <h3 class="innerList_h3" id="user_name">${user_name}</h3>
         <h4 class="innerList_h4" id="user_details">${email} || ${mobile}</h4>
     </div>
-    <img src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
+    <img id="delete_button" src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
 </div>
     `;
 
@@ -282,7 +283,7 @@ function setExternalUserDetails(data) {
             <h3 class="innerList_h3" id="user_name">${username}</h3>
             <h4 class="innerList_h4" id="user_details">${email} || ${mobile}</h4>
         </div>
-        <img src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
+        <img id="delete_button" src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
     </div>
         `;
         } else {

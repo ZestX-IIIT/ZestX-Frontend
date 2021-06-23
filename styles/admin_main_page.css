@@ -80,6 +80,7 @@ body {
 }
 .InnerListContent {
   font-family: "Now";
+  white-space:pre-wrap;
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
@@ -88,17 +89,23 @@ body {
 }
 .right_h3 {
   font-size: 1.2rem !important;
-  margin-bottom: 0.8rem;
-  padding-top: 0.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+#eventDescriptioninnerList{
+  margin-top: 0;
 }
 .outer_left {
   height: 93vh;
+  width: 22vw;
 }
 .outer_middle {
   height: 93vh;
+  width: 38vw;
 }
 .outer_right {
   height: 93vh;
+  width: 30vw;
 }
 .outer_right .inner_list {
   border: 0;
@@ -116,7 +123,7 @@ body {
 #secondh2 {
   display: flex;
   justify-content: space-between;
-  width: 22%;
+  width: 26%;
   cursor: pointer;
 }
 .internal_users,
@@ -131,6 +138,11 @@ body {
 .internal_users::-webkit-scrollbar,
 .outer_users::-webkit-scrollbar {
   display: none;
+}
+
+.active_event{
+  font-size: 2.2rem;
+  color: #f592eb;
 }
 .internal_users h3,
 .outer_users h3 {
