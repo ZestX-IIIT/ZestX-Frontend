@@ -27,7 +27,7 @@ let ongoingEvents;
 let isFirstTime = true;
 
 
-let setup = async () => {
+async function setup() {
 
     try {
         const res1 = await fetch(`${apiURL}/fest/ongoingevents`, {
@@ -41,7 +41,8 @@ let setup = async () => {
             event_id = ongoingEvents[0].fest_id;
             setOngoingEvents(ongoingEvents);
             setEventDetails(ongoingEvents[0]);
-            setUserDetails(ongoingEvents[0].user_id, ongoingEvents[0].external_user_id);
+            getInternalUserDetails(ongoingEvents[0].user_id);
+            getExternalUserDetails(ongoingEvents[0].external_user_id);
             for (let eventInstance of eventListArray) {
 
                 eventInstance.addEventListener("click", () => {
@@ -53,7 +54,8 @@ let setup = async () => {
                         (item) => item.fest_id == eventInstance.id
                     );
                     setEventDetails(event);
-                    setUserDetails(event.user_id, event.external_user_id);
+                    getInternalUserDetails(event.user_id);
+                    getExternalUserDetails(event.external_user_id);
                 });
             }
         }
@@ -89,13 +91,14 @@ let setup = async () => {
                     if (res3.status == 500) {
                         alert("Internal server error please re-try!");
                     } else {
-                        const data2 = await res1.json();
+                        const data2 = await res3.json();
                         ongoingEvents = data2.data;
 
                         const event = ongoingEvents.find(
                             (item) => item.fest_id == event_id
                         );
-                        setUserDetails(event.user_id, event.external_user_id);
+                        getInternalUserDetails(event.user_id);
+                        getExternalUserDetails(event.external_user_id);
                         alert("User added successfully!");
                         displayAdminMainpage();
                     }
@@ -184,7 +187,7 @@ function setEventDetails(data) {
     venue.innerHTML = `${data.venue}`;
 }
 
-let setUserDetails = async (array1, array2) => {
+async function getInternalUserDetails(array1) {
     try {
         if (array1.length != 0) {
             const res1 = await fetch(`${apiURL}/user/userdetails`, {
@@ -209,6 +212,13 @@ let setUserDetails = async (array1, array2) => {
             internalUserContainer.innerHTML = "";
             checkAndDisplayContainer(internalUserContainer);
         }
+    } catch (err) {
+        alert("error occured re-try!");
+        console.log(err);
+    }
+}
+async function getExternalUserDetails(array2) {
+    try {
         if (array2 != null && array2.length != 0) {
             const res2 = await fetch(`${apiURL}/user/exuserdetails`, {
                 method: "POST",
@@ -283,23 +293,32 @@ function setInternalUserDetails(data, array1) {
     for (let i = 0; i < internalUserDeleteBtnListLength; i++) {
         internalUserDeleteBtnList[i].addEventListener("click", async () => {
             displayPreloder();
-            const res = await fetch(`${apiURL}/fest/removeuser`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    authorization: token,
-                },
-                body: JSON.stringify({ eventId: event_id, userId: array1[i] }),
-            });
-            if (res.status == 400) {
-                alert("You have not access to admin panel!");
-                displayAdminMainpage();
-            } else if (res.status == 500) {
-                alert("Internal server error please re-try!");
-                displayAdminMainpage();
-            } else {
-                alert("User removed successfully!");
-                displayAdminMainpage();
+            try {
+                const res = await fetch(`${apiURL}/fest/removeuser`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        authorization: token,
+                    },
+                    body: JSON.stringify({ eventId: event_id, userId: array1[i] }),
+                });
+                if (res.status == 400) {
+                    alert("You have not access to admin panel!");
+                    displayAdminMainpage();
+                } else if (res.status == 500) {
+                    alert("Internal server error please re-try!");
+                    displayAdminMainpage();
+                } else {
+                    if (i > -1) {
+                        array1.splice(i, 1);
+                    }
+                    getInternalUserDetails(array1);
+                    alert("User removed successfully!");
+                    displayAdminMainpage();
+                }
+            } catch (err) {
+                alert("error occured re-try!");
+                console.log(err);
             }
         });
     }
@@ -347,23 +366,32 @@ function setExternalUserDetails(data, array2) {
     for (let i = 0; i < externalUserDeleteBtnListLength; i++) {
         externalUserDeleteBtnList[i].addEventListener("click", async () => {
             displayPreloder();
-            const res = await fetch(`${apiURL}/fest/removeexuser`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    authorization: token,
-                },
-                body: JSON.stringify({ eventId: event_id, userId: array2[i] }),
-            });
-            if (res.status == 400) {
-                alert("You have not access to admin panel!");
-                displayAdminMainpage();
-            } else if (res.status == 500) {
-                alert("Internal server error please re-try!");
-                displayAdminMainpage();
-            } else {
-                alert("User removed successfully!");
-                displayAdminMainpage();
+            try {
+                const res = await fetch(`${apiURL}/fest/removeexuser`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        authorization: token,
+                    },
+                    body: JSON.stringify({ eventId: event_id, userId: array2[i] }),
+                });
+                if (res.status == 400) {
+                    alert("You have not access to admin panel!");
+                    displayAdminMainpage();
+                } else if (res.status == 500) {
+                    alert("Internal server error please re-try!");
+                    displayAdminMainpage();
+                } else {
+                    if (i > -1) {
+                        array2.splice(i, 1);
+                    }
+                    getExternalUserDetails(array2)
+                    alert("User removed successfully!");
+                    displayAdminMainpage();
+                }
+            } catch (err) {
+                alert("error occured re-try!");
+                console.log(err);
             }
         });
     }
