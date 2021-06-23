@@ -49,10 +49,15 @@ body {
   height: auto;
   padding: 1rem;
   border-bottom: 1px solid #f8e6ff;
-  cursor: pointer;
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+#delete_button{
+  cursor: pointer;
+}
+.primary_event_list_admin_page{
+  cursor: pointer;
 }
 .inner_list::-webkit-scrollbar {
   display: none;
