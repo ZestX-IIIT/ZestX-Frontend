@@ -57,33 +57,33 @@ let profileBtn = document.getElementById("profile_button");
 let ongoingEventContainer;
 let pastEventContainer;
 
-fetch(`${apiURL}/fest/getlist`, {
-  method: "GET",
-})
-  .then((res) => res.json())
-  .then((data) => {
-    festData = data.data;
-  })
-  .catch((err) => {
-    console.log(err);
-    preloader.style.display = "none";
-  });
+setup();
 
-fetch(`${apiURL}/user/getdetails`, {
-  method: "GET",
-  headers: {
-    authorization: token,
-  },
-})
-  .then((res) => res.json())
-  .then((data) => {
-    userData = data.data;
+async function setup() {
+  try {
+    const res1 = await fetch(`${apiURL}/fest/getlist`, {
+      method: "GET",
+    });
+
+    const data1 = await res1.json();
+    festData = data1.data;
+
+    const res2 = await fetch(`${apiURL}/user/getdetails`, {
+      method: "GET",
+      headers: {
+        authorization: token,
+      },
+    });
+
+    const data2 = await res2.json();
+    userData = data2.data;
     profileBtn.innerHTML = `${userData.user_name[0]}`;
-  })
-  .catch((err) => {
+
+  } catch (err) {
+    alert("error occured re-try!");
     console.log(err);
-    preloader.style.display = "none";
-  });
+  }
+}
 
 window.addEventListener("load", () => {
 
@@ -114,175 +114,165 @@ window.addEventListener("load", () => {
     slider_event_list = document.getElementsByClassName("slide");
     event_poster_list = document.getElementsByClassName("event_poster_image");
 
-    registerBtn.addEventListener("click", () => {
-      displayPreloder();
+    try {
+      registerBtn.addEventListener("click", async () => {
+        displayPreloder();
 
-      if (!isRegister(eventId)) {
-        fetch(`${apiURL}/fest/register`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            authorization: token,
-          },
-          body: JSON.stringify({ id: eventId }),
-        })
-          .then(function (res) {
-            if (res.status == 400) {
-              displayEvenetspage();
-              alert("Please verify your email!");
-            } else if (res.status == 500) {
-              displayEvenetspage();
-              alert("Please re-try...");
-            } else {
-              displayEvenetspage();
-              alert("User registered successfully!");
-              let userarray = festData.find(
-                (event) => event.fest_id == eventId
-              ).user_id;
-              userarray[userarray.length] = userData.user_id;
-              userData.fest_id[userData.fest_id.length] = `${eventId}`;
-              registerBtn.innerHTML = `Unregister`;
-              registerBtn.style.animation = "none";
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-            preloader.style.display = "none";
-          });
-      } else {
-        fetch(`${apiURL}/fest/unregister`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            authorization: token,
-          },
-          body: JSON.stringify({ id: eventId }),
-        })
-          .then(function (res) {
-            if (res.status == 400) {
-              displayEvenetspage();
-              alert("Please verify your email!");
-            } else if (res.status == 500) {
-              displayEvenetspage();
-              alert("Please re-try...");
-            } else {
-              displayEvenetspage();
-              let userarray = festData.find(
-                (event) => event.fest_id == eventId
-              ).user_id;
-              const userIndex = userarray.indexOf(userData.user_id);
-              const eventIndex = userData.fest_id.indexOf(`${eventId}`);
-              if (userIndex > -1) {
-                userarray.splice(userIndex, 1);
-              }
-              if (eventIndex > -1) {
-                userData.fest_id.splice(eventIndex, 1);
-              }
-              alert("User unregistered successfully!");
-              setRegisterBtnText(eventId);
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-            preloader.style.display = "none";
-          });
-      }
-    });
 
-    for (let i = 0; i < 5; i++) {
-      event_poster_list[i].addEventListener("click", () => {
-        if (slider_event_list[i].checked == true) {
-          eventId = event_ids[i];
-          setEventDetails(event_ids[i]);
-          displayEvenetspage();
+        if (!isRegister(eventId)) {
+          const res3 = await fetch(`${apiURL}/fest/register`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              authorization: token,
+            },
+            body: JSON.stringify({ id: eventId }),
+          });
+          if (res3.status == 400) {
+            displayEvenetspage();
+            alert("Please verify your email!");
+          } else if (res3.status == 500) {
+            displayEvenetspage();
+            alert("Please re-try...");
+          } else {
+            displayEvenetspage();
+            alert("User registered successfully!");
+            let userarray = festData.find(
+              (event) => event.fest_id == eventId
+            ).user_id;
+            userarray[userarray.length] = userData.user_id;
+            userData.fest_id[userData.fest_id.length] = `${eventId}`;
+            registerBtn.innerHTML = `Unregister`;
+            registerBtn.style.animation = "none";
+          }
+
+        } else {
+          const res4 = await fetch(`${apiURL}/fest/unregister`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              authorization: token,
+            },
+            body: JSON.stringify({ id: eventId }),
+          });
+          if (res4.status == 400) {
+            displayEvenetspage();
+            alert("Please verify your email!");
+          } else if (res4.status == 500) {
+            displayEvenetspage();
+            alert("Please re-try...");
+          } else {
+            displayEvenetspage();
+            let userarray = festData.find(
+              (event) => event.fest_id == eventId
+            ).user_id;
+            const userIndex = userarray.indexOf(userData.user_id);
+            const eventIndex = userData.fest_id.indexOf(`${eventId}`);
+            if (userIndex > -1) {
+              userarray.splice(userIndex, 1);
+            }
+            if (eventIndex > -1) {
+              userData.fest_id.splice(eventIndex, 1);
+            }
+            alert("User unregistered successfully!");
+            setRegisterBtnText(eventId);
+          }
         }
       });
-    }
 
-    backBtnFromEventsPage.addEventListener("click", () => {
-      displayMainContainer();
-    });
-
-    backBtnFromProfilePage.addEventListener("click", () => {
-      displayMainContainer();
-      profileBtn.innerHTML = `${userData.user_name[0]}`;
-    });
-
-    backBtnFromEditProfilePage.addEventListener("click", () => {
-      displayProfilepage();
-    });
-
-    editBtn.addEventListener("click", () => {
-      displayEditProfilepage();
-      setUserDetailsInEditPage(userData);
-    });
-
-    logoutBtn.addEventListener("click", () => {
-      localStorage.removeItem("jwt");
-      location.href = "/";
-    });
-
-    saveBtn.addEventListener("click", () => {
-      let email = document.getElementById("edit_email").value;
-      let user_name = document.getElementById("edit_name").value;
-      let mobile = document.getElementById("edit_phone_number").value;
-      let password = document.getElementById("password").value;
-      let confirmPassword = document.getElementById("confirm_password").value;
-
-      if (password != confirmPassword) {
-        alert("Please enter same password in password and confirm password!");
-      } else if (password && email && mobile && user_name) {
-        displayPreloder();
-        fetch(`${apiURL}/user/updatedetails`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            authorization: localStorage.getItem("jwt"),
-          },
-          body: JSON.stringify({
-            user_name,
-            email,
-            password,
-            mobile,
-          }),
-        })
-          .then(function (res1) {
-            if (res1.status == 400) {
-              displayEditProfilepage();
-              alert("Internal server error please re-try!");
-            } else if (res1.status == 500) {
-              displayEditProfilepage();
-              alert("Password hashing error please re-try!");
-            } else if (res1.status == 200) {
-              alert("Your details updated successfully!");
-              userData.user_name = user_name;
-              userData.mobile = mobile;
-              displayProfilepage();
-            } else {
-              alert(
-                "Your details updated successfully! Please verify your updated email-id"
-              );
-              userData.user_name = user_name;
-              userData.email = email;
-              userData.mobile = mobile;
-              displayProfilepage();
-            }
-            return res1.json();
-          })
-          .then((data) => {
-            if (data.token) {
-              localStorage.setItem("jwt", data.token);
-            }
-            console.log(data);
-          })
-          .catch((err) => {
-            console.log(err);
-            preloader.style.display = "none";
-          });
-      } else {
-        alert("Please enter all details properly!");
+      for (let i = 0; i < 5; i++) {
+        event_poster_list[i].addEventListener("click", () => {
+          if (slider_event_list[i].checked == true) {
+            eventId = event_ids[i];
+            setEventDetails(event_ids[i]);
+            displayEvenetspage();
+          }
+        });
       }
-    });
+
+      backBtnFromEventsPage.addEventListener("click", () => {
+        displayMainContainer();
+      });
+
+      backBtnFromProfilePage.addEventListener("click", () => {
+        displayMainContainer();
+        profileBtn.innerHTML = `${userData.user_name[0]}`;
+      });
+
+      backBtnFromEditProfilePage.addEventListener("click", () => {
+        displayProfilepage();
+      });
+
+      editBtn.addEventListener("click", () => {
+        displayEditProfilepage();
+        setUserDetailsInEditPage(userData);
+      });
+
+      logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("jwt");
+        location.href = "/";
+      });
+
+      saveBtn.addEventListener("click", async () => {
+        let email = document.getElementById("edit_email").value;
+        let user_name = document.getElementById("edit_name").value;
+        let mobile = document.getElementById("edit_phone_number").value;
+        let password = document.getElementById("password").value;
+        let confirmPassword = document.getElementById("confirm_password").value;
+
+        if (password != confirmPassword) {
+          alert("Please enter same password in password and confirm password!");
+        } else if (password && email && mobile && user_name) {
+          displayPreloder();
+
+          const res5 = await fetch(`${apiURL}/user/updatedetails`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              authorization: localStorage.getItem("jwt"),
+            },
+            body: JSON.stringify({
+              user_name,
+              email,
+              password,
+              mobile,
+            }),
+          });
+
+          if (res5.status == 400) {
+            displayEditProfilepage();
+            alert("Internal server error please re-try!");
+          } else if (res5.status == 500) {
+            displayEditProfilepage();
+            alert("Password hashing error please re-try!");
+          } else if (res5.status == 200) {
+            alert("Your details updated successfully!");
+            userData.user_name = user_name;
+            userData.mobile = mobile;
+            displayProfilepage();
+          } else {
+            alert(
+              "Your details updated successfully! Please verify your updated email-id"
+            );
+            userData.user_name = user_name;
+            userData.email = email;
+            userData.mobile = mobile;
+            displayProfilepage();
+          }
+
+          const data5 = await res5.json();
+          if (data5.token) {
+            localStorage.setItem("jwt", data5.token);
+          }
+
+        } else {
+          alert("Please enter all details properly!");
+        }
+      });
+    } catch (err) {
+      alert("error occured re-try!");
+      console.log(err);
+    }
   }, 500);
 
   displayMainContainer()
@@ -338,7 +328,7 @@ team.addEventListener("click", () => {
   window.scrollTo(0, teamSection.offsetTop);
 });
 sponsers.addEventListener("click", () => {
-  window.scrollTo(0, sponsersSection.offsetTop - 160);
+  window.scrollTo(0, sponsersSection.offsetTop);
 });
 faq.addEventListener("click", () => {
   window.scrollTo(0, faqSection.offsetTop);
