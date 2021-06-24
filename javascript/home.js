@@ -451,7 +451,7 @@ function addEvents(array1, array2) {
   pastEventContainer.innerHTML = "";
 
   array1.forEach((item) => {
-    const { fest_name, description, start_date, end_date } = item;
+    const { fest_name, start_date, end_date } = item;
 
     var sDate = new Date(parseInt(start_date));
     var eDate = new Date(parseInt(end_date));
@@ -474,9 +474,7 @@ function addEvents(array1, array2) {
 
     const insideHtml = `<h2>${fest_name}</h2>
     <h4>${startDate} - ${endDate}</h4>
-    <div class="EventContent">
-    ${description}
-    </div>
+    
     `;
 
     event.innerHTML = insideHtml;

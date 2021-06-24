@@ -64,7 +64,7 @@ body {
   text-transform: uppercase;
   color: #efd5ff;
 }
-#email{
+#email {
   text-transform: lowercase;
 }
 .UserDetailsInput::placeholder {
@@ -172,6 +172,7 @@ input:focus {
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding-bottom: 13px;
 }
 #OngoingEventsList::-webkit-scrollbar,
 #PastEventsList::-webkit-scrollbar {
@@ -180,7 +181,8 @@ input:focus {
 .EventList {
   width: 97%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 15px;
+  padding: 10px;
   background: linear-gradient(
     270.46deg,
     rgba(255, 79, 206, 0.7) -24.06%,
