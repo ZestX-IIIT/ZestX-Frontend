@@ -5,6 +5,7 @@
 }
 body {
   position: relative;
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
 }
 
 #zestxlogoadminpage {
@@ -23,7 +24,6 @@ body {
   height: 100vh;
   grid-template-columns: 5fr 10fr 4fr;
   grid-template-rows: 1fr;
-  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
 }
 .main_admin_container h2 {
   height: 10%;
@@ -49,10 +49,18 @@ body {
   height: auto;
   padding: 1rem;
   border-bottom: 1px solid #f8e6ff;
-  cursor: pointer;
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+.internal_user_delete_button{
+  cursor: pointer;
+}
+.external_user_delete_button{
+  cursor: pointer;
+}
+.primary_event_list_admin_page{
+  cursor: pointer;
 }
 .inner_list::-webkit-scrollbar {
   display: none;
@@ -75,6 +83,7 @@ body {
 }
 .InnerListContent {
   font-family: "Now";
+  white-space:pre-wrap;
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
@@ -83,17 +92,23 @@ body {
 }
 .right_h3 {
   font-size: 1.2rem !important;
-  margin-bottom: 0.8rem;
-  padding-top: 0.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+#eventDescriptioninnerList{
+  margin-top: 0;
 }
 .outer_left {
   height: 93vh;
+  width: 22vw;
 }
 .outer_middle {
   height: 93vh;
+  width: 38vw;
 }
 .outer_right {
   height: 93vh;
+  width: 30vw;
 }
 .outer_right .inner_list {
   border: 0;
@@ -111,9 +126,11 @@ body {
 #secondh2 {
   display: flex;
   justify-content: space-between;
-  width: 22%;
+  width: 26%;
+  cursor: pointer;
 }
-.internal_users , .outer_users{
+.internal_users,
+.outer_users {
   height: 47.5%;
   display: flex;
   flex-direction: column;
@@ -125,7 +142,13 @@ body {
 .outer_users::-webkit-scrollbar {
   display: none;
 }
-.internal_users h3, .outer_users h3{
+
+.active_event{
+  font-size: 2.2rem;
+  color: #f592eb;
+}
+.internal_users h3,
+.outer_users h3 {
   display: flex;
   align-items: center;
   padding-left: 1rem;
@@ -136,18 +159,47 @@ body {
   text-transform: uppercase;
   color: #cdcee6;
 }
-.internal_list .inner_list h3{
+.internal_list .inner_list h3 {
   padding-left: 0;
 }
-.internal_list .inner_list{
+.internal_list .inner_list {
   border: 0px;
   border-top: 1px solid #f8e6ff;
   display: flex;
   justify-content: space-between;
 }
-#internal_users_h3{
+
+.display_to_none {
+  animation: to_opacity_none 0.5s ease-in-out 1;
+  display: none;
+}
+
+@keyframes to_opacity_none {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.display_to_block {
+  display: block;
+  animation: to_display_block 0.5s ease-in-out 1;
+}
+
+@keyframes to_display_block {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#internal_users_h3 {
   padding: 1rem;
 }
-#userListContainer{
+#userListContainer {
   justify-content: space-between;
 }
