@@ -39,13 +39,13 @@ body {
 .UserEditContainer {
   height: 75vh;
   padding-left: 5rem;
-  padding-top: 5rem;
+  padding-top: 3rem;
   border-right: 1px solid #ffffff;
   display: flex;
   flex-direction: column;
 }
 .UserDetailsInput {
-  width: 40%;
+  width: 45%;
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #efd5ff;
@@ -59,7 +59,9 @@ body {
   text-transform: uppercase;
   color: #efd5ff;
 }
-
+#edit_email{
+  text-transform: lowercase;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

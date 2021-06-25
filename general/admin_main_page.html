@@ -7,47 +7,56 @@
     <title>Admin Main Page</title>
     <link rel="stylesheet" href="../assets/fonts/now/stylesheet.css" />
     <link rel="stylesheet" href="../styles/admin_main_page.css" />
+
+    <script src="../javascript/html_include.js"></script>
   </head>
 
   <body>
-    <img
-      src="../assets/_general/zestx_icon.svg"
-      alt=""
-      id="zestxlogoadminpage"
-    />
+    <div
+      include_file_path="./loader.html"
+      style="position: fixed; width: 100vw; z-index: 50000"
+      id="admin_preloader_container"
+    ></div>
 
-    <section class="main_admin_container">
-      <div class="outer_left">
-        <h2>ONGOING/uPCOMING EVENTS</h2>
-        <div
-          class="container_common_background"
-          id="container_common_background"
-        >
-          <div class="inner_list primary_event_list_admin_page">
-            <h3 class="innerList_h3">Event Name</h3>
-            <h4 class="innerList_h4">Event Date</h4>
+    <div id="admin_main_page_container">
+      <img
+        src="../assets/_general/zestx_icon.svg"
+        alt=""
+        id="zestxlogoadminpage"
+      />
+
+      <section class="main_admin_container">
+        <div class="outer_left">
+          <h2>ONGOING/uPCOMING EVENTS</h2>
+          <div
+            class="container_common_background"
+            id="container_common_background"
+          >
+            <!-- <div class="inner_list primary_event_list_admin_page">
+              <h3 class="innerList_h3">Event Name</h3>
+              <h4 class="innerList_h4">Event Date</h4>
+            </div> -->
+
+            <!-- container_common_background -->
           </div>
 
-          <!-- container_common_background -->
+          <!-- outer_left -->
         </div>
-
-        <!-- outer_left -->
-      </div>
-      <div class="outer_middle">
-        <h2>
-          <div class="inner_h2" id="firsth2">Registered User</div>
-          <div class="inner_h2" id="secondh2">
-            Add User<img
-              src="../assets/home_page/Admin_page/add_user.svg"
-              alt=""
-            />
-          </div>
-        </h2>
-        <div class="container_common_background" id="userListContainer">
-          <div class="internal_users">
-            <h3 id="internal_users_h3">internal users</h3>
-            <div class="internal_list" id="internal_user_list">
-              <!-- <div class="inner_list">
+        <div class="outer_middle">
+          <h2>
+            <div class="inner_h2" id="firsth2">Registered User</div>
+            <div class="inner_h2" id="secondh2">
+              Add User<img
+                src="../assets/home_page/Admin_page/add_user.svg"
+                alt=""
+              />
+            </div>
+          </h2>
+          <div class="container_common_background" id="userListContainer">
+            <div class="internal_users">
+              <h3 id="internal_users_h3">internal users</h3>
+              <div class="internal_list" id="internal_user_list">
+                <!-- <div class="inner_list">
                 <div class="inner_list_content">
                   <h3 class="innerList_h3" id="user_name">User 1</h3>
                   <h4 class="innerList_h4" id="user_details">user_details</h4>
@@ -58,14 +67,14 @@
                 />
               </div> -->
 
-              <!-- internal_list -->
+                <!-- internal_list -->
+              </div>
+              <!-- internal_users -->
             </div>
-            <!-- internal_users -->
-          </div>
-          <div class="outer_users">
-            <h3 id="internal_users_h3">External users</h3>
-            <div class="internal_list" id="external_user_list">
-              <!-- <div class="inner_list">
+            <div class="outer_users">
+              <h3 id="internal_users_h3">External users</h3>
+              <div class="internal_list" id="external_user_list">
+                <!-- <div class="inner_list">
                 <div class="inner_list_content">
                   <h3 class="innerList_h3" id="user_name">User 1</h3>
                   <h4 class="innerList_h4" id="user_details">user_details</h4>
@@ -76,47 +85,58 @@
                 />
               </div> -->
 
-              <!-- internal_list -->
-            </div>
-            <!-- internal_users -->
+                <!-- internal_list -->
+              </div>
+              <!-- internal_users -->
 
-            <!-- outer_users -->
+              <!-- outer_users -->
+            </div>
+            <!-- container_common_background -->
           </div>
-          <!-- container_common_background -->
         </div>
-      </div>
-      <div class="outer_right">
-        <h2>Details</h2>
+        <div class="outer_right">
+          <h2>Details</h2>
 
-        <div class="container_common_background">
-          <div class="inner_list">
-            <h3 id="eventDescriptioninnerList" class="right_h3">Description</h3>
-            <div id="DescriptionContentinnerList" class="InnerListContent">
-              <!-- InnerListContent -->
+          <div class="container_common_background">
+            <div class="inner_list">
+              <h3 id="eventDescriptioninnerList" class="right_h3">
+                Description
+              </h3>
+              <div id="DescriptionContentinnerList" class="InnerListContent">
+                <!-- InnerListContent -->
+              </div>
+              <h3 id="eventVenueinnerList" class="right_h3">Venue</h3>
+              <div id="VenueContentinnerList" class="InnerListContent">
+              </div>
+              <h3 id="eventRulesinnerList" class="right_h3">Rules</h3>
+              <div id="RulesContentinnerList" class="InnerListContent">
+                <!-- InnerListContent -->
+              </div>
+              <h3 id="eventPrizesinnerList" class="right_h3">Prizes</h3>
+              <div id="PrizesContentinnerList" class="InnerListContent">
+                <!-- InnerListContent -->
+              </div>
+              <!-- inner_list -->
             </div>
-            <h3 id="eventVenueinnerList" class="right_h3">Venue</h3>
-            <div id="VenueContentinnerList" class="InnerListContent">
-              Atal Bihari Vajpayee Indian Institute of Information Technology
-              and Management, Gwalior
-              <!-- InnerListContent -->
-            </div>
-            <h3 id="eventRulesinnerList" class="right_h3">Rules</h3>
-            <div id="RulesContentinnerList" class="InnerListContent">
-              <!-- InnerListContent -->
-            </div>
-            <h3 id="eventPrizesinnerList" class="right_h3">Prizes</h3>
-            <div id="PrizesContentinnerList" class="InnerListContent">
-              <!-- InnerListContent -->
-            </div>
-            <!-- inner_list -->
+
+            <!-- container_common_background -->
           </div>
 
-          <!-- container_common_background -->
+          <!-- outer_right -->
         </div>
-
-        <!-- outer_right -->
-      </div>
-    </section>
+      </section>
+    </div>
+    <div id="admin_add_user_page_container">
+      <section
+        include_file_path="./admin_add_user.html"
+        id="sub_admin_add_user_page_container"
+      ></section>
+    </div>
+    <script>
+      includehtmlbyID("admin_preloader_container");
+      includehtmlbyID("sub_admin_add_user_page_container");
+    </script>
+    <script src="../javascript/html_include.js"></script>
     <script src="../javascript/admin_main_page.js"></script>
   </body>
 </html>
