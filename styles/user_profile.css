@@ -210,11 +210,11 @@ input:focus {
   opacity: 0.8;
   padding-top: 5px;
 }
-.EventContent {
+/* .EventContent {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-line-clamp: 2; 
   -webkit-box-orient: vertical;
   max-width: 100%;
   font-family: "Now";
@@ -226,4 +226,4 @@ input:focus {
   opacity: 0.8;
   padding-top: 5px;
   padding-bottom: 5px;
-}
+} */
