@@ -114,6 +114,7 @@ html::-webkit-scrollbar {
   margin-left: 60px;
   border-right: 1px solid #ffffff;
   padding-right: 10px;
+  padding-top: 15px;
   box-shadow: 6px -6px 10px -14px rgb(255 255 255 / 25%);
 }
 .frontright {
@@ -133,11 +134,11 @@ html::-webkit-scrollbar {
   font-family: "Now";
   font-style: normal;
   font-weight: 900;
-  font-size: 50px;
+  font-size: 40px;
   margin-right: 50px;
   text-transform: uppercase;
   color: #ece7ff;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .leftcontent {
   font-family: "Now";
@@ -153,7 +154,7 @@ html::-webkit-scrollbar {
   position: relative;
   width: 37rem;
   height: 21rem;
-  margin-top: 25px;
+  margin-top: 35px;
   overflow: hidden;
 }
 .image-container img {
