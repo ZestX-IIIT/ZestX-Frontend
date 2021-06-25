@@ -4,7 +4,6 @@ let footer = document.getElementsByClassName("footer");
 let preloader = document.getElementById("preloader_container");
 let arrow = document.getElementsByClassName("arrow");
 let main = document.getElementsByClassName("main");
-const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 let down = true;
 
 signupButton.addEventListener("click", () => {
@@ -22,22 +21,7 @@ window.addEventListener("load", () => {
   const token = localStorage.getItem("jwt");
   if (token) {
     preloader.style.display = "block";
-    fetch(`${apiURL}/user/getdetails`, {
-      method: "GET",
-      headers: {
-        authorization: token,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.data.is_admin)
-          window.location.href = "./general/admin_main_page.html";
-        else window.location.href = "./homepage.html";
-      })
-      .catch((err) => {
-        console.log(err);
-        preloader.style.display = "none";
-      });
+    location.href = "/homepage.html";
   }
 });
 
@@ -77,8 +61,10 @@ function collapseFooter() {
 
   let upwards = 275;
   let b = setInterval(() => {
+    // console.log(upwards);
     upwards = upwards - 5;
     scrollBy(0, -5);
+    // console.log(upwards);
     if (upwards <= 0) {
       clearInterval(b);
       footer[0].classList.toggle("display-none");
@@ -97,9 +83,10 @@ function expandFooter() {
   footer[0].classList.toggle("display-none");
   let distance = 275;
   let a = setInterval(() => {
-
+    // console.log(distance);
     distance = distance - 5;
     scrollBy(0, 5);
+    // console.log(distance);
     if (distance <= 0) {
       clearInterval(a);
     }
