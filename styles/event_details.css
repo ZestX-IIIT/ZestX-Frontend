@@ -30,7 +30,7 @@
 }
 
 #back_btn_from_festival_details_page {
-  width: 2%;
+  width: 2rem;
   position: absolute;
   left: 5%;
   margin-top: -1%;
@@ -63,6 +63,7 @@
   font-weight: 500;
   font-size: 1.2rem;
   padding: 0% 5%;
+  text-transform: capitalize;
   color: rgba(253, 253, 253, 0.9);
 }
 #EventDetailsLeftContainer {
@@ -70,12 +71,14 @@
   display: flex;
   flex-direction: column;
   border-right: 1px solid #ffffff;
+  justify-content: space-around;
 }
 #EventDetailsRightContainer {
   width: 50%;
   display: flex;
   flex-direction: column;
   padding-left: 5%;
+  justify-content: space-around;
 }
 
 #EventDescription {
@@ -94,15 +97,18 @@
 #EventRules {
   margin-top: 3%;
 }
-
+/* 
 #EventRulesContent,
 #EventPrizesContent {
   white-space: pre-line;
-}
+} */
 
 #EventDetailsRightContainer h3,
 #EventDetailsLeftContainer h3 {
   margin-bottom: 0.8rem;
+}
+#EventRulesContent , #EventPrizesContent{
+  white-space: pre-line;
 }
 #EventRegister {
   height: 10%;

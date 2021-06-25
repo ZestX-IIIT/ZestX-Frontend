@@ -55,7 +55,7 @@ body {
   justify-content: space-evenly;
 }
 .UserDetailsInput {
-  width: 80%;
+  width: 95%;
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #efd5ff;
@@ -66,6 +66,9 @@ body {
   font-size: 1.4rem;
   text-transform: uppercase;
   color: #efd5ff;
+}
+#email {
+  text-transform: lowercase;
 }
 .UserDetailsInput::placeholder {
   font-family: "Now";
@@ -126,6 +129,9 @@ input:focus {
   font-size: 1.4375rem;
   text-transform: uppercase;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #EditButton img {
   width: 20px;
@@ -169,6 +175,7 @@ input:focus {
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding-bottom: 13px;
 }
 #OngoingEventsList::-webkit-scrollbar,
 #PastEventsList::-webkit-scrollbar {
@@ -177,7 +184,8 @@ input:focus {
 .EventList {
   width: 97%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 15px;
+  padding: 10px;
   background: linear-gradient(
     270.46deg,
     rgba(255, 79, 206, 0.7) -24.06%,
@@ -213,9 +221,6 @@ input:focus {
 .EventContent {
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  -webkit-box-orient: vertical;
   max-width: 100%;
   font-family: "Now";
   font-style: normal;
