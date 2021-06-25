@@ -169,6 +169,8 @@ input:focus {
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding-top: 7px;
+  padding-bottom: 6px;
 }
 #OngoingEventsList::-webkit-scrollbar,
 #PastEventsList::-webkit-scrollbar {
@@ -177,7 +179,8 @@ input:focus {
 .EventList {
   width: 97%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 7px;
+  margin-bottom: 7px;
   background: linear-gradient(
     270.46deg,
     rgba(255, 79, 206, 0.7) -24.06%,
