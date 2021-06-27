@@ -142,7 +142,8 @@ setTimeout(function () {
 function setOngoingEvents(array) {
     ongoingEventContainer.innerHTML = "";
 
-    array.forEach((item) => {
+    let current_ongoing_festivals_list_length =array.length;
+    array.forEach(function (item, i) {
         const { fest_id, fest_name, start_date, end_date } = item;
 
         var sDate = new Date(parseInt(start_date));
@@ -172,6 +173,13 @@ function setOngoingEvents(array) {
         event.innerHTML = insideHtml;
 
         ongoingEventContainer.appendChild(event);
+
+        if(i==current_ongoing_festivals_list_length-1){
+            eventListArray[i].style.borderBottom = "none";
+
+        }
+
+
     });
 }
 
@@ -189,7 +197,7 @@ function setEventDetails(data) {
 
 async function getInternalUserDetails(array1) {
     try {
-        if (array1.length != 0) {
+        if (array1 != null && array1.length != 0) {
             const res1 = await fetch(`${apiURL}/user/userdetails`, {
                 method: "POST",
                 headers: {
