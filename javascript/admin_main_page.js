@@ -238,7 +238,7 @@ async function getInternalUserDetails(array1) {
                 const data1 = await res1.json();
                 setInternalUserDetails(data1.data, array1);
 
-                internalUsersEventClickRequestStack--
+                
                 console.log("min ", internalUsersEventClickRequestStack);
                 if (internalUsersEventClickRequestStack == 0) {
                     checkAndDisplayContainer(internalUserContainer);
@@ -246,14 +246,12 @@ async function getInternalUserDetails(array1) {
             }
         } else {
             internalUserContainer.innerHTML = "";
-            internalUsersEventClickRequestStack--
             if (internalUsersEventClickRequestStack == 0) {
 
                 checkAndDisplayContainer(internalUserContainer);
             }
         }
     } catch (err) {
-        internalUsersEventClickRequestStack--
         alert("error occured re-try!");
         console.log(err);
     }
@@ -313,6 +311,7 @@ async function getExternalUserDetails(array2) {
 }
 
 function setInternalUserDetails(data, array1) {
+    internalUsersEventClickRequestStack--
     internalUserContainer.innerHTML = "";
 
     for (let item of data) {
