@@ -1,0 +1,94 @@
+body{
+    height: 100vh;
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+}
+#hamburgerMenuBars{
+	width: 2.18rem;
+	height: 1.8rem;
+	margin: 1.875rem 0 1.25rem 1.25rem;
+	cursor: pointer;
+}
+.HBMbar{
+	height: 5px;
+	width: 100%;
+	background-color: white;
+	display: block;
+	border-radius: 5px;
+	transition: 500ms ease-in-out;
+}
+#HBMbar1{
+	transform: translateY(-4px);
+}
+#HBMbar3{
+	transform: translateY(4px);
+}
+.HamburgerMenuNavList li a{
+	color: #fff;
+	text-decoration: none;
+    font-family: 'Now';
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.HamburgerMenuNavList li a:hover{
+	font-weight: bold;
+}
+.HamburgerMenuNavList li{
+	list-style: none;
+	padding: .9rem 0;
+}
+.HamburgerMenuNavList{
+	padding: 0;
+	margin: 0 1.25rem;
+    opacity: 0;
+	transition: opacity 500ms ease-in-out;
+	display: none;
+}
+.HBMBackground, #hamburgermenuMainContainer{
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+.HBMBackground{
+	z-index: 1;
+	width: 0;
+	height: 0;
+	margin: 1.875rem 0 1.25rem 1.25rem;
+	/* background: radial-gradient(circle,#e94498,#b81568); */
+    box-shadow: 10px 10px 40px -7px rgb(255 255 255 / 47%);
+-webkit-box-shadow: 10px 10px 40px -7px rgb(255 255 255 / 47%);
+-moz-box-shadow: 10px 10px 40px -7px rgb(255 255 255 / 47%);
+    /* background: rgb(15,15,180); */
+/* background: radial-gradient(circle, rgba(15,15,180,1) 35%, rgba(0,212,255,1) 100%); */
+background: rgb(15,15,180);
+background: radial-gradient(circle, rgba(15,15,180,1) 35%, rgba(3,85,159,1) 100%);
+	border-radius: 50%;
+	transition: 500ms ease-in-out;
+}
+#hamburgermenuMainContainer{
+	z-index: 2;	
+}
+.Toggle_class_background{
+	width: 34.375rem;
+	height: 33.75rem;
+	transform: translate(-60%,-30%);
+}
+.Toggle_class .HBMbar{
+	background-color: white;
+}
+.Toggle_class #HBMbar1{
+	transform: translateY(4px) rotateZ(-45deg);
+}
+.Toggle_class #HBMbar3{
+	transform: translateY(-6px) rotate(45deg);
+}
+.Toggle_class #HBMbar2{
+	opacity: 0;
+}
+.Toggle_class{
+	display: block;
+}
+.HamburgerMenuNavList.Toggle_class{
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
