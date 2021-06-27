@@ -21,6 +21,9 @@
   left: 0;
   z-index: 1000;
 }
+#hamburger_menu{
+  display: none;
+}
 .logo {
   margin: 25px 0px 23px 59px;
 }
