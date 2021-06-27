@@ -121,6 +121,9 @@
     width: 50vh;
     height: 50vh;
   }
+  .team {
+    padding-top: 0;
+  }
 }
 @media only screen and (max-width: 1000px) {
   .teamContent {
@@ -176,9 +179,7 @@
   } */
 }
 @media only screen and (max-width: 730px) {
-  .team {
-    padding-top: 0;
-  }
+  
   .topContainer {
     width: 30vh;
     height: 30vh;
