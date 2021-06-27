@@ -27,6 +27,7 @@
 
 
   <nav class="navbar" id="nabar_container">
+    <section include_file_path="./general/hamburger_menu.html" id="hamburger_menu"></section>
     <div class="logo">
       <img src="./assets/_general/zestx_icon.svg" alt="navlogo" />
     </div>
@@ -45,7 +46,6 @@
     </div>
     </div>
   </nav>
- <!-- responsive till here -->
  
   <div id="primary_container_for_home_page_content">
 
@@ -163,10 +163,12 @@
     includehtmlbyID("sub_edit_profile_page_container")
     includehtmlbyID("slider_container")
     includehtmlbyID("footersection")
+    includehtmlbyID("hamburger_menu")
   </script>
 </body>
 <script src="./javascript/home.js"></script>
 <script src="./javascript/event.js"></script>
+<script src="../javascript/hamburger.js"></script>
 <script src="./javascript/lazysizes.min.js" async=""></script>
 <script src="./javascript/faq.js" async=""></script>
 
