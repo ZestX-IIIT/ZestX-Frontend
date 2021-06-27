@@ -70,7 +70,7 @@
     margin-right: 20px;
   }
   .logo {
-    margin-left: 5px;
+    margin-left: 15px;
   }
 }
 @media only screen and (max-width: 880px) {
@@ -83,9 +83,14 @@
     width: 60px;
     height: 60px;
     margin: auto;
+    margin-right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .logo img{
+    width: 6rem;
+  height: 5.5rem;
   }
   .character-container {
     width: 80%;
@@ -110,7 +115,21 @@
   #hamburger_menu{
     display: block;
   }
+  .logo{
+    margin-left: 0;
+    margin-right: 0;
+    position: absolute;
+    top: 0;
+    left: 41%;
+  }
 }
+@media only screen and (max-width: 506px) {
+  .logo img{
+    width: 4rem;
+  height: 3.5rem;
+  }
+}
+
 @media only screen and (max-width: 1400px) {
   .dot {
     display: none;
