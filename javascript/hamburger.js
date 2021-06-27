@@ -1,9 +1,20 @@
 let hamburgermenuMainContainer = document.getElementById("hamburgermenuMainContainer");
 let HamburgerMenuNavList = document.getElementById("HamburgerMenuNavList");
 let HBMBackground = document.getElementById("HBMBackground");
+let isOpen = false;
 
-function onClickMenu(){
+function onClickMenu() {
+
+
+	if (isOpen) {
+		HamburgerMenuNavList.classList.toggle("Toggle_class_anim");
+		isOpen = false
+	} else {
+		setTimeout(function () {
+			HamburgerMenuNavList.classList.toggle("Toggle_class_anim");
+		}, 300);
+		isOpen = true
+	}
 	hamburgermenuMainContainer.classList.toggle("Toggle_class");
-	HamburgerMenuNavList.classList.toggle("Toggle_class");
 	HBMBackground.classList.toggle("Toggle_class_background");
 }
