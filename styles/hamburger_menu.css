@@ -1,7 +1,9 @@
-body {
-  height: 100vh;
-  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 #hamburgerMenuBars {
   width: 2.18rem;
   height: 1.8rem;
@@ -31,7 +33,7 @@ body {
   font-weight: 400;
 }
 .HamburgerMenuNavList li a:hover {
-  font-weight: bold;
+    color: pink;
 }
 .HamburgerMenuNavList li {
   list-style: none;
@@ -56,7 +58,7 @@ body {
 }
 .HBMBackground,
 #hamburgermenuMainContainer {
-  top: 0;
+  top: 15%;
   left: 0;
   position: absolute;
 }
