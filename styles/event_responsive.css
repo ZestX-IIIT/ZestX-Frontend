@@ -30,11 +30,11 @@
     align-items: center;
   }
 }
-@media only screen and (max-width: 1110px) {
+/* @media only screen and (max-width: 1110px) {
   #slider {
     padding-top: 8rem;
   }
-}
+} */
 @media only screen and (max-width: 920px) {
   #slider {
     height: 60vh !important;
