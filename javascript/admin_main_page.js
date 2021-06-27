@@ -280,6 +280,7 @@ function setInternalUserDetails(data, array1) {
 
         const user = document.createElement("div");
         user.classList.add("inner_list_content");
+        user.classList.add("registered_internal_user");
 
         const insideHtml = `<div class="inner_list">
     <div class="inner_list_content internal_user_list_element">
@@ -294,6 +295,8 @@ function setInternalUserDetails(data, array1) {
 
         internalUserContainer.appendChild(user);
     };
+
+    document.getElementsByClassName("registered_internal_user")[data.length-1].getElementsByClassName("inner_list")[0].style.borderBottom = "none"
 
     let internalUserDeleteBtnList = document.getElementsByClassName("internal_user_delete_button");
     let internalUserDeleteBtnListLength = internalUserDeleteBtnList.length;
@@ -336,11 +339,12 @@ function setInternalUserDetails(data, array1) {
 function setExternalUserDetails(data, array2) {
     externalUserContainer.innerHTML = "";
 
-    data.forEach((item) => {
+   for (let item of data) {
         const { username, email, mobile } = item;
 
         const user = document.createElement("div");
         user.classList.add("inner_list_content");
+        user.classList.add("registered_external_user");
         let insideHtml;
 
         if (email && mobile) {
@@ -366,7 +370,8 @@ function setExternalUserDetails(data, array2) {
         user.innerHTML = insideHtml;
 
         externalUserContainer.appendChild(user);
-    });
+    }
+    document.getElementsByClassName("registered_external_user")[data.length-1].getElementsByClassName("inner_list")[0].style.borderBottom = "none"
 
     let externalUserDeleteBtnList = document.getElementsByClassName("external_user_delete_button");
     let externalUserDeleteBtnListLength = externalUserDeleteBtnList.length;
