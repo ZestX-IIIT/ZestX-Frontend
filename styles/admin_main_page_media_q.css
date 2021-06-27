@@ -78,17 +78,6 @@ body {
 }
 .primary_event_list_admin_page {
   cursor: pointer;
-  position: relative;
-}
-.festival_list_overlay {
-  position: absolute;
-  display: none;
-  height: 100%;
-  width: 100%;
-  top: 0%;
-  left: 0%;
-  z-index: -50;
-  background-color: rgb(138 45 248 / 29%);
 }
 .inner_list::-webkit-scrollbar {
   display: none;
@@ -127,7 +116,6 @@ body {
 #eventDescriptioninnerList {
   margin-top: 0;
 }
-
 .outer_left {
   height: 93vh;
   width: auto;
@@ -200,7 +188,7 @@ body {
 }
 
 .display_to_none {
-  animation: to_opacity_none 0.3s ease-in-out 1;
+  animation: to_opacity_none 0.5s ease-in-out 1;
   display: none;
 }
 
@@ -219,7 +207,7 @@ body {
 
 .display_to_block {
   display: block;
-  animation: to_display_block 0.3s ease-in-out 1;
+  animation: to_display_block 0.5s ease-in-out 1;
 }
 
 @keyframes to_display_block {
