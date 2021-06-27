@@ -16,10 +16,10 @@ body {
   height: 6rem;
 }
 .main_admin_container {
-  padding: 6vh 3vw;
+  padding: 6vh 2.5vw;
   padding-bottom: 0;
   display: grid;
-  grid-gap: 2.8rem;
+  grid-gap: 2.5vw;
   width: 100%;
   height: 100vh;
   grid-template-columns: 5fr 8fr 5fr;
@@ -30,7 +30,7 @@ body {
   font-family: "Now";
   font-style: normal;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   color: #fdfdfd;
   display: flex;
@@ -38,7 +38,7 @@ body {
 }
 .container_common_background {
   height: 85%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.07);
   box-shadow: inset 17.9rem 3px 12.8rem rgba(255, 242, 250, 0.1);
   border-radius: 0.95rem;
   display: flex;
@@ -56,6 +56,7 @@ body {
   width: 100%;
   height: auto;
   padding: 1rem;
+  padding-top: 1.2rem;
   border-bottom: 1px solid #f8e6ff;
   overflow-y: scroll;
   scrollbar-width: none;
@@ -85,15 +86,16 @@ body {
   font-family: "Now";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.9rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
-  color: #cdcee6;
+  color: #e5e6ff;
 }
 .inner_list h4 {
   font-family: "Now";
   font-style: normal;
-  font-weight: 500;
-  font-size: 1rem;
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 0.9rem;
   text-transform: uppercase;
   color: #bfbeff;
 }
@@ -108,8 +110,8 @@ body {
 }
 .right_h3 {
   font-size: 1.2rem !important;
-  margin-top: 0.8rem;
-  margin-bottom: 0.3rem;
+  margin-top: 1rem;
+  margin-bottom: 0.7rem;
 }
 #eventDescriptioninnerList {
   margin-top: 0;
@@ -171,9 +173,9 @@ body {
   font-family: "Now";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
-  color: #cdcee6;
+  color: #e5e6ff;
 }
 .internal_list .inner_list h3 {
   padding-left: 0;
@@ -218,14 +220,26 @@ body {
 }
 
 #internal_users_h3 {
-  padding: 1rem;
+  color: #fdfdfd;
+  padding-left: 1rem;
+  padding-bottom: 0.85rem;
+  font-weight: 500;
+  padding-top: 1.15rem;
+  letter-spacing: 1px;
   border-bottom: 1px solid #f8e6ff;
-  background: #ffffff1f;
+  background: #ffe8ff29;
+  background-blend-mode: overlay;
 }
 #external_users_h3 {
-  padding: 1rem;
-  background: #ffffff1f;
+  color: #fdfdfd;
+  padding-left: 1rem;
+  padding-bottom: 0.85rem;
+  font-weight: 500;
+  padding-top: 1.15rem;
+  letter-spacing: 1px;
   border-bottom: 1px solid #f8e6ff;
+  background: #ffe8ff29;
+  background-blend-mode: overlay;
   border-top: 1px solid #f8e6ff;
 }
 #userListContainer {
