@@ -30,7 +30,7 @@
   font-family: "Now";
   text-transform: uppercase;
   font-size: 1.1rem;
-  font-weight: 400;
+  font-weight: bold;
 }
 .HamburgerMenuNavList li a:hover {
     color: pink;
