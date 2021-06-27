@@ -65,9 +65,9 @@
     font-size: 1rem;
   }
 }
-@media only screen and (max-width: 730px) {
+@media only screen and (max-width: 1100px) {
   .FAQMainContainer {
-    padding-top: 0;
+    padding-top: 50px;
   }
 }
 @media only screen and (max-width: 670px) {
