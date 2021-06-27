@@ -50,35 +50,38 @@
       height: 10%;
     }
   } */
-@media only screen and (max-width: 1340px) {
+@media only screen and (max-width: 1100px) {
+  .sponsers {
+    padding-top: 50px;
+  }
+}
+@media only screen and (max-width: 1050px) {
   .sponserImages {
     height: 70%;
   }
+  
 }
-@media only screen and (max-width: 1110px) {
+/* @media only screen and (max-width: 1110px) {
   .sponserImages {
     height: 60%;
   }
-}
-@media only screen and (max-width: 935px) {
+} */
+/* @media only screen and (max-width: 935px) {
   .sponserImages {
     height: 50%;
   }
-}
-@media only screen and (max-width: 791px) {
+} */
+@media only screen and (max-width: 895px) {
   .sponsers {
-    height: 100vh;
+    height: 80vh;
+    grid-template-rows: repeat(5, 14vh);
   }
   .sponserContainer {
-    height: 75%;
-    align-items: center;
+    height: 100%;
+    /* align-items: center; */
   }
 }
-@media only screen and (max-width: 730px) {
-  #main_sponsers_container {
-    padding-top: 0 !important;
-  }
-}
+
 @media only screen and (max-width: 738px) {
   .sponsers {
     padding-top: 0;
@@ -90,27 +93,51 @@
     margin-left: 10px;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 700px) {
+  .sponserImages {
+    height: 80%;
+  }
+}
+@media only screen and (max-width: 570px) {
   .sponserContainer {
-    height: 65%;
+    height: 100%;
+  }
+  .sponsers {
+    padding-top: 0;
+    height: 15rem;
+    grid-template-rows: repeat(5, 3rem);
+  }
+}
+@media only screen and (max-width: 730px) {
+  #main_sponsers_container {
+    padding-top: 0 !important;
   }
 }
 @media only screen and (max-width: 440px) {
   .sponserContainer {
-    height: 50%;
+    height: 90%;
   }
 }
-@media only screen and (max-width: 365px) {
+@media only screen and (max-width: 400px) {
+  .sponsers {
+    padding-top: 0;
+    height: 12rem;
+    grid-template-rows: repeat(5, 2.4rem);
+  }
   .sponserContainer {
-    height: 45%;
+    height: 100%;
   }
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 360px) {
+  .sponsers {
+    padding-top: 0;
+    height: 10rem;
+    grid-template-rows: repeat(5, 2rem);
+  }
   .sponserContainer {
-    height: 40%;
+    height: 100%;
   }
 }
-
 /* @media only screen and (max-width: 395px) {
     .sponserImages {
       height: 100%;
@@ -123,7 +150,11 @@
   */
 @media only screen and (max-width: 295px) {
   .sponserContainer {
-    height: 30%;
+    height: 100%;
+  }
+  .sponsers {
+    padding-top: 0;
+    height: 8rem;
+    grid-template-rows: repeat(5, 1.4rem);
   }
 }
-
