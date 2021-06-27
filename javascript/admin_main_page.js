@@ -14,6 +14,7 @@ let adminAddUserPage = document.getElementById("admin_add_user_page_container");
 let internalUserContainer = document.getElementById("internal_user_list");
 let externalUserContainer = document.getElementById("external_user_list");
 let addUserBtnFromMainPage = document.getElementById("secondh2");
+let event_description_datails_sub_container = document.getElementById("event_description_datails_sub_container");
 let logoutBtn;
 
 let backBtnFromAddUserPage;
@@ -23,6 +24,9 @@ let deleteBtn;
 let exEmail;
 let exMobile;
 let event_id;
+let externalUsersEventClickRequestStack = 1;
+let internalUsersEventClickRequestStack = 1;
+let current_displaying_event_index = 0;
 let ongoingEvents;
 let isFirstTime = true;
 
@@ -43,10 +47,25 @@ async function setup() {
             setEventDetails(ongoingEvents[0]);
             getInternalUserDetails(ongoingEvents[0].user_id);
             getExternalUserDetails(ongoingEvents[0].external_user_id);
-            for (let eventInstance of eventListArray) {
+            checkAndDisplayContainer(eventListArray[current_displaying_event_index].getElementsByClassName("festival_list_overlay")[0])
 
+            // let temp_index_for_event_click_listeners = 0;
+            let temp_size_index_for_event_click_listeners = eventListArray.length;
+            for (let i = 0; i < temp_size_index_for_event_click_listeners; i++) {
+
+                let eventInstance = eventListArray[i]
                 eventInstance.addEventListener("click", () => {
+                    externalUsersEventClickRequestStack++;
+                    internalUsersEventClickRequestStack++;
+                    if (current_displaying_event_index != i) {
+
+                        checkAndCloseContainer(eventListArray[current_displaying_event_index].getElementsByClassName("festival_list_overlay")[0])
+                        checkAndDisplayContainer(eventInstance.getElementsByClassName("festival_list_overlay")[0])
+                        current_displaying_event_index = i
+                    }
                     event_id = eventInstance.id;
+
+
                     eventInstance.classList.add("active_event");
                     checkAndCloseContainer(internalUserContainer);
                     checkAndCloseContainer(externalUserContainer);
@@ -56,7 +75,9 @@ async function setup() {
                     setEventDetails(event);
                     getInternalUserDetails(event.user_id);
                     getExternalUserDetails(event.external_user_id);
+
                 });
+
             }
         }
 
@@ -142,7 +163,7 @@ setTimeout(function () {
 function setOngoingEvents(array) {
     ongoingEventContainer.innerHTML = "";
 
-    let current_ongoing_festivals_list_length =array.length;
+    let current_ongoing_festivals_list_length = array.length;
     array.forEach(function (item, i) {
         const { fest_id, fest_name, start_date, end_date } = item;
 
@@ -168,13 +189,14 @@ function setOngoingEvents(array) {
 
         const insideHtml = `<h3 class="innerList_h3">${fest_name}</h3>
     <h4 class="innerList_h4">${startDate} - ${endDate}</h4>
+    <div class="festival_list_overlay"></div>
     `;
 
         event.innerHTML = insideHtml;
 
         ongoingEventContainer.appendChild(event);
 
-        if(i==current_ongoing_festivals_list_length-1){
+        if (i == current_ongoing_festivals_list_length - 1) {
             eventListArray[i].style.borderBottom = "none";
 
         }
@@ -196,6 +218,7 @@ function setEventDetails(data) {
 }
 
 async function getInternalUserDetails(array1) {
+    externalUsersEventClickRequestStack--
     try {
         if (array1 != null && array1.length != 0) {
             const res1 = await fetch(`${apiURL}/user/userdetails`, {
@@ -214,13 +237,23 @@ async function getInternalUserDetails(array1) {
 
                 const data1 = await res1.json();
                 setInternalUserDetails(data1.data, array1);
-                checkAndDisplayContainer(internalUserContainer);
+
+                internalUsersEventClickRequestStack--
+                console.log("min ", internalUsersEventClickRequestStack);
+                if (internalUsersEventClickRequestStack == 0) {
+                    checkAndDisplayContainer(internalUserContainer);
+                }
             }
         } else {
             internalUserContainer.innerHTML = "";
-            checkAndDisplayContainer(internalUserContainer);
+            internalUsersEventClickRequestStack--
+            if (internalUsersEventClickRequestStack == 0) {
+
+                checkAndDisplayContainer(internalUserContainer);
+            }
         }
     } catch (err) {
+        internalUsersEventClickRequestStack--
         alert("error occured re-try!");
         console.log(err);
     }
@@ -251,7 +284,11 @@ async function getExternalUserDetails(array2) {
                     }, 100);
                     isFirstTime = false;
                 } else {
-                    checkAndDisplayContainer(externalUserContainer);
+                    console.log("ext", externalUsersEventClickRequestStack);
+                    if (externalUsersEventClickRequestStack == 0) {
+
+                        checkAndDisplayContainer(externalUserContainer);
+                    }
                 }
             }
 
@@ -263,7 +300,10 @@ async function getExternalUserDetails(array2) {
                 }, 100);
                 isFirstTime = false;
             } else {
-                checkAndDisplayContainer(externalUserContainer);
+                if (externalUsersEventClickRequestStack == 0) {
+
+                    checkAndDisplayContainer(externalUserContainer);
+                }
             }
         }
     } catch (err) {
@@ -296,7 +336,7 @@ function setInternalUserDetails(data, array1) {
         internalUserContainer.appendChild(user);
     };
 
-    document.getElementsByClassName("registered_internal_user")[data.length-1].getElementsByClassName("inner_list")[0].style.borderBottom = "none"
+    document.getElementsByClassName("registered_internal_user")[data.length - 1].getElementsByClassName("inner_list")[0].style.borderBottom = "none"
 
     let internalUserDeleteBtnList = document.getElementsByClassName("internal_user_delete_button");
     let internalUserDeleteBtnListLength = internalUserDeleteBtnList.length;
@@ -339,7 +379,7 @@ function setInternalUserDetails(data, array1) {
 function setExternalUserDetails(data, array2) {
     externalUserContainer.innerHTML = "";
 
-   for (let item of data) {
+    for (let item of data) {
         const { username, email, mobile } = item;
 
         const user = document.createElement("div");
@@ -371,7 +411,7 @@ function setExternalUserDetails(data, array2) {
 
         externalUserContainer.appendChild(user);
     }
-    document.getElementsByClassName("registered_external_user")[data.length-1].getElementsByClassName("inner_list")[0].style.borderBottom = "none"
+    document.getElementsByClassName("registered_external_user")[data.length - 1].getElementsByClassName("inner_list")[0].style.borderBottom = "none"
 
     let externalUserDeleteBtnList = document.getElementsByClassName("external_user_delete_button");
     let externalUserDeleteBtnListLength = externalUserDeleteBtnList.length;
@@ -440,7 +480,7 @@ function checkAndCloseContainer(container) {
         setTimeout(function () {
             container.style.display = "none";
             container.style.opacity = 0;
-        }, 500);
+        }, 300);
     }
 }
 
