@@ -107,6 +107,9 @@
   .navelements ul {
     display: none;
   }
+  #hamburger_menu{
+    display: block;
+  }
 }
 @media only screen and (max-width: 1400px) {
   .dot {
