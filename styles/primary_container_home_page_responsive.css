@@ -1,25 +1,55 @@
-@media only screen and (max-width: 654px) {
-    #primary_container_for_home_page_content {
-      grid-template-rows: 100vh 50vh 100vh 25rem 100vh;
-    }
+@media only screen and (max-width: 890px) {
+  #primary_container_for_home_page_content {
+    grid-template-rows: 90vh 100vh 100vh 80vh 100vh;
   }
-  @media only screen and (max-width: 520px) {
-    #primary_container_for_home_page_content {
-      grid-template-rows: 80vh 50vh 100vh 25rem 100vh;
-    }
+}
+@media only screen and (max-width: 775px) {
+  #primary_container_for_home_page_content {
+    grid-template-rows: 90vh 100vh 90vh 80vh 100vh;
   }
-  @media only screen and (max-width: 500px) {
-    #primary_container_for_home_page_content {
-      grid-template-rows: 60vh 50vh 100vh 25rem 100vh;
-    }
+}
+@media only screen and (max-width: 725px) {
+  #primary_container_for_home_page_content {
+    grid-template-rows: 110vh 50vh 85vh 25rem 100vh;
   }
-  @media only screen and (max-width: 385px) {
-    #primary_container_for_home_page_content {
-      grid-template-rows: 65vh 38vh 100vh 25rem 100vh;
-    }
+}
+@media only screen and (max-width: 700px) {
+  #primary_container_for_home_page_content {
+    grid-template-rows: 110vh 50vh 80vh 25rem 100vh;
   }
-  @media only screen and (max-width: 330px) {
-    #primary_container_for_home_page_content {
-      grid-template-rows: 65vh 38vh 100vh 25rem 100vh;
-    }
+}
+@media only screen and (max-width: 570px) {
+  #primary_container_for_home_page_content {
+    grid-template-rows: 100vh 50vh 55vh 15rem 100vh;
   }
+}
+@media only screen and (max-width: 555px) {
+  #primary_container_for_home_page_content {
+    grid-template-rows: 85vh 50vh 55vh 15rem 100vh;
+  }
+}
+@media only screen and (max-width: 505px) {
+  #primary_container_for_home_page_content {
+    grid-template-rows: 75vh 50vh 55vh 15rem 100vh;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #primary_container_for_home_page_content {
+    grid-template-rows: 70vh 50vh 55vh 15rem 100vh;
+  }
+}
+@media only screen and (max-width: 420px) {
+  #primary_container_for_home_page_content {
+    grid-template-rows: 70vh 38vh 50vh 15rem 100vh;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #primary_container_for_home_page_content {
+    grid-template-rows: 70vh 38vh 45vh 10rem 100vh;
+  }
+}
+@media only screen and (max-width: 295px) {
+  #primary_container_for_home_page_content {
+    grid-template-rows: 70vh 38vh 45vh 5rem 100vh;
+  }
+}
