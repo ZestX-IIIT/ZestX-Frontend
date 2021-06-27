@@ -137,7 +137,7 @@ body {
   width: 25px;
 }
 #firsth2 {
-  width: 40%;
+  width: auto;
 }
 #secondh2 {
   display: flex;
