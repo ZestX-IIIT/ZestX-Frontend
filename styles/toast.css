@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 #toastAlertMessage {
-  /* visibility: hidden; */
-  max-width: 3.125rem;
-  height: 3.125rem;
+  visibility: hidden;
+  max-width: 4.125rem;
+  height: 4.125rem;
   margin: auto;
   background-color: #333;
   color: #fff;
@@ -16,7 +16,7 @@
   z-index: 10;
   left: 0;
   right: 0;
-  bottom: 2rem;
+  bottom: 3rem;
   font-size: 17px;
   white-space: nowrap;
   font-family: "Now";
@@ -24,22 +24,23 @@
   text-transform: uppercase;
 }
 #toastAlertMessage #toastFrontMessage {
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 4.125rem;
+  height: 4.125rem;
   float: left;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   box-sizing: border-box;
-  background-color: #111;
-  color: #fff;
 }
 #toastAlertMessage #toastDescriptionMessage {
   color: #fff;
-  padding: 1rem;
+  padding: 1.3rem;
   overflow: hidden;
   white-space: nowrap;
 }
-
+#toastFrontMessage img{
+    margin: auto;
+    margin-top: 0.5625rem;
+    width: 3rem;
+    height: 3rem;
+}
 #toastAlertMessage.toastPopUp {
   visibility: visible;
   -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s,
