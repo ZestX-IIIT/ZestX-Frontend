@@ -114,3 +114,6 @@ input:focus {
   transform: translateY(-2rem);
   font-size: 1rem;
 }
+input[type='password']{
+  text-transform: none;
+}
