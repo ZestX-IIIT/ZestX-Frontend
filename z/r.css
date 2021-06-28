@@ -17,7 +17,7 @@ body::-webkit-scrollbar{
 	position:fixed;
 	top:0;
 	right:0;
-	width:50px;
+	width:20px;
 	height:100%;
 	background: rgba(255,255,255,0.05);
 }
@@ -25,7 +25,7 @@ body::-webkit-scrollbar{
 	position:fixed;
 	top:0;
 	right:0;
-	width:50px;
+	width:20px;
     /* height: ; */
 	background: linear-gradient(to top, #008aff , #00ffe7);
 	animation: animate 5s linear infinte;
