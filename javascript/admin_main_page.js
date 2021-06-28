@@ -243,7 +243,7 @@ async function getInternalUserDetails(array1) {
 
 
                 internalUsersEventClickRequestStack--
-                console.log("min ", internalUsersEventClickRequestStack);
+                // console.log("min ", internalUsersEventClickRequestStack);
 
                 if (internalUsersEventClickRequestStack == 0) {
                     checkAndCloseContainer(internalUsersListLoader)
@@ -254,7 +254,7 @@ async function getInternalUserDetails(array1) {
             internalUserContainer.innerHTML = "";
 
             internalUsersEventClickRequestStack--
-            console.log("min ", internalUsersEventClickRequestStack);
+            // console.log("min ", internalUsersEventClickRequestStack);
 
             if (internalUsersEventClickRequestStack == 0) {
                 checkAndCloseContainer(internalUsersListLoader)
@@ -264,7 +264,7 @@ async function getInternalUserDetails(array1) {
     } catch (err) {
 
         internalUsersEventClickRequestStack--
-        console.log("min ", internalUsersEventClickRequestStack);
+        // console.log("min ", internalUsersEventClickRequestStack);
 
         alert("error occured re-try!");
         console.log(err);
@@ -291,7 +291,7 @@ async function getExternalUserDetails(array2) {
                 setExternalUserDetails(data2.data, array2);
 
                 externalUsersEventClickRequestStack--
-                console.log("ext", externalUsersEventClickRequestStack);
+                // console.log("ext", externalUsersEventClickRequestStack);
 
                 if (isFirstTime) {
                     setTimeout(function () {
@@ -312,7 +312,7 @@ async function getExternalUserDetails(array2) {
 
 
             externalUsersEventClickRequestStack--
-            console.log("ext", externalUsersEventClickRequestStack);
+            // console.log("ext", externalUsersEventClickRequestStack);
 
 
             if (isFirstTime) {
@@ -330,7 +330,7 @@ async function getExternalUserDetails(array2) {
     } catch (err) {
 
         externalUsersEventClickRequestStack--
-        console.log("ext", externalUsersEventClickRequestStack);
+        // console.log("ext", externalUsersEventClickRequestStack);
 
 
         alert("error occured re-try!");
