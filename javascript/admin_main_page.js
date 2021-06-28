@@ -500,7 +500,7 @@ function checkAndCloseContainer(container) {
         setTimeout(function () {
             container.style.display = "none";
             container.style.opacity = 0;
-        }, 300);
+        }, 200);
     }
 }
 

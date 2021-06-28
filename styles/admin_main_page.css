@@ -200,7 +200,7 @@ body {
 }
 
 .display_to_none {
-  animation: to_opacity_none 0.3s ease-in-out 1;
+  animation: to_opacity_none 0.2s ease-in-out 1;
   display: none;
 }
 
@@ -219,7 +219,7 @@ body {
 
 .display_to_block {
   display: block;
-  animation: to_display_block 0.3s ease-in-out 1;
+  animation: to_display_block 0.2s ease-in-out 1;
 }
 
 @keyframes to_display_block {
