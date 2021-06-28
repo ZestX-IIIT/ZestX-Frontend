@@ -218,7 +218,8 @@ window.addEventListener("load", () => {
       });
 
       editBtn.addEventListener("click", () => {
-        displayEditProfilepage();
+        show_toast(1, "toast working goodly...");
+        // displayEditProfilepage();
         setUserDetailsInEditPage(userData);
       });
 
@@ -579,6 +580,39 @@ function clearDataInChangePasswordpage() {
   let confirmNewPassword = document.getElementById("confirm_new_password");
   confirmNewPassword.value = "";
 }
+
+function show_toast(isSuccess, message) {
+
+  let toastAlertMessage = document.getElementById("toastAlertMessage");
+  let toastImage = document.getElementById("toastImage");
+  let toastFrontMessage = document.getElementById("toastFrontMessage");
+  let toastDescriptionMessage = document.getElementById("toastDescriptionMessage");
+
+  if (isSuccess == 1) {
+    toastImage.src = "../assets/_general/success_tick.svg"
+    toastFrontMessage.style.backgroundColor = "green"
+  }
+  else if (isSuccess == 0) {
+    toastImage.src = "../assets/_general/error_cross.svg"
+    toastFrontMessage.style.backgroundColor = "red"
+  }
+  else {
+    toastImage.src = "../assets/_general/neutral_exclamation.svg"
+    toastFrontMessage.style.backgroundColor = "black"
+  }
+  toastDescriptionMessage.innerText = " ";
+  setTimeout(function () {
+    toastDescriptionMessage.innerText = message;
+  }, 600);
+  setTimeout(function () {
+    toastDescriptionMessage.innerText = " ";
+  }, 4200);
+  toastAlertMessage.className = "toastPopUp";
+  setTimeout(function () {
+    toastAlertMessage.className = toastAlertMessage.className.replace("toastPopUp", "");
+  }, 5000);
+}
+
 
 function setUserDetailsInEditPage(data) {
   let name = document.getElementById("edit_name");
