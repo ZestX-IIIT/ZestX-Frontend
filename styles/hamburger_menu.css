@@ -108,7 +108,7 @@
 }
 .Toggle_class_anim {
   display: block;
-  animation: hambeurger_fade_anim 0.5s 1 ease-in-out alternate forwards;
+  animation: hambeurger_fade_anim 0.5s 1 ease-in-out alternate ;
 }
 .HamburgerMenuNavList.Toggle_class {
   opacity: 1;
