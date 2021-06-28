@@ -276,3 +276,6 @@ body {
 #userListContainer {
   justify-content: space-between;
 }
+input[type='password']{
+  text-transform: none;
+}
