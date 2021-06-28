@@ -86,7 +86,7 @@ async function setup() {
     profileBtn.innerHTML = `${userData.user_name[0]}`;
 
   } catch (err) {
-    alert("error occured re-try!");
+    show_toast(0, "Error occured re-try!");
     console.log(err);
   }
 }
@@ -140,13 +140,13 @@ window.addEventListener("load", () => {
           });
           if (res3.status == 400) {
             displayEvenetspage();
-            alert("Please verify your email!");
+            show_toast(2, "Please verify your email!");
           } else if (res3.status == 500) {
             displayEvenetspage();
-            alert("Please re-try...");
+            show_toast(0, "Error occured Please re-try!");
           } else {
             displayEvenetspage();
-            alert("User registered successfully!");
+            show_toast(1, "User registered successfully!");
             let userarray = festData.find(
               (event) => event.fest_id == eventId
             ).user_id;
@@ -167,10 +167,10 @@ window.addEventListener("load", () => {
           });
           if (res4.status == 400) {
             displayEvenetspage();
-            alert("Please verify your email!");
+            show_toast(2, "Please verify your email!");
           } else if (res4.status == 500) {
             displayEvenetspage();
-            alert("Please re-try...");
+            show_toast(0, "Error occured Please re-try!");
           } else {
             displayEvenetspage();
             let userarray = festData.find(
@@ -184,7 +184,7 @@ window.addEventListener("load", () => {
             if (eventIndex > -1) {
               userData.fest_id.splice(eventIndex, 1);
             }
-            alert("User unregistered successfully!");
+            show_toast(1, "User unregistered successfully!");
             setRegisterBtnText(eventId);
           }
         }
@@ -218,8 +218,7 @@ window.addEventListener("load", () => {
       });
 
       editBtn.addEventListener("click", () => {
-        show_toast(1, "toast working goodly...");
-        // displayEditProfilepage();
+        displayEditProfilepage();
         setUserDetailsInEditPage(userData);
       });
 
@@ -239,9 +238,9 @@ window.addEventListener("load", () => {
         let confirmNewPassword = document.getElementById("confirm_new_password").value;
 
         if (newPassword != confirmNewPassword) {
-          alert("Confirm password not matched with new password!");
+          show_toast(2, "Confirm new password not matched with new password!");
         } else if (newPassword.length < 6) {
-          alert("Password should be minimum of 6 length!")
+          show_toast(2, "Password should be minimum of 6 length!");
         } else if (oldPassword && newPassword && confirmNewPassword) {
           displayPreloder();
 
@@ -259,16 +258,16 @@ window.addEventListener("load", () => {
 
           if (res6.status == 400) {
             displayChangePasswordpage();
-            alert("Incorrect current password!");
+            show_toast(2, "Incorrect current password!");
           } else if (res6.status == 500) {
             displayChangePasswordpage();
-            alert("Internal server error please re-try!");
+            show_toast(0, "Internal server error please re-try!");
           } else {
-            alert("Your password updated successfully!");
+            show_toast(1, "Your password updated successfully!");
             displayProfilepage();
           }
         } else {
-          alert("Please enter all details properly!");
+          show_toast(2, "Please enter all details properly!");
         }
       });
 
@@ -297,19 +296,18 @@ window.addEventListener("load", () => {
 
           if (res5.status == 400) {
             displayEditProfilepage();
-            alert("Incorrect Password!");
+            show_toast(2, "Incorrect Password!");
           } else if (res5.status == 500) {
             displayEditProfilepage();
-            alert("Internal server error please re-try!");
+            show_toast(0, "Internal server error please re-try!");
           } else if (res5.status == 200) {
-            alert("Your details updated successfully!");
+            show_toast(1, "Your details updated successfully!");
             userData.user_name = user_name;
             userData.mobile = mobile;
             displayProfilepage();
           } else {
-            alert(
-              "Your details updated successfully! Please verify your updated email-id"
-            );
+            show_toast(1, "Your details updated successfully! Please verify your updated email-id!");
+
             userData.user_name = user_name;
             userData.email = email;
             userData.mobile = mobile;
@@ -322,11 +320,11 @@ window.addEventListener("load", () => {
           }
 
         } else {
-          alert("Please enter all details properly!");
+          show_toast(2, "Please enter all details properly!");
         }
       });
     } catch (err) {
-      alert("error occured re-try!");
+      show_toast(0, "Error occured re-try!");
       console.log(err);
     }
   }, 500);
