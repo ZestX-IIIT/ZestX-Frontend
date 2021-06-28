@@ -15,7 +15,7 @@ function show_toast(isSuccess , message) {
     }
     else{
       toastImage.src = "../assets/_general/neutral_exclamation.svg"
-      toastFrontMessage.style.backgroundColor = "#d8d801"
+      toastFrontMessage.style.backgroundColor = "black"
     }
     toastDescriptionMessage.innerText = message;
     toastAlertMessage.className = "toastPopUp";
