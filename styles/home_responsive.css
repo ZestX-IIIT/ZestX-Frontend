@@ -187,6 +187,12 @@
   .front {
     height: 75vh;
   }
+  .frontleft h2 {
+    font-size: 1.7rem;
+  }
+  .leftcontent {
+    font-size: 0.8rem;
+  }
 }
 @media only screen and (max-width: 505px) {
   #animation_container {
@@ -215,7 +221,22 @@
     height: 35vh;
     width: 35vh;
   }
+  .frontleft h2 {
+    font-size: 1.5rem;
+  }
+  .leftcontent {
+    font-size: 0.7rem;
+  }
 }
+@media only screen and (max-width: 320px) {
+  .frontleft h2 {
+    font-size: 1.4rem;
+  }
+  .leftcontent {
+    font-size: 0.6rem;
+  }
+}
+
 @media only screen and (max-width: 290px) {
   #animation_container {
     height: 30vh;
