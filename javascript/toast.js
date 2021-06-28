@@ -4,14 +4,18 @@ let toastFrontMessage = document.getElementById("toastFrontMessage");
 let toastDescriptionMessage = document.getElementById("toastDescriptionMessage");
 let isSuccess , message;
 
-function launch_toast(isSuccess , message) {
-    if(isSuccess == true){
+function show_toast(isSuccess , message) {
+    if(isSuccess == 1){
         toastImage.src = "../assets/_general/success_tick.svg"
         toastFrontMessage.style.backgroundColor = "green"
     }
-    else{
+    else if(isSuccess == 0){
         toastImage.src = "../assets/_general/error_cross.svg"
         toastFrontMessage.style.backgroundColor = "red"
+    }
+    else{
+      toastImage.src = "../assets/_general/neutral_exclamation.svg"
+      toastFrontMessage.style.backgroundColor = "#d8d801"
     }
     toastDescriptionMessage.innerText = message;
     toastAlertMessage.className = "toastPopUp";
