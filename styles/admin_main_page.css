@@ -10,10 +10,19 @@ body {
 
 #zestxlogoadminpage {
   position: absolute;
-  top: 0;
-  right: 4%;
-  width: 6rem;
-  height: 6rem;
+  top: 2%;
+  right: 47.5vw;
+  width: 5%;
+  height: auto;
+}
+
+#logout_button{
+  height: auto;
+  position: absolute;
+  width: 7vw;
+  top: 8.6%;
+  right: 2.7vw;
+  cursor: pointer;
 }
 .main_admin_container {
   padding: 6vh 2.5vw;
@@ -74,7 +83,7 @@ body {
   display: none;
 }
 
-#internal_users_list_loader{
+#internal_users_list_loader {
   position: absolute;
   top: 16%;
   left: 0%;
@@ -83,7 +92,7 @@ body {
   display: none;
 }
 
-#external_users_list_loader{
+#external_users_list_loader {
   position: absolute;
   top: 16%;
   left: 0%;
@@ -180,7 +189,7 @@ body {
 .internal_users,
 .outer_users {
   height: 50%;
-  display: flex;  
+  display: flex;
   position: relative;
   flex-direction: column;
   overflow-y: hidden;

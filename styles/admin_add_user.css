@@ -8,7 +8,7 @@ body {
   position: relative;
 }
 
-#zestxlogoadminpage {
+#zestxlogoadminadduserpage {
   position: absolute;
   top: 0;
   left: 91%;
@@ -100,11 +100,6 @@ input:focus {
   justify-content: space-between;
 }
 
-#logout_button{
-  height: auto;
-  width: 10vw;
-  cursor: pointer;
-}
 
 #Add_user_button img {
   width: 25px;
