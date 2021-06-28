@@ -5,9 +5,8 @@
     width: 8%;
   }
   .main_admin_container h2 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
-
   .main_admin_container {
     padding: 8vh 2.5vw;
     padding-bottom: 0;
@@ -27,5 +26,24 @@
   }
   .outer_right {
     height: 92vh;
+  }
+  #internal_users_h3 {
+    padding-top: 1rem;
+  }
+  .internal_users h3,
+  .outer_users h3 {
+    font-size: 1.1rem;
+  }
+  .inner_list h4 {
+    font-size: 0.8rem;
+  }
+  .inner_list h3 {
+    font-size: 1.1rem;
+  }
+  .InnerListContent {
+    font-size: 0.8rem;
+  }
+  .right_h3 {
+    font-size: 1.1rem !important;
   }
 }
