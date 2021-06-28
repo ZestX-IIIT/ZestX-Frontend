@@ -127,7 +127,7 @@
   }
   .main_admin_container h2 {
     font-size: 1rem;
-    margin-bottom: 2%;
+    margin-bottom: 3vw;
     height: auto;
   }
   #add_user_plus_icon {
@@ -137,7 +137,7 @@
     padding: 14vw 2.5vw;
     height: auto;
     padding-bottom: 0;
-    grid-gap: 2vw;
+    grid-gap: 4vw;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
   }
@@ -176,5 +176,9 @@
   }
   .right_h3 {
     font-size: 1.1rem !important;
+  }
+  #internal_users_list_loader, #external_users_list_loader {
+    left: 20%;
+    width: 60%;
   }
 }
