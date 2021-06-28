@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 #toastAlertMessage {
+  width: 450px;
   visibility: hidden;
   max-width: 4.125rem;
   height: 4.125rem;
