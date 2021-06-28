@@ -604,6 +604,9 @@ function show_toast(isSuccess, message) {
   setTimeout(function () {
     toastDescriptionMessage.innerText = message;
   }, 600);
+  setTimeout(function () {
+    toastDescriptionMessage.innerText = " ";
+  }, 4200);
   toastAlertMessage.className = "toastPopUp";
   setTimeout(function () {
     toastAlertMessage.className = toastAlertMessage.className.replace("toastPopUp", "");
