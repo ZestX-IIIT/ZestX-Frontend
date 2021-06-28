@@ -73,6 +73,24 @@ body {
 .internal_list::-webkit-scrollbar {
   display: none;
 }
+
+#internal_users_list_loader{
+  position: absolute;
+  top: 16%;
+  left: 0%;
+  width: 100%;
+  height: 90%;
+  display: none;
+}
+
+#external_users_list_loader{
+  position: absolute;
+  top: 16%;
+  left: 0%;
+  width: 100%;
+  height: 90%;
+  display: none;
+}
 .external_user_delete_button {
   cursor: pointer;
 }
@@ -162,7 +180,8 @@ body {
 .internal_users,
 .outer_users {
   height: 50%;
-  display: flex;
+  display: flex;  
+  position: relative;
   flex-direction: column;
   overflow-y: hidden;
   scrollbar-width: none;

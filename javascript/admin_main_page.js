@@ -12,7 +12,9 @@ let adminMainPage = document.getElementById("admin_main_page_container");
 let preloader = document.getElementById("admin_preloader_container");
 let adminAddUserPage = document.getElementById("admin_add_user_page_container");
 let internalUserContainer = document.getElementById("internal_user_list");
+let internalUsersListLoader = document.getElementById("internal_users_list_loader")
 let externalUserContainer = document.getElementById("external_user_list");
+let externalUsersListLoader = document.getElementById("external_users_list_loader")
 let addUserBtnFromMainPage = document.getElementById("secondh2");
 let event_description_datails_sub_container = document.getElementById("event_description_datails_sub_container");
 let logoutBtn;
@@ -55,6 +57,8 @@ async function setup() {
 
                 let eventInstance = eventListArray[i]
                 eventInstance.addEventListener("click", () => {
+                    checkAndDisplayContainer(internalUsersListLoader)
+                    checkAndDisplayContainer(externalUsersListLoader)
                     externalUsersEventClickRequestStack++;
                     internalUsersEventClickRequestStack++;
                     if (current_displaying_event_index != i) {
@@ -242,6 +246,7 @@ async function getInternalUserDetails(array1) {
                 console.log("min ", internalUsersEventClickRequestStack);
 
                 if (internalUsersEventClickRequestStack == 0) {
+                    checkAndCloseContainer(internalUsersListLoader)
                     checkAndDisplayContainer(internalUserContainer);
                 }
             }
@@ -252,7 +257,7 @@ async function getInternalUserDetails(array1) {
             console.log("min ", internalUsersEventClickRequestStack);
 
             if (internalUsersEventClickRequestStack == 0) {
-
+                checkAndCloseContainer(internalUsersListLoader)
                 checkAndDisplayContainer(internalUserContainer);
             }
         }
@@ -296,6 +301,7 @@ async function getExternalUserDetails(array2) {
                 } else {
 
                     if (externalUsersEventClickRequestStack == 0) {
+                        checkAndCloseContainer(externalUsersListLoader)
                         checkAndDisplayContainer(externalUserContainer);
                     }
                 }
@@ -316,7 +322,7 @@ async function getExternalUserDetails(array2) {
                 isFirstTime = false;
             } else {
                 if (externalUsersEventClickRequestStack == 0) {
-
+                    checkAndCloseContainer(externalUsersListLoader)
                     checkAndDisplayContainer(externalUserContainer);
                 }
             }
