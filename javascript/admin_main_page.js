@@ -133,6 +133,9 @@ async function setup() {
             } else {
                 alert("Please fill atleast one of email and phone number!");
             }
+            document.getElementById("name").value = null
+            document.getElementById("email").value = null
+            document.getElementById("phone_number").value = null
         })
 
         backBtnFromAddUserPage.addEventListener("click", () => {
