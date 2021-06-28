@@ -53,7 +53,7 @@
   padding: 0;
   margin: 0 1.25rem;
   opacity: 0;
-  transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in;
   display: none;
 }
 .HBMBackground,
@@ -81,7 +81,7 @@
     rgb(174 35 255) 93%
   );	
   border-radius: 50%;
-  transition: 500ms ease-in-out;
+  transition: 500ms ease-in;
 }
 #hamburgermenuMainContainer {
   z-index: 2;
@@ -108,9 +108,9 @@
 }
 .Toggle_class_anim {
   display: block;
-  animation: hambeurger_fade_anim 0.5s 1 ease-in-out alternate forwards;
+  animation: hambeurger_fade_anim 0.5s 1 ease-in alternate forwards;
 }
 .HamburgerMenuNavList.Toggle_class {
   opacity: 1;
-  transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in;
 }
