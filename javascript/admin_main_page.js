@@ -218,7 +218,6 @@ function setEventDetails(data) {
 }
 
 async function getInternalUserDetails(array1) {
-    externalUsersEventClickRequestStack--
     try {
         if (array1 != null && array1.length != 0) {
             const res1 = await fetch(`${apiURL}/user/userdetails`, {
@@ -238,20 +237,30 @@ async function getInternalUserDetails(array1) {
                 const data1 = await res1.json();
                 setInternalUserDetails(data1.data, array1);
 
-                
+
+                internalUsersEventClickRequestStack--
                 console.log("min ", internalUsersEventClickRequestStack);
+
                 if (internalUsersEventClickRequestStack == 0) {
                     checkAndDisplayContainer(internalUserContainer);
                 }
             }
         } else {
             internalUserContainer.innerHTML = "";
+
+            internalUsersEventClickRequestStack--
+            console.log("min ", internalUsersEventClickRequestStack);
+
             if (internalUsersEventClickRequestStack == 0) {
 
                 checkAndDisplayContainer(internalUserContainer);
             }
         }
     } catch (err) {
+
+        internalUsersEventClickRequestStack--
+        console.log("min ", internalUsersEventClickRequestStack);
+
         alert("error occured re-try!");
         console.log(err);
     }
@@ -276,15 +285,17 @@ async function getExternalUserDetails(array2) {
                 const data2 = await res2.json();
                 setExternalUserDetails(data2.data, array2);
 
+                externalUsersEventClickRequestStack--
+                console.log("ext", externalUsersEventClickRequestStack);
+
                 if (isFirstTime) {
                     setTimeout(function () {
                         displayAdminMainpage();
                     }, 100);
                     isFirstTime = false;
                 } else {
-                    console.log("ext", externalUsersEventClickRequestStack);
-                    if (externalUsersEventClickRequestStack == 0) {
 
+                    if (externalUsersEventClickRequestStack == 0) {
                         checkAndDisplayContainer(externalUserContainer);
                     }
                 }
@@ -292,6 +303,12 @@ async function getExternalUserDetails(array2) {
 
         } else {
             externalUserContainer.innerHTML = "";
+
+
+            externalUsersEventClickRequestStack--
+            console.log("ext", externalUsersEventClickRequestStack);
+
+
             if (isFirstTime) {
                 setTimeout(function () {
                     displayAdminMainpage();
@@ -305,13 +322,17 @@ async function getExternalUserDetails(array2) {
             }
         }
     } catch (err) {
+
+        externalUsersEventClickRequestStack--
+        console.log("ext", externalUsersEventClickRequestStack);
+
+
         alert("error occured re-try!");
         console.log(err);
     }
 }
 
 function setInternalUserDetails(data, array1) {
-    internalUsersEventClickRequestStack--
     internalUserContainer.innerHTML = "";
 
     for (let item of data) {
@@ -479,7 +500,7 @@ function checkAndCloseContainer(container) {
         setTimeout(function () {
             container.style.display = "none";
             container.style.opacity = 0;
-        }, 300);
+        }, 200);
     }
 }
 
