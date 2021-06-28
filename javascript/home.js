@@ -224,6 +224,7 @@ window.addEventListener("load", () => {
 
       changePasswordBtn.addEventListener("click", () => {
         displayChangePasswordpage();
+        clearDataInChangePasswordpage();
       });
 
       logoutBtn.addEventListener("click", () => {
@@ -569,6 +570,16 @@ function addEvents(array1, array2) {
   });
 }
 
+function clearDataInChangePasswordpage() {
+
+  let oldPassword = document.getElementById("current_password");
+  oldPassword.value = "";
+  let newPassword = document.getElementById("new_password");
+  newPassword.value = "";
+  let confirmNewPassword = document.getElementById("confirm_new_password");
+  confirmNewPassword.value = "";
+}
+
 function setUserDetailsInEditPage(data) {
   let name = document.getElementById("edit_name");
   name.value = `${data.user_name}`;
@@ -576,6 +587,8 @@ function setUserDetailsInEditPage(data) {
   mobile.value = `${data.mobile}`;
   let email = document.getElementById("edit_email");
   email.value = `${data.email}`;
+  let password = document.getElementById("password");
+  password.value = "";
 }
 
 function setEventDetails(id) {
