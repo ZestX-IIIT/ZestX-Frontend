@@ -13,6 +13,9 @@ let primaryProfilePageContainer = document.getElementById(
 let primaryEditProfileContainer = document.getElementById(
   "primnary_edit_profile_container"
 );
+let primaryChangePasswordContainer = document.getElementById(
+  "primnary_change_password_container"
+);
 let preloader = document.getElementById("preloader_container");
 
 let slider_event_list;
@@ -50,9 +53,12 @@ let primary_events_posters =
 let backBtnFromEventsPage;
 let backBtnFromProfilePage;
 let backBtnFromEditProfilePage;
+let backBtnFromChangePasswordPage;
 let editBtn;
 let saveBtn;
+let updateBtn;
 let logoutBtn;
+let changePasswordBtn;
 let profileBtn = document.getElementById("profile_button");
 let ongoingEventContainer;
 let pastEventContainer;
@@ -97,6 +103,8 @@ window.addEventListener("load", () => {
     backBtnFromEditProfilePage = document.getElementById(
       "back_btn_from_edit_profile_page"
     );
+    backBtnFromChangePasswordPage = document.getElementById("back_btn_from_change_password_page");
+
     ongoingEventContainer = document.getElementById("OngoingEventsList");
     pastEventContainer = document.getElementById("PastEventsList");
 
@@ -106,6 +114,8 @@ window.addEventListener("load", () => {
 
     editBtn = document.getElementById("EditButton");
     saveBtn = document.getElementById("SaveButton");
+    updateBtn = document.getElementById("UpdateButton");
+    changePasswordBtn = document.getElementById("ChangePasswordButton");
     logoutBtn = document.getElementById("LogoutButton");
 
     let registerBtn = document.getElementById("EventRegister");
@@ -199,6 +209,10 @@ window.addEventListener("load", () => {
         profileBtn.innerHTML = `${userData.user_name[0]}`;
       });
 
+      backBtnFromChangePasswordPage.addEventListener("click", () => {
+        displayProfilepage();
+      });
+
       backBtnFromEditProfilePage.addEventListener("click", () => {
         displayProfilepage();
       });
@@ -208,9 +222,52 @@ window.addEventListener("load", () => {
         setUserDetailsInEditPage(userData);
       });
 
+      changePasswordBtn.addEventListener("click", () => {
+        displayChangePasswordpage();
+      });
+
       logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("jwt");
         location.href = "/";
+      });
+
+      updateBtn.addEventListener("click", async () => {
+        let oldPassword = document.getElementById("current_password").value;
+        let newPassword = document.getElementById("new_password").value;
+        let confirmNewPassword = document.getElementById("confirm_new_password").value;
+
+        if (newPassword != confirmNewPassword) {
+          alert("Confirm password not matched with new password!");
+        } else if (newPassword.length < 6) {
+          alert("Password should be minimum of 6 length!")
+        } else if (oldPassword && newPassword && confirmNewPassword) {
+          displayPreloder();
+
+          const res6 = await fetch(`${apiURL}/user/changepassword`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              authorization: localStorage.getItem("jwt"),
+            },
+            body: JSON.stringify({
+              oldPassword,
+              newPassword,
+            }),
+          });
+
+          if (res6.status == 400) {
+            displayChangePasswordpage();
+            alert("Incorrect current password!");
+          } else if (res6.status == 500) {
+            displayChangePasswordpage();
+            alert("Internal server error please re-try!");
+          } else {
+            alert("Your password updated successfully!");
+            displayProfilepage();
+          }
+        } else {
+          alert("Please enter all details properly!");
+        }
       });
 
       saveBtn.addEventListener("click", async () => {
@@ -218,11 +275,8 @@ window.addEventListener("load", () => {
         let user_name = document.getElementById("edit_name").value;
         let mobile = document.getElementById("edit_phone_number").value;
         let password = document.getElementById("password").value;
-        let confirmPassword = document.getElementById("confirm_password").value;
 
-        if (password != confirmPassword) {
-          alert("Please enter same password in password and confirm password!");
-        } else if (password && email && mobile && user_name) {
+        if (password && email && mobile && user_name) {
           displayPreloder();
 
           const res5 = await fetch(`${apiURL}/user/updatedetails`, {
@@ -241,10 +295,10 @@ window.addEventListener("load", () => {
 
           if (res5.status == 400) {
             displayEditProfilepage();
-            alert("Internal server error please re-try!");
+            alert("Incorrect Password!");
           } else if (res5.status == 500) {
             displayEditProfilepage();
-            alert("Password hashing error please re-try!");
+            alert("Internal server error please re-try!");
           } else if (res5.status == 200) {
             alert("Your details updated successfully!");
             userData.user_name = user_name;
@@ -590,6 +644,7 @@ function displayMainContainer() {
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(preloader);
   checkAndCloseContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(primaryChangePasswordContainer);
   checkAndCloseContainer(primaryEditProfileContainer);
 }
 
@@ -599,11 +654,23 @@ function displayPreloder() {
   checkAndCloseContainer(primaryContainer);
   checkAndCloseContainer(primaryProfilePageContainer);
   checkAndCloseContainer(primaryEditProfileContainer);
+  checkAndCloseContainer(primaryChangePasswordContainer);
   checkAndCloseContainer(nabar_container);
 }
 
 function displayEvenetspage() {
   checkAndDisplayContainer(primaryEventsPageContainer);
+  checkAndCloseContainer(primaryContainer);
+  checkAndCloseContainer(preloader);
+  checkAndCloseContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(primaryEditProfileContainer);
+  checkAndCloseContainer(primaryChangePasswordContainer);
+  checkAndCloseContainer(nabar_container);
+}
+
+function displayChangePasswordpage() {
+  checkAndDisplayContainer(primaryChangePasswordContainer);
+  checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(primaryContainer);
   checkAndCloseContainer(preloader);
   checkAndCloseContainer(primaryProfilePageContainer);
@@ -614,6 +681,7 @@ function displayEvenetspage() {
 function displayProfilepage() {
   setUserDetails(userData);
   checkAndDisplayContainer(primaryProfilePageContainer);
+  checkAndCloseContainer(primaryChangePasswordContainer);
   checkAndCloseContainer(primaryContainer);
   checkAndCloseContainer(preloader);
   checkAndCloseContainer(primaryEventsPageContainer);
@@ -623,6 +691,7 @@ function displayProfilepage() {
 
 function displayEditProfilepage() {
   checkAndDisplayContainer(primaryEditProfileContainer);
+  checkAndCloseContainer(primaryChangePasswordContainer);
   checkAndCloseContainer(primaryContainer);
   checkAndCloseContainer(preloader);
   checkAndCloseContainer(primaryEventsPageContainer);
