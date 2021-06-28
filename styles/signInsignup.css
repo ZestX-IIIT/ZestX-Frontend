@@ -209,3 +209,6 @@ input:not(:focus):valid ~ .floating
 input:focus{
   outline: none;
 }
+input[type='password']{
+  text-transform: none;
+}
