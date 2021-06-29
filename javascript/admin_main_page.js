@@ -134,9 +134,6 @@ async function setup() {
             } else {
                 show_toast(2, "Please fill atleast one of email and phone number!");
             }
-            document.getElementById("name").value = null
-            document.getElementById("email").value = null
-            document.getElementById("phone_number").value = null
         })
 
         backBtnFromAddUserPage.addEventListener("click", () => {
@@ -152,13 +149,17 @@ async function setup() {
 setup();
 
 addUserBtnFromMainPage.addEventListener("click", () => {
+    document.getElementById("name").value = null
+    document.getElementById("email").value = null
+    document.getElementById("phone_number").value = null
+
     displayAdminAddUserPage();
 });
 
 
 setTimeout(function () {
 
-    logoutBtn = document.getElementById("logout_button");
+    logoutBtn = document.getElementById("logout_button_admin_main_page");
 
     logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("jwt");
