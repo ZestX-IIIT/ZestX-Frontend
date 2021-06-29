@@ -11,7 +11,7 @@
     padding: 8vh 2.5vw;
     padding-bottom: 0;
   }
-  #logout_button {
+  #logout_button_admin_main_page {
     top: 11.25%;
     width: 9vw;
   }
@@ -68,7 +68,7 @@
     padding: 8vh 2.5vw;
     padding-bottom: 0;
   }
-  #logout_button {
+  #logout_button_admin_main_page {
     top: 11.25%;
     width: 10vw;
   }
@@ -142,7 +142,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
   }
-  #logout_button {
+  #logout_button_admin_main_page {
     width: 12vw;
     top: 14vw;
   }
@@ -190,7 +190,7 @@
     padding: 16vw 2.5vw;
     padding-bottom: 0;
   }
-  #logout_button {
+  #logout_button_admin_main_page {
     width: 5rem;
     top: 16.5vw;
   }
@@ -206,7 +206,7 @@
   .main_admin_container h2 {
     margin-bottom: 5vw;
   }
-  #logout_button {
+  #logout_button_admin_main_page {
     width: 5rem;
     top: 25vw;
   }
