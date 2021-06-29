@@ -65,7 +65,7 @@ signinBtn.addEventListener("click", (event) => {
         }
       })
       .catch((err) => {
-        show_toast(2, "Error occured Re-try!");
+        show_toast(0, "Internal server error please re-try!");
         console.log(err);
         preloader.style.display = "none";
       });
@@ -115,7 +115,7 @@ signupBtn.addEventListener("click", (event) => {
         }
       })
       .catch((err) => {
-        show_toast(2, "Error occured Re-try!");
+        show_toast(0, "Internal server error please re-try!");
         console.log(err);
         preloader.style.display = "none";
       });

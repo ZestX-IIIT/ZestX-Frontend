@@ -16,7 +16,15 @@ body {
   height: auto;
 }
 
-#logout_button{
+#admin_main_page_container {
+  display: none;
+  position: relative;
+}
+#admin_add_user_page_container {
+  display: none;
+}
+
+#logout_button_admin_main_page {
   height: auto;
   position: absolute;
   width: 7vw;
@@ -59,6 +67,15 @@ body {
 
 #container_common_background::-webkit-scrollbar {
   display: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .inner_list {
@@ -285,6 +302,6 @@ body {
 #userListContainer {
   justify-content: space-between;
 }
-input[type='password']{
+input[type="password"] {
   text-transform: none;
 }
