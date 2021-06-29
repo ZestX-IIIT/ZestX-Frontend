@@ -25,6 +25,10 @@
     <div include_file_path="./general/loader.html" style="position: fixed; width: 100vw; z-index: 50000;"
         id="preloader_container"></div>
 
+    <div id="primnary_toast_container">
+        <section include_file_path="./general/toast.html" id="sub_toast_container"></section>
+        </div>
+
     <section class="main">
         <div class="background opacity-class" id="bg1">
 
@@ -85,7 +89,8 @@
     <script src="./javascript/signinup.js"></script>
 
     <script>
-        includehtmlbyID("preloader_container")
+        includehtmlbyID("preloader_container");
+        includehtmlbyID("sub_toast_container");
     </script>
 </body>
 
