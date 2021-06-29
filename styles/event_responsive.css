@@ -1,4 +1,3 @@
-
 @media only screen and (max-width: 1300px) {
   .events {
     display: flex;
@@ -26,15 +25,47 @@
     left: 56%;
   }
 }
-
+@media only screen and (max-width: 1000px) {
+  #slider {
+    height: 65vh !important;
+  }
+}
 @media only screen and (max-width: 920px) {
   #slider {
     height: 60vh !important;
   }
 }
+@media only screen and (max-width: 845px) {
+  #slider {
+    height: 55vh !important;
+  }
+}
 @media only screen and (max-width: 730px) {
   .events {
     padding-top: 0;
+  }
+  #slider {
+    height: 50vh !important;
+  }
+  .slide:after,
+  .slide:checked:after {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+  .slide:checked:after {
+    border: 4px solid #989cff;
+  }
+  #s1 {
+    left: 42%;
+  }
+  #s2 {
+    left: 46%;
+  }
+  #s4 {
+    left: 54%;
+  }
+  #s5 {
+    left: 58%;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -45,15 +76,77 @@
 @media only screen and (max-width: 655px) {
   #slider {
     padding-top: 0;
+    height: 45vh !important;
   }
 }
+@media only screen and (max-width: 565px) {
+  .slide {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  .slide:checked:after {
+    border: 2px solid #989cff;
+  }
+  #slider {
+    height: 40vh !important;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   #slider {
-    height: 30vh !important;
+    height: 35vh !important;
+  }
+}
+@media only screen and (max-width: 475px) {
+  .slide {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+  .slide:checked:after {
+    border: 1.5px solid #989cff;
+  }
+  #slider {
+    height: 32vh !important;
   }
 }
 @media only screen and (max-width: 400px) {
   #slider {
-    height: 25vh !important;
+    height: 30vh !important;
+  }
+  #s1 {
+    left: 40%;
+  }
+  #s2 {
+    left: 45%;
+  }
+  #s4 {
+    left: 55%;
+  }
+  #s5 {
+    left: 60%;
+  }
+}
+@media only screen and (max-width: 370px) {
+  #slider {
+    height: 26vh !important;
+  }
+}
+@media only screen and (max-width: 340px) {
+  #s1 {
+    left: 38%;
+  }
+  #s2 {
+    left: 44%;
+  }
+  #s4 {
+    left: 56%;
+  }
+  #s5 {
+    left: 62%;
+  }
+}
+@media only screen and (max-width: 323px) {
+  #slider {
+    height: 24vh !important;
   }
 }
