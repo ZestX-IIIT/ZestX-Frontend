@@ -138,6 +138,7 @@
     height: auto;
     padding-bottom: 0;
     grid-gap: 4vw;
+    margin-bottom: 4vw;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
   }
@@ -146,7 +147,7 @@
     top: 14vw;
   }
   .container_common_background {
-    height: 45vw;
+    height: 35vw;
     border-radius: 0.5rem;
   }
   .outer_left {
@@ -156,7 +157,7 @@
     height: auto;
   }
   .outer_right {
-    height: 92vh;
+    height: auto;
   }
   #internal_users_h3 {
     padding-top: 1rem;
@@ -177,7 +178,8 @@
   .right_h3 {
     font-size: 1.1rem !important;
   }
-  #internal_users_list_loader, #external_users_list_loader {
+  #internal_users_list_loader,
+  #external_users_list_loader {
     left: 20%;
     width: 60%;
   }
