@@ -198,7 +198,7 @@
 
 @media screen and (min-width: 0px) and (max-width: 426px) {
   .main_admin_container {
-    padding: 25vw 3.5vw;
+    padding: 27vw 3.5vw;
     padding-bottom: 0;
     grid-gap: 7vw;
     margin-bottom: 6vw;
@@ -222,7 +222,7 @@
   #userListContainer {
     height: 80vh;
   }
-  .outer_left h2{
+  .outer_left h2 {
     width: 60vw;
   }
 }
