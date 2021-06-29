@@ -300,7 +300,7 @@ async function getExternalUserDetails(array2) {
                 setExternalUserDetails(data2.data, array2);
 
                 externalUsersEventClickRequestStack--
-                console.log("ext", externalUsersEventClickRequestStack);
+                // console.log("ext", externalUsersEventClickRequestStack);
 
                 if (isFirstTime) {
                     setTimeout(function () {
@@ -321,7 +321,7 @@ async function getExternalUserDetails(array2) {
 
 
             externalUsersEventClickRequestStack--
-            console.log("ext", externalUsersEventClickRequestStack);
+            // console.log("ext", externalUsersEventClickRequestStack);
 
 
             if (isFirstTime) {
@@ -339,7 +339,7 @@ async function getExternalUserDetails(array2) {
     } catch (err) {
 
         externalUsersEventClickRequestStack--
-        console.log("ext", externalUsersEventClickRequestStack);
+        // console.log("ext", externalUsersEventClickRequestStack);
 
 
         show_toast(0, "Internal server error please re-try!");
@@ -373,6 +373,7 @@ function setInternalUserDetails(data, array1) {
 
     document.getElementsByClassName("registered_internal_user")[data.length - 1].getElementsByClassName("inner_list")[0].style.borderBottom = "none"
 
+    let internalUserList = document.getElementsByClassName("registered_internal_user");
     let internalUserDeleteBtnList = document.getElementsByClassName("internal_user_delete_button");
     let internalUserDeleteBtnListLength = internalUserDeleteBtnList.length;
 
@@ -395,15 +396,12 @@ function setInternalUserDetails(data, array1) {
                     show_toast(0, "Internal server error please re-try!");
                     displayAdminMainpage();
                 } else {
+                    internalUserList[i].style.display = "none";
                     if (i > -1) {
                         array1.splice(i, 1);
                     }
-                    internalUsersEventClickRequestStack++;
-                    getInternalUserDetails(array1);
                     show_toast(1, "User removed successfully!");
-                    setTimeout(function () {
-                        displayAdminMainpage();
-                    }, 1500);
+                    displayAdminMainpage();
                 }
             } catch (err) {
                 show_toast(0, "Internal server error please re-try!");
@@ -451,6 +449,7 @@ function setExternalUserDetails(data, array2) {
     }
     document.getElementsByClassName("registered_external_user")[data.length - 1].getElementsByClassName("inner_list")[0].style.borderBottom = "none"
 
+    let externalUserList = document.getElementsByClassName("registered_external_user");
     let externalUserDeleteBtnList = document.getElementsByClassName("external_user_delete_button");
     let externalUserDeleteBtnListLength = externalUserDeleteBtnList.length;
 
@@ -473,15 +472,12 @@ function setExternalUserDetails(data, array2) {
                     show_toast(0, "Internal server error please re-try!");
                     displayAdminMainpage();
                 } else {
+                    externalUserList[i].style.display = "none";
                     if (i > -1) {
                         array2.splice(i, 1);
                     }
-                    externalUsersEventClickRequestStack++;
-                    getExternalUserDetails(array2)
                     show_toast(1, "User removed successfully!");
-                    setTimeout(function () {
-                        displayAdminMainpage();
-                    }, 1500);
+                    displayAdminMainpage();
                 }
             } catch (err) {
                 show_toast(0, "Internal server error please re-try!");
