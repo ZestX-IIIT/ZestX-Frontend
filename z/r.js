@@ -1,37 +1,56 @@
 let progress = document.getElementById("Progressbar");
 let totalHeight = document.body.scrollHeight - window.innerHeight;
+let windowWidth = window.innerWidth;
+let limit = windowWidth - 100;
 window.onscroll = function () {
   let progressHeight = (window.pageYOffset / totalHeight) * 100;
   progress.style.height = progressHeight + "%";
 };
 var y = 0;
 let scrollPath = document.getElementById("scrollPath");
+let scrollPath2 = document.getElementById("scrollPath2");
 // scrollPath.addEventListener("mousemove", progressBarScroll);
 let isProgressbarActive = false;
 
+let timeTemp = Date.now()
+console.log(timeTemp);
+
+
+console.log(scrollPath2);
+
 function startProgressbarScroll(e) {
   isProgressbarActive = true;
+  console.log("true")
 }
 function stopProgressbarScroll(e) {
   isProgressbarActive = false;
+  console.log("false")
 }
 
 function progressBarScroll(e) {
-  if (isProgressbarActive) {
-    y = e.clientY;
-    console.log(y);
-    window.scrollBy(0,  (((y * totalHeight) / window.innerHeight) - window.pageYOffset)/10);
-  }
+  // console.log(Date.now() -timeTemp)
+  // if (Date.now() - timeTemp > 500) {
+    if (isProgressbarActive) {
+      if (e.clientX > limit) {
+        y = e.clientY;
+        window.scrollBy(0, (((y * totalHeight) / window.innerHeight) - window.pageYOffset)/10 );
+
+      }
+    }
+  //   timeTemp= Date.now()
+  // }
+
 }
-scrollPath.addEventListener("mousedown", startProgressbarScroll);
-scrollPath.addEventListener("touchstart", startProgressbarScroll);
 
-scrollPath.addEventListener("mousemove", progressBarScroll);
-scrollPath.addEventListener("touchmove", progressBarScroll);
+document.addEventListener("mousedown", startProgressbarScroll);
+document.addEventListener("touchstart", startProgressbarScroll);
 
-scrollPath.addEventListener("mouseleave", stopProgressbarScroll);
-scrollPath.addEventListener("mouseup", stopProgressbarScroll);
-scrollPath.addEventListener("touchend", stopProgressbarScroll);
+document.addEventListener("mousemove", progressBarScroll);
+document.addEventListener("touchmove", progressBarScroll);
+
+document.addEventListener("mouseleave", stopProgressbarScroll);
+document.addEventListener("mouseup", stopProgressbarScroll);
+document.addEventListener("touchend", stopProgressbarScroll);
 
 // let isDown = false;
 // let startX;
