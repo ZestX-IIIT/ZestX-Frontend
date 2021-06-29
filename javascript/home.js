@@ -563,9 +563,7 @@ function addEvents(array1, array2) {
 
     const insideHtml = `<h2>${fest_name}</h2>
     <h4>${startDate} - ${endDate}</h4>
-    <div class="EventContent">
-    ${description}
-    </div>
+    
     `;
 
     event.innerHTML = insideHtml;
