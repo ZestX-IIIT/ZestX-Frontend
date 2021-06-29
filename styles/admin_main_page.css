@@ -16,6 +16,10 @@ body {
   height: auto;
 }
 
+#admin_main_page_container{
+  display: none;
+}
+
 #logout_button{
   height: auto;
   position: absolute;
