@@ -62,6 +62,7 @@ let changePasswordBtn;
 let profileBtn = document.getElementById("profile_button");
 let ongoingEventContainer;
 let pastEventContainer;
+let lastToastTimestamp = Date.now();
 
 setup();
 
@@ -233,6 +234,8 @@ window.addEventListener("load", () => {
       });
 
       updateBtn.addEventListener("click", async () => {
+
+
         let oldPassword = document.getElementById("current_password").value;
         let newPassword = document.getElementById("new_password").value;
         let confirmNewPassword = document.getElementById("confirm_new_password").value;
@@ -269,6 +272,7 @@ window.addEventListener("load", () => {
         } else {
           show_toast(2, "Please enter all details properly!");
         }
+
       });
 
       saveBtn.addEventListener("click", async () => {
@@ -581,34 +585,44 @@ function clearDataInChangePasswordpage() {
 
 function show_toast(isSuccess, message) {
 
-  let toastAlertMessage = document.getElementById("toastAlertMessage");
-  let toastImage = document.getElementById("toastImage");
-  let toastFrontMessage = document.getElementById("toastFrontMessage");
-  let toastDescriptionMessage = document.getElementById("toastDescriptionMessage");
+  if (Date.now() - lastToastTimestamp > 5000) {
+    let toastAlertMessage = document.getElementById("toastAlertMessage");
+    let toastImage = document.getElementById("toastImage");
+    let toastFrontMessage = document.getElementById("toastFrontMessage");
+    let toastDescriptionMessage = document.getElementById("toastDescriptionMessage");
+    let msgLength = message.length + 7;
 
-  if (isSuccess == 1) {
-    toastImage.src = "../assets/_general/success_tick.svg"
-    toastFrontMessage.style.backgroundColor = "green"
-  }
-  else if (isSuccess == 0) {
-    toastImage.src = "../assets/_general/error_cross.svg"
-    toastFrontMessage.style.backgroundColor = "red"
-  }
-  else {
-    toastImage.src = "../assets/_general/neutral_exclamation.svg"
-    toastFrontMessage.style.backgroundColor = "black"
-  }
-  toastDescriptionMessage.innerText = " ";
-  setTimeout(function () {
-    toastDescriptionMessage.innerText = message;
-  }, 600);
-  setTimeout(function () {
+    document.getElementById("toastAlertMessage").style.setProperty("--foo", `${msgLength}ch`);
+
+    if (isSuccess == 1) {
+      toastImage.src = "../assets/_general/success_tick.svg"
+      toastFrontMessage.style.backgroundColor = "green"
+    }
+    else if (isSuccess == 0) {
+      toastImage.src = "../assets/_general/error_cross.svg"
+      toastFrontMessage.style.backgroundColor = "red"
+    }
+    else {
+      toastImage.src = "../assets/_general/neutral_exclamation.svg"
+      toastFrontMessage.style.backgroundColor = "black"
+    }
     toastDescriptionMessage.innerText = " ";
-  }, 4200);
-  toastAlertMessage.className = "toastPopUp";
-  setTimeout(function () {
-    toastAlertMessage.className = toastAlertMessage.className.replace("toastPopUp", "");
-  }, 5000);
+    setTimeout(function () {
+      toastDescriptionMessage.innerText = message;
+    }, 600);
+    setTimeout(function () {
+      toastDescriptionMessage.innerText = " ";
+    }, 4200);
+    toastAlertMessage.className = "toastPopUp";
+    setTimeout(function () {
+      toastAlertMessage.className = toastAlertMessage.className.replace("toastPopUp", "");
+    }, 5000);
+    lastToastTimestamp = Date.now();
+  } else {
+    setTimeout(function () {
+      show_toast(isSuccess, message);
+    }, 5500 - (Date.now() - lastToastTimestamp))
+  }
 }
 
 

@@ -40,7 +40,6 @@ body {
   height: 75vh;
   padding-left: 5rem;
   padding-top: 3rem;
-  border-right: 1px solid #ffffff;
   display: flex;
   flex-direction: column;
 }
@@ -59,7 +58,7 @@ body {
   text-transform: uppercase;
   color: #efd5ff;
 }
-#edit_email{
+#edit_email {
   text-transform: lowercase;
 }
 input::-webkit-outer-spin-button,
@@ -114,6 +113,6 @@ input:focus {
   transform: translateY(-2rem);
   font-size: 1rem;
 }
-input[type='password']{
+input[type="password"] {
   text-transform: none;
 }
