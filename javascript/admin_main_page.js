@@ -30,6 +30,7 @@ let externalUsersEventClickRequestStack = 1;
 let internalUsersEventClickRequestStack = 1;
 let current_displaying_event_index = 0;
 let ongoingEvents;
+let lastToastTimestamp = Date.now();
 let isFirstTime = true;
 
 
@@ -40,7 +41,7 @@ async function setup() {
             method: "GET",
         });
         if (res1.status == 500) {
-            alert("Internal server error please re-try!");
+            show_toast(0, "Internal server error please re-try!");
         } else {
             const data1 = await res1.json();
             ongoingEvents = data1.data;
@@ -104,17 +105,17 @@ async function setup() {
                     body: JSON.stringify({ event_id, username: exUsername, email: exEmail, mobile: exMobile }),
                 });
                 if (res2.status == 400) {
-                    alert("You have not access to admin panel!");
+                    show_toast(2, "You have not access to admin panel!");
                     displayAdminAddUserPage();
                 } else if (res2.status == 500) {
-                    alert("Internal server error please re-try!");
+                    show_toast(0, "Internal server error please re-try!");
                     displayAdminAddUserPage();
                 } else {
                     const res3 = await fetch(`${apiURL}/fest/ongoingevents`, {
                         method: "GET",
                     })
                     if (res3.status == 500) {
-                        alert("Internal server error please re-try!");
+                        show_toast(0, "Internal server error please re-try!");
                     } else {
                         const data2 = await res3.json();
                         ongoingEvents = data2.data;
@@ -124,14 +125,14 @@ async function setup() {
                         );
                         getInternalUserDetails(event.user_id);
                         getExternalUserDetails(event.external_user_id);
-                        alert("User added successfully!");
+                        show_toast(1, "User added successfully!");
                         displayAdminMainpage();
                     }
                 }
             } else if (exUsername.length == 0) {
-                alert("Please fill name!");
+                show_toast(2, "Please fill name!");
             } else {
-                alert("Please fill atleast one of email and phone number!");
+                show_toast(2, "Please fill atleast one of email and phone number!");
             }
             document.getElementById("name").value = null
             document.getElementById("email").value = null
@@ -143,7 +144,7 @@ async function setup() {
         })
 
     } catch (err) {
-        alert("error occured re-try!");
+        show_toast(0, "Internal server error please re-try!");
         console.log(err);
     }
 }
@@ -236,9 +237,9 @@ async function getInternalUserDetails(array1) {
                 body: JSON.stringify({ ids: array1.toString() }),
             });
             if (res1.status == 400) {
-                alert("You have not access to admin panel!");
+                show_toast(2, "You have not access to admin panel!");
             } else if (res1.status == 500) {
-                alert("Internal server error please re-try!");
+                show_toast(0, "Internal server error please re-try!");
             } else {
 
                 const data1 = await res1.json();
@@ -269,7 +270,7 @@ async function getInternalUserDetails(array1) {
         internalUsersEventClickRequestStack--
         // console.log("min ", internalUsersEventClickRequestStack);
 
-        alert("error occured re-try!");
+        show_toast(0, "Internal server error please re-try!");
         console.log(err);
     }
 }
@@ -285,9 +286,9 @@ async function getExternalUserDetails(array2) {
                 body: JSON.stringify({ ids: array2.toString() }),
             });
             if (res2.status == 400) {
-                alert("You have not access to admin panel!");
+                show_toast(2, "You have not access to admin panel!");
             } else if (res2.status == 500) {
-                alert("Internal server error please re-try!");
+                show_toast(0, "Internal server error please re-try!");
             } else {
 
                 const data2 = await res2.json();
@@ -336,7 +337,7 @@ async function getExternalUserDetails(array2) {
         // console.log("ext", externalUsersEventClickRequestStack);
 
 
-        alert("error occured re-try!");
+        show_toast(0, "Internal server error please re-try!");
         console.log(err);
     }
 }
@@ -383,21 +384,21 @@ function setInternalUserDetails(data, array1) {
                     body: JSON.stringify({ eventId: event_id, userId: array1[i] }),
                 });
                 if (res.status == 400) {
-                    alert("You have not access to admin panel!");
+                    show_toast(2, "You have not access to admin panel!");
                     displayAdminMainpage();
                 } else if (res.status == 500) {
-                    alert("Internal server error please re-try!");
+                    show_toast(0, "Internal server error please re-try!");
                     displayAdminMainpage();
                 } else {
                     if (i > -1) {
                         array1.splice(i, 1);
                     }
                     getInternalUserDetails(array1);
-                    alert("User removed successfully!");
+                    show_toast(1, "User removed successfully!");
                     displayAdminMainpage();
                 }
             } catch (err) {
-                alert("error occured re-try!");
+                show_toast(0, "Internal server error please re-try!");
                 console.log(err);
             }
         });
@@ -458,21 +459,21 @@ function setExternalUserDetails(data, array2) {
                     body: JSON.stringify({ eventId: event_id, userId: array2[i] }),
                 });
                 if (res.status == 400) {
-                    alert("You have not access to admin panel!");
+                    show_toast(2, "You have not access to admin panel!");
                     displayAdminMainpage();
                 } else if (res.status == 500) {
-                    alert("Internal server error please re-try!");
+                    show_toast(0, "Internal server error please re-try!");
                     displayAdminMainpage();
                 } else {
                     if (i > -1) {
                         array2.splice(i, 1);
                     }
                     getExternalUserDetails(array2)
-                    alert("User removed successfully!");
+                    show_toast(1, "User removed successfully!");
                     displayAdminMainpage();
                 }
             } catch (err) {
-                alert("error occured re-try!");
+                show_toast(0, "Internal server error please re-try!");
                 console.log(err);
             }
         });
@@ -520,4 +521,46 @@ function checkAndDisplayContainer(container) {
         container.classList.remove("display_to_none");
     }
     container.classList.add("display_to_block");
+}
+
+function show_toast(isSuccess, message) {
+
+    if (Date.now() - lastToastTimestamp > 5000) {
+        let toastAlertMessage = document.getElementById("toastAlertMessage");
+        let toastImage = document.getElementById("toastImage");
+        let toastFrontMessage = document.getElementById("toastFrontMessage");
+        let toastDescriptionMessage = document.getElementById("toastDescriptionMessage");
+        let msgLength = message.length + 7;
+
+        document.getElementById("toastAlertMessage").style.setProperty("--foo", `${msgLength}ch`);
+
+        if (isSuccess == 1) {
+            toastImage.src = "../assets/_general/success_tick.svg"
+            toastFrontMessage.style.backgroundColor = "green"
+        }
+        else if (isSuccess == 0) {
+            toastImage.src = "../assets/_general/error_cross.svg"
+            toastFrontMessage.style.backgroundColor = "red"
+        }
+        else {
+            toastImage.src = "../assets/_general/neutral_exclamation.svg"
+            toastFrontMessage.style.backgroundColor = "black"
+        }
+        toastDescriptionMessage.innerText = " ";
+        setTimeout(function () {
+            toastDescriptionMessage.innerText = message;
+        }, 600);
+        setTimeout(function () {
+            toastDescriptionMessage.innerText = " ";
+        }, 4200);
+        toastAlertMessage.className = "toastPopUp";
+        setTimeout(function () {
+            toastAlertMessage.className = toastAlertMessage.className.replace("toastPopUp", "");
+        }, 5000);
+        lastToastTimestamp = Date.now();
+    } else {
+        setTimeout(function () {
+            show_toast(isSuccess, message);
+        }, 5500 - (Date.now() - lastToastTimestamp))
+    }
 }
