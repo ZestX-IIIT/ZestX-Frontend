@@ -50,6 +50,10 @@
     fadeout 0.5s 4.5s;
 }
 
+:root {
+  --foo: 30ch;
+}
+
 @-webkit-keyframes fadein {
   from {
     bottom: 0;
@@ -86,7 +90,7 @@
     min-width: 50px;
   }
   to {
-    min-width: 350px;
+    min-width: var(--foo);
   }
 }
 @-webkit-keyframes stay {
@@ -100,10 +104,10 @@
 
 @keyframes stay {
   from {
-    min-width: 350px;
+    min-width: var(--foo);
   }
   to {
-    min-width: 350px;
+    min-width: var(--foo);
   }
 }
 @-webkit-keyframes shrink {
@@ -117,7 +121,7 @@
 
 @keyframes shrink {
   from {
-    min-width: 350px;
+    min-width: var(--foo);
   }
   to {
     min-width: 50px;
