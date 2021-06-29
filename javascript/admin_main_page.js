@@ -125,7 +125,7 @@ async function setup() {
                         const event = ongoingEvents.find(
                             (item) => item.fest_id == event_id
                         );
-                        getInternalUserDetails(event.user_id);
+                        externalUsersEventClickRequestStack++;
                         getExternalUserDetails(event.external_user_id);
                         show_toast(1, "User added successfully!");
                         setTimeout(function () {
@@ -300,7 +300,7 @@ async function getExternalUserDetails(array2) {
                 setExternalUserDetails(data2.data, array2);
 
                 externalUsersEventClickRequestStack--
-                // console.log("ext", externalUsersEventClickRequestStack);
+                console.log("ext", externalUsersEventClickRequestStack);
 
                 if (isFirstTime) {
                     setTimeout(function () {
@@ -321,7 +321,7 @@ async function getExternalUserDetails(array2) {
 
 
             externalUsersEventClickRequestStack--
-            // console.log("ext", externalUsersEventClickRequestStack);
+            console.log("ext", externalUsersEventClickRequestStack);
 
 
             if (isFirstTime) {
@@ -339,7 +339,7 @@ async function getExternalUserDetails(array2) {
     } catch (err) {
 
         externalUsersEventClickRequestStack--
-        // console.log("ext", externalUsersEventClickRequestStack);
+        console.log("ext", externalUsersEventClickRequestStack);
 
 
         show_toast(0, "Internal server error please re-try!");
@@ -398,6 +398,7 @@ function setInternalUserDetails(data, array1) {
                     if (i > -1) {
                         array1.splice(i, 1);
                     }
+                    internalUsersEventClickRequestStack++;
                     getInternalUserDetails(array1);
                     show_toast(1, "User removed successfully!");
                     setTimeout(function () {
@@ -475,6 +476,7 @@ function setExternalUserDetails(data, array2) {
                     if (i > -1) {
                         array2.splice(i, 1);
                     }
+                    externalUsersEventClickRequestStack++;
                     getExternalUserDetails(array2)
                     show_toast(1, "User removed successfully!");
                     setTimeout(function () {
