@@ -94,7 +94,9 @@ async function setup() {
             exEmail = document.getElementById("email").value;
             exMobile = document.getElementById("phone_number").value;
 
-            if (exUsername && (exEmail || exMobile)) {
+            if (exMobile && exMobile.length < 10) {
+                show_toast(2, "Mobile no. should have 10 digits!");
+            } else if (exUsername && (exEmail || exMobile)) {
                 displayPreloder();
                 const res2 = await fetch(`${apiURL}/fest/adduser`, {
                     method: "POST",
@@ -126,7 +128,9 @@ async function setup() {
                         getInternalUserDetails(event.user_id);
                         getExternalUserDetails(event.external_user_id);
                         show_toast(1, "User added successfully!");
-                        displayAdminMainpage();
+                        setTimeout(function () {
+                            displayAdminMainpage();
+                        }, 2500);
                     }
                 }
             } else if (exUsername.length == 0) {
@@ -134,6 +138,7 @@ async function setup() {
             } else {
                 show_toast(2, "Please fill atleast one of email and phone number!");
             }
+
         })
 
         backBtnFromAddUserPage.addEventListener("click", () => {
@@ -152,7 +157,6 @@ addUserBtnFromMainPage.addEventListener("click", () => {
     document.getElementById("name").value = null
     document.getElementById("email").value = null
     document.getElementById("phone_number").value = null
-
     displayAdminAddUserPage();
 });
 
@@ -396,7 +400,9 @@ function setInternalUserDetails(data, array1) {
                     }
                     getInternalUserDetails(array1);
                     show_toast(1, "User removed successfully!");
-                    displayAdminMainpage();
+                    setTimeout(function () {
+                        displayAdminMainpage();
+                    }, 1500);
                 }
             } catch (err) {
                 show_toast(0, "Internal server error please re-try!");
@@ -471,7 +477,9 @@ function setExternalUserDetails(data, array2) {
                     }
                     getExternalUserDetails(array2)
                     show_toast(1, "User removed successfully!");
-                    displayAdminMainpage();
+                    setTimeout(function () {
+                        displayAdminMainpage();
+                    }, 1500);
                 }
             } catch (err) {
                 show_toast(0, "Internal server error please re-try!");
