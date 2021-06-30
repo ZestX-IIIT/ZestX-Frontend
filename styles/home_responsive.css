@@ -103,7 +103,7 @@
   }
 }
 @media only screen and (max-width: 1370px) {
-  #primnary_scroll_bar_container{
+  #Progressbar , #scrollPath{
     display: none;
   }
 }
