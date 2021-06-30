@@ -32,6 +32,22 @@ html::-webkit-scrollbar {
   opacity: 1;
 } */
 
+#sub_scroll_bar_container{
+  position: fixed;
+  top: 0;
+  right: 0%;
+  height: 100vh;
+  width: 100%;
+}
+
+#primnary_scroll_bar_container{
+  position: fixed;
+  top: 0;
+  right: 0%;
+  height: 100vh;
+  width: 100%;
+}
+
 #primnary_event_details_container {
   display: none;
   /* opacity: 0; */
