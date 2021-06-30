@@ -107,9 +107,6 @@
 .team_section_info_icons:hover{
   cursor: pointer;
 }
-.team_section_hover_icons_under_hover{
-  opacity: 0;
-}
 .team_section_github {
   top: 41.5%;
 }
@@ -119,24 +116,3 @@
 .team_section_mail {
   top: 14%;
 }
-/* .team_section_hover_icons_not_hover_github:hover{
-  opacity: 0;
-}
-.team_section_hover_icons_under_hover_github:hover{
-  opacity: 1;
-} */
-/* #member1 {
-  background-image: url("../assets/home_page/team_section/kunal_sir.png");
-}
-#member2 {
-  background-image: url("../assets/home_page/team_section/manish_sir.png");
-}
-#member3 {
-  background-image: url("../assets/home_page/team_section/nikhil_sir.png");
-}
-#member4 {
-  background-image: url("../assets/home_page/team_section/harsh_sir.png");
-}
-#member5 {
-  background-image: url("../assets/home_page/team_section/parth_sir_1.jpg");
-} */
