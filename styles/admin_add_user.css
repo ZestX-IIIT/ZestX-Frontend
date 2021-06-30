@@ -48,13 +48,13 @@ body {
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #efd5ff;
-  padding: 0.2rem;
+  padding: 0.4rem;
   padding-left: 0;
   margin-bottom: 2rem;
   font-family: "Now";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   color: #efd5ff;
 }
@@ -125,13 +125,13 @@ input:focus {
   color: #efd5ff;
   opacity: 0.7;
   transform: translateY(0px);
-  transition: all 400ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .admit_add_user_details:focus ~ .Label_floating,
 .admit_add_user_details:not(:focus):valid ~ .Label_floating {
-  transform: translateY(-2rem);
-  font-size: 1rem;
+  transform: translateY(-1.2rem);
+  font-size: 0.7rem;
 }
 input[type="password"] {
   text-transform: none;
