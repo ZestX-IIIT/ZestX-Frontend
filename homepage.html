@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="./styles/navbar.css">
   <link rel="stylesheet" href="./styles/home.css">
   <link rel="stylesheet" href="./styles/team.css">
-  <!-- <link rel="stylesheet" href="./styles/sponsers.css"> -->
   <link rel="stylesheet" href="./styles/navbar_responsive.css">
   <link rel="stylesheet" href="./styles/team_responsive.css">
   <!-- <link rel="stylesheet" href="../styles/sponser_responsive.css"> -->
   <link rel="stylesheet" href="./styles/home_responsive.css">
+  <link rel="stylesheet" href="../styles/progressbar_home_page.css">
   <link rel="stylesheet" href="./styles/primary_container_home_page_responsive.css">
   <!-- <link rel="stylesheet" href="./rough.css"> -->
   <script src="./javascript/html_include.js"></script>
@@ -90,7 +90,7 @@
 
         <div class="topContainer">
           <div class="outerContainer">
-            <img  src="../assets/home_page/team_section/kunal_sir.png" class="imageHolder" id="member1">
+            <img src="../assets/home_page/team_section/kunal_sir.png" class="imageHolder" id="member1">
           </div>
           <h2>KUNAL JAIN</h2>
         </div>
@@ -155,10 +155,12 @@
   <div id="primnary_toast_container">
     <section include_file_path="./general/toast.html" id="sub_toast_container"></section>
   </div>
-
-  <div id="primnary_scroll_bar_container">
+  <div id="Progressbar"></div>
+  <!-- <div id="scrollPath2"></div> -->
+  <div id="scrollPath"></div>
+  <!-- <div id="primnary_scroll_bar_container">
     <section include_file_path="./general/progressbar_home_page.html" id="sub_scroll_bar_container"></section>
-  </div>
+  </div> -->
 
   <script>
     includehtmlbyID("preloader_container")
@@ -173,7 +175,7 @@
     includehtmlbyID("hamburger_menu")
     includehtmlbyID("sub_change_password_container")
     includehtmlbyID("sub_toast_container")
-    includehtmlbyID("sub_scroll_bar_container")
+    // includehtmlbyID("sub_scroll_bar_container")
   </script>
 </body>
 <script src="./javascript/home.js"></script>
