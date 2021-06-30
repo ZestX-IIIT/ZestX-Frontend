@@ -104,6 +104,7 @@
   }
   .slide:checked:after {
     border: 1.5px solid #989cff;
+    top: -3%;
   }
   #slider {
     height: 32vh !important;
