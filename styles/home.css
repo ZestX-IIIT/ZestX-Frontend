@@ -2,12 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 .home {
   width: 100%;
   height: 100vh;
 }
-
+body{
+  position: relative;
+}
 #nabar_container {
   display: none;
 }

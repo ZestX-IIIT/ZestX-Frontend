@@ -19,14 +19,14 @@ setTimeout(function () {
   };
   var y = 0;
   let scrollPath = document.getElementById("scrollPath");
-  let scrollPath2 = document.getElementById("scrollPath2");
+  // let scrollPath2 = document.getElementById("scrollPath2");
   let isProgressbarActive = false;
 
   let timeTemp = Date.now()
   console.log(timeTemp);
 
 
-  console.log(scrollPath2);
+  // console.log(scrollPath2);
 
   function startProgressbarScroll(e) {
     limit = windowWidth - 200;
