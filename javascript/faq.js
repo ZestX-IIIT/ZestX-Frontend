@@ -1,24 +1,10 @@
 setTimeout(function () {
   var FAQQuestion = document.getElementsByClassName("FAQQuestion");
   var FAQArrowDown = document.getElementsByClassName("FAQArrowDown");
-  var i;
-  let count = true;
+  const FAQ_not_expanded_check_index = [];
 
-  for (i = 0; i < FAQQuestion.length; i++) {
-    FAQArrowDown[i].addEventListener("click", function () {
-      if (count == true) {
-        this.classList.add("ArrowRotate");
-        this.classList.remove("ArrowRotate2");
-        count = false;
-        console.log("1")
-      }
-      else {
-        this.classList.add("ArrowRotate2");
-        this.classList.remove("ArrowRotate");
-        count = true;
-        console.log("2")
-      }
-    });
+  for (let i = 0; i < FAQQuestion.length; i++) {
+    FAQ_not_expanded_check_index[i] = true;
     FAQQuestion[i].addEventListener("click", function () {
       this.classList.toggle("active");
       var panel = this.nextElementSibling;
@@ -27,6 +13,16 @@ setTimeout(function () {
       } else {
         panel.style.maxHeight = panel.scrollHeight + "px";
       }
+      if (FAQ_not_expanded_check_index[i]) {
+        FAQArrowDown[i].classList.remove("ArrowRotate2");
+        FAQArrowDown[i].classList.add("ArrowRotate");
+        FAQ_not_expanded_check_index[i] = false;
+        console.log(FAQ_not_expanded_check_index[i]);
+      } else {
+        FAQArrowDown[i].classList.remove("ArrowRotate");
+        FAQArrowDown[i].classList.add("ArrowRotate2");
+        FAQ_not_expanded_check_index[i] = true;
+      }
     });
   }
-}, 200);
+}, 500);
