@@ -89,10 +89,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0.56vw;
-  transition: background-image 400ms ease-out;
 }
 .imageHolder:hover {
-  background-image: url("../assets/home_page/team_section/hover.svg") !important;
   cursor: pointer;
 }
 /* #member1 {
