@@ -371,57 +371,62 @@ window.addEventListener("scroll", () => {
     }
   }
 });
-let current_offset_height = homeSection.offsetTop - 125;
-console.log(current_offset_height);
-let current_active_tab = 0;
-let smooth_setinterval;
-function smooth_scroll_home_page(target_height) {
-  if (target_height > current_offset_height) {
-    smooth_setinterval = setInterval(() => {
-      current_offset_height = current_offset_height + 10;
-      scrollBy(0, 10);
-      if (target_height <= current_offset_height) {
-        clearInterval(smooth_setinterval);
-      }
-    }, 1);
-  } else if (target_height < current_offset_height) {
-    smooth_setinterval = setInterval(() => {
-      current_offset_height = current_offset_height - 10;
-      scrollBy(0, -10);
-      if (target_height >= current_offset_height) {
-        clearInterval(smooth_setinterval);
-      }
-    }, 1);
-  }
-  else {
-    return;
-  }
-}
-
+// let current_offset_height = homeSection.offsetTop - 125;
+// let current_active_tab = 0;
+// let smooth_setinterval;
+// function smooth_scroll_home_page(target_height) {
+//   if (target_height > current_offset_height) {
+//     smooth_setinterval = setInterval(() => {
+//       current_offset_height = current_offset_height + 1;
+//       scrollBy(0, 1);
+//       if (target_height <= current_offset_height) {
+//         clearInterval(smooth_setinterval);
+//       }
+//     }, 1);
+//   } else if (target_height < current_offset_height) {
+//     smooth_setinterval = setInterval(() => {
+//       current_offset_height = current_offset_height - 1;
+//       scrollBy(0, -1);
+//       if (target_height >= current_offset_height) {
+//         clearInterval(smooth_setinterval);
+//       }
+//     }, 1);
+//   }
+//   else {
+//     return;
+//   }
+// }
+console.log(teamSection.offsetHeight);
 home.addEventListener("click", () => {
-  // window.scrollTo(0, homeSection.offsetTop - 125);
-  smooth_scroll_home_page(homeSection.offsetTop - 125);
-  console.log(current_active_tab);
+  homeSection.scrollIntoView( {behavior: "smooth"})
+  // window.scrollTo(0, homeSection.offsetHeight);
+  // smooth_scroll_home_page(homeSection.offsetTop - 125);
+  // console.log(current_active_tab);
 });
 events.addEventListener("click", () => {
-  // window.scrollTo(0, eventsSection.offsetTop - 75);
-  smooth_scroll_home_page(eventsSection.offsetTop - 75);
-  console.log(current_active_tab);
+  eventsSection.scrollIntoView({behavior: "smooth"})
+  
+  // window.scrollTo(0, eventsSection.offsetHeight);
+  // smooth_scroll_home_page(eventsSection.offsetTop - 75);
+  // console.log(current_active_tab);
 });
 team.addEventListener("click", () => {
-  // window.scrollTo(0, teamSection.offsetTop);
-  smooth_scroll_home_page(teamSection.offsetTop);
-  console.log(current_active_tab);
+  teamSection.scrollIntoView({behavior: "smooth"})
+  // window.scrollTo(0, teamSection.offsetHeight);
+  // smooth_scroll_home_page(teamSection.offsetTop);
+  // console.log(current_active_tab);
 });
 sponsers.addEventListener("click", () => {
-  // window.scrollTo(0, sponsersSection.offsetTop);
-  smooth_scroll_home_page(sponsersSection.offsetTop);
-  console.log(current_active_tab);
+  // window.scrollTo(0, sponsersSection.offsetHeight);
+  // smooth_scroll_home_page(sponsersSection.offsetTop);
+  // console.log(current_active_tab);
+  sponsersSection.scrollIntoView({behavior: "smooth"})
 });
 faq.addEventListener("click", () => {
-  // window.scrollTo(0, faqSection.offsetTop);
-  smooth_scroll_home_page(faqSection.offsetTop);
-  console.log(current_active_tab);
+  // window.scrollTo(0, faqSection.offsetHeight);
+  // smooth_scroll_home_page(faqSection.offsetTop);
+  // console.log(current_active_tab);
+  faqSection.scrollIntoView({behavior: "smooth"})
 });
 
 function deActive(tabIndex) {
