@@ -11,7 +11,7 @@ let mail_icons = document.getElementsByClassName("team_section_mail");
 // let team_section_hover_icons_not_hover_mail = document.getElementsByClassName("team_section_mail");
 // let team_section_hover_icons_under_hover_github = document.getElementsByClassName("team_section_hover_icons_under_hover_github")
 
-console.log(github_icons);
+// console.log(github_icons);
 
 for (let i = 0; i < imageHolder.length; i++) {
     outerContainer[i].addEventListener("mouseenter", () => {
