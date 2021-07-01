@@ -1,8 +1,0 @@
-  01-07-2021 17:35:23: Starting composition “computer_for_password_animation2”.
-
-  Output To: C:\Users\raj\ZestX\tp\images\img_21_[#####].png    01-07-2021 17:35:23: Finished composition “computer_for_password_animation2”.
-
-
-  Total Time Elapsed: 0 Seconds
-Log closed on 01-07-2021 at 17:35:23
-
