@@ -40,7 +40,7 @@ body::-webkit-scrollbar {
   top: 0;
   right: 0;
   cursor: grab;
-  z-index: 2000000000000;
+  z-index: 200;
   border-radius: 0 0 10px 10px;
   width: 15px;
   /* height: ; */
