@@ -62,7 +62,7 @@ html::-webkit-scrollbar {
   top: 0%;
   left: 0%;
   height: 100%;
-  z-index: 1000000;
+  z-index: 100;
 }
 
 #primnary_profile_details_container {
@@ -74,7 +74,7 @@ html::-webkit-scrollbar {
   top: 0%;
   left: 0%;
   height: 100%;
-  z-index: 1000000;
+  z-index: 100;
 }
 
 #primnary_edit_profile_container {
@@ -86,7 +86,7 @@ html::-webkit-scrollbar {
   top: 0%;
   left: 0%;
   height: 100%;
-  z-index: 1000000;
+  z-index: 100;
 }
 
 .display_to_none {
@@ -121,7 +121,7 @@ html::-webkit-scrollbar {
   height: 200vh;
   width: 100%;
   position: fixed;
-  z-index: -1000000;
+  z-index: -100;
   background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
 }
 .front {
