@@ -17,6 +17,14 @@ body {
   height: 6rem;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #efd5ff;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 #back_btn_from_add_user_page {
   position: absolute;
   top: 7%;

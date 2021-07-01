@@ -108,11 +108,18 @@ input:focus {
   transform: translateY(0px);
   transition: all 400ms ease-in-out;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #efd5ff;
+  transition: background-color 5000s ease-in-out 0s;
+}
 #forgot_password_at_edit_profile_page {
   margin-top: -50px;
   margin-left: 500px;
   font-size: 14px;
-  color: #ffffff;
+  color: #efd5ff;
   font-family: "Now";
   font-weight: bold;
   font-style: normal;
