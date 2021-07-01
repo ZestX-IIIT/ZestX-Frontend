@@ -131,10 +131,11 @@ signupBtn.addEventListener("click", async (event) => {
 });
 
 forgotPasswordBtn.addEventListener("click", async () => {
+  preloader.style.display = "block";
 
   const email = document.getElementById("signinemail").value;
 
-  const res3 = await fetch(`${apiURL}/user/forgotpasswordsignin`, {
+  const res4 = await fetch(`${apiURL}/user/forgotpasswordsignin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -142,12 +143,15 @@ forgotPasswordBtn.addEventListener("click", async () => {
     body: JSON.stringify({ email }),
   });
 
-  if (res3.status == 400) {
+  if (res4.status == 400) {
+    preloader.style.display = "none";
     show_toast(2, "Please enter registered email-id!");
-  } else if (res3.status == 500) {
+  } else if (res4.status == 500) {
+    preloader.style.display = "none";
     show_toast(0, "Error occured re-try!");
     console.log(err);
   } else {
+    preloader.style.display = "none";
     show_toast(1, "Your new password sent to your registered email-id!");
   }
 })

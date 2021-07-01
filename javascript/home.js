@@ -52,6 +52,8 @@ let backBtnFromEventsPage;
 let backBtnFromProfilePage;
 let backBtnFromEditProfilePage;
 let backBtnFromChangePasswordPage;
+let forgotPasswordBtnFromChangePasswordPage;
+let forgotPasswordBtnFromEditProfilePage;
 let editBtn;
 let saveBtn;
 let updateBtn;
@@ -103,6 +105,9 @@ window.addEventListener("load", () => {
     backBtnFromChangePasswordPage = document.getElementById(
       "back_btn_from_change_password_page"
     );
+
+    forgotPasswordBtnFromChangePasswordPage = document.getElementById("forgot_password_at_change_password_page");
+    forgotPasswordBtnFromEditProfilePage = document.getElementById("forgot_password_at_edit_profile_page");
 
     ongoingEventContainer = document.getElementById("OngoingEventsList");
     pastEventContainer = document.getElementById("PastEventsList");
@@ -223,6 +228,42 @@ window.addEventListener("load", () => {
         displayChangePasswordpage();
         clearDataInChangePasswordpage();
       });
+
+      forgotPasswordBtnFromChangePasswordPage.addEventListener("click", async () => {
+        displayPreloder();
+        const res = await fetch(`${apiURL}/user/forgotpasswordhomepage`, {
+          method: "GET",
+          headers: {
+            authorization: token,
+          },
+        });
+        if (res.status == 500) {
+          show_toast(0, "Error occured re-try!");
+          displayChangePasswordpage();
+          console.log(err);
+        } else {
+          show_toast(1, "Your new password sent to your registered email-id!");
+          displayChangePasswordpage();
+        }
+      })
+
+      forgotPasswordBtnFromEditProfilePage.addEventListener("click", async () => {
+        displayPreloder();
+        const res = await fetch(`${apiURL}/user/forgotpasswordhomepage`, {
+          method: "GET",
+          headers: {
+            authorization: token,
+          },
+        });
+        if (res.status == 500) {
+          show_toast(0, "Error occured re-try!");
+          displayEditProfilepage();
+          console.log(err);
+        } else {
+          show_toast(1, "Your new password sent to your registered email-id!");
+          displayEditProfilepage();
+        }
+      })
 
       logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("jwt");
@@ -396,22 +437,22 @@ window.addEventListener("scroll", () => {
 //     return;
 //   }
 // }
-console.log(teamSection.offsetHeight);
+// console.log(teamSection.offsetHeight);
 home.addEventListener("click", () => {
-  homeSection.scrollIntoView( {behavior: "smooth"})
+  homeSection.scrollIntoView({ behavior: "smooth" })
   // window.scrollTo(0, homeSection.offsetHeight);
   // smooth_scroll_home_page(homeSection.offsetTop - 125);
   // console.log(current_active_tab);
 });
 events.addEventListener("click", () => {
-  eventsSection.scrollIntoView({behavior: "smooth"})
-  
+  eventsSection.scrollIntoView({ behavior: "smooth" })
+
   // window.scrollTo(0, eventsSection.offsetHeight);
   // smooth_scroll_home_page(eventsSection.offsetTop - 75);
   // console.log(current_active_tab);
 });
 team.addEventListener("click", () => {
-  teamSection.scrollIntoView({behavior: "smooth"})
+  teamSection.scrollIntoView({ behavior: "smooth" })
   // window.scrollTo(0, teamSection.offsetHeight);
   // smooth_scroll_home_page(teamSection.offsetTop);
   // console.log(current_active_tab);
@@ -420,13 +461,13 @@ sponsers.addEventListener("click", () => {
   // window.scrollTo(0, sponsersSection.offsetHeight);
   // smooth_scroll_home_page(sponsersSection.offsetTop);
   // console.log(current_active_tab);
-  sponsersSection.scrollIntoView({behavior: "smooth"})
+  sponsersSection.scrollIntoView({ behavior: "smooth" })
 });
 faq.addEventListener("click", () => {
   // window.scrollTo(0, faqSection.offsetHeight);
   // smooth_scroll_home_page(faqSection.offsetTop);
   // console.log(current_active_tab);
-  faqSection.scrollIntoView({behavior: "smooth"})
+  faqSection.scrollIntoView({ behavior: "smooth" })
 });
 
 function deActive(tabIndex) {
