@@ -1,8 +1,0 @@
-  01-07-2021 22:05:04: Starting composition “tempConverterComp”.
-
-  Output To: C:\Users\raj\AppData\Local\Temp\Bodymovin\mqn22tz122\raw\images\img_23.png    01-07-2021 22:05:05: Finished composition “tempConverterComp”.
-
-
-  Total Time Elapsed: 1 Seconds
-Log closed on 01-07-2021 at 22:05:05
-
