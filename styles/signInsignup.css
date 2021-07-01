@@ -35,7 +35,7 @@ h1 {
   height: auto;
   border-radius: 15px;
 }
-.form-container2{
+.form-container2 {
   position: absolute;
   top: 25%;
   left: 10%;
@@ -46,27 +46,27 @@ h1 {
   height: auto;
   border-radius: 15px;
 }
-.display-class{
+.display-class {
   display: none !important;
   transition: display 200ms ease-in-out;
 }
-.opacity-class{
+.opacity-class {
   animation-name: fade;
   animation-timing-function: ease-in-out;
   animation-duration: 500ms;
   animation-iteration-count: 1;
   animation-direction: alternate;
-  animation-fill-mode:both;
+  animation-fill-mode: both;
 }
 @keyframes fade {
-  from{
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
-.background{
+.background {
   background: url("../assets/signin_signup_Page/containerbg.svg");
   width: 400px;
   top: 10%;
@@ -78,7 +78,7 @@ h1 {
   opacity: 0.7;
   box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.15);
 }
-.background2{
+.background2 {
   background: url("../assets/signin_signup_Page/containerbg.svg");
   width: 400px;
   top: 10%;
@@ -90,7 +90,7 @@ h1 {
   height: 565px;
   z-index: -1;
 }
-.background3{
+.background3 {
   background: url("../assets/signin_signup_Page/containerbg.svg");
   width: 400px;
   top: 25%;
@@ -102,7 +102,7 @@ h1 {
   opacity: 0.7;
   box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.15);
 }
-.background4{
+.background4 {
   background: url("../assets/signin_signup_Page/containerbg.svg");
   width: 400px;
   top: 25%;
@@ -135,7 +135,7 @@ input {
   font-family: "Now";
   font-weight: 500;
   font-style: normal;
-  font-size: 16px;  
+  font-size: 16px;
 }
 .btn {
   width: 35%;
@@ -154,11 +154,12 @@ input {
   cursor: pointer;
   transition: box-shadow 200ms ease-in-out;
 }
-.btn:hover{
+.btn:hover {
   box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.9);
 }
 
-.form-container div , .form-container2 div{
+.form-container div,
+.form-container2 div {
   margin: auto;
   color: white;
   font-family: "Now";
@@ -167,6 +168,15 @@ input {
   font-size: 14px;
 }
 div span {
+  color: #020b61;
+  font-family: "Now";
+  font-weight: bold;
+  font-style: normal;
+  cursor: pointer;
+}
+#forgot_password {
+  margin: auto;
+  padding-top: 5px;
   color: #020b61;
   font-family: "Now";
   font-weight: bold;
@@ -196,19 +206,18 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 input:focus ~ .floating,
-input:not(:focus):valid ~ .floating
-{
+input:not(:focus):valid ~ .floating {
   top: -30%;
   left: 0%;
   font-size: 12px !important;
 }
-input:focus{
+input:focus {
   outline: none;
 }
-input[type='password']{
+input[type="password"] {
   text-transform: none;
 }

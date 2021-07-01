@@ -91,8 +91,8 @@
   opacity: 1;
   z-index: 1;
   position: absolute;
-  top: 54%;
-  right: 57.55%;
+  top: 55%;
+  right: 56%;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -142,11 +142,15 @@
 .profile {
   width: auto;
   height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: inset 0px 0px 30px rgba(255, 242, 250, 0.1);
   backdrop-filter: blur(4px);
   border-radius: 26px;
-  margin: 34px 112px 49px 5px;
+  margin: 40px 112px 49px 5px;
+  border-radius: 50%;
 }
 .character-container {
   user-select: none;
@@ -160,10 +164,10 @@
   font-family: "Now";
   font-style: normal;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
   text-transform: uppercase;
   color: #ffffff;
   opacity: 0.7;
-  padding: 14px 22px 4px 22px;
+  padding: 0.5vw 1vw 0.5vw 1vw;
   cursor: pointer;
 }

@@ -6,7 +6,7 @@
 
 .slide {
   position: absolute;
-  bottom: 0%;
+  bottom: 11%;
   left: 50%;
   width: 1rem;
   height: 1rem;
@@ -16,9 +16,9 @@
   transition: all 500ms ease-out;
 }
 .slide:after {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 1rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 0.6rem;
   top: 0;
   left: 0;
   position: relative;
@@ -30,9 +30,9 @@
 }
 
 .slide:checked:after {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 1rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 0.5rem;
   top: 0;
   left: 0;
   position: relative;
@@ -46,16 +46,16 @@
   opacity: 1;
 }
 #s1 {
-  left: 46%;
+  left: 47%;
 }
 #s2 {
-  left: 48%;
+  left: 48.5%;
 }
 #s4 {
-  left: 52%;
+  left: 51.5%;
 }
 #s5 {
-  left: 54%;
+  left: 53%;
 }
 #slider {
   height: 90vh;
@@ -63,16 +63,20 @@
   position: relative;
   perspective: 550px;
   transform-style: preserve-3d;
+  margin-top: 5vh;
 }
 
 .event_poster_image {
   user-select: none;
 }
-
+.event_poster_image img{
+  height: 100%;
+  width: 100%;
+}
 #slider label {
   margin: auto;
   width: 80%;
-  height: auto;
+  height: 80%;
   border-radius: 4px;
   position: absolute;
   left: 0;
