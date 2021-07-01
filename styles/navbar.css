@@ -15,7 +15,8 @@
   display: flex;
   text-transform: capitalize;
   justify-content: space-between;
-  position: fixed;
+  /* position: fixed; */
+  position: sticky;
   top: 0;
   align-items: center;
   left: 0;
