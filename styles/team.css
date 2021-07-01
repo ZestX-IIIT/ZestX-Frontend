@@ -27,9 +27,19 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  opacity: 0;
+  height: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.teamMembers_active{
+  opacity: 1;
+  height: 90%;
 }
 .teamMembers::-webkit-scrollbar {
   display: none;
+}
+.team_Outer_container{
+  overflow:hidden;
 }
 .teamContent {
   font-family: "Now";
@@ -43,10 +53,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  transition: color 200ms ease-in-out,
+  font-size 200ms ease-in-out;
+  cursor: pointer;
 }
 .teamContentActive {
   color: #f1bbff;
-  font-size: 2vw;
+  font-size: 1.9vw;
 }
 .topContainer {
   width: auto;
