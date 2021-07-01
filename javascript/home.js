@@ -1,6 +1,4 @@
-let nabar_container = document.getElementById(
-  "nabar_container"
-);
+let nabar_container = document.getElementById("nabar_container");
 let primaryContainer = document.getElementById(
   "primary_container_for_home_page_content"
 );
@@ -85,7 +83,6 @@ async function setup() {
     const data2 = await res2.json();
     userData = data2.data;
     profileBtn.innerHTML = `${userData.user_name[0]}`;
-
   } catch (err) {
     show_toast(0, "Error occured re-try!");
     console.log(err);
@@ -93,7 +90,6 @@ async function setup() {
 }
 
 window.addEventListener("load", () => {
-
   setTimeout(function () {
     backBtnFromEventsPage = document.getElementById(
       "back_btn_from_festival_details_page"
@@ -104,7 +100,9 @@ window.addEventListener("load", () => {
     backBtnFromEditProfilePage = document.getElementById(
       "back_btn_from_edit_profile_page"
     );
-    backBtnFromChangePasswordPage = document.getElementById("back_btn_from_change_password_page");
+    backBtnFromChangePasswordPage = document.getElementById(
+      "back_btn_from_change_password_page"
+    );
 
     ongoingEventContainer = document.getElementById("OngoingEventsList");
     pastEventContainer = document.getElementById("PastEventsList");
@@ -128,7 +126,6 @@ window.addEventListener("load", () => {
     try {
       registerBtn.addEventListener("click", async () => {
         displayPreloder();
-
 
         if (!isRegister(eventId)) {
           const res3 = await fetch(`${apiURL}/fest/register`, {
@@ -156,7 +153,6 @@ window.addEventListener("load", () => {
             registerBtn.innerHTML = `Unregister`;
             registerBtn.style.animation = "none";
           }
-
         } else {
           const res4 = await fetch(`${apiURL}/fest/unregister`, {
             method: "POST",
@@ -234,11 +230,11 @@ window.addEventListener("load", () => {
       });
 
       updateBtn.addEventListener("click", async () => {
-
-
         let oldPassword = document.getElementById("current_password").value;
         let newPassword = document.getElementById("new_password").value;
-        let confirmNewPassword = document.getElementById("confirm_new_password").value;
+        let confirmNewPassword = document.getElementById(
+          "confirm_new_password"
+        ).value;
 
         if (newPassword != confirmNewPassword) {
           show_toast(2, "Confirm new password not matched with new password!");
@@ -272,7 +268,6 @@ window.addEventListener("load", () => {
         } else {
           show_toast(2, "Please enter all details properly!");
         }
-
       });
 
       saveBtn.addEventListener("click", async () => {
@@ -310,7 +305,10 @@ window.addEventListener("load", () => {
             userData.mobile = mobile;
             displayProfilepage();
           } else {
-            show_toast(1, "Your details updated successfully! Please verify your updated email-id!");
+            show_toast(
+              1,
+              "Your details updated successfully! Please verify your updated email-id!"
+            );
 
             userData.user_name = user_name;
             userData.email = email;
@@ -322,7 +320,6 @@ window.addEventListener("load", () => {
           if (data5.token) {
             localStorage.setItem("jwt", data5.token);
           }
-
         } else {
           show_toast(2, "Please enter all details properly!");
         }
@@ -333,8 +330,7 @@ window.addEventListener("load", () => {
     }
   }, 500);
 
-  displayMainContainer()
-
+  displayMainContainer();
 });
 
 window.addEventListener("scroll", () => {
@@ -375,21 +371,57 @@ window.addEventListener("scroll", () => {
     }
   }
 });
+let current_offset_height = homeSection.offsetTop - 125;
+console.log(current_offset_height);
+let current_active_tab = 0;
+let smooth_setinterval;
+function smooth_scroll_home_page(target_height) {
+  if (target_height > current_offset_height) {
+    smooth_setinterval = setInterval(() => {
+      current_offset_height = current_offset_height + 10;
+      scrollBy(0, 10);
+      if (target_height <= current_offset_height) {
+        clearInterval(smooth_setinterval);
+      }
+    }, 1);
+  } else if (target_height < current_offset_height) {
+    smooth_setinterval = setInterval(() => {
+      current_offset_height = current_offset_height - 10;
+      scrollBy(0, -10);
+      if (target_height >= current_offset_height) {
+        clearInterval(smooth_setinterval);
+      }
+    }, 1);
+  }
+  else {
+    return;
+  }
+}
 
 home.addEventListener("click", () => {
-  window.scrollTo(0, homeSection.offsetTop - 125);
+  // window.scrollTo(0, homeSection.offsetTop - 125);
+  smooth_scroll_home_page(homeSection.offsetTop - 125);
+  console.log(current_active_tab);
 });
 events.addEventListener("click", () => {
-  window.scrollTo(0, eventsSection.offsetTop - 75);
+  // window.scrollTo(0, eventsSection.offsetTop - 75);
+  smooth_scroll_home_page(eventsSection.offsetTop - 75);
+  console.log(current_active_tab);
 });
 team.addEventListener("click", () => {
-  window.scrollTo(0, teamSection.offsetTop);
+  // window.scrollTo(0, teamSection.offsetTop);
+  smooth_scroll_home_page(teamSection.offsetTop);
+  console.log(current_active_tab);
 });
 sponsers.addEventListener("click", () => {
-  window.scrollTo(0, sponsersSection.offsetTop);
+  // window.scrollTo(0, sponsersSection.offsetTop);
+  smooth_scroll_home_page(sponsersSection.offsetTop);
+  console.log(current_active_tab);
 });
 faq.addEventListener("click", () => {
-  window.scrollTo(0, faqSection.offsetTop);
+  // window.scrollTo(0, faqSection.offsetTop);
+  smooth_scroll_home_page(faqSection.offsetTop);
+  console.log(current_active_tab);
 });
 
 function deActive(tabIndex) {
@@ -572,7 +604,6 @@ function addEvents(array1, array2) {
 }
 
 function clearDataInChangePasswordpage() {
-
   let oldPassword = document.getElementById("current_password");
   oldPassword.value = "";
   let newPassword = document.getElementById("new_password");
@@ -582,27 +613,28 @@ function clearDataInChangePasswordpage() {
 }
 
 function show_toast(isSuccess, message) {
-
   if (Date.now() - lastToastTimestamp > 5000) {
     let toastAlertMessage = document.getElementById("toastAlertMessage");
     let toastImage = document.getElementById("toastImage");
     let toastFrontMessage = document.getElementById("toastFrontMessage");
-    let toastDescriptionMessage = document.getElementById("toastDescriptionMessage");
+    let toastDescriptionMessage = document.getElementById(
+      "toastDescriptionMessage"
+    );
     let msgLength = message.length + 7;
 
-    document.getElementById("toastAlertMessage").style.setProperty("--foo", `${msgLength}ch`);
+    document
+      .getElementById("toastAlertMessage")
+      .style.setProperty("--foo", `${msgLength}ch`);
 
     if (isSuccess == 1) {
-      toastImage.src = "../assets/_general/success_tick.svg"
-      toastFrontMessage.style.backgroundColor = "green"
-    }
-    else if (isSuccess == 0) {
-      toastImage.src = "../assets/_general/error_cross.svg"
-      toastFrontMessage.style.backgroundColor = "red"
-    }
-    else {
-      toastImage.src = "../assets/_general/neutral_exclamation.svg"
-      toastFrontMessage.style.backgroundColor = "black"
+      toastImage.src = "../assets/_general/success_tick.svg";
+      toastFrontMessage.style.backgroundColor = "green";
+    } else if (isSuccess == 0) {
+      toastImage.src = "../assets/_general/error_cross.svg";
+      toastFrontMessage.style.backgroundColor = "red";
+    } else {
+      toastImage.src = "../assets/_general/neutral_exclamation.svg";
+      toastFrontMessage.style.backgroundColor = "black";
     }
     toastDescriptionMessage.innerText = " ";
     setTimeout(function () {
@@ -613,16 +645,18 @@ function show_toast(isSuccess, message) {
     }, 4200);
     toastAlertMessage.className = "toastPopUp";
     setTimeout(function () {
-      toastAlertMessage.className = toastAlertMessage.className.replace("toastPopUp", "");
+      toastAlertMessage.className = toastAlertMessage.className.replace(
+        "toastPopUp",
+        ""
+      );
     }, 5000);
     lastToastTimestamp = Date.now();
   } else {
     setTimeout(function () {
       show_toast(isSuccess, message);
-    }, 5500 - (Date.now() - lastToastTimestamp))
+    }, 5500 - (Date.now() - lastToastTimestamp));
   }
 }
-
 
 function setUserDetailsInEditPage(data) {
   let name = document.getElementById("edit_name");
