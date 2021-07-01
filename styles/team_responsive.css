@@ -1,10 +1,6 @@
-
 @media only screen and (max-width: 1350px) {
   .teamContent {
     margin-left: 10px;
-  }
-  .teamMembers {
-    width: 62%;
   }
 }
 @media only screen and (max-width: 1170px) {
@@ -17,15 +13,11 @@
     margin-left: 0px;
     margin-right: 10px;
   }
-  .teamMembers {
-    width: 62%;
-  }
+
   .teamPanel {
     width: 25%;
   }
-  
 }
-
 
 @media only screen and (max-width: 800px) {
   .team {
@@ -33,7 +25,6 @@
   }
 }
 @media only screen and (max-width: 730px) {
-  
   .team {
     height: 70vh;
   }
@@ -46,16 +37,14 @@
     margin-right: 5px;
     text-align: center;
   }
-  
+
   .team {
     height: 50vh;
   }
 }
 
 @media only screen and (max-width: 420px) {
-
-.team {
-  height: 40vh;
-}
-
+  .team {
+    height: 40vh;
+  }
 }
