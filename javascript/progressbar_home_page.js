@@ -23,7 +23,7 @@ setTimeout(function () {
   let isProgressbarActive = false;
 
   let timeTemp = Date.now()
-  console.log(timeTemp);
+  // console.log(timeTemp);
 
 
   // console.log(scrollPath2);
@@ -33,14 +33,14 @@ setTimeout(function () {
     limit2 = windowWidth - 20;
     if (e.clientX > limit2) {
       isProgressbarActive = true;
-      console.log("true")
+      // console.log("true")
       progressBarScroll(e)
     }
 
   }
   function stopProgressbarScroll(e) {
     isProgressbarActive = false;
-    console.log("false")
+    // console.log("false")
   }
 
   function progressBarScroll(e) {
