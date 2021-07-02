@@ -3,6 +3,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+.bg_blend_of_home{
+  height: 200vh;
+  width: 100%;
+  position: fixed;
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+  z-index: -500;
+}
 .FAQMainContainer {
   width: 100%;
   height: 100vh;

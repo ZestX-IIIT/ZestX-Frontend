@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   user-select: none;
-  /* transition: all 200ms ease-in-out; */
 }
 .home {
   width: 100%;
@@ -89,7 +88,9 @@ html::-webkit-scrollbar {
   height: 100%;
   z-index: 100;
 }
-
+#primnary_change_password_container{
+  display: none;
+}
 .display_to_none {
   animation: to_opacity_none 0.5s ease-in-out 1;
   display: none;
