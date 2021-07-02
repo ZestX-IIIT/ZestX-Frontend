@@ -155,25 +155,22 @@ async function setUpLandingPage() {
             displayAdminAddUserPage();
         });
 
+
+
+        logoutBtn = document.getElementById("logout_button_admin_main_page");
+
+        logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("jwt");
+            location.href = "/";
+        });
+
+
     } catch (err) {
         show_toast(0, "Internal server error please re-try!");
         console.log(err);
     }
 }
 
-
-
-
-setTimeout(function () {
-
-    logoutBtn = document.getElementById("logout_button_admin_main_page");
-
-    logoutBtn.addEventListener("click", () => {
-        localStorage.removeItem("jwt");
-        location.href = "/";
-    });
-
-}, 100);
 
 
 function setOngoingEvents(array) {
