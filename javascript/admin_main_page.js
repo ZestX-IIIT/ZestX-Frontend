@@ -34,7 +34,7 @@ let lastToastTimestamp = Date.now();
 let isFirstTime = true;
 
 setTimeout(() => {
-    redirect(1, preloader, setUpLandingPage)
+    redirect(1, setUpLandingPage)
 }, 200);
 
 
