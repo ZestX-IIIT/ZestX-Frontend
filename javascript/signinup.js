@@ -135,7 +135,7 @@ function setUpSignInSignUpPage() {
 
     const email = document.getElementById("signinemail").value;
 
-    const res4 = await fetch(`${apiURL}/user/forgotpasswordsignin`, {
+    const res4 = await fetch(`${apiURL}/auth/forgotpasswordsignin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

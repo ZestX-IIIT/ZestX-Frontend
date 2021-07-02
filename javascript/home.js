@@ -257,7 +257,7 @@ function setUpViews() {
 
       forgotPasswordBtnFromChangePasswordPage.addEventListener("click", async () => {
         displayPreloder();
-        const res = await fetch(`${apiURL}/user/forgotpasswordhomepage`, {
+        const res = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
           method: "GET",
           headers: {
             authorization: token,
@@ -275,7 +275,7 @@ function setUpViews() {
 
       forgotPasswordBtnFromEditProfilePage.addEventListener("click", async () => {
         displayPreloder();
-        const res = await fetch(`${apiURL}/user/forgotpasswordhomepage`, {
+        const res = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
           method: "GET",
           headers: {
             authorization: token,
