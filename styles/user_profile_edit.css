@@ -8,8 +8,8 @@ body {
 }
 #zestxlogoeditpage {
   position: absolute;
-  bottom: 1%;
-  right: 5%;
+  bottom: 2%;
+  right: 2%;
   width: 6rem;
   height: 6rem;
 }
@@ -20,7 +20,8 @@ body {
   height: 100vh;
   padding-top: 4rem;
 }
-#BackEditButton a {
+#BackEditButton1 a {
+  margin-top: -15%;
   text-decoration: none;
   font-family: "Now";
   font-style: normal;
@@ -29,12 +30,13 @@ body {
   text-transform: uppercase;
   color: #ffffff;
 }
-#BackEditButton {
+#BackEditButton1 {
   padding-left: 1rem;
 }
-#BackEditButton img {
+#BackEditButton1 img {
   cursor: pointer;
-  padding-right: 1rem;
+  margin-right: 1rem;
+  margin-left: 0.5%;
 }
 .UserEditContainer {
   height: 75vh;
@@ -44,7 +46,7 @@ body {
   flex-direction: column;
 }
 .UserDetailsInput {
-  width: 45%;
+  width: 40%;
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #efd5ff;
@@ -91,6 +93,7 @@ input:focus {
   text-transform: uppercase;
   color: #ffffff;
   cursor: pointer;
+  margin-top: 3%;
 }
 .form-label {
   position: relative;
@@ -117,7 +120,7 @@ input:-webkit-autofill:active {
 }
 #forgot_password_at_edit_profile_page {
   margin-top: -50px;
-  margin-left: 500px;
+  margin-left: 430px;
   font-size: 14px;
   color: #efd5ff;
   font-family: "Now";

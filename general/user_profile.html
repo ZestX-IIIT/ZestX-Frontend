@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <img src="../assets/_general/zestx_icon.svg" alt="" id="zestxlogo" />
     <section id="MainUserContainer">
       <div id="profile_page_header">
         <img
@@ -19,7 +20,6 @@
           id="back_btn_from_profile_details_page"
         />
         <a href="#">Profile</a>
-        <img src="../assets/_general/zestx_icon.svg" alt="" id="zestxlogo" />
       </div>
       <div id="UserContainer">
         <div class="UserLeftContainer">
@@ -37,7 +37,7 @@
             id="phone_number"
             class="UserDetailsInput"
             placeholder="Phone Number"
-            disabled = "disabled"
+            disabled="disabled"
           />
           <input
             type="email"
@@ -47,26 +47,27 @@
             placeholder="Email"
             disabled="disabled"
           />
-          <button id="EditButton">
-            EDIT
-            <img
-              src="../assets/home_page/User_Profile/edit_pen.svg"
-              alt="edit"
-            />
-          </button>
-          <button id="ChangePasswordButton">
-            Change Password
-            <img
-              src="../assets/home_page/User_Profile/edit_pen.svg"
-              alt="edit"
-            />
-          </button>
-          <button id="LogoutButton">
+          <div id="button_container">
+            <button id="EditButton">
+              EDIT
+              <img
+                src="../assets/home_page/User_Profile/edit_pen.svg"
+                alt="edit"
+              />
+            </button>
+            <button id="ChangePasswordButton">
+              Change Password
+              <img
+                src="../assets/home_page/User_Profile/edit_pen.svg"
+                alt="edit"
+              />
+            </button>
             <img
               src="../assets/home_page/User_Profile/log_out.svg"
               alt="logout"
+              id="LogoutButton"
             />
-          </button>
+          </div>
         </div>
         <div class="UserRightContainer">
           <div class="OngoingEvents">
