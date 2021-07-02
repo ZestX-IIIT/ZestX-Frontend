@@ -1,3 +1,5 @@
+setTimeout(()=>{
+  
 let imageHolder = document.getElementsByClassName("imageHolder");
 let outerContainer = document.getElementsByClassName("outerContainer");
 let github_icons = document.getElementsByClassName("team_section_github");
@@ -68,3 +70,4 @@ for (let i = 0; i < teamMembers.length; i++) {
     }
   });
 }
+},200)
