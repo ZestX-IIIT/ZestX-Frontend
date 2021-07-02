@@ -15,190 +15,197 @@ let userData;
 let lastToastTimestamp = Date.now();
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 
-window.addEventListener("load", () => {
-  closeLoader();
-});
 
-function closeLoader() {
-  preloader.style.display = "none";
-}
+setTimeout(() => {
+  redirect(0, setUpSignInSignUpPage)
+}, 200);
 
-signinBtn.addEventListener("click", async (event) => {
-  event.preventDefault();
-  preloader.style.display = "block";
-  const email = document.getElementById("signinemail").value;
-  const password = document.getElementById("signinpassword").value;
 
-  if (email && password) {
-    try {
+function setUpSignInSignUpPage() {
 
-      const res1 = await fetch(`${apiURL}/auth/signin`, {
+  signinBtn.addEventListener("click", async (event) => {
+    event.preventDefault();
+    preloader.style.display = "block";
+    const email = document.getElementById("signinemail").value;
+    const password = document.getElementById("signinpassword").value;
+
+    if (email && password) {
+      try {
+
+        const res1 = await fetch(`${apiURL}/auth/signin`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const data1 = await res1.json();
+
+        if (res1.status == 400) {
+          show_toast(2, "User does not exists, Please sign up!");
+          preloader.style.display = "none";
+        } else if (res1.status == 444) {
+          show_toast(2, "Enter correct password!");
+          preloader.style.display = "none";
+
+        } else if (res1.status == 500) {
+          show_toast(0, "Internal server error please re-try!");
+          preloader.style.display = "none";
+        } else {
+
+          const { token } = data1;
+
+          localStorage.setItem("jwt", token);
+          const res2 = await fetch(`${apiURL}/user/getdetails`, {
+            method: "GET",
+            headers: {
+              authorization: token,
+            },
+          });
+
+          const data2 = await res2.json();
+          userData = data2.data;
+
+          if (userData.is_admin)
+            window.location.href = "./general/admin_main_page.html";
+          else window.location.href = "./homepage.html";
+
+        }
+      } catch (error) {
+        show_toast(0, "Internal server error please re-try!");
+        preloader.style.display = "none";
+      }
+    } else {
+      show_toast(2, "Please fill all the details properly!");
+      preloader.style.display = "none";
+    }
+  });
+
+  signupBtn.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById("signupemail").value;
+    const user_name = document.getElementById("name").value;
+    const password = document.getElementById("signuppassword").value;
+    const mobile = document.getElementById("mobile").value;
+    const confirmPassword = document.getElementById("confirm").value;
+
+    if (email && password && user_name && mobile) {
+      if (password != confirmPassword) {
+        show_toast(2, "Passwords not matched with confirm password!");
+        return;
+      }
+      if (password.length < 6) {
+        show_toast(2, "Password should be minimum of 6 length!");
+        return;
+      }
+      preloader.style.display = "block";
+
+      const res3 = await fetch(`${apiURL}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ user_name, email, password, mobile }),
       });
 
-      const data1 = await res1.json();
+      const data3 = await res3.json();
 
-      if (res1.status == 400) {
-        show_toast(2, "User does not exists, Please sign up!");
+      if (res3.status == 400) {
+        show_toast(2, "User already exists, Please sign in!");
         preloader.style.display = "none";
-      } else if (res1.status == 444) {
-        show_toast(2, "Enter correct password!");
-        preloader.style.display = "none";
-
-      } else if (res1.status == 500) {
+      } else if (res3.status == 500) {
         show_toast(0, "Internal server error please re-try!");
         preloader.style.display = "none";
       } else {
-
-        const { token } = data1;
-
+        const token = data3.data;
         localStorage.setItem("jwt", token);
-        const res2 = await fetch(`${apiURL}/user/getdetails`, {
-          method: "GET",
-          headers: {
-            authorization: token,
-          },
-        });
-
-        const data2 = await res2.json();
-        userData = data2.data;
-
-        if (userData.is_admin)
-          window.location.href = "./general/admin_main_page.html";
-        else window.location.href = "./homepage.html";
-
+        window.location.href = "./homepage.html";
       }
-    } catch (error) {
-      show_toast(0, "Internal server error please re-try!");
+
+    } else {
+      show_toast(2, "Please fill all the details properly!");
       preloader.style.display = "none";
     }
-  } else {
-    show_toast(2, "Please fill all the details properly!");
-    preloader.style.display = "none";
-  }
-});
+  });
 
-signupBtn.addEventListener("click", async (event) => {
-  event.preventDefault();
-
-  const email = document.getElementById("signupemail").value;
-  const user_name = document.getElementById("name").value;
-  const password = document.getElementById("signuppassword").value;
-  const mobile = document.getElementById("mobile").value;
-  const confirmPassword = document.getElementById("confirm").value;
-
-  if (email && password && user_name && mobile) {
-    if (password != confirmPassword) {
-      show_toast(2, "Passwords not matched with confirm password!");
-      return;
-    }
-    if (password.length < 6) {
-      show_toast(2, "Password should be minimum of 6 length!");
-      return;
-    }
+  forgotPasswordBtn.addEventListener("click", async () => {
     preloader.style.display = "block";
 
-    const res3 = await fetch(`${apiURL}/auth/signup`, {
+    const email = document.getElementById("signinemail").value;
+
+    const res4 = await fetch(`${apiURL}/user/forgotpasswordsignin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ user_name, email, password, mobile }),
+      body: JSON.stringify({ email }),
     });
 
-    const data3 = await res3.json();
-
-    if (res3.status == 400) {
-      show_toast(2, "User already exists, Please sign in!");
+    if (res4.status == 400) {
       preloader.style.display = "none";
-    } else if (res3.status == 500) {
-      show_toast(0, "Internal server error please re-try!");
+      show_toast(2, "Please enter registered email-id!");
+    } else if (res4.status == 500) {
       preloader.style.display = "none";
+      show_toast(0, "Error occured re-try!");
+      console.log(err);
     } else {
-      const token = data3.data;
-      localStorage.setItem("jwt", token);
-      window.location.href = "./homepage.html";
+      preloader.style.display = "none";
+      show_toast(1, "Your new password sent to your registered email-id!");
     }
+  })
 
-  } else {
-    show_toast(2, "Please fill all the details properly!");
-    preloader.style.display = "none";
+  if (text == "signin") {
+    signincontainer.classList.toggle("display-class");
+    signincontainer.classList.toggle("opacity-class");
+    signupcontainer.classList.toggle("opacity-class");
+    signupcontainer.classList.toggle("display-class");
+    bg1.classList.toggle("opacity-class");
+    bg2.classList.toggle("opacity-class");
+    bg3.classList.toggle("opacity-class");
+    bg4.classList.toggle("opacity-class");
+    bg1.classList.toggle("display-class");
+    bg2.classList.toggle("display-class");
+    bg3.classList.toggle("display-class");
+    bg4.classList.toggle("display-class");
   }
-});
 
-forgotPasswordBtn.addEventListener("click", async () => {
-  preloader.style.display = "block";
-
-  const email = document.getElementById("signinemail").value;
-
-  const res4 = await fetch(`${apiURL}/user/forgotpasswordsignin`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email }),
+  signin.addEventListener("click", () => {
+    signupcontainer.classList.toggle("opacity-class");
+    signincontainer.classList.toggle("opacity-class");
+    signupcontainer.classList.toggle("display-class");
+    signincontainer.classList.toggle("display-class");
+    bg1.classList.toggle("opacity-class");
+    bg2.classList.toggle("opacity-class");
+    bg3.classList.toggle("opacity-class");
+    bg4.classList.toggle("opacity-class");
+    bg1.classList.toggle("display-class");
+    bg2.classList.toggle("display-class");
+    bg3.classList.toggle("display-class");
+    bg4.classList.toggle("display-class");
+  });
+  signup.addEventListener("click", () => {
+    signupcontainer.classList.toggle("opacity-class");
+    signincontainer.classList.toggle("opacity-class");
+    signupcontainer.classList.toggle("display-class");
+    signincontainer.classList.toggle("display-class");
+    bg1.classList.toggle("opacity-class");
+    bg2.classList.toggle("opacity-class");
+    bg3.classList.toggle("opacity-class");
+    bg4.classList.toggle("opacity-class");
+    bg1.classList.toggle("display-class");
+    bg2.classList.toggle("display-class");
+    bg3.classList.toggle("display-class");
+    bg4.classList.toggle("display-class");
   });
 
-  if (res4.status == 400) {
-    preloader.style.display = "none";
-    show_toast(2, "Please enter registered email-id!");
-  } else if (res4.status == 500) {
-    preloader.style.display = "none";
-    show_toast(0, "Error occured re-try!");
-    console.log(err);
-  } else {
-    preloader.style.display = "none";
-    show_toast(1, "Your new password sent to your registered email-id!");
-  }
-})
 
-if (text == "signin") {
-  signincontainer.classList.toggle("display-class");
-  signincontainer.classList.toggle("opacity-class");
-  signupcontainer.classList.toggle("opacity-class");
-  signupcontainer.classList.toggle("display-class");
-  bg1.classList.toggle("opacity-class");
-  bg2.classList.toggle("opacity-class");
-  bg3.classList.toggle("opacity-class");
-  bg4.classList.toggle("opacity-class");
-  bg1.classList.toggle("display-class");
-  bg2.classList.toggle("display-class");
-  bg3.classList.toggle("display-class");
-  bg4.classList.toggle("display-class");
+
+  preloader.style.display = "none";
+
 }
 
-signin.addEventListener("click", () => {
-  signupcontainer.classList.toggle("opacity-class");
-  signincontainer.classList.toggle("opacity-class");
-  signupcontainer.classList.toggle("display-class");
-  signincontainer.classList.toggle("display-class");
-  bg1.classList.toggle("opacity-class");
-  bg2.classList.toggle("opacity-class");
-  bg3.classList.toggle("opacity-class");
-  bg4.classList.toggle("opacity-class");
-  bg1.classList.toggle("display-class");
-  bg2.classList.toggle("display-class");
-  bg3.classList.toggle("display-class");
-  bg4.classList.toggle("display-class");
-});
-signup.addEventListener("click", () => {
-  signupcontainer.classList.toggle("opacity-class");
-  signincontainer.classList.toggle("opacity-class");
-  signupcontainer.classList.toggle("display-class");
-  signincontainer.classList.toggle("display-class");
-  bg1.classList.toggle("opacity-class");
-  bg2.classList.toggle("opacity-class");
-  bg3.classList.toggle("opacity-class");
-  bg4.classList.toggle("opacity-class");
-  bg1.classList.toggle("display-class");
-  bg2.classList.toggle("display-class");
-  bg3.classList.toggle("display-class");
-  bg4.classList.toggle("display-class");
-});
 
 function show_toast(isSuccess, message) {
 
