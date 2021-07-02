@@ -124,7 +124,7 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: unset;
   }
  
   /* .frontleft h2 {
@@ -143,8 +143,8 @@
   .front {
     height: 100vh;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
   }
   .image-container {
     display: none;
@@ -157,6 +157,7 @@
     margin-top: 1rem;
     width: 95%;
     border: 0;
+    height: 75%;
   }
   .frontleft h2 {
     margin: 0;
@@ -169,34 +170,32 @@
     text-align: center;
   }
   #animation_container {
-    height: 60vh;
-    width: 60vh;
+    height: 55vh;
+    width: 55vh;
   }
-}
-@media only screen and (max-width: 750px) {
   .frontleft h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .leftcontent {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
   }
 }
+
 @media only screen and (max-width: 555px) {
   #animation_container {
     height: 55vh;
     width: 55vh;
   }
-  .frontleft {
-    margin-left: 0;
-  }
+  
   .front {
     height: 75vh;
   }
   .frontleft h2 {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
   }
   .leftcontent {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 @media only screen and (max-width: 505px) {
@@ -227,18 +226,18 @@
     width: 35vh;
   }
   .frontleft h2 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
   .leftcontent {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 @media only screen and (max-width: 320px) {
   .frontleft h2 {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
   .leftcontent {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
 }
 
