@@ -6,7 +6,7 @@
 
 .slide {
   position: absolute;
-  bottom: 11%;
+  bottom: 12%;
   left: 50%;
   width: 1rem;
   height: 1rem;
@@ -75,7 +75,7 @@
 }
 #slider label {
   margin: auto;
-  width: 80%;
+  width: 75%;
   height: auto;
   border-radius: 4px;
   position: absolute;
