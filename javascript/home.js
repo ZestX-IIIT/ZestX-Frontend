@@ -14,6 +14,8 @@ let primaryEditProfileContainer = document.getElementById(
 let primaryChangePasswordContainer = document.getElementById(
   "primnary_change_password_container"
 );
+let primary_events_posters =
+  document.getElementsByClassName("event_poster_image");
 let preloader = document.getElementById("preloader_container");
 
 let slider_event_list;
@@ -45,9 +47,6 @@ let festData;
 let userData;
 let event_ids = [8, 9, 7, 6, 10];
 
-let primary_events_posters =
-  document.getElementsByClassName("event_poster_image");
-
 let backBtnFromEventsPage;
 let backBtnFromProfilePage;
 let backBtnFromEditProfilePage;
@@ -64,27 +63,42 @@ let ongoingEventContainer;
 let pastEventContainer;
 let lastToastTimestamp = Date.now();
 
+let url = new URL(location.href);
+let sectionId = url.searchParams.get("id");
+
+if (sectionId == "eventssec") {
+  location.href = "#eventssec";
+} else if (sectionId == "teamsec") {
+  location.href = "#teamsec";
+  deActive(0);
+} else if (sectionId == "faqsec") {
+  location.href = "#faqsec";
+  deActive(0);
+}
+
 setup();
 
 async function setup() {
   try {
-    const res1 = await fetch(`${apiURL}/fest/getlist`, {
-      method: "GET",
-    });
+    if (token) {
+      const res1 = await fetch(`${apiURL}/fest/getlist`, {
+        method: "GET",
+      });
 
-    const data1 = await res1.json();
-    festData = data1.data;
+      const data1 = await res1.json();
+      festData = data1.data;
 
-    const res2 = await fetch(`${apiURL}/user/getdetails`, {
-      method: "GET",
-      headers: {
-        authorization: token,
-      },
-    });
+      const res2 = await fetch(`${apiURL}/user/getdetails`, {
+        method: "GET",
+        headers: {
+          authorization: token,
+        },
+      });
 
-    const data2 = await res2.json();
-    userData = data2.data;
-    profileBtn.innerHTML = `${userData.user_name[0]}`;
+      const data2 = await res2.json();
+      userData = data2.data;
+      profileBtn.innerHTML = `${userData.user_name[0]}`;
+    }
   } catch (err) {
     show_toast(0, "Error occured re-try!");
     console.log(err);
@@ -113,7 +127,13 @@ window.addEventListener("load", () => {
     pastEventContainer = document.getElementById("PastEventsList");
 
     profileBtn.addEventListener("click", () => {
-      displayProfilepage();
+      if (token)
+        displayProfilepage();
+      else {
+        show_toast(2, "Please sign-in first!");
+        window.location.href = "./signupsignin.html" + "#" + "signin";
+      }
+
     });
 
     editBtn = document.getElementById("EditButton");
@@ -195,9 +215,15 @@ window.addEventListener("load", () => {
       for (let i = 0; i < 5; i++) {
         event_poster_list[i].addEventListener("click", () => {
           if (slider_event_list[i].checked == true) {
-            eventId = event_ids[i];
-            setEventDetails(event_ids[i]);
-            displayEvenetspage();
+            if (token) {
+              eventId = event_ids[i];
+              setEventDetails(event_ids[i]);
+              displayEvenetspage();
+
+            } else {
+              window.location.href = "./signupsignin.html" + "#" + "signin";
+              show_toast(2, "Please sign-in first!");
+            }
           }
         });
       }
