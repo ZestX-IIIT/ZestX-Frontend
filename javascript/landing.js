@@ -19,26 +19,8 @@ signinButton.addEventListener("click", () => {
 
 window.addEventListener("load", () => {
   preloader.style.display = "none";
-  const token = localStorage.getItem("jwt");
-  if (token) {
-    preloader.style.display = "block";
-    fetch(`${apiURL}/user/getdetails`, {
-      method: "GET",
-      headers: {
-        authorization: token,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.data.is_admin)
-          window.location.href = "./general/admin_main_page.html";
-        else window.location.href = "./homepage.html";
-      })
-      .catch((err) => {
-        console.log(err);
-        preloader.style.display = "none";
-      });
-  }
+  console.log();
+  redirect(false, preloader)
 });
 
 arrow[0].addEventListener("click", () => {
