@@ -9,7 +9,7 @@ body {
 #zestxlogo {
   position: absolute;
   top: 0;
-  right: 4%;
+  right: 1%;
   width: 6rem;
   height: 6rem;
 }
@@ -21,6 +21,7 @@ body {
   /* padding-top: 4rem  ; */
 }
 #profile_page_header a {
+  margin-top: 3%;
   text-decoration: none;
   font-family: "Now";
   font-style: normal;
@@ -37,7 +38,9 @@ body {
 }
 #profile_page_header img {
   cursor: pointer;
-  margin-right: 1rem;
+  margin-right: 1%;
+  margin-top: 3%;
+  margin-left: 0.5%;
 }
 #UserContainer {
   display: grid;
@@ -48,7 +51,6 @@ body {
 .UserLeftContainer {
   height: 80vh;
   padding-left: 5rem;
-  padding-top: 5rem;
   border-right: 1px solid #ffffff;
   display: flex;
   flex-direction: column;
@@ -58,7 +60,7 @@ body {
   width: 80%;
   background: transparent;
   border: 0px;
-  border-bottom: 2px solid #efd5ff;
+  /* border-bottom: 2px solid #efd5ff; */
   padding-bottom: 0.8rem;
   font-family: "Now";
   font-style: normal;
@@ -87,7 +89,8 @@ input[type="number"] {
 input:focus {
   outline: none;
 }
-#EditButton , #ChangePasswordButton {
+#EditButton,
+#ChangePasswordButton {
   cursor: pointer;
   width: 9rem;
   height: 3.54rem;
@@ -107,31 +110,23 @@ input:focus {
   text-transform: uppercase;
   color: #ffffff;
 }
-#ChangePasswordButton{
-  width: 15rem;
-  font-size: 1.1rem;
+#ChangePasswordButton {
+  width: 21rem;
+  font-size: 1.4rem;
 }
 #LogoutButton {
   cursor: pointer;
-  width: 12rem;
-  height: 3.54rem;
-  background: linear-gradient(
-    270deg,
-    rgba(150, 4, 163, 0.6) 10%,
-    rgba(49, 2, 149, 0.6) 99%
-  );
-  mix-blend-mode: normal;
-  border: 2px solid #f9e8ff;
-  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.25);
-  border-radius: 7px;
-  font-family: "Now";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.4375rem;
-  text-transform: uppercase;
-  color: #ffffff;
+  margin-top: 5%;
 }
-#EditButton img , #ChangePasswordButton img {
+#button_container {
+  padding-right: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#EditButton img,
+#ChangePasswordButton img {
   width: 20px;
   margin-left: 5px;
   height: auto;
@@ -234,6 +229,6 @@ input:focus {
   padding-top: 5px;
   padding-bottom: 5px;
 } */
-input[type='password']{
+input[type="password"] {
   text-transform: none;
 }
