@@ -86,6 +86,7 @@ async function setup() {
             }
         }
 
+        redirect(1,preloader)
         backBtnFromAddUserPage = document.getElementById("back_btn_from_add_user_page");
         addUserBtnFromAddUserPage = document.getElementById("Add_user_button");
 

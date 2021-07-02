@@ -55,7 +55,7 @@ function redirectToHomeOrAdminPageAccToToken(isAdmin) {
 
 function redirectToHomePageAccToToken(isAdmin) {
     if (!isAdmin)
-        window.location.href = "./homepage.html";
+        window.location.href = "../homepage.html";
     else
         loaderContainer.style.display = "none";
 
