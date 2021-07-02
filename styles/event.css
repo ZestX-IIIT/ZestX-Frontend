@@ -6,7 +6,7 @@
 
 .slide {
   position: absolute;
-  bottom: 11%;
+  bottom: 12%;
   left: 50%;
   width: 1rem;
   height: 1rem;
@@ -46,22 +46,15 @@
   opacity: 1;
 }
 #s1 {
-  top: 92%;
   left: 47%;
 }
 #s2 {
-  top: 92%;
   left: 48.5%;
 }
-#s3 {
-  top: 92%;
-}
 #s4 {
-  top: 92%;
   left: 51.5%;
 }
 #s5 {
-  top: 92%;
   left: 53%;
 }
 #slider {
@@ -70,20 +63,20 @@
   position: relative;
   perspective: 550px;
   transform-style: preserve-3d;
-  padding-top: 7vh;
+  margin-top: 5vh;
 }
 
 .event_poster_image {
   user-select: none;
 }
-.event_poster_image img {
+.event_poster_image img{
   height: 100%;
   width: 100%;
 }
 #slider label {
   margin: auto;
-  width: 80%;
-  height: 80%;
+  width: 75%;
+  height: auto;
   border-radius: 4px;
   position: absolute;
   left: 0;
@@ -138,11 +131,4 @@
 }
 .events {
   padding-top: 80px;
-}
-#bg_blend {
-  height: 200vh;
-  width: 100%;
-  position: fixed;
-  z-index: -100;
-  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
 }

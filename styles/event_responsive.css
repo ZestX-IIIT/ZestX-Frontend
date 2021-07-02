@@ -10,7 +10,7 @@
 }
 @media only screen and (max-width: 1176px) {
   #slider {
-    height: 75vh;
+    height: 80vh;
   }
   #s1 {
     left: 44%;
@@ -95,6 +95,10 @@
 @media only screen and (max-width: 500px) {
   #slider {
     height: 35vh !important;
+  }
+  #slider label{
+    width: 80%;
+    height: auto;
   }
 }
 @media only screen and (max-width: 475px) {
