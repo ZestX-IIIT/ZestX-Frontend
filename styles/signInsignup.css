@@ -97,7 +97,7 @@ h1 {
   left: 10%;
   position: absolute;
   border-radius: 15px;
-  height: 371px;
+  height: 410px;
   mix-blend-mode: hard-light;
   opacity: 0.7;
   box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.15);
@@ -176,7 +176,7 @@ div span {
 }
 #forgot_password {
   margin: auto;
-  padding-top: 5px;
+  padding-top: 15px;
   color: #020b61;
   font-family: "Now";
   font-weight: bold;
