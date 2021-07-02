@@ -40,6 +40,8 @@ let eventsSection = document.getElementById("eventssec");
 let teamSection = document.getElementById("teamsec");
 let sponsersSection = document.getElementById("sponser_container");
 let faqSection = document.getElementById("faqsec");
+let Progressbar = document.getElementById("Progressbar");
+let scrollPath = document.getElementById("scrollPath");
 
 let index = 0;
 let activeTab = 0;
@@ -720,25 +722,25 @@ function setEventDetails(id) {
     eDate.getDate() + "-" + (eDate.getMonth() + 1) + "-" + eDate.getFullYear();
 
   switch (id) {
-    case 6:
+    case 8:
       detailsContainer.style.backgroundImage =
-        "url('../assets/home_page/events_details/rangshala_bg.svg'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
+        "url('../assets/home_page/events_details/compressed_event_details_webp/hot_stepper_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
       break;
     case 7:
       detailsContainer.style.background =
-        "url('../assets/home_page/events_details/raise_your_mic_bg.svg'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
+        "url('../assets/home_page/events_details/compressed_event_details_webp/raise_your_mic_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
       break;
-    case 8:
+    case 6:
       detailsContainer.style.background =
-        "url('../assets/home_page/events_details/hot_stepper_bg.svg'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
+        "url('../assets/home_page/events_details/compressed_event_details_webp/rangshala_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
       break;
     case 9:
       detailsContainer.style.background =
-        "url('../assets/home_page/events_details/one_mic_stand_bg.svg'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
+        "url('../assets/home_page/events_details/compressed_event_details_webp/one_mic_stand_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
       break;
     case 10:
       detailsContainer.style.background =
-        "url('../assets/home_page/events_details/strokes_bg.svg'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
+        "url('../assets/home_page/events_details/compressed_event_details_webp/strokes_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
       break;
   }
 
@@ -764,6 +766,8 @@ function setEventDetails(id) {
 
 function displayMainContainer() {
   checkAndDisplayContainer(primaryContainer);
+  checkAndDisplayContainer(scrollPath);
+  checkAndDisplayContainer(Progressbar);
   checkAndDisplayContainer(nabar_container);
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(preloader);
@@ -780,6 +784,8 @@ function displayPreloder() {
   checkAndCloseContainer(primaryEditProfileContainer);
   checkAndCloseContainer(primaryChangePasswordContainer);
   checkAndCloseContainer(nabar_container);
+  checkAndCloseContainer(scrollPath);
+  checkAndCloseContainer(Progressbar);
 }
 
 function displayEvenetspage() {
@@ -790,6 +796,8 @@ function displayEvenetspage() {
   checkAndCloseContainer(primaryEditProfileContainer);
   checkAndCloseContainer(primaryChangePasswordContainer);
   checkAndCloseContainer(nabar_container);
+  checkAndCloseContainer(scrollPath);
+  checkAndCloseContainer(Progressbar);
 }
 
 function displayChangePasswordpage() {
@@ -800,6 +808,8 @@ function displayChangePasswordpage() {
   checkAndCloseContainer(primaryProfilePageContainer);
   checkAndCloseContainer(primaryEditProfileContainer);
   checkAndCloseContainer(nabar_container);
+  checkAndCloseContainer(scrollPath);
+  checkAndCloseContainer(Progressbar);
 }
 
 function displayProfilepage() {
@@ -811,6 +821,8 @@ function displayProfilepage() {
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(primaryEditProfileContainer);
   checkAndCloseContainer(nabar_container);
+  checkAndCloseContainer(scrollPath);
+  checkAndCloseContainer(Progressbar);
 }
 
 function displayEditProfilepage() {
@@ -821,6 +833,8 @@ function displayEditProfilepage() {
   checkAndCloseContainer(primaryEventsPageContainer);
   checkAndCloseContainer(primaryProfilePageContainer);
   checkAndCloseContainer(nabar_container);
+  checkAndCloseContainer(scrollPath);
+  checkAndCloseContainer(Progressbar);
 }
 
 // Functions for cleaner APIs for toggeling beetween pages
