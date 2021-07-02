@@ -1,7 +1,7 @@
 
 var redirect = function (redirectWithoutTokenChk, loaderContainer) {
 
-    
+
     const token = localStorage.getItem("jwt");
     console.log(token);
 
@@ -56,12 +56,18 @@ function redirectToHomeOrAdminPageAccToToken(isAdmin) {
 function redirectToHomePageAccToToken(isAdmin) {
     if (!isAdmin)
         window.location.href = "./homepage.html";
+    else
+        loaderContainer.style.display = "none";
+
 }
 
 
 function redirectToAdminPageAccToToken(isAdmin) {
     if (isAdmin)
         window.location.href = "./general/admin_main_page.html";
+    else
+        loaderContainer.style.display = "none";
+
 
 }
 
