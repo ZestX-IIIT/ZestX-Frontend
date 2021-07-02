@@ -73,6 +73,10 @@
     padding-top: 50px;
   }
 }
+@media only screen and (max-width: 790px){}
+.FAQMainContainer {
+    padding-top: 10px;
+}
 @media only screen and (max-width: 720px) {
   .FAQQuestion {
     font-size: 0.7rem;
@@ -93,6 +97,11 @@
   }
   .FAQArrowDown {
     width: 2rem;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .FAQMainContainer {
+    height: 85vh;
   }
 }
 @media only screen and (max-width: 370px) {
