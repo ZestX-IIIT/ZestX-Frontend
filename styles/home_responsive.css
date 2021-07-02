@@ -124,7 +124,6 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: unset;
   }
  
   /* .frontleft h2 {
@@ -158,6 +157,7 @@
     width: 95%;
     border: 0;
     height: 75%;
+    justify-content: unset;
   }
   .frontleft h2 {
     margin: 0;
@@ -200,8 +200,8 @@
 }
 @media only screen and (max-width: 505px) {
   #animation_container {
-    height: 45vh;
-    width: 45vh;
+    height: 50vh;
+    width: 50vh;
   }
   .front {
     height: 60vh;
