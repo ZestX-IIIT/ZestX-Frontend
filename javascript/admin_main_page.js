@@ -41,7 +41,7 @@ setTimeout(() => {
 async function setUpLandingPage() {
 
     try {
-        const res1 = await fetch(`${apiURL}/fest/ongoingevents`, {
+        const res1 = await fetch(`${apiURL}/admin/ongoingevents`, {
             method: "GET",
         });
         if (res1.status == 500) {
@@ -102,7 +102,7 @@ async function setUpLandingPage() {
                 show_toast(2, "Mobile no. should have 10 digits!");
             } else if (exUsername && (exEmail || exMobile)) {
                 displayPreloder();
-                const res2 = await fetch(`${apiURL}/fest/adduser`, {
+                const res2 = await fetch(`${apiURL}/admin/adduser`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -117,7 +117,7 @@ async function setUpLandingPage() {
                     show_toast(0, "Internal server error please re-try!");
                     displayAdminAddUserPage();
                 } else {
-                    const res3 = await fetch(`${apiURL}/fest/ongoingevents`, {
+                    const res3 = await fetch(`${apiURL}/admin/ongoingevents`, {
                         method: "GET",
                     })
                     if (res3.status == 500) {
@@ -233,7 +233,7 @@ function setEventDetails(data) {
 async function getInternalUserDetails(array1) {
     try {
         if (array1 != null && array1.length != 0) {
-            const res1 = await fetch(`${apiURL}/user/userdetails`, {
+            const res1 = await fetch(`${apiURL}/admin/userdetails`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -282,7 +282,7 @@ async function getInternalUserDetails(array1) {
 async function getExternalUserDetails(array2) {
     try {
         if (array2 != null && array2.length != 0) {
-            const res2 = await fetch(`${apiURL}/user/exuserdetails`, {
+            const res2 = await fetch(`${apiURL}/admin/exuserdetails`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -381,7 +381,7 @@ function setInternalUserDetails(data, array1) {
         internalUserDeleteBtnList[i].addEventListener("click", async () => {
             displayPreloder();
             try {
-                const res = await fetch(`${apiURL}/fest/removeuser`, {
+                const res = await fetch(`${apiURL}/admin/removeuser`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -457,7 +457,7 @@ function setExternalUserDetails(data, array2) {
         externalUserDeleteBtnList[i].addEventListener("click", async () => {
             displayPreloder();
             try {
-                const res = await fetch(`${apiURL}/fest/removeexuser`, {
+                const res = await fetch(`${apiURL}/admin/removeexuser`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
