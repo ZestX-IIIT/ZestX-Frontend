@@ -63,19 +63,6 @@ let ongoingEventContainer;
 let pastEventContainer;
 let lastToastTimestamp = Date.now();
 
-let url = new URL(location.href);
-let sectionId = url.searchParams.get("id");
-
-if (sectionId == "eventssec") {
-  location.href = "#eventssec";
-} else if (sectionId == "teamsec") {
-  location.href = "#teamsec";
-  deActive(0);
-} else if (sectionId == "faqsec") {
-  location.href = "#faqsec";
-  deActive(0);
-}
-
 setup();
 
 async function setup() {
