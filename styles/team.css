@@ -16,7 +16,7 @@
   border-right: 1px solid #ffffff;
 }
 .teamMembers {
-  width: 60VW;
+  width: 60vw;
   height: 90%;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: inset 273px 3px 196px rgba(255, 242, 250, 0.1);
@@ -31,15 +31,15 @@
   height: 0;
   transition: opacity 500ms ease-in-out;
 }
-.teamMembers_active{
+.teamMembers_active {
   opacity: 1;
   height: 90%;
 }
 .teamMembers::-webkit-scrollbar {
   display: none;
 }
-.team_Outer_container{
-  overflow:hidden;
+.team_Outer_container {
+  overflow: hidden;
 }
 .teamContent {
   font-family: "Now";
@@ -53,8 +53,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  transition: color 200ms ease-in-out,
-  font-size 200ms ease-in-out;
+  transition: color 200ms ease-in-out, font-size 200ms ease-in-out;
   cursor: pointer;
 }
 .teamContentActive {
@@ -117,7 +116,7 @@
   opacity: 0;
   transition: all 400ms ease-in-out;
 }
-.team_section_info_icons:hover{
+.team_section_info_icons:hover {
   cursor: pointer;
 }
 .team_section_github {
@@ -128,4 +127,11 @@
 }
 .team_section_mail {
   top: 14%;
+}
+#bg_blend {
+  height: 200vh;
+  width: 100%;
+  position: fixed;
+  z-index: -100;
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
 }
