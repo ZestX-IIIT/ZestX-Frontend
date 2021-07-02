@@ -64,7 +64,7 @@
   .FAQAnswer {
     font-size: 0.8rem;
   }
-  .FAQArrowDown{
+  .FAQArrowDown {
     width: 3.5rem;
   }
 }
@@ -73,11 +73,11 @@
     padding-top: 50px;
     height: 90vh;
   }
-  
 }
-@media only screen and (max-width: 790px){}
-.FAQMainContainer {
+@media only screen and (max-width: 790px) {
+  .FAQMainContainer {
     padding-top: 10px;
+  }
 }
 @media only screen and (max-width: 720px) {
   .FAQQuestion {
@@ -86,10 +86,10 @@
   .FAQAnswer {
     font-size: 0.7rem;
   }
-  .FAQArrowDown{
+  .FAQArrowDown {
     width: 3rem;
   }
-  .FAQMainContainer{
+  .FAQMainContainer {
     height: 75vh;
   }
 }
@@ -125,7 +125,7 @@
   }
   .FAQAnswer {
     margin-left: 1rem;
-}
+  }
 }
 @media only screen and (max-width: 300px) {
   .FAQQuestion {
