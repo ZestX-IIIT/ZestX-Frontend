@@ -63,10 +63,18 @@ let ongoingEventContainer;
 let pastEventContainer;
 let lastToastTimestamp = Date.now();
 
-setup();
 
-async function setup() {
-  
+setTimeout(() => {
+  redirect(2, preloader, setup)
+}, 200);
+
+
+function setup() {
+  loadData()
+  setUpViews()
+}
+async function loadData() {
+
   try {
     if (token) {
       const res1 = await fetch(`${apiURL}/fest/getlist`, {
@@ -92,9 +100,10 @@ async function setup() {
     console.log(err);
   }
 }
-  redirect(2, preloader)
 
-window.addEventListener("load", () => {
+function setUpViews() {
+
+  // window.addEventListener("load", () => {
   setTimeout(function () {
     backBtnFromEventsPage = document.getElementById(
       "back_btn_from_festival_details_page"
@@ -387,103 +396,81 @@ window.addEventListener("load", () => {
   }, 500);
 
   displayMainContainer();
-});
+  // });
 
-window.addEventListener("scroll", () => {
-  let h = window.innerHeight;
-  if (window.pageYOffset <= h / 2) {
-    if (activeTab != 0) {
-      activeTab = 0;
-      setActive(0);
-      deActive(1);
-      deActive(2);
+  window.addEventListener("scroll", () => {
+    let h = window.innerHeight;
+    if (window.pageYOffset <= h / 2) {
+      if (activeTab != 0) {
+        activeTab = 0;
+        setActive(0);
+        deActive(1);
+        deActive(2);
+      }
+    } else if (window.pageYOffset <= (h * 3) / 2) {
+      if (activeTab != 1) {
+        activeTab = 1;
+        setActive(activeTab);
+        deActive(0);
+        deActive(2);
+      }
+    } else if (window.pageYOffset <= (h * 5) / 2) {
+      if (activeTab != 2) {
+        activeTab = 2;
+        setActive(activeTab);
+        deActive(1);
+        deActive(3);
+      }
+    } else if (window.pageYOffset <= (h * 7) / 2) {
+      if (activeTab != 3) {
+        activeTab = 3;
+        setActive(activeTab);
+        deActive(2);
+        deActive(4);
+      }
+    } else {
+      if (activeTab != 4) {
+        activeTab = 4;
+        setActive(activeTab);
+        deActive(3);
+      }
     }
-  } else if (window.pageYOffset <= (h * 3) / 2) {
-    if (activeTab != 1) {
-      activeTab = 1;
-      setActive(activeTab);
-      deActive(0);
-      deActive(2);
-    }
-  } else if (window.pageYOffset <= (h * 5) / 2) {
-    if (activeTab != 2) {
-      activeTab = 2;
-      setActive(activeTab);
-      deActive(1);
-      deActive(3);
-    }
-  } else if (window.pageYOffset <= (h * 7) / 2) {
-    if (activeTab != 3) {
-      activeTab = 3;
-      setActive(activeTab);
-      deActive(2);
-      deActive(4);
-    }
-  } else {
-    if (activeTab != 4) {
-      activeTab = 4;
-      setActive(activeTab);
-      deActive(3);
-    }
-  }
-});
-// let current_offset_height = homeSection.offsetTop - 125;
-// let current_active_tab = 0;
-// let smooth_setinterval;
-// function smooth_scroll_home_page(target_height) {
-//   if (target_height > current_offset_height) {
-//     smooth_setinterval = setInterval(() => {
-//       current_offset_height = current_offset_height + 1;
-//       scrollBy(0, 1);
-//       if (target_height <= current_offset_height) {
-//         clearInterval(smooth_setinterval);
-//       }
-//     }, 1);
-//   } else if (target_height < current_offset_height) {
-//     smooth_setinterval = setInterval(() => {
-//       current_offset_height = current_offset_height - 1;
-//       scrollBy(0, -1);
-//       if (target_height >= current_offset_height) {
-//         clearInterval(smooth_setinterval);
-//       }
-//     }, 1);
-//   }
-//   else {
-//     return;
-//   }
-// }
-// console.log(teamSection.offsetHeight);
-home.addEventListener("click", () => {
-  homeSection.scrollIntoView({ behavior: "smooth" })
-  // window.scrollTo(0, homeSection.offsetHeight);
-  // smooth_scroll_home_page(homeSection.offsetTop - 125);
-  // console.log(current_active_tab);
-});
-events.addEventListener("click", () => {
-  eventsSection.scrollIntoView({ behavior: "smooth" })
+  });
 
-  // window.scrollTo(0, eventsSection.offsetHeight);
-  // smooth_scroll_home_page(eventsSection.offsetTop - 75);
-  // console.log(current_active_tab);
-});
-team.addEventListener("click", () => {
-  teamSection.scrollIntoView({ behavior: "smooth" })
-  // window.scrollTo(0, teamSection.offsetHeight);
-  // smooth_scroll_home_page(teamSection.offsetTop);
-  // console.log(current_active_tab);
-});
-sponsers.addEventListener("click", () => {
-  // window.scrollTo(0, sponsersSection.offsetHeight);
-  // smooth_scroll_home_page(sponsersSection.offsetTop);
-  // console.log(current_active_tab);
-  sponsersSection.scrollIntoView({ behavior: "smooth" })
-});
-faq.addEventListener("click", () => {
-  // window.scrollTo(0, faqSection.offsetHeight);
-  // smooth_scroll_home_page(faqSection.offsetTop);
-  // console.log(current_active_tab);
-  faqSection.scrollIntoView({ behavior: "smooth" })
-});
+
+  setInterval(() => {
+    if (index == 0) {
+      poster1.classList.add("fade-class");
+      poster2.classList.remove("fade-class");
+    } else if (index == 1) {
+      poster2.classList.add("fade-class");
+      poster3.classList.remove("fade-class");
+    } else {
+      poster3.classList.add("fade-class");
+      poster1.classList.remove("fade-class");
+    }
+    index++;
+    index = index % 3;
+  }, 4000);
+
+
+  home.addEventListener("click", () => {
+    homeSection.scrollIntoView({ behavior: "smooth" })
+  });
+  events.addEventListener("click", () => {
+    eventsSection.scrollIntoView({ behavior: "smooth" })
+  });
+  team.addEventListener("click", () => {
+    teamSection.scrollIntoView({ behavior: "smooth" })
+  });
+  sponsers.addEventListener("click", () => {
+    sponsersSection.scrollIntoView({ behavior: "smooth" })
+  });
+  faq.addEventListener("click", () => {
+    faqSection.scrollIntoView({ behavior: "smooth" })
+  });
+
+}
 
 function deActive(tabIndex) {
   switch (tabIndex) {
@@ -536,21 +523,6 @@ function setActive(tabIndex) {
       break;
   }
 }
-
-setInterval(() => {
-  if (index == 0) {
-    poster1.classList.add("fade-class");
-    poster2.classList.remove("fade-class");
-  } else if (index == 1) {
-    poster2.classList.add("fade-class");
-    poster3.classList.remove("fade-class");
-  } else {
-    poster3.classList.add("fade-class");
-    poster1.classList.remove("fade-class");
-  }
-  index++;
-  index = index % 3;
-}, 4000);
 
 function setRegisterBtnText(id) {
   const data = festData.find((item) => item.fest_id == id);
