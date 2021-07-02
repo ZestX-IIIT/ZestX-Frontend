@@ -22,7 +22,7 @@ var redirect = function (redirectWithoutTokenChk, loaderContainer, setUpFun) {
                         redirectToHomeOrAdminPageAccToToken(isAdmin);
                         break;
                     case 1:
-                        redirectToHomePageAccToToken(isAdmin);
+                        redirectToHomePageAccToToken(isAdmin, setUpFun, loaderContainer);
                         break;
                     case 2:
                         redirectToAdminPageAccToToken(isAdmin, setUpFun, loaderContainer);
@@ -41,7 +41,7 @@ var redirect = function (redirectWithoutTokenChk, loaderContainer, setUpFun) {
     } else {
         if (redirectWithoutTokenChk > 0) {
             loaderContainer.style.display = "block";
-            window.location.href = "./signupsignin.html";
+            window.location.href = "../signupsignin.html";
         }
     }
 }

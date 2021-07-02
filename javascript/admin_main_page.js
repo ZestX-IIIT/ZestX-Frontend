@@ -33,6 +33,10 @@ let ongoingEvents;
 let lastToastTimestamp = Date.now();
 let isFirstTime = true;
 
+setTimeout(() => {
+    redirect(1, preloader, setup)
+}, 200);
+
 
 async function setup() {
 
@@ -86,7 +90,6 @@ async function setup() {
             }
         }
 
-        redirect(1,preloader)
         backBtnFromAddUserPage = document.getElementById("back_btn_from_add_user_page");
         addUserBtnFromAddUserPage = document.getElementById("Add_user_button");
 
@@ -145,6 +148,12 @@ async function setup() {
         backBtnFromAddUserPage.addEventListener("click", () => {
             displayAdminMainpage();
         })
+        addUserBtnFromMainPage.addEventListener("click", () => {
+            document.getElementById("name").value = null
+            document.getElementById("email").value = null
+            document.getElementById("phone_number").value = null
+            displayAdminAddUserPage();
+        });
 
     } catch (err) {
         show_toast(0, "Internal server error please re-try!");
@@ -152,14 +161,7 @@ async function setup() {
     }
 }
 
-setup();
 
-addUserBtnFromMainPage.addEventListener("click", () => {
-    document.getElementById("name").value = null
-    document.getElementById("email").value = null
-    document.getElementById("phone_number").value = null
-    displayAdminAddUserPage();
-});
 
 
 setTimeout(function () {
