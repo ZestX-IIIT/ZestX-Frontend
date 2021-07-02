@@ -43,6 +43,11 @@ var redirect = function (redirectWithoutTokenChk, loaderContainer, setUpFun) {
             loaderContainer.style.display = "block";
             window.location.href = "../signupsignin.html";
         }
+        else {
+            loaderContainer.style.display = "none";
+            setUpFun()
+
+        }
     }
 }
 
@@ -67,8 +72,4 @@ function redirectToAdminPageAccToToken(isAdmin, setUpFun, loaderContainer) {
     else
         loaderContainer.style.display = "none";
     setUpFun()
-
-
 }
-
-

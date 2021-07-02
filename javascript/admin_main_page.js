@@ -34,11 +34,11 @@ let lastToastTimestamp = Date.now();
 let isFirstTime = true;
 
 setTimeout(() => {
-    redirect(1, preloader, setup)
+    redirect(1, preloader, setUpLandingPage)
 }, 200);
 
 
-async function setup() {
+async function setUpLandingPage() {
 
     try {
         const res1 = await fetch(`${apiURL}/fest/ongoingevents`, {
