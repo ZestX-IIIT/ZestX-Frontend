@@ -25,7 +25,8 @@
 
 .FAQQuestion {
   background-color: transparent;
-  padding: 18px;
+  padding: 10px;
+  padding-left: 2rem;
   width: 100%;
   border: none;
   text-align: left;
@@ -33,30 +34,33 @@
   transition: 0.4s;
   font-family: "Now";
   font-style: normal;
-  font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   color: #bfbeff;
-  padding: 2rem;
-  padding-bottom: 1rem;
+  /* padding: 2rem; */
+  /* padding-bottom: 1rem; */
   display: flex;
   justify-content: space-between;
+  font-weight: 500;
+  align-items: center;
 }
 .FAQQuestion h2 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
+  font-weight: 500;
 }
 
 .FAQArrowDown {
   cursor: pointer;
+  width: 4rem;
 }
 .FAQAnswer {
   font-family: "Now";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   color: #cdcee6;
   padding-top: 0;
@@ -99,4 +103,11 @@
   to {
     transform: rotate(0deg);
   }
+}
+#bg_blend {
+  height: 200vh;
+  width: 100%;
+  position: fixed;
+  z-index: -100;
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
 }
