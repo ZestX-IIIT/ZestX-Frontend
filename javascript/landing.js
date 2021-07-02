@@ -8,7 +8,7 @@ const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 let down = true;
 
 setTimeout(() => {
-  redirect(0, preloader, setUpLandingPage)
+  redirect(0, setUpLandingPage)
 }, 200);
 
 

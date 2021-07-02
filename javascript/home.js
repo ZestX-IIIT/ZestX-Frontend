@@ -67,7 +67,7 @@ let lastToastTimestamp = Date.now();
 
 
 setTimeout(() => {
-  redirect(2, preloader, setup)
+  redirect(2, setup)
 }, 200);
 
 
