@@ -200,6 +200,7 @@ div span {
   font-style: normal;
   font-size: 16px !important;
   transition: all 0.2s ease-in-out;
+  pointer-events: none;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
