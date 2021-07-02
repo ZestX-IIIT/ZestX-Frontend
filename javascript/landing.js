@@ -4,7 +4,6 @@ let footer = document.getElementsByClassName("footer");
 let preloader = document.getElementById("preloader_container");
 let arrow = document.getElementsByClassName("arrow");
 let main = document.getElementsByClassName("main");
-const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 let down = true;
 
 setTimeout(() => {
