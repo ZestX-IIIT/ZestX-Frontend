@@ -66,6 +66,7 @@ let lastToastTimestamp = Date.now();
 setup();
 
 async function setup() {
+  
   try {
     if (token) {
       const res1 = await fetch(`${apiURL}/fest/getlist`, {
@@ -91,6 +92,7 @@ async function setup() {
     console.log(err);
   }
 }
+  redirect(2, preloader)
 
 window.addEventListener("load", () => {
   setTimeout(function () {
