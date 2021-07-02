@@ -33,8 +33,12 @@ let ongoingEvents;
 let lastToastTimestamp = Date.now();
 let isFirstTime = true;
 
+setTimeout(() => {
+    redirect(1, preloader, setUpLandingPage)
+}, 200);
 
-async function setup() {
+
+async function setUpLandingPage() {
 
     try {
         const res1 = await fetch(`${apiURL}/fest/ongoingevents`, {
@@ -144,6 +148,12 @@ async function setup() {
         backBtnFromAddUserPage.addEventListener("click", () => {
             displayAdminMainpage();
         })
+        addUserBtnFromMainPage.addEventListener("click", () => {
+            document.getElementById("name").value = null
+            document.getElementById("email").value = null
+            document.getElementById("phone_number").value = null
+            displayAdminAddUserPage();
+        });
 
     } catch (err) {
         show_toast(0, "Internal server error please re-try!");
@@ -151,14 +161,7 @@ async function setup() {
     }
 }
 
-setup();
 
-addUserBtnFromMainPage.addEventListener("click", () => {
-    document.getElementById("name").value = null
-    document.getElementById("email").value = null
-    document.getElementById("phone_number").value = null
-    displayAdminAddUserPage();
-});
 
 
 setTimeout(function () {

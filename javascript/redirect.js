@@ -1,9 +1,9 @@
 
-var redirect = function (redirectWithoutTokenChk, loaderContainer) {
+var redirect = function (redirectWithoutTokenChk, loaderContainer, setUpFun) {
 
 
     const token = localStorage.getItem("jwt");
-    console.log(token);
+    console.log(loaderContainer);
 
     if (token) {
         loaderContainer.style.display = "block";
@@ -22,10 +22,10 @@ var redirect = function (redirectWithoutTokenChk, loaderContainer) {
                         redirectToHomeOrAdminPageAccToToken(isAdmin);
                         break;
                     case 1:
-                        redirectToHomePageAccToToken(isAdmin);
+                        redirectToHomePageAccToToken(isAdmin, setUpFun, loaderContainer);
                         break;
                     case 2:
-                        redirectToAdminPageAccToToken(isAdmin);
+                        redirectToAdminPageAccToToken(isAdmin, setUpFun, loaderContainer);
                         break;
 
                     default:
@@ -41,7 +41,12 @@ var redirect = function (redirectWithoutTokenChk, loaderContainer) {
     } else {
         if (redirectWithoutTokenChk > 0) {
             loaderContainer.style.display = "block";
-            window.location.href = "./signupsignin.html";
+            window.location.href = "../signupsignin.html";
+        }
+        else {
+            loaderContainer.style.display = "none";
+            setUpFun()
+
         }
     }
 }
@@ -53,22 +58,18 @@ function redirectToHomeOrAdminPageAccToToken(isAdmin) {
 }
 
 
-function redirectToHomePageAccToToken(isAdmin) {
+function redirectToHomePageAccToToken(isAdmin, setUpFun, loaderContainer) {
     if (!isAdmin)
-        window.location.href = "./homepage.html";
+        window.location.href = "../homepage.html";
     else
         loaderContainer.style.display = "none";
-
+    setUpFun()
 }
 
-
-function redirectToAdminPageAccToToken(isAdmin) {
+function redirectToAdminPageAccToToken(isAdmin, setUpFun, loaderContainer) {
     if (isAdmin)
         window.location.href = "./general/admin_main_page.html";
     else
         loaderContainer.style.display = "none";
-
-
+    setUpFun()
 }
-
-

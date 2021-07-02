@@ -7,37 +7,49 @@ let main = document.getElementsByClassName("main");
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 let down = true;
 
-signupButton.addEventListener("click", () => {
-  preloader.style.display = "block";
-  window.location.href = "./signupsignin.html" + "#" + "signup";
-});
+setTimeout(() => {
+  redirect(0, preloader, setUpLandingPage)
+}, 200);
 
-signinButton.addEventListener("click", () => {
-  preloader.style.display = "block";
-  window.location.href = "./signupsignin.html" + "#" + "signin";
-});
 
-window.addEventListener("load", () => {
-  preloader.style.display = "none";
-  console.log();
-  redirect(0, preloader)
-});
+function setUpLandingPage() {
 
-arrow[0].addEventListener("click", () => {
-  toggleFooterStates();
-});
 
-window.onkeydown = function (e) {
-  if (e.keyCode === 27) {
-    // ESC key trigger to collpase
-    if (!down) {
-      collapseFooter();
-    }
-  } else if (e.keyCode === 70) {
-    // F key trigger to Expand/collpase both
+
+  signupButton.addEventListener("click", () => {
+    preloader.style.display = "block";
+    window.location.href = "./signupsignin.html" + "#" + "signup";
+  });
+
+  signinButton.addEventListener("click", () => {
+    preloader.style.display = "block";
+    window.location.href = "./signupsignin.html" + "#" + "signin";
+  });
+
+
+  arrow[0].addEventListener("click", () => {
     toggleFooterStates();
-  }
-};
+  });
+
+
+
+  window.onkeydown = function (e) {
+    if (e.keyCode === 27) {
+      // ESC key trigger to collpase
+      if (!down) {
+        collapseFooter();
+      }
+    } else if (e.keyCode === 70) {
+      // F key trigger to Expand/collpase both
+      toggleFooterStates();
+    }
+  };
+
+  preloader.style.display = "none";
+
+
+}
+
 
 function toggleFooterStates() {
   if (down) {
