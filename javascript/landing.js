@@ -20,7 +20,7 @@ signinButton.addEventListener("click", () => {
 window.addEventListener("load", () => {
   preloader.style.display = "none";
   console.log();
-  redirect(false, preloader)
+  redirect(0, preloader)
 });
 
 arrow[0].addEventListener("click", () => {
