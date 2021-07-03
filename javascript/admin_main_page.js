@@ -33,10 +33,12 @@ let ongoingEvents;
 let lastToastTimestamp = Date.now();
 let isFirstTime = true;
 
-setTimeout(() => {
-    redirect(1, setUpLandingPage)
-}, 200);
 
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        redirect(1, setUpLandingPage)
+    }, 200);
+});
 
 async function setUpLandingPage() {
 
@@ -81,7 +83,7 @@ async function setUpLandingPage() {
                     const event = ongoingEvents.find(
                         (item) => item.fest_id == eventInstance.id
                     );
-                    setEventDetails(event);
+                    setEventDetails(event); 
                     getInternalUserDetails(event.user_id);
                     getExternalUserDetails(event.external_user_id);
 
