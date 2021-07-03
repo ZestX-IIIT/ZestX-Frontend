@@ -47,6 +47,7 @@ body {
     font-size: 1.2vw;
     text-align: right;
     transition: font-size 300ms ease-in-out;
+    cursor: pointer;
 }
 .scrolling_terms_condition_content_active{
     color: pink;
