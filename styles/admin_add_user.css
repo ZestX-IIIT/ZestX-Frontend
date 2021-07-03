@@ -10,8 +10,8 @@ body {
 
 #zestxlogoadminadduserpage {
   position: absolute;
-  top: 0;
-  left: 91%;
+  top: 1.5vw;
+  right: 2vw;
   width: 6rem;
   z-index: 2;
   height: 6rem;
