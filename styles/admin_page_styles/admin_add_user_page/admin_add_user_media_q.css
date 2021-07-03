@@ -11,6 +11,9 @@
     width: 8vw;
     top: 2vw;
   }
+  #Add_user_button img {
+    width: 1.7rem;
+  }
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
   #Add_user_button {
