@@ -73,6 +73,7 @@ function setUpSignInSignUpPage() {
 
         }
       } catch (error) {
+        console.log(error);
         show_toast(0, "Internal server error please re-try!");
         preloader.style.display = "none";
       }

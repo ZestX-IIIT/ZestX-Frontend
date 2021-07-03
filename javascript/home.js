@@ -83,6 +83,9 @@ async function loadData() {
     if (token) {
       const res1 = await fetch(`${apiURL}/fest/getlist`, {
         method: "GET",
+        headers: {
+          authorization: token,
+        },
       });
 
       const data1 = await res1.json();
