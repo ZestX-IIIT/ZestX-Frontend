@@ -1,0 +1,14 @@
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+  #back_btn_from_add_user_page {
+    left: 4vw;
+    width: 2.2vw;
+  }
+
+  .Admin_add_container {
+    padding-left: 4.5vw;
+  }
+  #zestxlogoadminadduserpage {
+    width: 8vw;
+    top: 2vw;
+  }
+}
