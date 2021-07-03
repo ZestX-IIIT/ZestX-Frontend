@@ -1,4 +1,8 @@
 setTimeout(function () {
+  let event_slider = document.getElementById("slider")
+  if(location.href == "http://127.0.0.1:5500/general/slider_event.html"){
+      event_slider.style.marginTop = "12vh"
+  }
   var slider = document.getElementsByClassName("slide");
   let index_slider = 0;
   var isNotHovering = true;
