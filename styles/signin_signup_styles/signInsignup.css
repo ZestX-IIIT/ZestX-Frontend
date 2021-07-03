@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .main {
-  background-image: url("../assets/signin_signup_Page/background.jpg");
+  background-image: url("../../assets/signin_signup_Page/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -67,7 +67,7 @@ h1 {
   }
 }
 .background {
-  background: url("../assets/signin_signup_Page/containerbg.svg");
+  background: url("../../assets/signin_signup_Page/containerbg.svg");
   width: 400px;
   top: 10%;
   left: 10%;
@@ -79,7 +79,7 @@ h1 {
   box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.15);
 }
 .background2 {
-  background: url("../assets/signin_signup_Page/containerbg.svg");
+  background: url("../../assets/signin_signup_Page/containerbg.svg");
   width: 400px;
   top: 10%;
   left: 10%;
@@ -91,7 +91,7 @@ h1 {
   z-index: -1;
 }
 .background3 {
-  background: url("../assets/signin_signup_Page/containerbg.svg");
+  background: url("../../assets/signin_signup_Page/containerbg.svg");
   width: 400px;
   top: 25%;
   left: 10%;
@@ -103,7 +103,7 @@ h1 {
   box-shadow: inset 0px 4px 57px rgba(247, 249, 255, 0.15);
 }
 .background4 {
-  background: url("../assets/signin_signup_Page/containerbg.svg");
+  background: url("../../assets/signin_signup_Page/containerbg.svg");
   width: 400px;
   top: 25%;
   left: 10%;
