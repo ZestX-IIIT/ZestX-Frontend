@@ -41,20 +41,29 @@ input:-webkit-autofill:active {
   height: 100vh;
   position: relative;
   display: flex;
-  flex-direction: row ;
+  flex-direction: row;
 }
 
 .Admin_add_container {
-  height: 75vh;
-  width: 50%;
-  padding-left: 5rem;
-  padding-top: 5rem;
+  height: 100%;
+  width: 35%;
+  padding-left: 5%;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 
+#admin_add_user_anim_container {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6%;
+  padding-bottom: 1%;
+}
+
 .admit_add_user_details {
-  width: 66%;
+  width: 100%;
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #efd5ff;
@@ -67,10 +76,6 @@ input:-webkit-autofill:active {
   font-size: 1.2rem;
   text-transform: uppercase;
   color: #efd5ff;
-}
-
-#admin_add_user_anim_container{
-width: 50%;
 }
 
 input::-webkit-outer-spin-button,
@@ -127,6 +132,7 @@ input:focus {
 
 .Label_section {
   position: relative;
+  padding-top: 2%;
 }
 
 .Label_floating {
