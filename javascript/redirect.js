@@ -6,7 +6,7 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
     console.log(redirectWithoutTokenChk);
     if (token) {
 
-        fetch(`${apiURL}/user/getdetails`, {
+        fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
             method: "GET",
             headers: {
                 authorization: token,
