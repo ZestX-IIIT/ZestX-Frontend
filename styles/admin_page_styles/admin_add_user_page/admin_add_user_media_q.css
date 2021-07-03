@@ -32,4 +32,13 @@
     top: 2vw;
     right: 4vw;
   }
+  #Add_user_button img {
+    width: 1.5rem;
+  }
+  .Admin_add_container {
+    width: 40%;
+  }
+  #admin_add_user_anim_container {
+    width: 65%;
+  }
 }
