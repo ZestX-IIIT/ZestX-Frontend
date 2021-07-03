@@ -12,9 +12,9 @@ body {
   position: absolute;
   top: 1.5vw;
   right: 5vw;
-  width: 6rem;
+  width: 6vw;
   z-index: 2;
-  height: 6rem;
+  height: auto;
 }
 
 input:-webkit-autofill,
@@ -59,6 +59,7 @@ input:-webkit-autofill:active {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10vw;
   padding-top: 6%;
   padding-bottom: 1%;
 }
@@ -94,8 +95,9 @@ input:focus {
 }
 
 #Add_user_button {
-  width: 12rem;
-  height: 3rem;
+  width: auto;
+  height: auto;
+  padding: 0.8vw 2vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +135,7 @@ input:focus {
 
 .Label_section {
   position: relative;
-  padding-top: 2%;
+  padding-top: 0.5%;
 }
 
 .Label_floating {
