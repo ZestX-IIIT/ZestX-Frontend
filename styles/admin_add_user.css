@@ -27,11 +27,11 @@ input:-webkit-autofill:active {
 
 #back_btn_from_add_user_page {
   position: absolute;
-  top: 7%;
-  left: 6%;
-  width: 1.8rem;
-  height: 3rem;
-  cursor: pointer;
+  top: 4vw;
+  left: 5.5%;
+  width: 2.2rem;
+  z-index: 2;
+  height: auto;
 }
 
 .Main_Admin_Add_Container {
@@ -40,11 +40,13 @@ input:-webkit-autofill:active {
   width: 100%;
   height: 100vh;
   position: relative;
-  padding-top: 4rem;
+  display: flex;
+  flex-direction: row ;
 }
 
 .Admin_add_container {
   height: 75vh;
+  width: 50%;
   padding-left: 5rem;
   padding-top: 5rem;
   display: flex;
@@ -52,7 +54,7 @@ input:-webkit-autofill:active {
 }
 
 .admit_add_user_details {
-  width: 40%;
+  width: 66%;
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #efd5ff;
@@ -66,6 +68,11 @@ input:-webkit-autofill:active {
   text-transform: uppercase;
   color: #efd5ff;
 }
+
+#admin_add_user_anim_container{
+width: 50%;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

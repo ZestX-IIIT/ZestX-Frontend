@@ -66,10 +66,12 @@ let pastEventContainer;
 let lastToastTimestamp = Date.now();
 
 
-setTimeout(() => {
-  redirect(2, setup)
-}, 200);
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    redirect(2, setup)
+  }, 200);
 
+});
 
 function setup() {
   loadData()
