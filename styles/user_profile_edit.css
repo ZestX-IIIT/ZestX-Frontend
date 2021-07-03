@@ -136,3 +136,6 @@ input:-webkit-autofill:active {
 input[type="password"] {
   text-transform: none;
 }
+.floating{
+  pointer-events: none;
+}
