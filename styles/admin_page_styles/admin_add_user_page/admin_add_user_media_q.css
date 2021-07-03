@@ -1,4 +1,4 @@
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 425px)  and (max-width: 1024px) {
   #back_btn_from_add_user_page {
     left: 4vw;
     width: 2.2vw;
@@ -15,7 +15,7 @@
     width: 1.7rem;
   }
 }
-@media screen and (min-width: 0px) and (max-width: 768px) {
+@media screen and (min-width: 425px) and (max-width: 768px) {
   #Add_user_button {
     font-size: 0.9rem;
   }
