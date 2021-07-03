@@ -13,9 +13,6 @@ setTimeout(() => {
 
 
 function setUpLandingPage() {
-
-
-
   signupButton.addEventListener("click", () => {
     preloader.style.display = "block";
     window.location.href = "./signupsignin.html" + "#" + "signup";
