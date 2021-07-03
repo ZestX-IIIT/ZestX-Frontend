@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .main {
-  background-image: url("../assets/landing_page/SVG/background.svg");
+  background-image: url("../../assets/landing_page/SVG/background.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
