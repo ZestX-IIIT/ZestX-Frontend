@@ -2,3 +2,9 @@
 /node_modules
 rough.html
 rough.css
+dist/bundle.js
+dist/index.html
+index.js
+package-lock.json
+package.json
+webpack.config.js
