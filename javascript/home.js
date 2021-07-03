@@ -239,6 +239,10 @@ function setUpViews() {
 
       backBtnFromProfilePage.addEventListener("click", () => {
         displayMainContainer();
+        setActive(0);
+        deActive(2);
+        deActive(3);
+        deActive(4);
         profileBtn.innerHTML = `${userData.user_name[0]}`;
       });
 
