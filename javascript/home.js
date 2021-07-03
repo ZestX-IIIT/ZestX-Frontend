@@ -277,7 +277,7 @@ function setUpViews() {
           displayChangePasswordpage();
           console.log(err);
         } else {
-          show_toast(1, "Your new password sent to your registered email-id!");
+          show_toast(1, "Link to reset password sent to your email-id!");
           displayChangePasswordpage();
         }
       })
@@ -295,7 +295,7 @@ function setUpViews() {
           displayEditProfilepage();
           console.log(err);
         } else {
-          show_toast(1, "Your new password sent to your registered email-id!");
+          show_toast(1, "Link to reset password sent to your email-id!");
           displayEditProfilepage();
         }
       })
