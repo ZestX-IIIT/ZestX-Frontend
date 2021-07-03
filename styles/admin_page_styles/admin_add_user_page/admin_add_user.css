@@ -36,7 +36,6 @@ input:-webkit-autofill:active {
 
 .Main_Admin_Add_Container {
   background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
-  mix-blend-mode: overlay;
   width: 100%;
   height: 100vh;
   position: relative;
