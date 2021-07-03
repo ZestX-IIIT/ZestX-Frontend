@@ -104,7 +104,7 @@
 }
 @media only screen and (max-width: 1370px) {
   #Progressbar , #scrollPath{
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (max-width: 1300px) {
