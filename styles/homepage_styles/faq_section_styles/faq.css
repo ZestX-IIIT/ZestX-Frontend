@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-.bg_blend_of_home{
+.bg_blend_of_home {
   height: 200vh;
   width: 100%;
   position: fixed;
@@ -13,11 +13,11 @@
 .FAQMainContainer {
   width: 100%;
   height: 100vh;
-  padding-top: 10.27rem;
+  padding-top: 9.27rem;
 }
 .FAQContainer {
   width: 90%;
-  max-height: 85%;
+  max-height: 94%;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: inset 349px 4px 250px rgba(255, 242, 250, 0.1);
   border-radius: 12px;
@@ -80,6 +80,9 @@
 }
 .FAQAnswer p {
   margin-bottom: 1rem;
+}
+.lastAnswer {
+  border-bottom: none;
 }
 .ArrowRotate {
   animation-name: rotate_arrow_faq;
