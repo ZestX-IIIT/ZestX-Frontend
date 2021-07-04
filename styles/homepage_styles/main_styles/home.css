@@ -19,7 +19,6 @@ body {
   position: relative;
   top: 0;
   grid-template-columns: 100%;
-  grid-template-rows: 100vh 100vh 100vh 100vh 100vh;
 }
 html {
   scroll-behavior: smooth;
