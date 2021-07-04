@@ -5,13 +5,17 @@ let privacyPolicy = document.getElementById("privacy-policy");
 let cookiePolicy = document.getElementById("cookie-policy");
 let activeTabTnCPage = 0;
 
-let url = new URL(location.href);
-let id = url.searchParams.get("id");
-terms_conditon_landing[id].scrollIntoView({ behavior: "smooth" });
+let urlLink = new URL(location.href);
+let terms_conditon_landing_index = urlLink.searchParams.get("id");
+if (terms_conditon_landing_index == null) {
+  terms_conditon_landing_index = 0;
+}
+terms_conditon_landing[terms_conditon_landing_index].scrollIntoView({ behavior: "smooth" });
 
 for (let i = 0; i < scrolling_terms_condition_content.length; i++) {
   scrolling_terms_condition_content[i].addEventListener("click", () => {
     terms_conditon_landing[i].scrollIntoView({ behavior: "smooth" });
+    // preloader.style.display = "block";
   })
 }
 window.addEventListener("scroll", () => {
