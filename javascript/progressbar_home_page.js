@@ -25,6 +25,7 @@ setTimeout(function () {
   }
 
   var y = 0;
+  let isProgressbarActive = false;
   function startProgressbarScroll(e) {
     limit = windowWidth - 200;
     limit2 = windowWidth - 20;
