@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
   color: #fdfdfd;
@@ -14,48 +17,48 @@ body {
   margin: auto;
   width: 65%;
   margin-left: 22%;
-    position: relative;
-    padding-top: 2vw;
-    user-select: none;
+  position: relative;
+  padding-top: 2vw;
+  user-select: none;
 }
-*::selection{
-    color: blue;
-    background: white;
+*::selection {
+  color: blue;
+  background: white;
 }
-#zestxlogotcpage{
-    position: fixed;
-    top: 1.45vw;
-    right: 4vw;
-    z-index: 100;
-    width: 6rem;
-    height: 6rem;
-    user-select: none;
+#zestxlogotcpage {
+  position: fixed;
+  top: 1.45vw;
+  right: 4vw;
+  z-index: 100;
+  width: 6rem;
+  height: 6rem;
+  user-select: none;
 }
-.scrolling_terms_condition{
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-right: 1px solid white;
-    height: 80vh;
-    width: 20%;
-    padding-right: 1.5vw;
-    margin-top: 5vw;
+.scrolling_terms_condition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-right: 1px solid white;
+  height: 80vh;
+  width: 20%;
+  padding-right: 1.5vw;
+  margin-top: 5vw;
 }
 
-.scrolling_terms_condition_content{
-    padding-top: 0.5vw;
-    font-size: 1.2vw;
-    text-align: right;
-    transition: font-size 300ms ease-in-out;
-    cursor: pointer;
+.scrolling_terms_condition_content {
+  padding-top: 0.5vw;
+  font-size: 1.2vw;
+  text-align: right;
+  transition: font-size 300ms ease-in-out;
+  cursor: pointer;
 }
-.scrolling_terms_condition_content_active{
-    color: pink;
-    font-size: 1.3vw;
+.scrolling_terms_condition_content_active {
+  color: pink;
+  font-size: 1.3vw;
 }
-.terms_conditon_landing> h1:first-child{
-    color: pink;
-    font-size: 2rem;
+.terms_conditon_landing > h1:first-child {
+  color: pink;
+  font-size: 2rem;
 }
 section {
   line-height: 1.7;
