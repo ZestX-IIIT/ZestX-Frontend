@@ -1,0 +1,11 @@
+@media screen and (min-width: 926px) and (max-width: 1026px) {
+  .footer-content {
+    margin: 41px 41px;
+  }
+  .footer {
+    height: 230px;
+  }
+  .follow img {
+    margin-left: 8px;
+  }
+}

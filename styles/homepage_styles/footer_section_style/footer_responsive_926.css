@@ -1,0 +1,18 @@
+@media screen and (min-width: 826px) and (max-width: 926px) {
+  .footer-content {
+    margin: 38px 41px;
+  }
+  .footer {
+    height: 230px;
+  }
+  .follow img {
+    margin-left: 8px;
+  }
+  a {
+    font-size: 0.9rem;
+  }
+  .footer h2 {
+    margin-bottom: 24px;
+    font-size: 1.2rem;
+  }
+}
