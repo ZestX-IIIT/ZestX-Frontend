@@ -32,6 +32,9 @@ body {
 }
 #BackEditButton1 {
   padding-left: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 #BackEditButton1 img {
   cursor: pointer;
