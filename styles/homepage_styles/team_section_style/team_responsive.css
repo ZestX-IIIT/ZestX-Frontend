@@ -24,6 +24,12 @@
     height: 88vh;
   }
 }
+@media only screen and (max-width: 750px) {
+  .team{
+    margin-bottom: 30px;
+  }
+}
+
 @media only screen and (max-width: 730px) {
   .team {
     height: 70vh;

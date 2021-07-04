@@ -1,7 +1,7 @@
 @media only screen and (max-width: 360px) {
   .sponsers {
     padding-top: 0;
-    height: 10rem;
+    height: 5em;
     grid-template-rows: repeat(5, 2rem);
   }
   .sponserContainer {

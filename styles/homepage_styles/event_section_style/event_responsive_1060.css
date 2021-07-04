@@ -1,5 +1,5 @@
-/* @media only screen and (max-width: 1060px) {
-  #slider {
-    height: 73vh !important;
+@media only screen and (max-width: 1060px) {
+  .events{
+    padding-top: 50px;
   }
-} */
+}
