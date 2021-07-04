@@ -1,0 +1,30 @@
+@media screen and (min-width: 0px) and (max-width: 426px) {
+  .main_admin_container {
+    padding: 27vw 3.5vw;
+    padding-bottom: 0;
+    grid-gap: 7vw;
+    margin-bottom: 6vw;
+  }
+  .main_admin_container h2 {
+    margin-bottom: 5vw;
+  }
+  #logout_button_admin_main_page {
+    width: 5rem;
+    top: 25vw;
+  }
+  #zestxlogoadminpage {
+    top: 1.4%;
+    right: 40vw;
+    width: 20%;
+  }
+  .container_common_background {
+    height: 75vw;
+    border-radius: 0.5rem;
+  }
+  #userListContainer {
+    height: 80vh;
+  }
+  .outer_left h2 {
+    width: 60vw;
+  }
+}
