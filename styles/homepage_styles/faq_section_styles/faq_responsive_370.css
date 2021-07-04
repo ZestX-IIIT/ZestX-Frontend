@@ -1,0 +1,29 @@
+@media only screen and (max-width: 370px) {
+  .FAQMainContainer {
+    height: 55vh;
+  }
+  .FAQQuestion {
+    font-size: 0.5rem;
+    padding-left: 1rem;
+  }
+  .FAQAnswer {
+    font-size: 0.5rem;
+  }
+  .FAQArrowDown {
+    width: 1.7rem;
+  }
+  .FAQAnswer {
+    margin-left: 1rem;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .FAQQuestion {
+    font-size: 0.4rem;
+  }
+  .FAQAnswer {
+    font-size: 0.4rem;
+  }
+  .FAQArrowDown {
+    width: 1.5rem;
+  }
+}
