@@ -8,7 +8,13 @@ setTimeout(function () {
   let limit2 = windowWidth - 20;
   let coloer_grediet_value_1;
   let coloer_grediet_value_2;
+
+  updateProgressBar()
   window.onscroll = function () {
+    updateProgressBar()
+  };
+
+  function updateProgressBar() {
     totalHeight = document.body.scrollHeight - window.innerHeight;
     let progressHeight = (window.pageYOffset / totalHeight) * 100;
     progress.style.height = progressHeight + "%";
@@ -16,31 +22,20 @@ setTimeout(function () {
     coloer_grediet_value_2 = 11 + "," + 189 + "," + 202
     progress.style.background = "linear-gradient(to top, rgb(" + coloer_grediet_value_1 + "), rgb(" + coloer_grediet_value_2 + "))";
 
-  };
+  }
+
   var y = 0;
-  let scrollPath = document.getElementById("scrollPath");
-  // let scrollPath2 = document.getElementById("scrollPath2");
-  let isProgressbarActive = false;
-
-  let timeTemp = Date.now()
-  // console.log(timeTemp);
-
-
-  // console.log(scrollPath2);
-
   function startProgressbarScroll(e) {
     limit = windowWidth - 200;
     limit2 = windowWidth - 20;
     if (e.clientX > limit2) {
       isProgressbarActive = true;
-      // console.log("true")
       progressBarScroll(e)
     }
 
   }
   function stopProgressbarScroll(e) {
     isProgressbarActive = false;
-    // console.log("false")
   }
 
   function progressBarScroll(e) {
