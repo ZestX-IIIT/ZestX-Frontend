@@ -6,7 +6,8 @@ setTimeout(function () {
   var slider = document.getElementsByClassName("slide");
   let index_slider = 0;
   var isNotHovering = true;
-
+  let event_poster_image = document.getElementsByClassName("event_poster_image");
+  
   for (var i = 0; i < slider.length; i++) {
     slider[i].addEventListener('change', function () {
       for (let i = 0; i < slider.length; i++) {
