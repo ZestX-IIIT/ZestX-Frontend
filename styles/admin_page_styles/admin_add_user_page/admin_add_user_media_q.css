@@ -45,30 +45,44 @@
 @media screen and (max-width: 426px) {
   #Add_user_button {
     font-size: 0.9rem;
+    padding: 1.8vw 5vw;
   }
   .admit_add_user_details {
     font-size: 1rem;
   }
   #back_btn_from_add_user_page {
-    left: 4vw;
-    top: 4vw;
-    width: 3.2vw;
+    left: 5vw;
+    top: 6.5vw;
+    width: 5.5vw;
   }
   #zestxlogoadminadduserpage {
-    width: 9vw;
-    top: 2vw;
-    right: 4vw;
+    width: 16vw;
+    top: 3vw;
+    right: 40vw;
   }
   #Add_user_button img {
     width: 1.5rem;
   }
   .Admin_add_container {
     width: 100%;
+    justify-content: unset;
+    align-items: center;
+    padding: 0 6.5vw 0 6.5vw;
   }
   #admin_add_user_anim_container {
     width: 100%;
+    padding: 21vw 10vw 0 10vw;
   }
   .Main_Admin_Add_Container {
     flex-direction: column-reverse;
-}
+  }
+  .Label_section {
+    width: 100%;
+  }
+  .Label_floating {
+    font-size: 1rem;
+  }
+  .buttons_container {
+    width: auto;
+  }
 }
