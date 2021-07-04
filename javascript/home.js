@@ -235,6 +235,11 @@ function setUpViews() {
 
       backBtnFromEventsPage.addEventListener("click", () => {
         displayMainContainer();
+        setActive(0);
+        deActive(1);
+        deActive(3);
+        deActive(4);
+        deActive(2);
       });
 
       backBtnFromProfilePage.addEventListener("click", () => {
@@ -243,6 +248,7 @@ function setUpViews() {
         deActive(2);
         deActive(3);
         deActive(4);
+        deActive(1);
         profileBtn.innerHTML = `${userData.user_name[0]}`;
       });
 
@@ -425,14 +431,14 @@ function setUpViews() {
         deActive(0);
         deActive(2);
       }
-    } else if (window.pageYOffset <= sponsersSection.offsetTop - (windowHeightHomePage /2)) {
+    } else if (window.pageYOffset <= sponsersSection.offsetTop - (windowHeightHomePage / 2)) {
       if (activeTab != 2) {
         activeTab = 2;
         setActive(activeTab);
         deActive(1);
         deActive(3);
       }
-    } else if (window.pageYOffset <= faqSection.offsetTop - (windowHeightHomePage/2)) {
+    } else if (window.pageYOffset <= faqSection.offsetTop - (windowHeightHomePage / 2)) {
       if (activeTab != 3) {
         activeTab = 3;
         setActive(activeTab);
