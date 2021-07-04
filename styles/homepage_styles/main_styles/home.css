@@ -27,7 +27,9 @@ html {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-
+.home_section_heading{
+  display: none;
+}
 html::-webkit-scrollbar {
   display: none;
 }
@@ -157,7 +159,7 @@ html::-webkit-scrollbar {
   width: 70vh;
 }
 
-.frontleft h2 {
+.frontleft h2 , .home_section_heading {
   font-family: "Now";
   font-style: normal;
   font-weight: 900;
