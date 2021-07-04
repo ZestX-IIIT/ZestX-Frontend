@@ -1,9 +1,9 @@
 @media only screen and (max-width: 736px) {
-  .events {
+  /* .events {
     padding-top: 0;
-  }
+  } */
   #slider {
-    height: 50vh !important;
+    height: 50vw !important;
   }
   .slide {
     top: 39vw ;

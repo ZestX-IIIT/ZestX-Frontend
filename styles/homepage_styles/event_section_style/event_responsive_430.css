@@ -1,7 +1,7 @@
 @media only screen and (max-width: 430px) {
-  #slider {
+  /* #slider {
     height: 33vh !important;
-  }
+  } */
   #s1 {
     left: 40%;
   }

@@ -7,7 +7,7 @@
   .slide:checked:after {
     border: 2px solid #989cff;
   }
-  #slider {
+  /* #slider {
     height: 40vh !important;
-  }
+  } */
 }
