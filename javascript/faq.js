@@ -17,7 +17,6 @@ setTimeout(function () {
         FAQArrowDown[i].classList.remove("ArrowRotate2");
         FAQArrowDown[i].classList.add("ArrowRotate");
         FAQ_not_expanded_check_index[i] = false;
-        console.log(FAQ_not_expanded_check_index[i]);
       } else {
         FAQArrowDown[i].classList.remove("ArrowRotate");
         FAQArrowDown[i].classList.add("ArrowRotate2");
