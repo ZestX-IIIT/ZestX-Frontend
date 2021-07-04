@@ -5,9 +5,8 @@
 }
 
 #hamburgerMenuBars {
-  width: 2.18rem;
-  height: 1.8rem;
-  margin: 1.875rem 0 1.25rem 1.25rem;
+  width: 7vw;
+  height: 7vw;
   cursor: pointer;
 }
 .HBMbar {
@@ -58,7 +57,7 @@
 }
 .HBMBackground,
 #hamburgermenuMainContainer {
-  top: 15%;
+  top: 0;
   left: 0;
   position: absolute;
 }
