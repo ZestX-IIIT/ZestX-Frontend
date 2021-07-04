@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Main Page</title>
-  <link rel="stylesheet" href="../fonts/now/stylesheet.css" />
-  <link rel="stylesheet" href="../admin_page_styles/admin_main_page.css" />
-  <link rel="stylesheet" href="../admin_page_styles/admin_main_page_media_q_901-1024.css" />
-  <link rel="stylesheet" href="../admin_page_styles/admin_main_page_media_q_769-900.css" />
-  <link rel="stylesheet" href="../admin_page_styles/admin_main_page_media_q_768.css" />
-  <link rel="stylesheet" href="../admin_page_styles/admin_main_page_media_q_626.css" />  
-  <link rel="stylesheet" href="../admin_page_styles/admin_main_page_media_q_426.css" />
+  <link rel="stylesheet" href="../assets/fonts/now/stylesheet.css" />
+  <link rel="stylesheet" href="../styles/admin_page_styles/admin_main_page.css" />
+  <link rel="stylesheet" href="../styles/admin_page_styles/admin_main_page_media_q_901-1024.css" />
+  <link rel="stylesheet" href="../styles/admin_page_styles/admin_main_page_media_q_769-900.css" />
+  <link rel="stylesheet" href="../styles/admin_page_styles/admin_main_page_media_q_768.css" />
+  <link rel="stylesheet" href="../styles/admin_page_styles/admin_main_page_media_q_626.css" />  
+  <link rel="stylesheet" href="../styles/admin_page_styles/admin_main_page_media_q_426.css" />
 
-  <script src="../html_include.js"></script>
-  <script src="../redirect.js">
+  <script src="../javascript/html_include.js"></script>
+  <script src="../javascript/redirect.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"
     integrity="sha512-jbTBHn1aXqglu6As1bUWxdPYc9b1uMHtreBM30oW3HbNFDS/eO1n+f98l4qcmw2l7CAdjWSbu3wVjm9SKISOaw=="
@@ -29,8 +29,8 @@
     id="admin_preloader_container"></div>
 
   <div id="admin_main_page_container">
-    <img src="../_general/zestx_icon.svg" alt="" id="zestxlogoadminpage" />
-    <img id="logout_button_admin_main_page" src="../home_page/User_Profile/log_out.svg" alt="logout" />
+    <img src="../assets/_general/zestx_icon.svg" alt="" id="zestxlogoadminpage" />
+    <img id="logout_button_admin_main_page" src="../assets/home_page/User_Profile/log_out.svg" alt="logout" />
     <section class="main_admin_container">
       <div class="outer_left">
         <h2>ONGOING/uPCOMING EVENTS</h2>
@@ -45,7 +45,7 @@
         <h2>
           <div class="inner_h2" id="firsth2">Registered User</div>
           <div class="inner_h2" id="secondh2">
-            Add User<img src="../home_page/Admin_page/add_user.svg" id="add_user_plus_icon" alt="" />
+            Add User<img src="../assets/home_page/Admin_page/add_user.svg" id="add_user_plus_icon" alt="" />
           </div>
         </h2>
         <div class="container_common_background" id="userListContainer">
@@ -54,7 +54,7 @@
             <div class="internal_list" id="internal_user_list">
               <!-- internal_list -->
             </div>
-            <!-- <img src="../home_page/Admin_page/sub_loader.svg" id="internal_users_list_loader"> -->
+            <!-- <img src="../assets/home_page/Admin_page/sub_loader.svg" id="internal_users_list_loader"> -->
             <div id="internal_users_list_loader">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="
                     margin: auto;
@@ -175,9 +175,9 @@
     includehtmlbyID("sub_admin_add_user_page_container");
     includehtmlbyID("sub_toast_container");
   </script>
-  <script src="../html_include.js"></script>
-  <script src="../admin_main_page.js"></script>
-  <script src="../admin_add_user_anim_include.js" defer></script>
+  <script src="../javascript/html_include.js"></script>
+  <script src="../javascript/admin_main_page.js"></script>
+  <script src="../javascript/admin_add_user_anim_include.js" defer></script>
 </body>
 
 </html>
