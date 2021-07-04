@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 .navbar {
+  position: relative;
   background: linear-gradient(
     180deg,
     #0e1491 0%,
@@ -109,8 +110,8 @@
   opacity: 1;
   z-index: 1;
   position: absolute;
-  top: 55%;
-    right: 53.75vw;
+  top: 60%;
+    right: 53.8vw;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
