@@ -1,14 +1,14 @@
 @media only screen and (max-width: 1300px) {
-  .events {
+  /* .events {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } */
   #slider {
     height: 85vh;
   }
-  #slider label {
+  /* #slider label {
     width: 75%;
   height: auto;
-  }
+  } */
 }

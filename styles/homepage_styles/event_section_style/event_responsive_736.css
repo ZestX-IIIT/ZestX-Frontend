@@ -5,6 +5,9 @@
   #slider {
     height: 50vh !important;
   }
+  .slide {
+    top: 39vw ;
+  }
   .slide:after,
   .slide:checked:after {
     width: 0.5rem;
