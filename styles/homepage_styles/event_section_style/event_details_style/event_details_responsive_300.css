@@ -1,0 +1,16 @@
+@media only screen and (max-width: 300px) {
+  #EventDetailsContent {
+    font-size: 0.8rem;
+  }
+  #EventName {
+    font-size: 1rem;
+  }
+  #back_btn_from_festival_details_page {
+    width: 1rem;
+  }
+  #EventRegister {
+    font-size: 0.8rem;
+    height: 10%;
+    width: 11rem;
+  }
+}
