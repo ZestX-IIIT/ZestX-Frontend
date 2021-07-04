@@ -1,0 +1,6 @@
+@media only screen and (max-width: 655px) {
+  #slider {
+    padding-top: 0;
+    height: 45vh !important;
+  }
+}
