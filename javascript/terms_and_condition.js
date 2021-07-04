@@ -7,10 +7,9 @@ let activeTabTnCPage = 0;
 
 let urlLink = new URL(location.href);
 let terms_conditon_landing_index = urlLink.searchParams.get("id");
-if (terms_conditon_landing_index == null) {
-  terms_conditon_landing_index = 0;
+if (terms_conditon_landing_index == 1 || terms_conditon_landing_index == 2) {
+  terms_conditon_landing[terms_conditon_landing_index].scrollIntoView({ behavior: "smooth" });
 }
-terms_conditon_landing[terms_conditon_landing_index].scrollIntoView({ behavior: "smooth" });
 
 for (let i = 0; i < scrolling_terms_condition_content.length; i++) {
   scrolling_terms_condition_content[i].addEventListener("click", () => {

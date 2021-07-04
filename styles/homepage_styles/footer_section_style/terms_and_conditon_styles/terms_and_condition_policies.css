@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
   color: #fdfdfd;
   font-family: "Now";
   font-style: normal;
@@ -18,6 +17,15 @@ body {
   padding-top: 2vw;
   user-select: none;
 }
+#bg_blend_tnc{
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+  height: 130vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
 *::selection {
   color: blue;
   background: white;
@@ -27,8 +35,8 @@ body {
   top: 1.45vw;
   right: 4vw;
   z-index: 100;
-  width: 6rem;
-  height: 6rem;
+  width: 7vw;
+  height: 7vw;
   user-select: none;
 }
 .scrolling_terms_condition {
@@ -55,13 +63,13 @@ body {
 }
 .terms_conditon_landing > h1:first-child {
   color: pink;
-  font-size: 2rem;
+  font-size: 2vw;
 }
 section {
   line-height: 1.7;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  padding: 10px 20px 40px;
+  padding: 0.625vw 1.25vw 2.5vw;
 }
 section h1,
 section h2,
@@ -75,53 +83,51 @@ section h6 {
 }
 
 section h1 {
-  font-size: 1.2rem;
-  margin-top: 25px;
-  margin-bottom: 15px;
+  font-size: 1.2vw;
+  margin-top: 1.5625vw;
+  margin-bottom: 0.9375vw;
   line-height: 1.4;
 }
 section h2 {
-  font-size: 1rem;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 1vw;
+  margin-top: 1.25vw;
+  margin-bottom: 0.625vw;
 }
 section h3 {
-  font-size: 0.9rem;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 0.9vw;
+  margin-top: 1.25vw;
+  margin-bottom: 0.625vw;
 }
 section h4 {
-  font-size: 0.7rem;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 0.7vw;
+  margin-top: 1.25vw;
+  margin-bottom: 0.625vw;
 }
 section h5 {
-  font-size: 0.6rem;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 0.6vw;
+  margin-top: 1.25vw;
+  margin-bottom: 0.625vw;
 }
 section h6 {
-  font-size: 0.5rem;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 0.5vw;
+  margin-top: 1.25vw;
+  margin-bottom: 0.625vw;
 }
 section p {
-  font-size: 1rem;
-  margin-bottom: 10px;
+  font-size: 1vw;
+  margin-bottom: 0.625vw;
 }
 section ul {
-  font-size: 1rem;
+  font-size: 1vw;
   list-style-type: disc;
   line-height: 2;
-  margin-left: 30px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-left: 1.875vw;
+  margin-top: 0.9375vw;
+  margin-bottom: 0.9375vw;
 }
 section a {
   color: pink;
   text-decoration: none;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
   text-transform: lowercase;
 }
 
