@@ -1,0 +1,14 @@
+@media only screen and (max-width: 340px) {
+  #s1 {
+    left: 38%;
+  }
+  #s2 {
+    left: 44%;
+  }
+  #s4 {
+    left: 56%;
+  }
+  #s5 {
+    left: 62%;
+  }
+}
