@@ -1,0 +1,11 @@
+@media only screen and (max-width: 795px) {
+  .sponsers {
+    padding-top: 0;
+    height: 20rem;
+    grid-template-rows: repeat(5, 4rem);
+  }
+  .sponserImages {
+    height: 100%;
+    margin-left: 10px;
+  }
+}
