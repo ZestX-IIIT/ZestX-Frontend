@@ -42,16 +42,16 @@
     height: 50vh;
   }
 }
-@media only screen and (max-width: 525px) {
+/* @media only screen and (max-width: 525px) {
   .team {
     padding-top: 25px;
   }
-}
-@media only screen and (max-width: 425px) {
+} */
+/* @media only screen and (max-width: 425px) {
   .team {
     padding-top: 10px;
   }
-}
+} */
 @media only screen and (max-width: 420px) {
   .team {
     height: 40vh;
