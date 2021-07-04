@@ -33,7 +33,7 @@
 }
 @media only screen and (max-width: 845px) {
   .sponsers {
-    height: 60vh;
+    height: 70vh;
     grid-template-rows: repeat(5, 12vh);
   }
   .sponserContainer {
@@ -44,12 +44,24 @@
 @media only screen and (max-width: 795px) {
   .sponsers {
     padding-top: 0;
-    height: 20rem;
+    height: 25rem;
     grid-template-rows: repeat(5, 4rem);
   }
   .sponserImages {
     height: 100%;
     margin-left: 10px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .sponsers {
+    padding-top: 50px;
+    height: 28rem;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  #main_sponsers_container {
+    padding-top: 0 !important;
   }
 }
 @media only screen and (max-width: 700px) {
@@ -62,14 +74,8 @@
     height: 100%;
   }
   .sponsers {
-    padding-top: 0;
-    height: 15rem;
+    height: 20rem;
     grid-template-rows: repeat(5, 3rem);
-  }
-}
-@media only screen and (max-width: 730px) {
-  #main_sponsers_container {
-    padding-top: 0 !important;
   }
 }
 @media only screen and (max-width: 440px) {
@@ -79,8 +85,7 @@
 }
 @media only screen and (max-width: 400px) {
   .sponsers {
-    padding-top: 0;
-    height: 12rem;
+    height: 18rem;
     grid-template-rows: repeat(5, 2.4rem);
   }
   .sponserContainer {
@@ -89,8 +94,7 @@
 }
 @media only screen and (max-width: 360px) {
   .sponsers {
-    padding-top: 0;
-    height: 10rem;
+    height: 17rem;
     grid-template-rows: repeat(5, 2rem);
   }
   .sponserContainer {
@@ -103,8 +107,7 @@
     height: 100%;
   }
   .sponsers {
-    padding-top: 0;
-    height: 8rem;
+    height: 15rem;
     grid-template-rows: repeat(5, 1.4rem);
   }
 }
