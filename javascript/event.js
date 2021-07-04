@@ -8,9 +8,7 @@ setTimeout(function () {
   var isNotHovering = true;
 
   for (var i = 0; i < slider.length; i++) {
-    console.log(i);
     slider[i].addEventListener('change', function () {
-      console.log("hehe");
       for (let i = 0; i < slider.length; i++) {
         if (slider[i].checked) {
           index_slider = i;
