@@ -126,6 +126,9 @@
   .front {
     height: 60vh;
   }
+  .home{
+    height: 80vh;
+  }
 }
 
 /* @media only screen and (max-width: 470px) {
@@ -150,6 +153,12 @@
   }
   .leftcontent {
     font-size: 0.6rem;
+  }
+  .front {
+    height: 50vh;
+  }
+  .home{
+    height: 65vh;
   }
 }
 @media only screen and (max-width: 320px) {
