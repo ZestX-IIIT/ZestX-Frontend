@@ -25,11 +25,11 @@
   display: none;
 }
 .logo {
-  margin: 25px 0px 23px 59px;
+  margin: 1.5625vw 0vw 1.4375vw 3.6875vw;
 }
 .logo img {
-  width: 7rem;
-  height: 6.5rem;
+  width: 7vw;
+  height: 7vw;
 }
 .navelements {
   display: flex;
@@ -48,91 +48,22 @@
 }
 .navelements ul li {
   cursor: pointer;
-  font-size: 21px;
+  font-size: 1.3125vw;
   font-family: "Now";
   font-style: normal;
   font-weight: 500;
   color: #fdfdfd;
-  margin: 59px 30px 70px 30px;
+  margin: 3.6875vw 1.875vw 4.375vw 1.875vw;
 }
-
-/* .navelements ul li a {
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 21px;
-  font-family: "Now";
-  font-style: normal;
-  font-weight: 500;
-  color: #fdfdfd;
-  margin: 59px 10px 70px 10px;
-  text-transform: uppercase;
-} */
-
 .navelements ul li a {
   color: #f6f4e6;
   text-decoration: none;
-  font-size: 21px;
+  font-size: 1.3125vw;
   text-transform: uppercase;
   font-weight: 500;
-  padding: 59px 10px 70px 10px;
+  padding: 3.6875vw 0.625vw 4.375vw 0.625vw;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-}
-
-/* .navelements ul li a:hover {
-  color: #f1bbff;
-} */
-
-.navelements ul .dot {
-  width: 7px;
-  height: 7px;
-  background: #f1bbff;
-  border-radius: 50%;
-  opacity: 1;
-  z-index: 1;
-  position: absolute;
-  top: 55%;
-  right: 56%;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.dothome {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.dotevents {
-  -webkit-transform: translateX(153px);
-  transform: translateX(153px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.dotteam {
-  -webkit-transform: translateX(300px);
-  transform: translateX(300px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.dotsponsers {
-  -webkit-transform: translateX(465px);
-  transform: translateX(465px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.dotfaq {
-  -webkit-transform: translateX(620px);
-  transform: translateX(620px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
 }
 
 .navactive a {
@@ -148,8 +79,8 @@
   background: rgba(255, 255, 255, 0.2);
   box-shadow: inset 0px 0px 30px rgba(255, 242, 250, 0.1);
   backdrop-filter: blur(4px);
-  border-radius: 26px;
-  margin: 40px 112px 49px 5px;
+  border-radius: 1.625vw;
+  margin: 2.5vw 7vw 3.0625vw 0.3125vw;
   border-radius: 50%;
 }
 .character-container {
@@ -159,15 +90,67 @@
   background: rgba(255, 255, 255, 0.2);
   box-shadow: inset 0px 0px 30px rgba(255, 242, 250, 0.1);
   backdrop-filter: blur(4px);
-  border-radius: 27px;
-  margin: 6px;
+  border-radius: 1.6875vw;
+  margin: 0.375vw;
   font-family: "Now";
   font-style: normal;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2vw;
   text-transform: uppercase;
   color: #ffffff;
   opacity: 0.7;
   padding: 0.5vw 1vw 0.5vw 1vw;
   cursor: pointer;
+}
+
+.navelements ul .dot {
+  width: 0.4375vw;
+  height: 0.4375vw;
+  background: #f1bbff;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 1;
+  position: absolute;
+  top: 55%;
+    right: 54vw;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.dothome {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.dotevents {
+  -webkit-transform: translateX(9.5625vw);
+  transform: translateX(9.5625vw);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.dotteam {
+  -webkit-transform: translateX(19vw);
+  transform: translateX(19vw);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.dotsponsers {
+  -webkit-transform: translateX(29.0625vw);
+  transform: translateX(29.0625vw);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.dotfaq {
+  -webkit-transform: translateX(38.75vw);
+  transform: translateX(38.75vw);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
 }

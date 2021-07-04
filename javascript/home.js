@@ -410,29 +410,29 @@ function setUpViews() {
   // });
 
   window.addEventListener("scroll", () => {
-    let h = window.innerHeight;
-    if (window.pageYOffset <= h / 2) {
+    let windowHeightHomePage = window.innerHeight;
+    if (window.pageYOffset <= eventsSection.offsetTop - (windowHeightHomePage / 2)) {
       if (activeTab != 0) {
         activeTab = 0;
         setActive(0);
         deActive(1);
         deActive(2);
       }
-    } else if (window.pageYOffset <= (h * 3) / 2) {
+    } else if (window.pageYOffset <= teamSection.offsetTop - (windowHeightHomePage / 2)) {
       if (activeTab != 1) {
         activeTab = 1;
         setActive(activeTab);
         deActive(0);
         deActive(2);
       }
-    } else if (window.pageYOffset <= (h * 5) / 2) {
+    } else if (window.pageYOffset <= sponsersSection.offsetTop - (windowHeightHomePage /2)) {
       if (activeTab != 2) {
         activeTab = 2;
         setActive(activeTab);
         deActive(1);
         deActive(3);
       }
-    } else if (window.pageYOffset <= (h * 7) / 2) {
+    } else if (window.pageYOffset <= faqSection.offsetTop - (windowHeightHomePage/2)) {
       if (activeTab != 3) {
         activeTab = 3;
         setActive(activeTab);
