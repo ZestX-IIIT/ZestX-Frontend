@@ -24,15 +24,27 @@
   font-size: 400;
   text-transform: uppercase;
 }
-#toastAlertMessage #toastFrontMessage {
+#toastAlertMessage {
   width: 4.125rem;
   height: 4.125rem;
   float: left;
   box-sizing: border-box;
 }
-#toastAlertMessage #toastDescriptionMessage {
+#toastFrontMessage {
+  width: 4.125rem;
+  height: 4.125rem;
+  float: left;
+  box-sizing: border-box;
+}
+ #toastDescriptionMessage {
   color: #fff;
   padding: 1.3rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#toastAlertMessage {
+  color: #fff;
+  padding: 0;
   overflow: hidden;
   white-space: nowrap;
 }
