@@ -25,7 +25,7 @@ setTimeout(function () {
       index_slider++;
       index_slider = index_slider % 5;
     }
-  }, 2500);
+  }, 4000);
 
   var slide = document.getElementById("slider");
   slide.addEventListener("mouseover", () => {
