@@ -31,9 +31,6 @@
   font-size: 1.1rem;
   font-weight: bold;
 }
-.HamburgerMenuNavList li a:hover {
-  color: pink;
-}
 .HamburgerMenuNavList li {
   list-style: none;
   padding: 0.9rem 0;
