@@ -1,5 +1,5 @@
 
-var redirect = function (redirectWithoutTokenChk, setUpFun) {
+exports.redirect = function (redirectWithoutTokenChk, setUpFun) {
 
     const token = localStorage.getItem("jwt");
     if (token) {

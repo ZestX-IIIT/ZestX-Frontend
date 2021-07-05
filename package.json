@@ -8,6 +8,7 @@
     "dev": "nodemon ./javascript/landing.js",
     "start": "node index.js",
     "begin": "parcel index.html",
+    "home": "parcel homepage.html",
     "build": "parcel build index.html"
   },
   "repository": {

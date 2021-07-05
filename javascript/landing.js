@@ -6,11 +6,14 @@ let arrow = document.getElementsByClassName("arrow");
 let main = document.getElementsByClassName("main");
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 let down = true;
+import { redirect } from './redirect';
+import { includehtmlbyID } from './html_include';
 
 setTimeout(() => {
   redirect(0, setUpLandingPage)
 }, 200);
 
+includehtmlbyID("preloader_container");
 
 function setUpLandingPage() {
 
