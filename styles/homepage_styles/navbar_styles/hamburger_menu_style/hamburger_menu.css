@@ -5,8 +5,8 @@
 }
 
 #hamburgerMenuBars {
-  width: 7vw;
-  height: 7vw;
+  width: 41px;
+  height: auto;
   cursor: pointer;
 }
 .HBMbar {
