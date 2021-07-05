@@ -65,8 +65,6 @@ let ongoingEventContainer;
 let pastEventContainer;
 let lastToastTimestamp = Date.now();
 
-import { redirect } from './redirect';
-import { includehtmlbyID } from './html_include';
 
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -74,20 +72,6 @@ window.addEventListener("load", () => {
   }, 200);
 
 });
-
-includehtmlbyID("preloader_container")
-includehtmlbyID("animation_container")
-includehtmlbyID("sponser_container")
-includehtmlbyID("faqsec")
-includehtmlbyID("sub_event_details_page_container")
-includehtmlbyID("sub_profile_details_page_container")
-includehtmlbyID("sub_edit_profile_page_container")
-includehtmlbyID("slider_container")
-includehtmlbyID("footersection")
-includehtmlbyID("hamburger_menu")
-includehtmlbyID("sub_change_password_container")
-includehtmlbyID("sub_toast_container")
-includehtmlbyID("team_container")
 
 function setup() {
   loadData()

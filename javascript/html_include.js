@@ -1,4 +1,4 @@
-exports.includehtmlbyID = function (containerid) {
+function includehtmlbyID(containerid) {
   var elmnt, file, xhttp;
 
   elmnt = document.getElementById(containerid);
