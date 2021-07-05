@@ -2,3 +2,5 @@
 /node_modules
 rough.html
 .cache
+package-lock.json
+index.js
