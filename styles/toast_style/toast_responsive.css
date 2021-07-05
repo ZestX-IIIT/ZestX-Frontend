@@ -1,0 +1,26 @@
+@media screen and (max-width: 768px) {
+  #toastAlertMessage {
+    font-size: 2.2vw;
+    height: 8vw;
+  }
+  #toastFrontMessage img {
+    margin: auto;
+    margin-top: 1.5vw;
+    width: 5vw;
+    height: auto;
+  }
+  #toastFrontMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8vw;
+    height: 8vw;
+  }
+  #toastDescriptionMessage {
+    padding: 0;
+    height: 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

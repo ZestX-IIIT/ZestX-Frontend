@@ -524,62 +524,36 @@ function setUpViews() {
   });
 }
 
-// eventsSection.scrollIntoView({ behavior: "smooth" });
-
-let activeHamburger = 0;
 function setUpHamBurgerMenuOnClickListeners(hamburgerMenuItems) {
   hamburgerMenuItems[0].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(0);
-    if (activeHamburger != 0) {
-      document.getElementById("").scrollIntoView({
-        behavior: "smooth",
-      });
-      activeHamburger = 0;
-    }
+    homeSection.scrollIntoView({
+      behavior: 'smooth'
+    });
   });
   hamburgerMenuItems[1].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(1);
-    if (activeHamburger != 1) {
-      window.scroll({
-        top: 516,
-        left: 0,
-        behavior: "smooth",
-      });
-      activeHamburger = 1;
-    }
+    eventsSection.scrollIntoView({
+      behavior: 'smooth'
+    });
   });
   hamburgerMenuItems[2].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(2);
-    if (activeHamburger != 2) {
-      window.scroll({
-        top: 1000,
-        left: 0,
-        behavior: "smooth",
-      });
-      activeHamburger = 2;
-    }
+    teamSection.scrollIntoView({
+      behavior: 'smooth'
+    });
   });
   hamburgerMenuItems[3].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(3);
-    if (activeHamburger != 3) {
-      window.scroll({
-        top: 1500,
-        left: 0,
-        behavior: "smooth",
-      });
-      activeHamburger = 3;
-    }
+    sponsersSection.scrollIntoView({
+      behavior: 'smooth'
+    });
   });
   hamburgerMenuItems[4].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(4);
-    if (activeHamburger != 4) {
-      window.scroll({
-        top: 1800,
-        left: 0,
-        behavior: "smooth",
-      });
-      activeHamburger = 4;
-    }
+    faqSection.scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 }
 
