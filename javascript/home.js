@@ -65,6 +65,9 @@ let ongoingEventContainer;
 let pastEventContainer;
 let lastToastTimestamp = Date.now();
 
+let hamBurgerMenuButtons;
+let currentHMaburgerActiveItemIndex = 0;
+
 
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -140,6 +143,15 @@ function setUpViews() {
       }
 
     });
+
+    hamBurgerMenuButtons = [document.getElementById("home_hamburger_menu"),
+    document.getElementById("events_hamburger_menu"),
+    document.getElementById("team_hamburger_menu"),
+    document.getElementById("sponsers_hamburger_menu"),
+    document.getElementById("faq_hamburger_menu")
+    ]
+    setUpHamBurgerMenuOnClickListeners(hamBurgerMenuButtons)
+    setCurrentActiveHamburegerMenuTo(0)
 
     editBtn = document.getElementById("EditButton");
     saveBtn = document.getElementById("SaveButton");
@@ -488,6 +500,45 @@ function setUpViews() {
   });
 
 }
+
+faqSection.scrollIntoView({ behavior: "smooth" })
+
+
+function setUpHamBurgerMenuOnClickListeners(hamburgerMenuItems) {
+  hamburgerMenuItems[0].addEventListener("click", () => {
+    console.log(homeSection.offsetTop);
+    setCurrentActiveHamburegerMenuTo(0)
+    homeSection.scrollIntoView({ behavior: "smooth" })
+  });
+  hamburgerMenuItems[1].addEventListener("click", () => {
+    console.log(eventsSection.offsetTop);
+    setCurrentActiveHamburegerMenuTo(1)
+    eventsSection.scrollIntoView({ behavior: "smooth" })
+  });
+  hamburgerMenuItems[2].addEventListener("click", () => {
+    console.log("hehe3h");
+    setCurrentActiveHamburegerMenuTo(2)
+    teamSection.scrollIntoView({ behavior: "smooth" })
+  });
+  hamburgerMenuItems[3].addEventListener("click", () => {
+    console.log("heheh4");
+    setCurrentActiveHamburegerMenuTo(3)
+    sponsersSection.scrollIntoView({ behavior: "smooth" })
+  });
+  hamburgerMenuItems[4].addEventListener("click", () => {
+    console.log("heheh5");
+    setCurrentActiveHamburegerMenuTo(4)
+    faqSection.scrollIntoView({ behavior: "smooth" })
+  });
+
+}
+
+function setCurrentActiveHamburegerMenuTo(hamburegerAIndex) {
+  hamBurgerMenuButtons[currentHMaburgerActiveItemIndex].style.color = "white"
+  currentHMaburgerActiveItemIndex = hamburegerAIndex
+  hamBurgerMenuButtons[hamburegerAIndex].style.color = "pink"
+}
+
 
 function deActive(tabIndex) {
   switch (tabIndex) {
