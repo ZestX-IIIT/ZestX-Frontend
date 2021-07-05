@@ -8,48 +8,64 @@ body {
 }
 #zestxlogoeditpage {
   position: fixed;
-  bottom: 2%;
-  right: 2%;
-  width: 6rem;
-  height: 6rem;
+  top: 2%;
+  right: 2.6%;
+  width: 7vw;
+  height: auto;
 }
 .Main_Edit_Container {
   background: url("../../../assets/admin_page/add_user_bg.png"),
     Linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  padding-top: 4rem;
+  display: flex;
+  flex-direction: row;
 }
 #BackEditButton1 a {
-  margin-top: -15%;
   text-decoration: none;
   font-family: "Now";
   font-style: normal;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.8vw;
   text-transform: uppercase;
+  margin: 0;
   color: #ffffff;
 }
 #BackEditButton1 {
-  padding-left: 1rem;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 3vw;
+  left: 5vw;
+  width: 20vw;
+  display: flex;
+  align-items: center;
 }
 #BackEditButton1 img {
   cursor: pointer;
-  margin-right: 1rem;
-  margin-left: 0.5%;
+  width: 2vw;
+  margin-right: 5%;
+  margin-top: -1%;
 }
 .UserEditContainer {
-  height: 75vh;
-  padding-left: 5rem;
-  padding-top: 3rem;
+  height: 100vh;
+  padding-left: 5vw;
+  padding-top: 3%;
+  width: 40vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+#user_edit_profile_anim_container {
+  width: 60vw;
+  height: 100vh;
+  padding: 10vw;
+  padding-top: 4%;
+  padding-bottom: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .UserDetailsInput {
-  width: 40%;
+  width: 100%;
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #efd5ff;
@@ -100,6 +116,7 @@ input:focus {
 }
 .form-label {
   position: relative;
+  width: 100%;
 }
 .floating {
   position: absolute;
@@ -122,12 +139,12 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 #forgot_password_at_edit_profile_page {
-  margin-top: -50px;
-  margin-left: 430px;
+  margin-top: 20px;
+  margin-left: 0;
   font-size: 14px;
   color: #efd5ff;
   font-family: "Now";
-  font-weight: bold;
+  font-weight: 500;
   font-style: normal;
   cursor: pointer;
 }
@@ -139,6 +156,6 @@ input:-webkit-autofill:active {
 input[type="password"] {
   text-transform: none;
 }
-.floating{
+.floating {
   pointer-events: none;
 }
