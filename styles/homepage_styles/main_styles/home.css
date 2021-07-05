@@ -10,6 +10,7 @@
 }
 body {
   position: relative;
+  overflow-x: hidden;
 }
 #nabar_container {
   display: none;
