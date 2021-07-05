@@ -23,7 +23,6 @@ async function verifyUser() {
     if (res.status == 200) {
         window.location.href = "../homepage.html";
     } else {
-        second.style.marginLeft = "30%";
         second.innerHTML = `Not redirected? <a href="" id="re_try">click here</a>`
     }
 }
