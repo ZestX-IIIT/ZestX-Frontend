@@ -33,6 +33,7 @@
   display: inline-block;
   visibility: visible;
   z-index: 10;
+  
 }
 
 .slide:checked:after {
