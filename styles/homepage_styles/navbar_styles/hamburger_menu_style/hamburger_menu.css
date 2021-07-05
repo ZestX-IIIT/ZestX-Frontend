@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -32,7 +32,7 @@
   font-weight: bold;
 }
 .HamburgerMenuNavList li a:hover {
-    color: pink;
+  color: pink;
 }
 .HamburgerMenuNavList li {
   list-style: none;
@@ -50,7 +50,7 @@
 
 .HamburgerMenuNavList {
   padding: 0;
-  margin: 0 1.25rem;
+  margin: 0;
   opacity: 0;
   transition: opacity 500ms linear;
   display: none;
@@ -70,15 +70,8 @@
   box-shadow: 2px 36px 87px -7px rgb(93 0 216 / 54%);
   -webkit-box-shadow: 2px 36px 87px -7px rgb(93 0 216 / 54%);
   -moz-box-shadow: 2px 36px 87px -7px rgb(93 0 216 / 54%);
-  /* background: rgb(15,15,180); */
-  /* background: radial-gradient(circle, rgba(15,15,180,1) 35%, rgba(0,212,255,1) 100%); */
   background: rgb(15, 15, 180);
-  background: radial-gradient(
-    circle,
-    rgb(0 2 169) 27%,
-    rgb(66 0 195) 56%,
-    rgb(174 35 255) 93%
-  );	
+  background: radial-gradient(circle, rgb(14 13 120) 27%, rgb(29 10 140) 56%);
   border-radius: 50%;
   transition: 500ms linear;
 }
