@@ -295,7 +295,7 @@ function setUpViews() {
           displayChangePasswordpage();
           console.log(err);
         } else {
-          show_toast(1, "Link to reset password sent to your email-id!");
+          show_toast(1, "Link to reset password has been sent to your email-id!");
           displayChangePasswordpage();
         }
       })
@@ -313,7 +313,7 @@ function setUpViews() {
           displayEditProfilepage();
           console.log(err);
         } else {
-          show_toast(1, "Link to reset password sent to your email-id!");
+          show_toast(1, "Link to reset password has been sent to your email-id!!");
           displayEditProfilepage();
         }
       })
@@ -331,7 +331,7 @@ function setUpViews() {
         ).value;
 
         if (newPassword != confirmNewPassword) {
-          show_toast(2, "Confirm new password not matched with new password!");
+          show_toast(2, "Both passwords should be same!");
         } else if (newPassword.length < 6) {
           show_toast(2, "Password should be minimum of 6 length!");
         } else if (oldPassword && newPassword && confirmNewPassword) {
@@ -501,34 +501,63 @@ function setUpViews() {
 
 }
 
-faqSection.scrollIntoView({ behavior: "smooth" })
+// eventsSection.scrollIntoView({ behavior: "smooth" });
 
-
+let activeHamburger = 0
 function setUpHamBurgerMenuOnClickListeners(hamburgerMenuItems) {
   hamburgerMenuItems[0].addEventListener("click", () => {
-    console.log(homeSection.offsetTop);
-    setCurrentActiveHamburegerMenuTo(0)
-    homeSection.scrollIntoView({ behavior: "smooth" })
+    setCurrentActiveHamburegerMenuTo(0);
+    if (activeHamburger != 0) {
+      document.getElementById('').scrollIntoView({
+        behavior: 'smooth'
+      })
+      activeHamburger = 0;
+    }
   });
   hamburgerMenuItems[1].addEventListener("click", () => {
-    console.log(eventsSection.offsetTop);
-    setCurrentActiveHamburegerMenuTo(1)
-    eventsSection.scrollIntoView({ behavior: "smooth" })
+    setCurrentActiveHamburegerMenuTo(1);
+    if (activeHamburger != 1) {
+      window.scroll({
+        top: 516,
+        left: 0,
+        behavior: 'smooth'
+      });
+      activeHamburger = 1;
+    }
   });
   hamburgerMenuItems[2].addEventListener("click", () => {
-    console.log("hehe3h");
-    setCurrentActiveHamburegerMenuTo(2)
-    teamSection.scrollIntoView({ behavior: "smooth" })
+    setCurrentActiveHamburegerMenuTo(2);
+    if (activeHamburger != 2) {
+      window.scroll({
+        top: 1000,
+        left: 0,
+        behavior: 'smooth'
+      });
+      activeHamburger = 2;
+    }
   });
   hamburgerMenuItems[3].addEventListener("click", () => {
-    console.log("heheh4");
-    setCurrentActiveHamburegerMenuTo(3)
-    sponsersSection.scrollIntoView({ behavior: "smooth" })
+    setCurrentActiveHamburegerMenuTo(3);
+    if (activeHamburger != 3) {
+      window.scroll({
+        top: 1500,
+        left: 0,
+        behavior: 'smooth'
+      });
+      activeHamburger = 3;
+    }
   });
   hamburgerMenuItems[4].addEventListener("click", () => {
-    console.log("heheh5");
-    setCurrentActiveHamburegerMenuTo(4)
-    faqSection.scrollIntoView({ behavior: "smooth" })
+    setCurrentActiveHamburegerMenuTo(4);
+    if (activeHamburger != 4) {
+
+      window.scroll({
+        top: 1800,
+        left: 0,
+        behavior: 'smooth'
+      });
+      activeHamburger = 4;
+    }
   });
 
 }
