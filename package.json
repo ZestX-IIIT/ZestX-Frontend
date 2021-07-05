@@ -1,11 +1,14 @@
 {
-  "name": "ZestX",
+  "name": "zestx",
   "version": "1.0.0",
   "description": "https://zestx.netlify.app",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon ./javascript/landing.js",
+    "start": "node index.js",
+    "begin": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,8 @@
     "fs": "0.0.1-security",
     "nodemon": "^2.0.9",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
   }
 }
