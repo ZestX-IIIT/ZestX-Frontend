@@ -8,8 +8,8 @@ body {
 }
 #zestxlogoeditpage {
   position: fixed;
-  top: 2%;
-  right: 2.6%;
+  top: 3%;
+  right: 5%;
   width: 7vw;
   height: auto;
 }
@@ -26,7 +26,7 @@ body {
   font-family: "Now";
   font-style: normal;
   font-weight: bold;
-  font-size: 1.8vw;
+  font-size: 1.7vw;
   text-transform: uppercase;
   margin: 0;
   color: #ffffff;
@@ -94,8 +94,8 @@ input:focus {
   outline: none;
 }
 #SaveButton {
-  width: 9rem;
-  height: 3.54rem;
+  width: fit-content;
+  height: auto;
   background: linear-gradient(
     270deg,
     rgba(150, 4, 163, 0.6) 10%,
@@ -108,11 +108,14 @@ input:focus {
   font-family: "Now";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.4375rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   color: #ffffff;
   cursor: pointer;
-  margin-top: 3%;
+  padding: 0.8vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  margin-top: 5%;
 }
 .form-label {
   position: relative;
@@ -139,7 +142,7 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 #forgot_password_at_edit_profile_page {
-  margin-top: 20px;
+  margin-top: 5%;
   margin-left: 0;
   font-size: 14px;
   color: #efd5ff;
@@ -147,6 +150,7 @@ input:-webkit-autofill:active {
   font-weight: 500;
   font-style: normal;
   cursor: pointer;
+  opacity: 0.8;
 }
 .UserDetailsInput:focus ~ .floating,
 .UserDetailsInput:not(:focus):valid ~ .floating {

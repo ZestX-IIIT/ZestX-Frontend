@@ -1,38 +1,95 @@
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  #user_edit_profile_anim_container {
+    padding: 8vw;
+    padding-top: 4%;
+    padding-bottom: 1%;
+  }
   .UserDetailsInput {
-    width: 60%;
-  }
-}
-@media only screen and (max-width: 800px) {
-  .UserDetailsInput {
-    width: 80%;
-  }
-}
-@media only screen and (max-width: 550px) {
-  .UserDetailsInput {
-    width: 95%;
-    font-size: 1rem;
-  }
-  .UserEditContainer {
-    padding-left: 1rem;
-  }
-  #BackEditButton1 a {
-    font-size: 1.5rem;
-  }
-  #BackEditButton1 img {
-    width: 2.5rem;
+    margin-bottom: 1.7rem;
+    padding: 0.6rem;
+    padding-left: 0;
+    font-size: 1.1rem;
   }
   .floating {
     font-size: 1rem;
   }
+  #forgot_password_at_edit_profile_page {
+    margin-top: 8%;
+  }
   .UserDetailsInput:focus ~ .floating,
   .UserDetailsInput:not(:focus):valid ~ .floating {
-    font-size: 0.6rem;
-    transform: translateY(-1rem);
+    transform: translateY(-1.5rem);
+    font-size: 0.7rem;
+  }
+  #zestxlogoeditpage {
+    width: 9vw;
   }
   #SaveButton {
-    width: 8rem;
-    height: 3rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+  #BackEditButton1 a {
+    font-size: 2vw;
+  }
+  #BackEditButton1 img {
+    width: 2.5vw;
+  }
+  #BackEditButton1 {
+    top: 4.54vw;
+  }
+}
+@media only screen and (max-width: 426px) {
+  .Main_Edit_Container {
+    flex-direction: column-reverse;
+  }
+
+  .UserEditContainer {
+    width: 100%;
+    justify-content: unset;
+    align-items: center;
+    padding: 0 6.5vw 0 6.5vw;
+  }
+  #user_edit_profile_anim_container {
+    width: 100vw;
+    padding-top: 20vw;
+    margin-top: 1vw;
+    height: 50vh;
+  }
+  .UserDetailsInput {
+    margin-bottom: 1.2rem;
+    padding: 0.6rem;
+    padding-left: 0;
+    font-size: 1.1rem;
+  }
+  .floating {
+    font-size: 1rem;
+  }
+  #forgot_password_at_edit_profile_page {
+    margin-top: 5%;
+  }
+  .UserDetailsInput:focus ~ .floating,
+  .UserDetailsInput:not(:focus):valid ~ .floating {
+    transform: translateY(-1.5rem);
+    font-size: 0.7rem;
+  }
+  #zestxlogoeditpage {
+    width: 15vw;
+    top: 1%;
+  }
+  #SaveButton {
+    font-size: 1rem;
+    padding: 2.2vw;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    margin-top: 2%;
+  }
+  #BackEditButton1 a {
+    font-size: 4vw;
+  }
+  #BackEditButton1 img {
+    width: 4.5vw;
+  }
+  #BackEditButton1 {
+    width: 80vw;
+    top: 6vw;
   }
 }
