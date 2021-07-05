@@ -68,17 +68,20 @@ let lastToastTimestamp = Date.now();
 let hamBurgerMenuButtons;
 let currentHMaburgerActiveItemIndex = 0;
 
+
 window.addEventListener("load", () => {
   setTimeout(() => {
-    redirect(2, setup);
+    redirect(2, setup)
   }, 200);
+
 });
 
 function setup() {
-  loadData();
-  setUpViews();
+  loadData()
+  setUpViews()
 }
 async function loadData() {
+
   try {
     if (token) {
       const res1 = await fetch(`${apiURL}/fest/getlist`, {
@@ -109,6 +112,7 @@ async function loadData() {
 }
 
 function setUpViews() {
+
   // window.addEventListener("load", () => {
   setTimeout(function () {
     backBtnFromEventsPage = document.getElementById(
@@ -124,33 +128,30 @@ function setUpViews() {
       "back_btn_from_change_password_page"
     );
 
-    forgotPasswordBtnFromChangePasswordPage = document.getElementById(
-      "forgot_password_at_change_password_page"
-    );
-    forgotPasswordBtnFromEditProfilePage = document.getElementById(
-      "forgot_password_at_edit_profile_page"
-    );
+    forgotPasswordBtnFromChangePasswordPage = document.getElementById("forgot_password_at_change_password_page");
+    forgotPasswordBtnFromEditProfilePage = document.getElementById("forgot_password_at_edit_profile_page");
 
     ongoingEventContainer = document.getElementById("OngoingEventsList");
     pastEventContainer = document.getElementById("PastEventsList");
 
     profileBtn.addEventListener("click", () => {
-      if (token) displayProfilepage();
+      if (token)
+        displayProfilepage();
       else {
         show_toast(2, "Please sign-in first!");
         window.location.href = "./signupsignin.html" + "#" + "signin";
       }
+
     });
 
-    hamBurgerMenuButtons = [
-      document.getElementById("home_hamburger_menu"),
-      document.getElementById("events_hamburger_menu"),
-      document.getElementById("team_hamburger_menu"),
-      document.getElementById("sponsers_hamburger_menu"),
-      document.getElementById("faq_hamburger_menu"),
-    ];
-    setUpHamBurgerMenuOnClickListeners(hamBurgerMenuButtons);
-    setCurrentActiveHamburegerMenuTo(0);
+    hamBurgerMenuButtons = [document.getElementById("home_hamburger_menu"),
+    document.getElementById("events_hamburger_menu"),
+    document.getElementById("team_hamburger_menu"),
+    document.getElementById("sponsers_hamburger_menu"),
+    document.getElementById("faq_hamburger_menu")
+    ]
+    setUpHamBurgerMenuOnClickListeners(hamBurgerMenuButtons)
+    setCurrentActiveHamburegerMenuTo(0)
 
     editBtn = document.getElementById("EditButton");
     saveBtn = document.getElementById("SaveButton");
@@ -235,6 +236,7 @@ function setUpViews() {
               eventId = event_ids[i];
               setEventDetails(event_ids[i]);
               displayEvenetspage();
+
             } else {
               window.location.href = "./signupsignin.html" + "#" + "signin";
               show_toast(2, "Please sign-in first!");
@@ -280,53 +282,41 @@ function setUpViews() {
         clearDataInChangePasswordpage();
       });
 
-      forgotPasswordBtnFromChangePasswordPage.addEventListener(
-        "click",
-        async () => {
-          displayPreloder();
-          const res = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
-            method: "GET",
-            headers: {
-              authorization: token,
-            },
-          });
-          if (res.status == 500) {
-            show_toast(0, "Error occured re-try!");
-            displayChangePasswordpage();
-            console.log(err);
-          } else {
-            show_toast(
-              1,
-              "Link to reset password has been sent to your email-id!"
-            );
-            displayChangePasswordpage();
-          }
+      forgotPasswordBtnFromChangePasswordPage.addEventListener("click", async () => {
+        displayPreloder();
+        const res = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
+          method: "GET",
+          headers: {
+            authorization: token,
+          },
+        });
+        if (res.status == 500) {
+          show_toast(0, "Error occured re-try!");
+          displayChangePasswordpage();
+          console.log(err);
+        } else {
+          show_toast(1, "Link to reset password has been sent to your email-id!");
+          displayChangePasswordpage();
         }
-      );
+      })
 
-      forgotPasswordBtnFromEditProfilePage.addEventListener(
-        "click",
-        async () => {
-          displayPreloder();
-          const res = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
-            method: "GET",
-            headers: {
-              authorization: token,
-            },
-          });
-          if (res.status == 500) {
-            show_toast(0, "Error occured re-try!");
-            displayEditProfilepage();
-            console.log(err);
-          } else {
-            show_toast(
-              1,
-              "Link to reset password has been sent to your email-id!!"
-            );
-            displayEditProfilepage();
-          }
+      forgotPasswordBtnFromEditProfilePage.addEventListener("click", async () => {
+        displayPreloder();
+        const res = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
+          method: "GET",
+          headers: {
+            authorization: token,
+          },
+        });
+        if (res.status == 500) {
+          show_toast(0, "Error occured re-try!");
+          displayEditProfilepage();
+          console.log(err);
+        } else {
+          show_toast(1, "Link to reset password has been sent to your email-id!!");
+          displayEditProfilepage();
         }
-      );
+      })
 
       logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("jwt");
@@ -443,40 +433,28 @@ function setUpViews() {
 
   window.addEventListener("scroll", () => {
     let windowHeightHomePage = window.innerHeight;
-    if (
-      window.pageYOffset <=
-      eventsSection.offsetTop - windowHeightHomePage / 2
-    ) {
+    if (window.pageYOffset <= eventsSection.offsetTop - (windowHeightHomePage / 2)) {
       if (activeTab != 0) {
         activeTab = 0;
         setActive(0);
         deActive(1);
         deActive(2);
       }
-    } else if (
-      window.pageYOffset <=
-      teamSection.offsetTop - windowHeightHomePage / 2
-    ) {
+    } else if (window.pageYOffset <= teamSection.offsetTop - (windowHeightHomePage / 2)) {
       if (activeTab != 1) {
         activeTab = 1;
         setActive(activeTab);
         deActive(0);
         deActive(2);
       }
-    } else if (
-      window.pageYOffset <=
-      sponsersSection.offsetTop - windowHeightHomePage / 2
-    ) {
+    } else if (window.pageYOffset <= sponsersSection.offsetTop - (windowHeightHomePage / 2)) {
       if (activeTab != 2) {
         activeTab = 2;
         setActive(activeTab);
         deActive(1);
         deActive(3);
       }
-    } else if (
-      window.pageYOffset <=
-      faqSection.offsetTop - windowHeightHomePage / 2
-    ) {
+    } else if (window.pageYOffset <= faqSection.offsetTop - (windowHeightHomePage / 2)) {
       if (activeTab != 3) {
         activeTab = 3;
         setActive(activeTab);
@@ -491,6 +469,7 @@ function setUpViews() {
       }
     }
   });
+
 
   setInterval(() => {
     if (index == 0) {
@@ -507,61 +486,92 @@ function setUpViews() {
     index = index % 3;
   }, 4000);
 
+
   home.addEventListener("click", () => {
-    homeSection.scrollIntoView({ behavior: "smooth" });
+    homeSection.scrollIntoView({ behavior: "smooth" })
   });
   events.addEventListener("click", () => {
-    eventsSection.scrollIntoView({ behavior: "smooth" });
+    eventsSection.scrollIntoView({ behavior: "smooth" })
   });
   team.addEventListener("click", () => {
-    teamSection.scrollIntoView({ behavior: "smooth" });
+    teamSection.scrollIntoView({ behavior: "smooth" })
   });
   sponsers.addEventListener("click", () => {
-    sponsersSection.scrollIntoView({ behavior: "smooth" });
+    sponsersSection.scrollIntoView({ behavior: "smooth" })
   });
   faq.addEventListener("click", () => {
-    faqSection.scrollIntoView({ behavior: "smooth" });
+    faqSection.scrollIntoView({ behavior: "smooth" })
   });
+
 }
 
+// eventsSection.scrollIntoView({ behavior: "smooth" });
+
+let activeHamburger = 0
 function setUpHamBurgerMenuOnClickListeners(hamburgerMenuItems) {
   hamburgerMenuItems[0].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(0);
-    homeSection.scrollIntoView({
-      behavior: 'smooth'
-    });
+    if (activeHamburger != 0) {
+      document.getElementById('').scrollIntoView({
+        behavior: 'smooth'
+      })
+      activeHamburger = 0;
+    }
   });
   hamburgerMenuItems[1].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(1);
-    eventsSection.scrollIntoView({
-      behavior: 'smooth'
-    });
+    if (activeHamburger != 1) {
+      window.scroll({
+        top: 516,
+        left: 0,
+        behavior: 'smooth'
+      });
+      activeHamburger = 1;
+    }
   });
   hamburgerMenuItems[2].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(2);
-    teamSection.scrollIntoView({
-      behavior: 'smooth'
-    });
+    if (activeHamburger != 2) {
+      window.scroll({
+        top: 1000,
+        left: 0,
+        behavior: 'smooth'
+      });
+      activeHamburger = 2;
+    }
   });
   hamburgerMenuItems[3].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(3);
-    sponsersSection.scrollIntoView({
-      behavior: 'smooth'
-    });
+    if (activeHamburger != 3) {
+      window.scroll({
+        top: 1500,
+        left: 0,
+        behavior: 'smooth'
+      });
+      activeHamburger = 3;
+    }
   });
   hamburgerMenuItems[4].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(4);
-    faqSection.scrollIntoView({
-      behavior: 'smooth'
-    });
+    if (activeHamburger != 4) {
+
+      window.scroll({
+        top: 1800,
+        left: 0,
+        behavior: 'smooth'
+      });
+      activeHamburger = 4;
+    }
   });
+
 }
 
 function setCurrentActiveHamburegerMenuTo(hamburegerAIndex) {
-  hamBurgerMenuButtons[currentHMaburgerActiveItemIndex].style.color = "white";
-  currentHMaburgerActiveItemIndex = hamburegerAIndex;
-  hamBurgerMenuButtons[hamburegerAIndex].style.color = "pink";
+  hamBurgerMenuButtons[currentHMaburgerActiveItemIndex].style.color = "white"
+  currentHMaburgerActiveItemIndex = hamburegerAIndex
+  hamBurgerMenuButtons[hamburegerAIndex].style.color = "pink"
 }
+
 
 function deActive(tabIndex) {
   switch (tabIndex) {
