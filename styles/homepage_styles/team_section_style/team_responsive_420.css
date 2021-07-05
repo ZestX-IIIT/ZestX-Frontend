@@ -1,0 +1,5 @@
+@media only screen and (max-width: 420px) {
+    .team {
+      height: 40vh;
+    }
+  }

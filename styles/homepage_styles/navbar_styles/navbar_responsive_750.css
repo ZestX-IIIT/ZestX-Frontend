@@ -1,0 +1,28 @@
+@media only screen and (max-width: 750px) {
+  .navelements ul {
+    display: none;
+  }
+  #hamburger_menu {
+    display: block;
+  }
+  .profile {
+    width: 7vw;
+    height: 7vw;
+    margin-right: 5vw;
+  }
+  .character-container {
+    width: 6vw;
+    height: 6vw;
+    font-size: 3.5vw;
+  }
+  .logo {
+    margin: 0;
+  }
+  .logo img {
+    width: 12vw;
+    height: 12vw;
+  }
+  .navelements {
+    position: relative;
+  }
+}

@@ -1,11 +1,12 @@
-
 @media only screen and (max-width: 1500px) {
-  .frontleft h2 , .home_section_heading {
+  .frontleft h2,
+  .home_section_heading {
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 1370px) {
-  #Progressbar , #scrollPath{
+  #Progressbar,
+  #scrollPath {
     display: none !important;
   }
 }
@@ -27,7 +28,7 @@
     display: flex;
     flex-direction: column;
   }
- 
+
   /* .frontleft h2 {
       font-size: 3rem;
     } */
@@ -62,7 +63,8 @@
     justify-content: center;
     margin: auto;
   }
-  .frontleft h2  , .home_section_heading{
+  .frontleft h2,
+  .home_section_heading {
     margin: 0;
     margin-top: 10px;
     text-align: center;
@@ -76,19 +78,20 @@
     height: 55vh;
     width: 55vh;
   }
-  .frontleft h2  , .home_section_heading{
+  .frontleft h2,
+  .home_section_heading {
     font-size: 1.5rem;
   }
   .leftcontent {
     font-size: 0.8rem;
     margin-top: 0.5rem;
   }
-  .home{
+  .home {
     height: 90vh;
   }
 }
 @media only screen and (max-width: 750px) {
-  #hamburger_menu{
+  #hamburger_menu {
     width: 5vw;
     height: 5vw;
     position: relative;
@@ -97,7 +100,7 @@
     align-items: center;
     margin-left: 5vw;
   }
-  .home_section_heading{
+  .home_section_heading {
     display: block;
   }
 }
@@ -107,11 +110,12 @@
     height: 55vh;
     width: 55vh;
   }
-  
+
   .front {
     height: 75vh;
   }
-  .frontleft h2 , .home_section_heading{
+  .frontleft h2,
+  .home_section_heading {
     font-size: 1.3rem;
   }
   .leftcontent {
@@ -126,7 +130,7 @@
   .front {
     height: 60vh;
   }
-  .home{
+  .home {
     height: 80vh;
   }
 }
@@ -148,7 +152,8 @@
     height: 35vh;
     width: 35vh;
   }
-  .frontleft h2 , .home_section_heading{
+  .frontleft h2,
+  .home_section_heading {
     font-size: 1.1rem;
   }
   .leftcontent {
@@ -157,12 +162,13 @@
   .front {
     height: 50vh;
   }
-  .home{
+  .home {
     height: 68vh;
   }
 }
 @media only screen and (max-width: 320px) {
-  .frontleft h2 , .home_section_heading {
+  .frontleft h2,
+  .home_section_heading {
     font-size: 1rem;
   }
   .leftcontent {
