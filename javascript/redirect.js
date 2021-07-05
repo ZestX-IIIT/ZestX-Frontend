@@ -2,7 +2,7 @@
 var redirect = function (redirectWithoutTokenChk, setUpFun) {
 
     const token = localStorage.getItem("jwt");
-    if (token) {
+    if (token && token != null) {
 
         fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
             method: "GET",
