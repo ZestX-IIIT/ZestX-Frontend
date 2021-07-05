@@ -15,6 +15,9 @@
     height: 6vw;
     font-size: 3.5vw;
   }
+  .navbar {
+    height: 90px;
+  }
   .logo {
     margin: 0;
   }
