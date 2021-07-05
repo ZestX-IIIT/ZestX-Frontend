@@ -1,0 +1,10 @@
+@media only screen and (max-width: 900px)
+
+{.Main_Edit_Container_verification h2 {
+  font-size: 7vw;
+}
+.Main_Edit_Container_verification h4,
+.Main_Edit_Container_verification #redirect_msg {
+  font-size: 3vw;
+}
+}
