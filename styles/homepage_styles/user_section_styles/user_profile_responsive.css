@@ -29,6 +29,9 @@
   .Pastevents h2 {
     height: 10%;
   }
+  .UserRightContainer {
+    margin-bottom: 4vh;
+  }
   .EventList h2 {
     height: auto;
   }
@@ -40,64 +43,31 @@
   }
   #UserContainer {
     grid-template-columns: 100%;
-    grid-template-rows: 70vh 110vh;
+    grid-template-rows: auto auto;
   }
-  #MainUserContainer{
-    height: 200vh;
+  #MainUserContainer {
+    height: auto;
   }
   .UserLeftContainer {
     padding-top: 0;
-    height: 70vh;
-    padding-left: 3rem;
+    height: 41vh;
+    border-right: 0;
+    padding-left: 3.5rem;
   }
-.UserLeftContainer {
-  border-right: 0;
-}
-}
-@media only screen and (max-width: 700px) {
-  .UserDetailsInputProfileDatailsPage{
-    font-size: 1.2rem;
+  #profile_page_header {
+    padding-left: 2.5rem;
   }
-  .UserDetailsInputProfileDatailsPage::placeholder {
-    font-size: 1.2rem;
+  #button_container {
+    width: fit-content;
   }
-  #EditButton {
-    width: 8rem;
-    height: 3rem;
+  #EditButton,
+  #ChangePasswordButton {
+    margin-right: 3vw;
   }
-  #LogoutButton {
-    width: 10rem;
-    height: 3rem;
+  #profile_page_header img {
+    margin-left: 0;
   }
-  #LogoutButton img{
-    width: 80%;
-  }
-  .UserLeftContainer {
-    padding-left: 2rem;
-  }
-}
-@media only screen and (max-width: 450px) {
-  .UserDetailsInputProfileDatailsPage{
-    font-size: 1rem;
-    padding-bottom: 0.4rem;
-  }
-  .UserDetailsInputProfileDatailsPage::placeholder {
-    font-size: 1rem;
-  }
-  .OngoingEvents h2,
-  .Pastevents h2 {
-    font-size: 1rem;
-  }
-  #EditButton {
-    width: 7rem;
-    height: 2.5rem;
-  }
-  #LogoutButton {
-    width: 9rem;
-    height: 2.5rem;
-  }
-  #zestxlogo {
-    width: 4rem;
-    height: 4rem;
+  .UserDetailsInputProfileDatailsPage {
+    padding-bottom: 1em;
   }
 }
