@@ -1,0 +1,20 @@
+@media only screen and (max-width: 650px) {
+  .profile {
+    width: 11vw;
+    height: 11vw;
+    margin-right: 5vw;
+  }
+  .character-container {
+    width: 9vw;
+    height: 9vw;
+    font-size: 6vw;
+  }
+  .logo img {
+    width: 15vw;
+    height: 15vw;
+  }
+  .logo {
+    position: absolute;
+    left: 42vw;
+  }
+}

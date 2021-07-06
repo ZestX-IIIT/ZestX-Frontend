@@ -1,0 +1,14 @@
+@media only screen and (max-width: 475px) {
+  .FAQQuestion {
+    font-size: 0.6rem;
+  }
+  .FAQAnswer {
+    font-size: 0.6rem;
+  }
+  .FAQArrowDown {
+    width: 2rem;
+  }
+  .FAQMainContainer {
+    height: 65vh;
+  }
+}

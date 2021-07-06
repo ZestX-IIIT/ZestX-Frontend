@@ -1,0 +1,137 @@
+@media screen and (min-width: 526px) and (max-width: 626px) {
+  #sq1 {
+    width: 45%;
+    top: 34%;
+    right: 0%;
+  }
+
+  #sq2 {
+    width: 6%;
+    top: 6%;
+    left: 8%;
+  }
+
+  #sq4 {
+    width: 8%;
+    top: 87%;
+    left: 3%;
+  }
+  #sq5 {
+    width: 10%;
+    right: 43%;
+    bottom: 7%;
+  }
+
+  .girl {
+    width: 42vw;
+    position: relative;
+    height: 54.6vw;
+  }
+  .head {
+    height: 16vw;
+    margin-top: 8.5%;
+  }
+  .btn {
+    font-size: 15px;
+  }
+  #ph5 {
+    left: 37%;
+  }
+  #ph4 {
+    left: 35%;
+  }
+
+  .btn-div {
+    margin-top: 22%;
+  }
+  .content {
+    height: 73%;
+    margin-left: 6%;
+    margin-right: 1%;
+    margin-top: 3%;
+  }
+  .text {
+    margin-top: -5%;
+    margin-right: 5%;
+  }
+
+  .head h1 {
+    font-size: 1.8rem;
+    left: 20%;
+  }
+  #outline {
+    height: 20%;
+    width: auto;
+    left: 45%;
+    margin-top: 0px;
+  }
+  #signupbutton {
+    padding-top: 4.2%;
+  }
+  #slogan_text {
+    margin-top: 9%;
+  }
+  .text {
+    font-size: 0.9rem;
+    margin-right: 8%;
+    height: auto;
+  }
+  #sq3 {
+    width: 10.5%;
+    top: 3%;
+    right: 48%;
+  }
+  #l1 {
+    top: 88%;
+    left: 5%;
+    width: 9%;
+  }
+  #l2 {
+    height: 1.6%;
+    top: 9.5%;
+    left: 39%;
+    width: 11%;
+  }
+  .follow img {
+    width: 28px;
+  }
+  .arrow {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    bottom: 4%;
+    left: 45%;
+  }
+  .footer-content {
+    margin: 38px 0px 0px 34px;
+    width: 100%;
+    justify-content: unset;
+  }
+  .footer {
+    height: 200px;
+  }
+  .follow img {
+    margin-left: 2px;
+    width: 19px;
+  }
+  a {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+  .footer h2 {
+    margin-bottom: 26px;
+    font-size: 1.1rem;
+  }
+  .follow {
+    margin: 38px 36px;
+  }
+  .tc {
+    margin-left: 5%;
+  }
+  .help {
+    margin-left: 8%;
+  }
+  body > div.footer > div.follow > h2 {
+    text-align: end;
+  }
+}

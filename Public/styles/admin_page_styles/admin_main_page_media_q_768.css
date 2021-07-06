@@ -1,0 +1,78 @@
+@media screen and (max-width: 768px) {
+  #zestxlogoadminpage {
+    top: 1%;
+    right: 44vw;
+    width: 12%;
+  }
+  #secondh2 {
+    justify-content: center;
+    align-items: center;
+  }
+  .internal_user_delete_button {
+    width: 4vw;
+  }
+  .external_user_delete_button {
+    width: 5vw;
+  }
+  #userListContainer {
+    height: 70vh;
+  }
+  .main_admin_container h2 {
+    font-size: 1rem;
+    margin-bottom: 3vw;
+    height: auto;
+  }
+  #add_user_plus_icon {
+    margin-bottom: 3px;
+  }
+  .main_admin_container {
+    padding: 14vw 2.5vw;
+    height: auto;
+    padding-bottom: 0;
+    grid-gap: 4vw;
+    margin-bottom: 4vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  #logout_button_admin_main_page {
+    width: 12vw;
+    top: 14vw;
+  }
+  .container_common_background {
+    height: 35vw;
+    border-radius: 0.5rem;
+  }
+  .outer_left {
+    height: auto;
+  }
+  .outer_middle {
+    height: auto;
+  }
+  .outer_right {
+    height: auto;
+  }
+  #internal_users_h3 {
+    padding-top: 1rem;
+  }
+  .internal_users h3,
+  .outer_users h3 {
+    font-size: 1.1rem;
+  }
+  .inner_list h4 {
+    font-size: 0.8rem;
+  }
+  .inner_list h3 {
+    font-size: 1.1rem;
+  }
+  .InnerListContent {
+    font-size: 0.8rem;
+  }
+  .right_h3 {
+    font-size: 1.1rem !important;
+  }
+  #internal_users_list_loader,
+  #external_users_list_loader {
+    left: 20%;
+    width: 60%;
+  }
+}

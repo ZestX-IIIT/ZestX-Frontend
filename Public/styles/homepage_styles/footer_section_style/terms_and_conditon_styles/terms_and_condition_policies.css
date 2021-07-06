@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #fdfdfd;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2vw;
+  text-transform: uppercase;
+  margin: auto;
+  width: 65%;
+  margin-left: 22%;
+  position: relative;
+  padding-top: 2vw;
+  user-select: none;
+}
+#bg_blend_tnc{
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+  height: 130vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+*::selection {
+  color: blue;
+  background: white;
+}
+#zestxlogotcpage {
+  position: fixed;
+  top: 1.45vw;
+  right: 4vw;
+  z-index: 100;
+  width: 7vw;
+  height: 7vw;
+  user-select: none;
+}
+.scrolling_terms_condition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-right: 1px solid white;
+  height: 80vh;
+  width: 20%;
+  padding-right: 1.5vw;
+  margin-top: 5vw;
+}
+
+.scrolling_terms_condition_content {
+  padding-top: 0.5vw;
+  font-size: 1.2vw;
+  text-align: right;
+  transition: font-size 300ms ease-in-out;
+  cursor: pointer;
+}
+.scrolling_terms_condition_content_active {
+  color: pink;
+  font-size: 1.3vw;
+}
+.terms_conditon_landing > h1:first-child {
+  color: pink;
+  font-size: 2vw;
+}
+section {
+  line-height: 1.7;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding: 0.625vw 1.25vw 2.5vw;
+}
+section h1,
+section h2,
+section h3,
+section h4,
+section h5,
+section h6 {
+  font-weight: 500;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+section h1 {
+  font-size: 1.2vw;
+  margin-top: 1.5625vw;
+  margin-bottom: 0.9375vw;
+  line-height: 1.4;
+}
+section h2 {
+  font-size: 1vw;
+  margin-top: 1.25vw;
+  margin-bottom: 0.625vw;
+}
+section h3 {
+  font-size: 0.9vw;
+  margin-top: 1.25vw;
+  margin-bottom: 0.625vw;
+}
+section h4 {
+  font-size: 0.7vw;
+  margin-top: 1.25vw;
+  margin-bottom: 0.625vw;
+}
+section h5 {
+  font-size: 0.6vw;
+  margin-top: 1.25vw;
+  margin-bottom: 0.625vw;
+}
+section h6 {
+  font-size: 0.5vw;
+  margin-top: 1.25vw;
+  margin-bottom: 0.625vw;
+}
+section p {
+  font-size: 1vw;
+  margin-bottom: 0.625vw;
+}
+section ul {
+  font-size: 1vw;
+  list-style-type: disc;
+  line-height: 2;
+  margin-left: 1.875vw;
+  margin-top: 0.9375vw;
+  margin-bottom: 0.9375vw;
+}
+section a {
+  color: pink;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+/* 
+@media all and (max-width: 479px) {
+  .menu li:first-of-type {
+    margin-top: 20px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 767px) {
+  .menu li:first-of-type {
+    margin-top: 20px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 979px) {
+  .menu li:first-of-type {
+    margin-top: 20px;
+  }
+}
+@media all and (min-width: 980px) {
+  .subnav {
+    background: #fff;
+  }
+  .subnav li {
+    float: left;
+  }
+  .subnav li:hover {
+    border-radius: 0;
+  }
+  .subnav .label-name {
+    display: none;
+  }
+  .subnav .menu {
+    clear: none;
+    max-height: none;
+  }
+  .subnav .menu li:last-of-type {
+    margin-bottom: 0;
+  }
+  .subnav .menu-icon {
+    display: none;
+  }
+  .subnav .by-privacypolicies {
+    top: 1.3rem;
+  }
+  section {
+    padding: 10px 20px 40px;
+  }
+  section h1 {
+    font-size: 2.125rem;
+  }
+  section h2 {
+    font-size: 1.65rem;
+  }
+  section h3 {
+    font-size: 1.35rem;
+  }
+  section h4 {
+    font-size: 1.25rem;
+  }
+  section h5 {
+    font-size: 1.125rem;
+  }
+  section h6 {
+    font-size: 1rem;
+  }
+  section ul li p {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  footer {
+    font-size: 1rem !important;
+    padding: 1rem 0;
+    background-color: #464855;
+    color: #fff;
+  }
+} */

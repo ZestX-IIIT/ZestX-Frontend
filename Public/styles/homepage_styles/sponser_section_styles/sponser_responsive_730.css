@@ -1,0 +1,5 @@
+@media only screen and (max-width: 730px) {
+  #main_sponsers_container {
+    padding-top: 0 !important;
+  }
+}

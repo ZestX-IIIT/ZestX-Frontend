@@ -1,0 +1,9 @@
+@media only screen and (max-width: 1105px) {
+  .sponsers {
+    padding-top: 50px;
+  }
+  .sponsers {
+    height: 80vh;
+    grid-template-rows: repeat(5, 14vh);
+  }
+}

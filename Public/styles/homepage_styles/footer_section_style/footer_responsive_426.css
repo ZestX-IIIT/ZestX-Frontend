@@ -1,0 +1,35 @@
+@media screen and (max-width: 426px) {
+  .footer-content {
+    margin: 20px 0px 0px 20px;
+    width: fit-content;
+    justify-content: unset;
+  }
+  .footer {
+    height: 125px;
+  }
+  .follow img {
+    margin-left: 0px;
+    width: 16px;
+  }
+  a {
+    font-size: 0.5rem;
+    margin-bottom: 4px;
+  }
+  .footer h2 {
+    margin-bottom: 11px;
+    font-size: 0.7rem;
+  }
+  .follow {
+    margin: 25px 25px 0 0;
+  }
+  .tc {
+    margin-left: 5%;
+  }
+  .help {
+    margin-left: 0%;
+  }
+  body > div.footer > div.follow > h2 {
+    text-align: end;
+    font-size: 0.7rem;
+  }
+}

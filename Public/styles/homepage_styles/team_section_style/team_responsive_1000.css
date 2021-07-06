@@ -1,0 +1,10 @@
+@media only screen and (max-width: 1000px) {
+    .teamContent {
+      margin-left: 0px;
+      margin-right: 10px;
+    }
+  
+    .teamPanel {
+      width: 25%;
+    }
+  }

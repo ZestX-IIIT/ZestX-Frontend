@@ -1,0 +1,308 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+}
+
+#zestxlogoadminpage {
+  position: absolute;
+  top: 2%;
+  right: 47.5vw;
+  width: 5%;
+  height: auto;
+}
+
+#admin_main_page_container {
+  display: none;
+  position: relative;
+}
+#admin_add_user_page_container {
+  display: none;
+}
+
+#logout_button_admin_main_page {
+  height: auto;
+  position: absolute;
+  width: 7vw;
+  top: 8.6%;
+  right: 2.7vw;
+  cursor: pointer;
+}
+.main_admin_container {
+  padding: 6vh 2.5vw;
+  padding-bottom: 0;
+  display: grid;
+  grid-gap: 2.5vw;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 5fr 8fr 5fr;
+  grid-template-rows: 1fr;
+}
+.main_admin_container h2 {
+  height: 10%;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #fdfdfd;
+  display: flex;
+  align-items: center;
+}
+.container_common_background {
+  height: 85%;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 17.9rem 3px 12.8rem rgba(255, 242, 250, 0.1);
+  border-radius: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#container_common_background::-webkit-scrollbar {
+  display: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.inner_list {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  padding-top: 1.2rem;
+  border-bottom: 1px solid #f8e6ff;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.internal_user_delete_button {
+  cursor: pointer;
+}
+.internal_list {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.internal_list::-webkit-scrollbar {
+  display: none;
+}
+
+#internal_users_list_loader {
+  position: absolute;
+  top: 16%;
+  left: 0%;
+  width: 100%;
+  height: 90%;
+  display: none;
+}
+
+#external_users_list_loader {
+  position: absolute;
+  top: 16%;
+  left: 0%;
+  width: 100%;
+  height: 90%;
+  display: none;
+}
+.external_user_delete_button {
+  cursor: pointer;
+}
+.primary_event_list_admin_page {
+  cursor: pointer;
+  position: relative;
+}
+.festival_list_overlay {
+  position: absolute;
+  display: none;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: -50;
+  background-color: rgb(138 45 248 / 29%);
+}
+.inner_list::-webkit-scrollbar {
+  display: none;
+}
+.inner_list h3 {
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #e5e6ff;
+}
+.inner_list h4 {
+  font-family: "Now";
+  font-style: normal;
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #bfbeff;
+}
+.InnerListContent {
+  font-family: "Now";
+  white-space: pre-wrap;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: rgba(253, 253, 253, 0.9);
+}
+.right_h3 {
+  font-size: 1.2rem !important;
+  margin-top: 1rem;
+  margin-bottom: 0.7rem;
+}
+#eventDescriptioninnerList {
+  margin-top: 0;
+}
+
+.outer_left {
+  height: 93vh;
+  width: auto;
+}
+.outer_middle {
+  height: 93vh;
+  width: auto;
+}
+.outer_right {
+  height: 93vh;
+  width: auto;
+}
+.outer_right .inner_list {
+  border: 0;
+}
+.outer_middle h2 {
+  display: flex;
+  justify-content: space-between;
+}
+.inner_h2 img {
+  width: 25px;
+}
+#firsth2 {
+  width: auto;
+}
+#secondh2 {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  cursor: pointer;
+}
+.internal_users,
+.outer_users {
+  height: 50%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.internal_users::-webkit-scrollbar,
+.outer_users::-webkit-scrollbar {
+  display: none;
+}
+
+.active_event {
+  font-size: 2.2rem;
+  color: #f592eb;
+}
+.internal_users h3,
+.outer_users h3 {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #e5e6ff;
+}
+.internal_list .inner_list h3 {
+  padding-left: 0;
+}
+.internal_list .inner_list {
+  border: 0px;
+  border-bottom: 1px solid #f8e6ff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.display_to_none {
+  animation: to_opacity_none 0.2s ease-in-out 1;
+  display: none;
+}
+
+@keyframes to_opacity_none {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#add_user_plus_icon {
+  margin-left: 10px;
+}
+
+.display_to_block {
+  display: block;
+  animation: to_display_block 0.2s ease-in-out 1;
+}
+
+@keyframes to_display_block {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#internal_users_h3 {
+  color: #fdfdfd;
+  padding-left: 1rem;
+  padding-bottom: 0.85rem;
+  font-weight: 500;
+  padding-top: 1.15rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #f8e6ff;
+  background: #ffe8ff29;
+  background-blend-mode: overlay;
+}
+#external_users_h3 {
+  color: #fdfdfd;
+  padding-left: 1rem;
+  padding-bottom: 0.85rem;
+  font-weight: 500;
+  padding-top: 1.15rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #f8e6ff;
+  background: #ffe8ff29;
+  background-blend-mode: overlay;
+  border-top: 1px solid #f8e6ff;
+}
+#userListContainer {
+  justify-content: space-between;
+}
+input[type="password"] {
+  text-transform: none;
+}
