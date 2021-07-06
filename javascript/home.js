@@ -180,6 +180,9 @@ function setUpViews() {
           if (res3.status == 400) {
             displayEvenetspage();
             show_toast(2, "Please verify your email!");
+          } else if (res3.status == 404) {
+            displayEvenetspage();
+            show_toast(2, "User already registered please refresh!");
           } else if (res3.status == 500) {
             displayEvenetspage();
             show_toast(0, "Error occured Please re-try!");
@@ -189,8 +192,14 @@ function setUpViews() {
             let userarray = festData.find(
               (event) => event.fest_id == eventId
             ).user_id;
-            userarray[userarray.length] = userData.user_id;
-            userData.fest_id[userData.fest_id.length] = `${eventId}`;
+            if (userarray == null)
+              userarray = [userData.user_id];
+            else
+              userarray[userarray.length] = userData.user_id;
+            if (userData.fest_id == null)
+              userData.fest_id = [`${eventId}`];
+            else
+              userData.fest_id[userData.fest_id.length] = `${eventId}`;
             registerBtn.innerHTML = `Unregister`;
             registerBtn.style.animation = "none";
           }
@@ -206,6 +215,9 @@ function setUpViews() {
           if (res4.status == 400) {
             displayEvenetspage();
             show_toast(2, "Please verify your email!");
+          } else if (res3.status == 404) {
+            displayEvenetspage();
+            show_toast(2, "User not registered please refresh!");
           } else if (res4.status == 500) {
             displayEvenetspage();
             show_toast(0, "Error occured Please re-try!");
