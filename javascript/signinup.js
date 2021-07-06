@@ -13,7 +13,6 @@ let bg4 = document.getElementById("bg4");
 let text = window.location.hash.substring(1);
 let userData;
 let lastToastTimestamp = Date.now();
-let regularExpression = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/;
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 
 setTimeout(() => {
@@ -107,38 +106,10 @@ function setUpSignInSignUpPage() {
       return;
     }
 
-    if (password.length < 6) {
-      show_toast(2, "Password should be minimum of 6 length!");
-      return;
-    }
+    let passwordValidator = passValidator(password);
 
-    if (password.search(/[A-Z]/) < 0) {
-      show_toast(2, "Password should contain atleast 1 uppercase letter!");
-      return;
-    }
-
-    if (password.search(/[a-z]/) < 0) {
-      show_toast(2, "Password should contain atleast 1 lowercase letter!");
-      return;
-    }
-
-    if (password.search(/[0-9]/) < 0) {
-      show_toast(2, "Password should contain atleast 1 digit!");
-      return;
-    }
-
-    if (password.search(' ') != -1) {
-      show_toast(2, "Password should not contain any spaces!");
-      return;
-    }
-
-    if (!regularExpression.test(password)) {
-      show_toast(2, "Password should contain atleast 1 special character!");
-      return;
-    }
-
-    if (password.length > 20) {
-      show_toast(2, "Password should be maximum of 20 length!");
+    if (!passwordValidator[0]) {
+      show_toast(2, `${passwordValidator[1]}`);
       return;
     }
     preloader.style.display = "block";
