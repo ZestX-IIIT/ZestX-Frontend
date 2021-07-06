@@ -157,6 +157,7 @@
   }
   #profile_page_header img {
     margin-right: 3vw;
+    width: 6vw;
   }
   #profile_page_header a {
     font-size: 4.5vw;
@@ -192,9 +193,13 @@
   .EventList h4 {
     font-size: 2.5vw;
   }
+  .EventList {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+  }
 }
 @media only screen and (max-width: 440px) {
-  #MainUserContainer{
+  #MainUserContainer {
     height: 100vh;
   }
 }
