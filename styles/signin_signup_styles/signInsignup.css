@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  overflow: hidden;
+}
 .main {
   background-image: url("../../assets/signin_signup_Page/background.jpg");
   background-repeat: no-repeat;
