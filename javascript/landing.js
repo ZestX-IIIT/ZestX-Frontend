@@ -17,12 +17,14 @@ function setUpLandingPage() {
 
 
   signupButton.addEventListener("click", () => {
-    preloader.style.display = "block";
+    // preloader.style.display = "block";
+    displayPreloaderContainerLandingPage()
     window.location.href = "./signupsignin.html" + "#" + "signup";
   });
 
   signinButton.addEventListener("click", () => {
-    preloader.style.display = "block";
+    // preloader.style.display = "block";
+    displayPreloaderContainerLandingPage()
     window.location.href = "./signupsignin.html" + "#" + "signin";
   });
 
@@ -45,9 +47,11 @@ function setUpLandingPage() {
     }
   };
 
-  preloader.style.display = "none";
-
-
+  // preloader.style.display = "none";
+  displayMainContainerLandingPage();
+setTimeout(() => {
+  AOS.init();
+}, 100);
 }
 
 
@@ -98,4 +102,41 @@ function expandFooter() {
       clearInterval(a);
     }
   }, 8);
+}
+function displayMainContainerLandingPage(){
+  checkAndDisplayContainer(main[0]);
+  checkAndCloseContainer(preloader);
+}
+function displayPreloaderContainerLandingPage(){
+  checkAndCloseContainer(main[0]);
+  checkAndDisplayContainer(preloader);
+}
+function checkAndCloseContainer(container) {
+  if (container.classList.contains("display_to_block")) {
+    container.classList.remove("display_to_block");
+  }
+  container.classList.add("display_to_none");
+
+  if (container.style.display != "none") {
+    container.classList.add("display_to_none");
+
+    setTimeout(function () {
+      container.style.display = "none";
+      container.style.opacity = 0;
+    }, 500);
+  }
+}
+
+function checkAndDisplayContainer(container) {
+  if (container == footer[0]) {
+    container.style.display = "flex";
+  } 
+  else {
+    container.style.display = "block";
+  }
+  container.style.opacity = 1;
+  if (container.classList.contains("display_to_none")) {
+    container.classList.remove("display_to_none");
+  }
+  container.classList.add("display_to_block");
 }
