@@ -13,13 +13,12 @@ let bg4 = document.getElementById("bg4");
 let text = window.location.hash.substring(1);
 let userData;
 let lastToastTimestamp = Date.now();
+let regularExpression = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/;
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
-
 
 setTimeout(() => {
   redirect(0, setUpSignInSignUpPage)
 }, 200);
-
 
 function setUpSignInSignUpPage() {
 
@@ -92,49 +91,81 @@ function setUpSignInSignUpPage() {
     const mobile = document.getElementById("mobile").value;
     const confirmPassword = document.getElementById("confirm").value;
 
-    if (email && password && user_name && mobile) {
-      if (password != confirmPassword) {
-        show_toast(2, "Passwords not matched with confirm password!");
-        return;
-      }
-      if (password.length < 6) {
-        show_toast(2, "Password should be minimum of 6 length!");
-        return;
-      }
-      if (mobile.length != 10) {
-        show_toast(2, "Mobile no. should be of 10 length!");
-        return;
-      }
-      preloader.style.display = "block";
-
-      const signupRes = await fetch(`${apiURL}/auth/signup`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ user_name, email, password, mobile }),
-      });
-
-      const signupData = await signupRes.json();
-
-      if (signupRes.status == 400) {
-        show_toast(2, "User already exists, Please sign in!");
-        preloader.style.display = "none";
-      } else if (signupRes.status == 444) {
-        show_toast(2, `${signupData.error}`);
-        preloader.style.display = "none";
-      } else if (signupRes.status == 500) {
-        show_toast(0, "Internal server error please re-try!");
-        preloader.style.display = "none";
-      } else {
-        const token = signupData.data;
-        localStorage.setItem("jwt", token);
-        window.location.href = "./homepage.html";
-      }
-
-    } else {
+    if (!(email && password && user_name && mobile)) {
       show_toast(2, "Please fill all the details properly!");
       preloader.style.display = "none";
+      return;
+    }
+
+    if (mobile.length != 10) {
+      show_toast(2, "Mobile no. should be of 10 length!");
+      return;
+    }
+
+    if (password != confirmPassword) {
+      show_toast(2, "Passwords not matched with confirm password!");
+      return;
+    }
+
+    if (password.length < 6) {
+      show_toast(2, "Password should be minimum of 6 length!");
+      return;
+    }
+
+    if (password.search(/[A-Z]/) < 0) {
+      show_toast(2, "Password should contain atleast 1 uppercase letter!");
+      return;
+    }
+
+    if (password.search(/[a-z]/) < 0) {
+      show_toast(2, "Password should contain atleast 1 lowercase letter!");
+      return;
+    }
+
+    if (password.search(/[0-9]/) < 0) {
+      show_toast(2, "Password should contain atleast 1 digit!");
+      return;
+    }
+
+    if (password.search(' ') != -1) {
+      show_toast(2, "Password should not contain any spaces!");
+      return;
+    }
+
+    if (!regularExpression.test(password)) {
+      show_toast(2, "Password should contain atleast 1 special character!");
+      return;
+    }
+
+    if (password.length > 20) {
+      show_toast(2, "Password should be maximum of 20 length!");
+      return;
+    }
+    preloader.style.display = "block";
+
+    const signupRes = await fetch(`${apiURL}/auth/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ user_name, email, password, mobile }),
+    });
+
+    const signupData = await signupRes.json();
+
+    if (signupRes.status == 400) {
+      show_toast(2, "User already exists, Please sign in!");
+      preloader.style.display = "none";
+    } else if (signupRes.status == 444) {
+      show_toast(2, `${signupData.error}`);
+      preloader.style.display = "none";
+    } else if (signupRes.status == 500) {
+      show_toast(0, "Internal server error please re-try!");
+      preloader.style.display = "none";
+    } else {
+      const token = signupData.data;
+      localStorage.setItem("jwt", token);
+      window.location.href = "./homepage.html";
     }
   });
 
