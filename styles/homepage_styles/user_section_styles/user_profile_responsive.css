@@ -104,4 +104,7 @@
   .Pastevents h2 {
     font-size: 1.1rem;
   }
+  #profile_page_header {
+    padding-left: 5vw;
+  }
 }
