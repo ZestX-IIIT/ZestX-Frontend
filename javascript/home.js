@@ -189,12 +189,14 @@ function setUpViews() {
             let userarray = festData.find(
               (event) => event.fest_id == eventId
             ).user_id;
+            console.log(userarray);
+            console.log(userData.fest_id);
             if (userarray == null)
-              userarray[0] = userData.user_id;
+              userarray = [userData.user_id];
             else
               userarray[userarray.length] = userData.user_id;
             if (userData.fest_id == null)
-              userData.fest_id[0] = `${eventId}`;
+              userData.fest_id = [`${eventId}`];
             else
               userData.fest_id[userData.fest_id.length] = `${eventId}`;
             registerBtn.innerHTML = `Unregister`;
