@@ -71,3 +71,37 @@
     padding-bottom: 1em;
   }
 }
+@media only screen and (max-width: 725px) {
+  .UserLeftContainer {
+    padding-left: 5.4vw;
+  }
+  .UserDetailsInputProfileDatailsPage {
+    padding-bottom: 0.8rem;
+    font-size: 1.2rem;
+  }
+  .UserLeftContainer {
+    height: 28vh;
+  }
+  input#name {
+    margin-top: -6vh;
+  }
+  #EditButton,
+  #ChangePasswordButton {
+    font-size: 1rem;
+    padding-bottom: 0.4rem;
+  }
+  #LogoutButton {
+    margin-top: 1vw;
+  }
+  #EditButton img,
+  #ChangePasswordButton img {
+    display: none;
+  }
+  #profile_page_header {
+    padding-left: 2.5rem;
+  }
+  .OngoingEvents h2,
+  .Pastevents h2 {
+    font-size: 1.1rem;
+  }
+}
