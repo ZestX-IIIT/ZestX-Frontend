@@ -108,7 +108,7 @@ html::-webkit-scrollbar {
 
 .display_to_block {
   display: block;
-  animation: to_display_block 1s ease-in-out 1;
+  animation: to_display_block 0.5s ease-in-out 1;
 }
 
 @keyframes to_display_block {
