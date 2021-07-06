@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+}
+
+#zestxlogoadminadduserpage {
+  position: absolute;
+  top: 1.5vw;
+  right: 5vw;
+  width: 6vw;
+  z-index: 2;
+  height: auto;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #efd5ff;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+#back_btn_from_add_user_page {
+  position: absolute;
+  top: 3.5vw;
+  left: 5.5vw;
+  width: 1.8vw;
+  z-index: 2;
+  height: auto;
+}
+
+.Main_Admin_Add_Container {
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.Admin_add_container {
+  height: 100%;
+  width: 35%;
+  padding-left: 5.5vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 3%;
+}
+
+#admin_add_user_anim_container {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10vw;
+  padding-top: 6%;
+  padding-bottom: 1%;
+}
+
+.admit_add_user_details {
+  width: 100%;
+  background: transparent;
+  border: 0px;
+  border-bottom: 2px solid #efd5ff;
+  padding: 0.4rem;
+  padding-left: 0;
+  margin-bottom: 2rem;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #efd5ff;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:focus {
+  outline: none;
+}
+
+#Add_user_button {
+  width: auto;
+  height: auto;
+  padding: 0.8vw 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    270deg,
+    rgba(150, 4, 163, 0.6) 10%,
+    rgba(49, 2, 149, 0.6) 99%
+  );
+  mix-blend-mode: normal;
+  border: 2px solid #f9e8ff;
+  box-shadow: 0px 3px 9px rgb(0 0 0 / 25%);
+  border-radius: 7px;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.buttons_container {
+  margin-top: 6%;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#Add_user_button img {
+  width: 2rem;
+  margin-left: 5px;
+  height: auto;
+}
+
+.Label_section {
+  position: relative;
+  padding-top: 0.5%;
+}
+
+.Label_floating {
+  position: absolute;
+  top: 4%;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #efd5ff;
+  opacity: 0.7;
+  transform: translateY(0px);
+  transition: all 300ms ease-in-out;
+}
+
+.admit_add_user_details:focus ~ .Label_floating,
+.admit_add_user_details:not(:focus):valid ~ .Label_floating {
+  transform: translateY(-1.2rem);
+  font-size: 0.7rem;
+}
+input[type="password"] {
+  text-transform: none;
+}
+input[type="email"] {
+  text-transform: lowercase;
+}

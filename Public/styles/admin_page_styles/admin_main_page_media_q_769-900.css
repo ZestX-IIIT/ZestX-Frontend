@@ -1,0 +1,57 @@
+@media screen and (min-width: 769px) and (max-width: 901px) {
+  #zestxlogoadminpage {
+    top: 1%;
+    right: 45.5vw;
+    width: 9%;
+  }
+  #secondh2 {
+    justify-content: center;
+    align-items: center;
+  }
+  .main_admin_container h2 {
+    font-size: 1rem;
+  }
+  #add_user_plus_icon {
+    margin-bottom: 3px;
+  }
+  .main_admin_container {
+    padding: 8vh 2.5vw;
+    padding-bottom: 0;
+  }
+  #logout_button_admin_main_page {
+    top: 11.25%;
+    width: 10vw;
+  }
+  .container_common_background {
+    height: 86%;
+    border-radius: 0.5rem;
+  }
+  .outer_left {
+    height: 92vh;
+  }
+  .outer_middle {
+    height: 92vh;
+  }
+  .outer_right {
+    height: 92vh;
+  }
+  #internal_users_h3 {
+    padding-top: 1rem;
+  }
+  .internal_users h3,
+  .outer_users h3 {
+    font-size: 1.1rem;
+  }
+  .inner_list h4 {
+    font-size: 0.8rem;
+  }
+  .inner_list h3 {
+    font-size: 1.1rem;
+  }
+  .InnerListContent {
+    font-size: 0.8rem;
+  }
+  .right_h3 {
+    font-size: 1.1rem !important;
+  }
+}

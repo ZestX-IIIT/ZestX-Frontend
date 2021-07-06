@@ -1,0 +1,65 @@
+@media only screen and (max-width: 1350px) {
+  .teamContent {
+    margin-left: 10px;
+  }
+}
+@media only screen and (max-width: 1170px) {
+  .team {
+    padding-top: 50px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .teamContent {
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+
+  .teamPanel {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .team {
+    height: 88vh;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .team{
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .team {
+    height: 70vh;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .teamContent {
+    margin: 0;
+    margin-top: 20px;
+    margin-right: 5px;
+    text-align: center;
+  }
+
+  .team {
+    height: 50vh;
+  }
+}
+/* @media only screen and (max-width: 525px) {
+  .team {
+    padding-top: 25px;
+  }
+} */
+/* @media only screen and (max-width: 425px) {
+  .team {
+    padding-top: 10px;
+  }
+} */
+@media only screen and (max-width: 420px) {
+  .team {
+    height: 40vh;
+  }
+}

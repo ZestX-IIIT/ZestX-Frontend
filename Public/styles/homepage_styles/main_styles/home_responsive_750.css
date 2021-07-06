@@ -1,0 +1,14 @@
+@media only screen and (max-width: 750px) {
+    #hamburger_menu{
+      width: 5vw;
+      height: 5vw;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 5vw;
+    }
+    .home_section_heading{
+      display: block;
+    }
+  }

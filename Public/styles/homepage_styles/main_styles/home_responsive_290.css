@@ -1,0 +1,6 @@
+@media only screen and (max-width: 290px) {
+    #animation_container {
+      height: 30vh;
+      width: 30vh;
+    }
+  }

@@ -1,0 +1,10 @@
+@media only screen and (max-width: 475px) {
+  .slide {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+  .slide:checked:after {
+    border: 1.5px solid #989cff;
+    top: -3%;
+  }
+}

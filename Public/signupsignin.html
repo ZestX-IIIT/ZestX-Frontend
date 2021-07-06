@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In Sign Up</title>
+    <link rel="stylesheet" href="./assets/fonts/now/stylesheet.css" />
+    <link rel="stylesheet" href="./styles/signin_signup_styles/signInsignup.css" />
+    <link rel="stylesheet" href="./styles/signin_signup_styles/signInsignup_media_q_600-768.css"
+        media="screen and (min-width: 600px) and (max-width: 768px)" />
+    <link rel="stylesheet" href="./styles/signin_signup_styles/signInsignup_media_q_500-600.css"
+        media="screen and (min-width: 500px) and (max-width: 600px)" />
+    <link rel="stylesheet" href="./styles/signin_signup_styles/signInsignup_media_q_426-500.css"
+        media="screen and (min-width: 426px) and (max-width: 500px)" />
+    <link rel="stylesheet" href="./styles/signin_signup_styles/signInsignup_media_q_426.css" media="screen and (max-width: 426px)" />
+    <link rel="stylesheet" href="./styles/signin_signup_styles/signInsignup_media_q_376.css" media="screen and (max-width: 376px)" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="./javascript/html_include.js"></script>
+    <script src="./javascript/redirect.js"></script>
+
+</head>
+
+<body background-image="../assets/signin_signup_Page/background.jpg">
+
+    <div include_file_path="./general/loader.html" style="position: fixed; width: 100vw; z-index: 50000;"
+        id="preloader_container"></div>
+
+    <div id="primnary_toast_container">
+        <section include_file_path="./general/toast.html" id="sub_toast_container"></section>
+        </div>
+
+    <section class="main">
+        <div class="background opacity-class" id="bg1">
+
+        </div>
+        <div class="background2 opacity-class" id="bg2">
+
+        </div>
+        <div class="background3 display-class" id="bg3">
+
+        </div>
+        <div class="background4 display-class" id="bg4">
+
+        </div>
+        <div class="form-container2 display-class" id="signincontainer">
+            <h1 data-aos="fade-up" data-aos-delay="0" data-aos-offset="10">SIGN IN</h1>
+            <form>
+                <div class="form-label" data-aos="fade-up" data-aos-delay="100" data-aos-offset="10">
+                    <input type="email" name="email" id="signinemail" required />
+                    <div class="floating">EMAIL</div>
+                </div>
+                <div class="form-label" data-aos="fade-up" data-aos-delay="200" data-aos-offset="10">
+                    <input type="password" name="password" id="signinpassword" required />
+                    <div class="floating">PASSWORD</div>
+                </div>
+                <button type="submit" class="btn" id="signinButton" data-aos="fade-up" data-aos-delay="300" data-aos-offset="10">CONTINUE</button>
+            </form>
+            <div id="swap_form_to_signup_text_container" data-aos="fade-up" data-aos-delay="400" data-aos-offset="10">DON'T HAVE A ACCOUNT? <span id="signup">SIGN UP</span></div>
+            <div id="forgot_password" data-aos="fade-up" data-aos-delay="500" data-aos-offset="10">FORGOT PASSWORD?</div>
+        </div>
+        </div>
+        <div class="form-container opacity-class" id="signupcontainer">
+            <h1>SIGN UP</h1>
+            <form>
+                <div class="form-label" data-aos="fade-up" data-aos-delay="0" data-aos-offset="10">
+                    <input type="email" name="email" id="signupemail" required />
+                    <div class="floating">EMAIL</div>
+                </div>
+                <div class="form-label" data-aos="fade-up" data-aos-delay="100" data-aos-offset="10">
+                    <input type="text" name="name" id="name" required />
+                    <div class="floating">NAME</div>
+                </div>
+                <div class="form-label" data-aos="fade-up" data-aos-delay="200" data-aos-offset="10">
+                    <input type="number" name="mobile" id="mobile" required />
+                    <div class="floating">MOBILE NUMBER</div>
+                </div>
+                <div class="form-label" data-aos="fade-up" data-aos-delay="300" data-aos-offset="10">
+                    <input type="password" name="password" id="signuppassword" required />
+                    <div class="floating">PASSWORD</div>
+                </div>
+                <div class="form-label" data-aos="fade-up" data-aos-delay="400" data-aos-offset="10">
+                    <input type="password" name="confirmpassword" id="confirm" required />
+                    <div class="floating">CONFIRM PASSWORD</div>
+                </div>
+                <button type="submit" class="btn" id="signupButton" data-aos="fade-up" data-aos-delay="500" data-aos-offset="10">CONTINUE</button>
+            </form>
+            <div id="swap_form_to_signin_text_container" data-aos="fade-up" data-aos-delay="600" data-aos-offset="10">ALREADY HAVE AN ACCOUNT? <span id="signin">SIGN IN</span></div>
+        </div>
+    </section>
+    <script src="./javascript/signinup.js"></script>
+    <script>
+        includehtmlbyID("preloader_container");
+        includehtmlbyID("sub_toast_container");
+        </script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+
+</html>

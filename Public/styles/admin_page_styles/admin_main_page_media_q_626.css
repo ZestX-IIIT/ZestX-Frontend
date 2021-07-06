@@ -1,0 +1,10 @@
+@media screen and (min-width: 0px) and (max-width: 626px) {
+  .main_admin_container {
+    padding: 16vw 2.5vw;
+    padding-bottom: 0;
+  }
+  #logout_button_admin_main_page {
+    width: 5rem;
+    top: 16.5vw;
+  }
+}
