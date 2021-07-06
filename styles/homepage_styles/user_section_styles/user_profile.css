@@ -194,8 +194,8 @@ input:focus {
   margin-bottom: 7px;
   background: linear-gradient(
     270.46deg,
-    rgba(255, 79, 206, 0.7) -24.06%,
-    rgba(86, 6, 255, 0.7) 105.66%
+    rgba(255, 79, 206, 0.6) -24.06%,
+    rgba(86, 6, 255, 0.6) 105.66%
   );
   border-radius: 8px;
   display: flex;
