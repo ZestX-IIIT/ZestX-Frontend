@@ -180,6 +180,9 @@ function setUpViews() {
           if (res3.status == 400) {
             displayEvenetspage();
             show_toast(2, "Please verify your email!");
+          } else if (res3.status == 404) {
+            displayEvenetspage();
+            show_toast(2, "User already registered please refresh!");
           } else if (res3.status == 500) {
             displayEvenetspage();
             show_toast(0, "Error occured Please re-try!");
@@ -212,6 +215,9 @@ function setUpViews() {
           if (res4.status == 400) {
             displayEvenetspage();
             show_toast(2, "Please verify your email!");
+          } else if (res3.status == 404) {
+            displayEvenetspage();
+            show_toast(2, "User not registered please refresh!");
           } else if (res4.status == 500) {
             displayEvenetspage();
             show_toast(0, "Error occured Please re-try!");
