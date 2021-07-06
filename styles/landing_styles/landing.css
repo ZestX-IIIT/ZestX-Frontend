@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background: #02113e;
+}
 .main {
   background-image: url("../../assets/landing_page/SVG/background.svg");
   background-position: center;
