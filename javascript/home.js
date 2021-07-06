@@ -70,7 +70,8 @@ let currentHMaburgerActiveItemIndex = 0;
 
 window.addEventListener("load", () => {
   setTimeout(() => {
-    redirect(2, setup);
+    // redirect(2, setup);
+    setup()
   }, 200);
 });
 
