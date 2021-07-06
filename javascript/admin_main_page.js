@@ -83,7 +83,7 @@ async function setUpLandingPage() {
                     const event = ongoingEvents.find(
                         (item) => item.fest_id == eventInstance.id
                     );
-                    setEventDetails(event); 
+                    setEventDetails(event);
                     getInternalUserDetails(event.user_id);
                     getExternalUserDetails(event.external_user_id);
 
@@ -100,8 +100,8 @@ async function setUpLandingPage() {
             exEmail = document.getElementById("email").value;
             exMobile = document.getElementById("phone_number").value;
 
-            if (exMobile && exMobile.length < 10) {
-                show_toast(2, "Mobile no. should have 10 digits!");
+            if (exMobile && exMobile.length != 10) {
+                show_toast(2, "Mobile no. should be of 10 length!");
             } else if (exUsername && (exEmail || exMobile)) {
                 displayPreloder();
                 const res2 = await fetch(`${apiURL}/admin/adduser`, {
