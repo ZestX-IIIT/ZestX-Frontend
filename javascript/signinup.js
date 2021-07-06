@@ -32,7 +32,7 @@ function setUpSignInSignUpPage() {
     if (email && password) {
       try {
 
-        const res1 = await fetch(`${apiURL}/auth/signin`, {
+        const signinRes = await fetch(`${apiURL}/auth/signin`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -40,32 +40,32 @@ function setUpSignInSignUpPage() {
           body: JSON.stringify({ email, password }),
         });
 
-        const data1 = await res1.json();
+        const signinData = await signinRes.json();
 
-        if (res1.status == 400) {
+        if (signinRes.status == 400) {
           show_toast(2, "User does not exists, Please sign up!");
           preloader.style.display = "none";
-        } else if (res1.status == 444) {
+        } else if (signinRes.status == 444) {
           show_toast(2, "Enter correct password!");
           preloader.style.display = "none";
 
-        } else if (res1.status == 500) {
+        } else if (signinRes.status == 500) {
           show_toast(0, "Internal server error please re-try!");
           preloader.style.display = "none";
         } else {
 
-          const { token } = data1;
+          const { token } = signinData;
 
           localStorage.setItem("jwt", token);
-          const res2 = await fetch(`${apiURL}/user/getdetails`, {
+          const userDataRes = await fetch(`${apiURL}/user/getdetails`, {
             method: "GET",
             headers: {
               authorization: token,
             },
           });
 
-          const data2 = await res2.json();
-          userData = data2.data;
+          const userDetails = await userDataRes.json();
+          userData = userDetails.data;
 
           if (userData.is_admin)
             window.location.href = "./general/admin_main_page.html";
@@ -107,7 +107,7 @@ function setUpSignInSignUpPage() {
       }
       preloader.style.display = "block";
 
-      const res3 = await fetch(`${apiURL}/auth/signup`, {
+      const signupRes = await fetch(`${apiURL}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -115,16 +115,19 @@ function setUpSignInSignUpPage() {
         body: JSON.stringify({ user_name, email, password, mobile }),
       });
 
-      const data3 = await res3.json();
+      const signupData = await signupRes.json();
 
-      if (res3.status == 400) {
+      if (signupRes.status == 400) {
         show_toast(2, "User already exists, Please sign in!");
         preloader.style.display = "none";
-      } else if (res3.status == 500) {
+      } else if (signupRes.status == 444) {
+        show_toast(2, `${signupData.error}`);
+        preloader.style.display = "none";
+      } else if (signupRes.status == 500) {
         show_toast(0, "Internal server error please re-try!");
         preloader.style.display = "none";
       } else {
-        const token = data3.data;
+        const token = signupData.data;
         localStorage.setItem("jwt", token);
         window.location.href = "./homepage.html";
       }
@@ -212,7 +215,7 @@ function setUpSignInSignUpPage() {
   AOS.init({
     easing: 'ease-in-out',
     once: true,
-    duration: 600, 
+    duration: 600,
   });
 }
 
