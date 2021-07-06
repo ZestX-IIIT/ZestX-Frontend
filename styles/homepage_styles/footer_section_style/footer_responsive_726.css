@@ -17,8 +17,8 @@
     height: 230px;
   }
   .follow img {
-    margin-left: 8px;
-    width: 28px;
+    margin-left: 1vw;
+    width: 4vw;
   }
   a {
     font-size: 0.9rem;
@@ -29,5 +29,6 @@
   }
   .follow {
     margin: 37px 36px;
+    margin-left: 0;
   }
 }
