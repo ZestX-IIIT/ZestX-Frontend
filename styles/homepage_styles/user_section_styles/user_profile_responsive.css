@@ -24,7 +24,7 @@
     width: 66%;
   }
 }
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 1024px) {
   .OngoingEvents h2,
   .Pastevents h2 {
     height: 10%;

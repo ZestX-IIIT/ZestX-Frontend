@@ -8,10 +8,11 @@ body {
 }
 #zestxlogo {
   position: absolute;
-  top: 0.7rem;
-  right: 3rem;
+  border: 0.7rem;
+  right: 2rem;
   width: 6rem;
   height: 6rem;
+  top: 1.3vw;
 }
 #MainUserContainer {
   background: url("../../../assets/home_page/events_details/rangshala_bg.svg"),
@@ -25,11 +26,11 @@ body {
   font-family: "Now";
   font-style: normal;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.6rem;
   text-transform: uppercase;
   color: #ffffff;
   margin: 0;
-  margin-top: 0.3vw;
+  margin-top: 1.3vw;
 }
 #profile_page_header {
   padding-left: 3.5rem;
@@ -39,9 +40,12 @@ body {
 }
 #profile_page_header img {
   cursor: pointer;
-  margin-right: 2%;
+  margin-right: 1.7%;
   margin-left: 0.5%;
+  width: 1.7rem;
+  margin-top: 1vw;
 }
+
 #UserContainer {
   display: grid;
   grid-template-columns: 45% 55%;
@@ -69,6 +73,9 @@ body {
   font-size: 1.4rem;
   text-transform: uppercase;
   color: #efd5ff;
+}
+input#name {
+  margin-top: -10vh;
 }
 .UserDetailsInputProfileDatailsPage::placeholder {
   font-family: "Now";
@@ -110,16 +117,17 @@ input:focus {
   font-size: 1.3rem;
   text-transform: uppercase;
   color: #ffffff;
-  margin-top: 1.8vw;
+  margin-top: 1.2vw;
   padding: 0.8vw 2vw 0.8vw 2vw;
+  margin-right: 2vh;
 }
 #LogoutButton {
   cursor: pointer;
-  margin-top: 2vw;
+  margin-top: 1.8vw;
   width: 7rem;
 }
 #button_container {
-  padding-right: 15%;
+  padding-right: 18%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -135,6 +143,7 @@ input:focus {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 50% 50%;
+  height: 80vh;
 }
 .OngoingEvents,
 .Pastevents {
@@ -156,6 +165,9 @@ input:focus {
   text-transform: uppercase;
   color: #fdfdfd;
   opacity: 0.8;
+}
+.Pastevents h2 {
+  margin-top: 0.4vh;
 }
 #OngoingEventsList,
 #PastEventsList {
@@ -182,8 +194,8 @@ input:focus {
   margin-bottom: 7px;
   background: linear-gradient(
     270.46deg,
-    rgba(255, 79, 206, 0.7) -24.06%,
-    rgba(86, 6, 255, 0.7) 105.66%
+    rgba(255, 79, 206, 0.6) -24.06%,
+    rgba(86, 6, 255, 0.6) 105.66%
   );
   border-radius: 8px;
   display: flex;
@@ -200,7 +212,8 @@ input:focus {
   color: #ffffff;
   opacity: 0.8;
   height: auto;
-  padding-top: 5px;
+  margin-top: 1vw;
+  margin-left: 0.4vw;
 }
 .EventList h4 {
   font-family: "Now";
@@ -209,8 +222,10 @@ input:focus {
   font-size: 1rem;
   text-transform: uppercase;
   color: #ffffff;
-  opacity: 0.8;
-  padding-top: 5px;
+  opacity: 0.7;
+  margin-top: 0.4vw;
+  margin-left: 0.4vw;
+  margin-bottom: 0.6vw;
 }
 /* .EventContent {
   overflow: hidden;

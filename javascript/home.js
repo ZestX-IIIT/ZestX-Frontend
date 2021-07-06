@@ -431,7 +431,8 @@ function setUpViews() {
       displayMainContainer();
       AOS.init({
         once: false,
-        easing: 'ease-in-out',
+        easing: "ease-in-out",
+        once: true,
       });
     } catch (err) {
       show_toast(0, "Error occured re-try!");
@@ -528,31 +529,31 @@ function setUpHamBurgerMenuOnClickListeners(hamburgerMenuItems) {
   hamburgerMenuItems[0].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(0);
     homeSection.scrollIntoView({
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
   hamburgerMenuItems[1].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(1);
     eventsSection.scrollIntoView({
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
   hamburgerMenuItems[2].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(2);
     teamSection.scrollIntoView({
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
   hamburgerMenuItems[3].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(3);
     sponsersSection.scrollIntoView({
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
   hamburgerMenuItems[4].addEventListener("click", () => {
     setCurrentActiveHamburegerMenuTo(4);
     faqSection.scrollIntoView({
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
 }

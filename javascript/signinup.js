@@ -209,8 +209,12 @@ function setUpSignInSignUpPage() {
 
   preloader.style.display = "none";
 
+  AOS.init({
+    easing: 'ease-in-out',
+    once: true,
+    duration: 600, 
+  });
 }
-
 
 function show_toast(isSuccess, message) {
 

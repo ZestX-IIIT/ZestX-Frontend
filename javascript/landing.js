@@ -50,7 +50,11 @@ function setUpLandingPage() {
   // preloader.style.display = "none";
   displayMainContainerLandingPage();
 setTimeout(() => {
-  AOS.init();
+  AOS.init({
+    easing: 'ease-in-out',
+    duration: 600,
+    once: true,
+  });
 }, 100);
 }
 
