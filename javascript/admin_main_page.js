@@ -535,7 +535,7 @@ function checkAndDisplayContainer(container) {
 function show_toast(isSuccess, message) {
 
     if (Date.now() - lastToastTimestamp > 5000) {
-        let toastAlertMessage = document.getElementById("to AlertMessage");
+        let toastAlertMessage = document.getElementById("toastAlertMessage");
         let toastImage = document.getElementById("toastImage");
         let toastFrontMessage = document.getElementById("toastFrontMessage");
         let toastDescriptionMessage = document.getElementById("toastDescriptionMessage");
