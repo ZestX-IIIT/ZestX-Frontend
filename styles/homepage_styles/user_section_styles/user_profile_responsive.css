@@ -108,3 +108,88 @@
     padding-left: 5vw;
   }
 }
+@media only screen and (max-width: 560px) {
+  .UserLeftContainer {
+    padding-left: 5.4vw;
+  }
+  .UserDetailsInputProfileDatailsPage {
+    padding-bottom: 0.8rem;
+    font-size: 1.2rem;
+  }
+  #button_container {
+    width: 81vw;
+  }
+  .UserLeftContainer {
+    height: 41vw;
+    margin-top: 1vw;
+    margin-bottom: 7vw;
+    justify-content: space-around;
+  }
+  input#name {
+    margin-top: 0;
+  }
+  .UserDetailsInputProfileDatailsPage {
+    font-size: 3.8vw;
+  }
+  #EditButton,
+  #ChangePasswordButton {
+    font-size: 3.2vw;
+    padding: 1.6vw 3.5vw 1.3vw 3.5vw;
+  }
+  #LogoutButton {
+    margin-top: 3vw;
+    width: 18vw;
+  }
+  #EditButton img,
+  #ChangePasswordButton img {
+    display: none;
+  }
+  #profile_page_header {
+    padding-left: 2.5rem;
+  }
+  .OngoingEvents h2,
+  .Pastevents h2 {
+    font-size: 3.2vw;
+  }
+  #profile_page_header {
+    padding-left: 5vw;
+    height: 16vw;
+  }
+  #profile_page_header img {
+    margin-right: 3vw;
+  }
+  #profile_page_header a {
+    font-size: 4.5vw;
+  }
+  #OngoingEventsList,
+  #PastEventsList {
+    padding-top: 0.2vw;
+    padding-bottom: 0.3vw;
+    height: 40vw;
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+  }
+  .OngoingEvents,
+  .Pastevents {
+    height: fit-content;
+  }
+  .UserRightContainer {
+    height: fit-content;
+  }
+  #zestxlogo {
+    position: absolute;
+    right: 2vw;
+    width: 15vw;
+    height: auto;
+    top: 1.3vw;
+  }
+
+  #OngoingEventsList,
+  #PastEventsList {
+    padding-top: 0.4vw;
+    padding-bottom: 0.3vw;
+  }
+  .EventList h4 {
+    font-size: 2.5vw;
+  }
+}
