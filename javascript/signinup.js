@@ -101,6 +101,10 @@ function setUpSignInSignUpPage() {
         show_toast(2, "Password should be minimum of 6 length!");
         return;
       }
+      if (mobile.length != 10) {
+        show_toast(2, "Mobile no. should be of 10 length!");
+        return;
+      }
       preloader.style.display = "block";
 
       const res3 = await fetch(`${apiURL}/auth/signup`, {
