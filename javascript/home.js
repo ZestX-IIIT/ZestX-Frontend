@@ -189,8 +189,6 @@ function setUpViews() {
             let userarray = festData.find(
               (event) => event.fest_id == eventId
             ).user_id;
-            console.log(userarray);
-            console.log(userData.fest_id);
             if (userarray == null)
               userarray = [userData.user_id];
             else
