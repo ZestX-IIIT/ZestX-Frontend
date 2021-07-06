@@ -80,7 +80,7 @@
     font-size: 1.2rem;
   }
   .UserLeftContainer {
-    height: 28vh;
+    height: 40vw;
   }
   input#name {
     margin-top: -6vh;
@@ -88,7 +88,7 @@
   #EditButton,
   #ChangePasswordButton {
     font-size: 1rem;
-    padding-bottom: 0.4rem;
+    padding: 1.2vw 3vw 1.1vw 3vw;
   }
   #LogoutButton {
     margin-top: 1vw;
