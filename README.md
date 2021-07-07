@@ -94,10 +94,3 @@ Admin would have a single user management page containing information for all th
 - [Harshil Mendpara](https://github.com/HarshilMendpara)
 - [Raj Varsani](https://github.com/RajVarsani)
 
-#### Web Kriti Organizer
-
-- [Manish Kumar (Mentor)](https://github.com/manishprivet)
-- [Kunal Jain](https://github.com/kunaljain0212)
-- [Nikhil Gupta](https://github.com/TheNinza)
-- [Harsh Sharma](https://github.com/hs2361)
-- [Parth Lawania](https://github.com/parthlaw)
