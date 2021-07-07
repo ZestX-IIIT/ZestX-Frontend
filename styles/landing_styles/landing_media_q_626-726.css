@@ -106,7 +106,8 @@
   }
   .footer-content {
     margin: 38px 41px;
-    width: 60%;
+    margin-right: 0;
+    width: 66%;
   }
   .footer {
     height: 230px;
@@ -117,6 +118,7 @@
   }
   a {
     font-size: 0.9rem;
+    margin-bottom: 6px;
   }
   .footer h2 {
     margin-bottom: 24px;
@@ -124,5 +126,6 @@
   }
   .follow {
     margin: 37px 36px;
+    margin-left:0;  
   }
 }
