@@ -1,14 +1,12 @@
 {
   "name": "zestx",
   "version": "1.0.0",
-  "description": "https://zestx.netlify.app",
-  "main": "index.js",
-  "type": "module",
+  "description": "ZestX: Futuristic Fest Website",
+  "main": "index1.js",
   "scripts": {
-    "dev": "nodemon ./javascript/landing.js",
-    "start": "node index.js",
-    "begin": "parcel index.html",
-    "build": "parcel build index.html"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -23,11 +21,6 @@
   "homepage": "https://github.com/ZestX-IIIT/ZestX#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "nodemon": "^2.0.9",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "nodemon": "^2.0.9"
   }
 }

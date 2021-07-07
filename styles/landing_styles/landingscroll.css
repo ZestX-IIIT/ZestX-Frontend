@@ -88,12 +88,12 @@ a {
   display: flex;
   flex-direction: column;
 }
-/* .follow {
+.follow {
   margin: 50px 75px;
 }
 .follow img {
   margin-right: 15px;
-} */
+}
 .main {
   filter: brightness(100%);
   transition: filter 600ms ease-in-out;
