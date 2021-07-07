@@ -8,13 +8,15 @@ resetBtn.addEventListener("click", async () => {
     let password = document.getElementById("reset_password").value;
     let confirmPassword = document.getElementById("confirm_reset_password").value;
 
-    if (password != confirmPassword)
+    if (password != confirmPassword) {
         return show_toast(2, "Confirm password not matched with password!");
+    }
 
     let passwordValidator = passValidator(password);
 
-    if (!passwordValidator[0])
+    if (!passwordValidator[0]) {
         return show_toast(2, `${passwordValidator[1]}`);
+    }
 
     const res = await fetch(`${apiURL}/user/forgotpassword`, {
         method: "POST",
