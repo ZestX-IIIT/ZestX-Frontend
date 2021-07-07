@@ -81,25 +81,25 @@ function setup() {
 async function loadData() {
   try {
     if (token) {
-      const res1 = await fetch(`${apiURL}/fest/getlist`, {
+      const eventDataRes = await fetch(`${apiURL}/fest/getlist`, {
         method: "GET",
         headers: {
           authorization: token,
         },
       });
 
-      const data1 = await res1.json();
-      festData = data1.data;
+      const eventData = await eventDataRes.json();
+      festData = eventData.data;
 
-      const res2 = await fetch(`${apiURL}/user/getdetails`, {
+      const userDataRes = await fetch(`${apiURL}/user/getdetails`, {
         method: "GET",
         headers: {
           authorization: token,
         },
       });
 
-      const data2 = await res2.json();
-      userData = data2.data;
+      const userDetails = await userDataRes.json();
+      userData = userDetails.data;
       profileBtn.innerHTML = `${userData.user_name[0]}`;
     }
   } catch (err) {
@@ -169,7 +169,7 @@ function setUpViews() {
         displayPreloder();
 
         if (!isRegister(eventId)) {
-          const res3 = await fetch(`${apiURL}/fest/register`, {
+          const registerRes = await fetch(`${apiURL}/fest/register`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -177,13 +177,13 @@ function setUpViews() {
             },
             body: JSON.stringify({ id: eventId }),
           });
-          if (res3.status == 400) {
+          if (registerRes.status == 400) {
             displayEvenetspage();
             show_toast(2, "Please verify your email!");
-          } else if (res3.status == 404) {
+          } else if (registerRes.status == 404) {
             displayEvenetspage();
             show_toast(2, "User already registered please refresh!");
-          } else if (res3.status == 500) {
+          } else if (registerRes.status == 500) {
             displayEvenetspage();
             show_toast(0, "Error occured Please re-try!");
           } else {
@@ -204,7 +204,7 @@ function setUpViews() {
             registerBtn.style.animation = "none";
           }
         } else {
-          const res4 = await fetch(`${apiURL}/fest/unregister`, {
+          const unregisterRes = await fetch(`${apiURL}/fest/unregister`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -212,13 +212,13 @@ function setUpViews() {
             },
             body: JSON.stringify({ id: eventId }),
           });
-          if (res4.status == 400) {
+          if (unregisterRes.status == 400) {
             displayEvenetspage();
             show_toast(2, "Please verify your email!");
-          } else if (res3.status == 404) {
+          } else if (unregisterRes.status == 404) {
             displayEvenetspage();
             show_toast(2, "User not registered please refresh!");
-          } else if (res4.status == 500) {
+          } else if (unregisterRes.status == 500) {
             displayEvenetspage();
             show_toast(0, "Error occured Please re-try!");
           } else {
@@ -296,16 +296,16 @@ function setUpViews() {
         "click",
         async () => {
           displayPreloder();
-          const res = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
+          const forgotPassRes = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
             method: "GET",
             headers: {
               authorization: token,
             },
           });
-          if (res.status == 500) {
+          if (forgotPassRes.status == 500) {
             show_toast(0, "Error occured re-try!");
             displayChangePasswordpage();
-            console.log(err);
+            // console.log(err);
           } else {
             show_toast(
               1,
@@ -320,16 +320,16 @@ function setUpViews() {
         "click",
         async () => {
           displayPreloder();
-          const res = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
+          const forgotPassRes = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
             method: "GET",
             headers: {
               authorization: token,
             },
           });
-          if (res.status == 500) {
+          if (forgotPassRes.status == 500) {
             show_toast(0, "Error occured re-try!");
             displayEditProfilepage();
-            console.log(err);
+            // console.log(err);
           } else {
             show_toast(
               1,
@@ -365,7 +365,7 @@ function setUpViews() {
 
         displayPreloder();
 
-        const res6 = await fetch(`${apiURL}/user/changepassword`, {
+        const changePassRes = await fetch(`${apiURL}/user/changepassword`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -377,15 +377,15 @@ function setUpViews() {
           }),
         });
 
-        const changePassData = res6.json();
+        const changePassData = changePassRes.json();
 
-        if (res6.status == 400) {
+        if (changePassRes.status == 400) {
           displayChangePasswordpage();
           show_toast(2, "Incorrect current password!");
-        } else if (res6.status == 444) {
+        } else if (changePassRes.status == 444) {
           displayChangePasswordpage();
           show_toast(2, `${changePassData.error}`);
-        } else if (res6.status == 500) {
+        } else if (changePassRes.status == 500) {
           displayChangePasswordpage();
           show_toast(0, "Internal server error please re-try!");
         } else {
@@ -401,53 +401,58 @@ function setUpViews() {
         let mobile = document.getElementById("edit_phone_number").value;
         let password = document.getElementById("password").value;
 
-        if (password && email && mobile && user_name) {
-          displayPreloder();
 
-          const res5 = await fetch(`${apiURL}/user/updatedetails`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              authorization: localStorage.getItem("jwt"),
-            },
-            body: JSON.stringify({
-              user_name,
-              email,
-              password,
-              mobile,
-            }),
-          });
-
-          if (res5.status == 400) {
-            displayEditProfilepage();
-            show_toast(2, "Incorrect Password!");
-          } else if (res5.status == 500) {
-            displayEditProfilepage();
-            show_toast(0, "Internal server error please re-try!");
-          } else if (res5.status == 200) {
-            show_toast(1, "Your details updated successfully!");
-            userData.user_name = user_name;
-            userData.mobile = mobile;
-            displayProfilepage();
-          } else {
-            show_toast(
-              1,
-              "Your details updated successfully! Please verify your updated email-id!"
-            );
-
-            userData.user_name = user_name;
-            userData.email = email;
-            userData.mobile = mobile;
-            displayProfilepage();
-          }
-
-          const data5 = await res5.json();
-          if (data5.token) {
-            localStorage.setItem("jwt", data5.token);
-          }
-        } else {
-          show_toast(2, "Please enter all details properly!");
+        if (!(password && email && mobile && user_name)) {
+          return show_toast(2, "Please enter all details properly!");
         }
+
+        if (!validateEmail(email)) {
+          return show_toast(2, "Please Enter a valid email!");
+        }
+
+        displayPreloder();
+        const updateDetailsRes = await fetch(`${apiURL}/user/updatedetails`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: localStorage.getItem("jwt"),
+          },
+          body: JSON.stringify({
+            user_name,
+            email,
+            password,
+            mobile,
+          }),
+        });
+
+        if (updateDetailsRes.status == 400) {
+          displayEditProfilepage();
+          show_toast(2, "Incorrect Password!");
+        } else if (updateDetailsRes.status == 500) {
+          displayEditProfilepage();
+          show_toast(0, "Internal server error please re-try!");
+        } else if (updateDetailsRes.status == 200) {
+          show_toast(1, "Your details updated successfully!");
+          userData.user_name = user_name;
+          userData.mobile = mobile;
+          displayProfilepage();
+        } else {
+          show_toast(
+            1,
+            "Your details updated successfully! Please verify your updated email-id!"
+          );
+
+          userData.user_name = user_name;
+          userData.email = email;
+          userData.mobile = mobile;
+          displayProfilepage();
+        }
+
+        const updateDetailsData = await updateDetailsRes.json();
+        if (updateDetailsData.token) {
+          localStorage.setItem("jwt", updateDetailsData.token);
+        }
+
       });
       displayMainContainer();
       AOS.init({
