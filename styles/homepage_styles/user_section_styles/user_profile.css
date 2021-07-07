@@ -247,3 +247,6 @@ input:focus {
 input[type="password"] {
   text-transform: none;
 }
+input[type="email"] {
+  text-transform: lowercase;
+}

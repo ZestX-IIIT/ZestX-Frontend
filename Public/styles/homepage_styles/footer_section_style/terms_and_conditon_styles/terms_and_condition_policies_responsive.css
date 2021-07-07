@@ -1,6 +1,0 @@
-@media only screen and (max-width: 1200px) {
-  .tnc_progressbar,
-  .tnc_scrollpath {
-    display: none !important;
-  }
-}
