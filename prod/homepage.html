@@ -6,51 +6,55 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZESTX</title>
-  
-  <link rel="stylesheet" href="./assets/fonts/now/stylesheet.css">
-  <link rel="stylesheet" href="./styles/">
 
-  <link rel="stylesheet" href="./styles/homepage_styles/navbar_styles/navbar.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/navbar_styles/navbar_responsive_850.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/navbar_styles/navbar_responsive_750.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/navbar_styles/navbar_responsive_650.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/navbar_styles/navbar_responsive_415.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_1500.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_1370.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_1300.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_1170.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_1110.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_750.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_555.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_505.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_420.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_320.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_290.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_270.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/progressbar_home_page.css">
-  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/primary_container_home_page_responsive.css">
+  <link rel="stylesheet" href="./assets/fonts/now/stylesheet.css">
+  <link rel="stylesheet" href="./styles/homepage.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  <script src="../javascript/redirect.js">
-  </script>
-  <script src="./javascript/html_include.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"
     integrity="sha512-jbTBHn1aXqglu6As1bUWxdPYc9b1uMHtreBM30oW3HbNFDS/eO1n+f98l4qcmw2l7CAdjWSbu3wVjm9SKISOaw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" defer>
     </script>
-  <script src="./javascript/mail_verifier.js"></script>
-  <link rel="stylesheet" href="./styles/homepage.css">
+
 </head>
 
 <body>
-  <!-- <div id="bg_blend"></div> -->
-  <div include_file_path="./general/loader.html" style="position: fixed; width: 100vw; z-index: 50000"
-    id="preloader_container"></div>
+  <div id="bg_blend"></div>
+  <div style="position: fixed; width: 100vw; z-index: 50000" id="preloader_container">
+    <section class="wrapper dark" scroll="no" style="overflow: hidden">
+      <div class="spinner">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+    </section>
+  </div>
 
 
   <nav class="navbar" id="nabar_container">
-    <section include_file_path="./general/hamburger_menu.html" id="hamburger_menu"></section>
+    <section id="hamburger_menu">
+      <div id="hamburgermenuMainContainer">
+        <div id="hamburgerMenuBars">
+          <div id="HBMbar1" class="HBMbar"></div>
+          <div id="HBMbar2" class="HBMbar"></div>
+          <div id="HBMbar3" class="HBMbar"></div>
+        </div>
+        <ul class="HamburgerMenuNavList" id="HamburgerMenuNavList">
+          <li><a href="#home" id="home_hamburger_menu">Home</a></li>
+          <li><a href="#events" id="events_hamburger_menu">Events</a></li>
+          <li><a href="#team" id="team_hamburger_menu">Team</a></li>
+          <li>
+            <a href="#sponsers" id="sponsers_hamburger_menu">sponsers</a>
+          </li>
+          <li><a href="#faq" id="faq_hamburger_menu">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="HBMBackground" id="HBMBackground"></div>
+    </section>
     <div class="logo">
       <img src="./assets/_general/zestx_icon.svg" alt="navlogo" />
     </div>
@@ -89,93 +93,740 @@
           </div>
         </div>
         <div class="frontright">
-          <div include_file_path="./general/primary_home_animation.html" id="animation_container" data-aos="zoom-in"
-            data-aos-duration="800" data-aos-delay="250"></div>
+          <div id="animation_container" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="250">
+            <div id="animation_container">
+              <img src="../assets/home_page/animation/SVG/bg.svg" class="image" id="bg" alt="" />
+              <img src="../assets/home_page/animation/SVG/bg_light.svg" class="image" id="bg_light" alt="" />
+              <img src="../assets/home_page/animation/SVG/stage.svg" class="image" id="stage" alt="" />
+              <img src="../assets/home_page/animation/4x/girl_2.png" class="image" id="girl" alt="" />
+              <img src="../assets/home_page/animation/SVG/light.svg" class="image" id="light" alt="" />
+              <img src="../assets/home_page/animation/SVG/floating_objects.svg" class="image" id="floating_objects"
+                alt="" />
+              <img src="../assets/home_page/animation/SVG/obj_1.svg" class="image" id="obj_1" alt="" />
+              <img src="../assets/home_page/animation/SVG/obj_2.svg" class="image" id="obj_2" alt="" />
+              <img src="../assets/home_page/animation/SVG/ring_1.svg" class="image" id="ring_1_b" alt="" />
+              <img src="../assets/home_page/animation/SVG/ring_1.svg" class="image" id="ring_1_t" alt="" />
+              <img src="../assets/home_page/animation/SVG/ring_1.svg" class="image" id="ring_2_b" alt="" />
+              <img src="../assets/home_page/animation/SVG/ring_1.svg" class="image" id="ring_2_t" alt="" />
+              <img src="../assets/home_page/animation/SVG/white_obj_1.svg" class="image" id="white_obj_1" alt="" />
+              <img src="../assets/home_page/animation/SVG/white_obj_2.svg" class="image" id="white_obj_2" alt="" />
+              <img src="../assets/home_page/animation/SVG/white_obj_3.svg" class="image" id="white_obj_3" alt="" />
+              <img src="../assets/home_page/animation/SVG/white_obj_4_outlined.svg" class="image"
+                id="white_obj_4_outlined" alt="" />
+              <img src="../assets/home_page/animation/SVG/white_obj_5.svg" class="image" id="white_obj_5" alt="" />
+              <img src="../assets/home_page/animation/SVG/overlay.svg" class="image" id="overlay" alt="" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Events Include -->
-    <!-- <section class="events" id="eventssec">
+    <section class="events" id="eventssec">
       <h2 class="home_section_heading">
         Our Events
       </h2>
-      <div include_file_path="./general/slider_event.html" id="slider_container"></div>
-    </section> -->
+      <div id="slider_container">
+        <div class="bg_blend_of_home"></div>
+        <!-- <div class="tp"> -->
+        <section id="slider">
+          <input type="radio" name="slider" class="slide" id="s1" checked />
+          <input type="radio" name="slider" class="slide" id="s2" />
+          <input type="radio" name="slider" class="slide" id="s3" />
+          <input type="radio" name="slider" class="slide" id="s4" />
+          <input type="radio" name="slider" class="slide" id="s5" />
+          <label class="event_poster_image" for="s1" id="slide1">
+            <img src="../assets/_events_assets/posters/2x/compressed_for_lazyload_webp/hot_stepper.webp"
+              data-src="../assets/_events_assets/posters/2x/100/hot_stepper.webp" class="lazyload" data-aos="fade-up"
+              data-aos-duration="400" data-aos-offset="60" data-aos-delay="0" />
+          </label>
+          <label class="event_poster_image" for="s2" id="slide2">
+            <img src="../assets/_events_assets/posters/2x/compressed_for_lazyload_webp/one_mic_stand.webp"
+              data-src="../assets/_events_assets/posters/2x/100/one_mic_stand.webp" class="lazyload" data-aos="fade-up"
+              data-aos-duration="400" data-aos-offset="60" data-aos-delay="200" />
+          </label>
+          <label class="event_poster_image" for="s3" id="slide3">
+            <img src="../assets/_events_assets/posters/2x/compressed_for_lazyload_webp/raise_your_mic.webp"
+              data-src="../assets/_events_assets/posters/2x/100/raise_your_mic.webp" class="lazyload" data-aos="fade-up"
+              data-aos-duration="400" data-aos-offset="60" data-aos-delay="400" />
+          </label>
+          <label class="event_poster_image" for="s4" id="slide4">
+            <img src="../assets/_events_assets/posters/2x/compressed_for_lazyload_webp/rangshala.webp"
+              data-src="../assets/_events_assets/posters/2x/100/rangshala.webp" class="lazyload" data-aos="fade-up"
+              data-aos-duration="400" data-aos-offset="60" data-aos-delay="600" />
+          </label>
+          <label class="event_poster_image" for="s5" id="slide5">
+            <img src="../assets/_events_assets/posters/2x/compressed_for_lazyload_webp/strokes.webp"
+              data-src="../assets/_events_assets/posters/2x/100/strokes.webp" class="lazyload" data-aos="fade-up"
+              data-aos-duration="400" data-aos-offset="60" data-aos-delay="800" />
+          </label>
+        </section>
+      </div>
+    </section>
 
     <!-- Team Include -->
-    <!-- <section class="teams" id="teamsec">
+    <section class="teams" id="teamsec">
       <h2 class="home_section_heading">
         Our Team
       </h2>
-      <div include_file_path="./general/team.html" id="team_container"></div>
-    </section> -->
+      <div id="team_container">
+        <div class="bg_blend_of_home"></div>
+        <section class="team" id="teamsec">
+          <div class="teamPanel">
+            <div class="teamContent teamContentActive" data-aos="fade-up" data-aos-duration="400" data-aos-delay="0"
+              data-aos-offset="60">Core</div>
+            <div class="teamContent" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200"
+              data-aos-offset="60">Core support</div>
+            <div class="teamContent" data-aos="fade-up" data-aos-duration="400" data-aos-delay="400"
+              data-aos-offset="60">web dev</div>
+            <div class="teamContent" data-aos="fade-up" data-aos-duration="400" data-aos-delay="600"
+              data-aos-offset="60">design and video</div>
+          </div>
+
+          <div class="team_Outer_container">
+            <div class="teamMembers teamMembers_active" id="teamMembers" data-aos="fade-left" data-aos-duration="400"
+              data-aos-delay="0" data-aos-offset="100">
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/kunal_sir.webp"
+                    class="imageHolder" id="member1" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>KUNAL JAIN</h2>
+              </div>
+
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/manish_sir.webp"
+                    class="imageHolder" id="member2" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>MANISH KUMAR</h2>
+              </div>
+
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/nikhil_sir.webp"
+                    class="imageHolder" id="member3" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>NIKHIL GUPTA</h2>
+              </div>
+
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/harsh_sir.webp"
+                    class="imageHolder" id="member4" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>HARSH SHARMA</h2>
+              </div>
+
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/parth_sir.webp"
+                    class="imageHolder" id="member5" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>PARTH LAWANIA</h2>
+              </div>
+            </div>
+            <div class="teamMembers" id="teamMembers2">
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/manish_sir.webp"
+                    class="imageHolder" id="member2" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>MANISH KUMAR</h2>
+              </div>
+            </div>
+            <div class="teamMembers" id="teamMembers3">
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/akash.webp"
+                    class="imageHolder" id="member2" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>AKASH GUPTA</h2>
+              </div>
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/harshil.webp"
+                    class="imageHolder" id="member2" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>HARSHIL MENDPARA</h2>
+              </div>
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/raj.webp"
+                    class="imageHolder" id="member2" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>RAJ VARSANI</h2>
+              </div>
+            </div>
+            <div class="teamMembers" id="teamMembers4">
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/raj.webp"
+                    class="imageHolder" id="member2" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>RAJ VARSANI</h2>
+              </div>
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/harshil.webp"
+                    class="imageHolder" id="member2" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>HARSHIL MENDPARA</h2>
+              </div>
+              <div class="topContainer">
+                <div class="outerContainer">
+                  <img
+                    src="../assets/home_page/team_section/profile_images/caroonified/compressed_photos_webp_images/akash.webp"
+                    class="imageHolder" id="member2" />
+                  <img src="../assets/home_page/team_section/ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_github.svg"
+                    class="team_section_info_icons team_section_github" alt="" />
+                  <img src="../assets/home_page/team_section/ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_linkedin.svg"
+                    class="team_section_info_icons team_section_linkedin" alt="" />
+                  <img src="../assets/home_page/team_section/ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                  <img src="../assets/home_page/team_section/h_ic_mail.svg"
+                    class="team_section_info_icons team_section_mail" alt="" />
+                </div>
+                <h2>AKASH GUPTA</h2>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
 
     <!-- Sponsers Include -->
-    <!-- <h2 class="home_section_heading">
+    <h2 class="home_section_heading">
       Our Sponsers
     </h2>
-    <div include_file_path="./general/sponser_page.html" id="sponser_container"></div> -->
+    <div id="sponser_container">
+      <section class="sponsers">
+        <div class="sponserContainer" id="spcon1">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/coca_cola.webp" alt=""
+            class="sponserImages" id="sponserpic4" data-aos="fade-left" data-aos-duration="600">
+
+        </div>
+        <div class="sponserContainer" id="spcon2" data-aos="fade-right" data-aos-duration="600">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/atkt.webp" alt=""
+            class="sponserImages" id="sponserpic1">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/tribe_vibe.webp" alt=""
+            class="sponserImages" id="sponserpic15">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/o_genie.webp" alt=""
+            class="sponserImages" id="sponserpic11">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/yono_sbi.webp" alt=""
+            class="sponserImages" id="sponserpic16">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/gwalior_mp.webp" alt=""
+            class="sponserImages" id="sponserpic6">
+
+        </div>
+        <div class="sponserContainer" id="spcon3" data-aos="fade-left" data-aos-duration="600">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/big_fm.webp" alt=""
+            class="sponserImages" id="sponserpic2">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/fastrack.webp" alt=""
+            class="sponserImages" id="sponserpic5">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/lensfit.webp" alt=""
+            class="sponserImages" id="sponserpic9">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/bly_lounge.webp" alt=""
+            class="sponserImages" id="sponserpic3">
+
+        </div>
+        <div class="sponserContainer" id="spcon4" data-aos="fade-right" data-aos-duration="600">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/sehat_one.webp" alt=""
+            class="sponserImages" id="sponserpic13">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/the_city_vibes.webp" alt=""
+            class="sponserImages" id="sponserpic14">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/nisha_dance_studio.webp"
+            alt="" class="sponserImages" id="sponserpic10">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/pnb.webp" alt=""
+            class="sponserImages" id="sponserpic12">
+        </div>
+        <div class="sponserContainer" id="spcon5" data-aos="fade-left" data-aos-duration="600">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/inox.webp" alt=""
+            class="sponserImages" id="sponserpic7">
+          <img src="../assets/home_page/sponsers_section/compressed_webp_sponsers_section/jawed_habib.webp" alt=""
+            class="sponserImages" id="sponserpic8">
+
+
+        </div>
+      </section>
+    </div>
 
     <!-- FAQ Include -->
-    <!-- <h2 class="home_section_heading" data-aos="fade-up">
+    <h2 class="home_section_heading" data-aos="fade-up">
       Faqs
     </h2>
-    <section include_file_path="./general/faq_page.html" id="faqsec"></section> -->
+    <section id="faqsec">
+      <div class="bg_blend_of_home"></div>
+      <section class="FAQMainContainer">
+        <div class="FAQContainer">
+          <button class="FAQQuestion" data-aos="fade-right" data-aos-duration="400" data-aos-delay="0"
+            data-aos-offset="40">
+            <h2>Who can register in the festival?</h2>
+            <img src="../assets/home_page/FAQ/down_arrow.svg" class="FAQArrowDown" data-aos="fade-left"
+              data-aos-duration="400" data-aos-delay="50" data-aos-offset="15" alt="" />
+          </button>
+          <div class="FAQAnswer">
+            <p>
+              Anyone currently pursuing an undergraduate degree from any
+              institution in India, across all streams is eligible to participate
+              in ZestX 2021. Alumnus of IIITM Gwalior and graduated students of
+              any institute are not permitted to participate.
+            </p>
+          </div>
+          <button class="FAQQuestion" data-aos="fade-right" data-aos-duration="400" data-aos-delay="200"
+            data-aos-offset="40">
+            <h2>Are there any participation fees?</h2>
+            <img src="../assets/home_page/FAQ/down_arrow.svg" class="FAQArrowDown" data-aos="fade-left"
+              data-aos-duration="400" data-aos-delay="250" data-aos-offset="15" alt="" />
+          </button>
+          <div class="FAQAnswer">
+            <p>
+              You can participate free of cost in some events, and some of them
+              have registration fees. You can check their fees during the
+              registration process.
+            </p>
+          </div>
+          <button class="FAQQuestion" data-aos="fade-right" data-aos-duration="400" data-aos-delay="400"
+            data-aos-offset="40">
+            <h2>How many events can I participate in?</h2>
+            <img src="../assets/home_page/FAQ/down_arrow.svg" class="FAQArrowDown" data-aos="fade-left"
+              data-aos-duration="400" data-aos-delay="450" data-aos-offset="15" alt="" />
+          </button>
+          <div class="FAQAnswer">
+            <p>
+              You can participate in all events! We have not set any cap on the
+              number of events you can participate in, and win too!
+            </p>
+          </div>
+          <button class="FAQQuestion" data-aos="fade-right" data-aos-duration="400" data-aos-delay="600"
+            data-aos-offset="40">
+            <h2>Do we have a Campus Ambassador Program this year?</h2>
+            <img src="../assets/home_page/FAQ/down_arrow.svg" class="FAQArrowDown" data-aos="fade-left"
+              data-aos-duration="400" data-aos-delay="650" data-aos-offset="15" alt="" />
+          </button>
+          <div class="FAQAnswer">
+            <p>
+              Unfortunately we do not have a campus ambassador program this year,
+              but we will surely be having one next time!
+            </p>
+          </div>
+          <button class="FAQQuestion" data-aos="fade-right" data-aos-duration="400" data-aos-delay="800"
+            data-aos-offset="40">
+            <h2>What is the deadline for registering in an event?</h2>
+            <img src="../assets/home_page/FAQ/down_arrow.svg" class="FAQArrowDown" data-aos="fade-left"
+              data-aos-duration="400" data-aos-delay="850" data-aos-offset="15" alt="" />
+          </button>
+          <div class="FAQAnswer">
+            <p>
+              The deadline for registering in an event is before the start of the
+              event.
+            </p>
+          </div>
+          <button class="FAQQuestion" data-aos="fade-right" data-aos-duration="400" data-aos-delay="1000"
+            data-aos-offset="40">
+            <h2>Do I need any proof to register for events?</h2>
+            <img src="../assets/home_page/FAQ/down_arrow.svg" class="FAQArrowDown" data-aos="fade-left"
+              data-aos-duration="400" data-aos-delay="1050" data-aos-offset="15" alt="" />
+          </button>
+          <div class="FAQAnswer">
+            <p>
+              Yes. We will require the official institute/university email address
+              issued to you. In case you do not have an institute/university email
+              address, you will be required to send an email from any person
+              having a valid institute/university email address to
+              verify.zestx@gmail.com confirming that you are a student of the
+              institution.
+            </p>
+          </div>
+          <button class="FAQQuestion" data-aos="fade-right" data-aos-duration="400" data-aos-delay="1200"
+            data-aos-offset="40">
+            <h2>
+              How can I confirm wheather I am registered in particular event or
+              not?
+            </h2>
+            <img src="../assets/home_page/FAQ/down_arrow.svg" class="FAQArrowDown" data-aos="fade-left"
+              data-aos-duration="400" data-aos-delay="1250" data-aos-offset="15" alt="" />
+          </button>
+          <div class="FAQAnswer lastAnswer">
+            <p>
+              You can check list of ongoing/upcoming events and past events in
+              which you have participated in your profile section.
+            </p>
+          </div>
+        </div>
+      </section>
+    </section>
 
     <!-- footer Include -->
-    <!-- <section include_file_path="./general/footer.html" id="footersection"></section> -->
+    <section id="footersection">
+      <div class="footer">
+        <div class="footer-content">
+          <div class="tc">
+            <h2>T&C</h2>
+            <a href="./general/terms_and_condition_policies.html?id=0" target="_blank" data-aos="fade-up"
+              data-aos-duration="400" data-aos-delay="0" data-aos-offset="1">TERMS AND CONDITIONS</a>
+            <a href="./general/terms_and_condition_policies.html?id=1" target="_blank" data-aos="fade-up"
+              data-aos-duration="400" data-aos-delay="200" data-aos-offset="1">PRIVACY POLICY</a>
+            <a href="./general/terms_and_condition_policies.html?id=2" target="_blank" data-aos="fade-up"
+              data-aos-duration="400" data-aos-delay="400" data-aos-offset="1">COOKIE POLICY</a>
+          </div>
+          <div class="help">
+            <h2>HELP</h2>
+            <a href="tel:+910562789123" data-aos="fade-up" data-aos-duration="400" data-aos-delay="0"
+              data-aos-offset="1">0562 789123</a>
+            <a href="mailto:help.zestx@example.com" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200"
+              data-aos-offset="1">help.zestx@gmail.com</a>
+          </div>
+        </div>
+        <div class="follow">
+          <h2>FOLLOW US</h2>
+          <a href="https://www.facebook.com/" target="_blank" data-aos="fade-up" data-aos-duration="400"
+            data-aos-delay="0" data-aos-offset="10"><img src="../assets/footer/svg/ic_fb_footer.svg "
+              alt="facebook" /></a>
+          <a href="https://www.instagram.com/" target="_blank" data-aos="fade-up" data-aos-duration="400"
+            data-aos-delay="200" data-aos-offset="10"><img src="../assets/footer/svg/ic_insta_footer.svg"
+              alt="instagram" /></a>
+          <a href="https://www.youtube.com/" target="_blank" data-aos="fade-up" data-aos-duration="400"
+            data-aos-delay="400" data-aos-offset="10"><img src="../assets/footer/svg/ic_yt_footer.svg"
+              alt="youtube" /></a>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <!-- <div id="primnary_event_details_container">
-    <section include_file_path="./general/event_details.html" id="sub_event_details_page_container"></section>
-  </div> -->
+  <div id="primnary_event_details_container">
+    <section id="sub_event_details_page_container">
+      <section id="EventDetailsContainer">
+        <div id="header_container_for_title_in_event_detail_page">
+          <img src="../assets/home_page/User_Profile/arrow_profile.svg" alt="back btn"
+            id="back_btn_from_festival_details_page" />
+          <div id="date_and_title_container_at_events_details_page">
+            <h2 id="EventName">Event Name</h2>
+            <h4 id="EventDate">Date1-Date2</h4>
+          </div>
+        </div>
+        <div id="EventDetailsContent">
+          <div id="EventDetailsLeftContainer">
+            <div id="EventDescription">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+              voluptas voluptatibus modi iste nostrum suscipit, architecto aut
+              distinctio nemo tempora pariatur qui, nihil quaerat? Architecto
+              itaque et ullam illo perferendis nobis quisquam voluptatum ipsa
+              quia, corrupti, maxime magnam quidem inventore?
+            </div>
+            <div id="EventVenue">
+              <h3>VENUE</h3>
+              <div id="EventVenueContent">
+                Atal Bihari Vajpayee Indian Institute of Information Technology
+                and Management, Gwalior.
+              </div>
+            </div>
+            <button id="EventRegister">Register(Event Price)</button>
+          </div>
+          <div id="EventDetailsRightContainer">
+            <div id="EventRules">
+              <h3>RULES</h3>
+              <div id="EventRulesContent">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora
+                natus, totam earum soluta ullam repudiandae dolores maxime
+                necessitatibus non impedit alias, quod eligendi enim hic
+                voluptatem aliquid, repellendus officia facilis?
+              </div>
+            </div>
+            <div id="EventPrizes">
+              <h3>PRIZES</h3>
+              <div id="EventPrizesContent">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora
+                natus, totam earum soluta ullam repudiandae dolores maxime
+                necessitatibus non impedit alias, quod eligendi enim hic
+                voluptatem aliquid, repellendus officia facilis?
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
 
-  <!-- <div id="primnary_profile_details_container">
-    <section include_file_path="./general/user_profile.html" id="sub_profile_details_page_container"></section>
-  </div> -->
+  <div id="primnary_profile_details_container">
+    <section id="sub_profile_details_page_container"> <img src="../assets/_general/zestx_icon.svg" alt=""
+        id="zestxlogo" />
+      <section id="MainUserContainer">
+        <div id="profile_page_header">
+          <img src="../assets/home_page/User_Profile/arrow_profile.svg" alt="back btn"
+            id="back_btn_from_profile_details_page" />
+          <a href="#">Profile</a>
+        </div>
+        <div id="UserContainer">
+          <div class="UserLeftContainer">
+            <input type="text" name="Name" id="name" class="UserDetailsInputProfileDatailsPage" placeholder="Name"
+              disabled="disabled" />
+            <input type="number" name="Phone Number" id="phone_number" class="UserDetailsInputProfileDatailsPage"
+              placeholder="Phone Number" disabled="disabled" />
+            <input type="email" name="Email" id="email" class="UserDetailsInputProfileDatailsPage" placeholder="Email"
+              disabled="disabled" />
+            <div id="button_container">
+              <button id="EditButton">
+                EDIT
+                <img src="../assets/home_page/User_Profile/edit_pen.svg" alt="edit" />
+              </button>
+              <button id="ChangePasswordButton">
+                Change Password
+                <img src="../assets/home_page/User_Profile/edit_pen.svg" alt="edit" />
+              </button>
+              <img src="../assets/home_page/User_Profile/log_out.svg" alt="logout" id="LogoutButton" />
+            </div>
+          </div>
+          <div class="UserRightContainer">
+            <div class="OngoingEvents">
+              <h2>ongoing/upcoming Events You’ve participated</h2>
+              <div id="OngoingEventsList"></div>
+            </div>
+            <div class="Pastevents">
+              <h2>past Events You’ve participated</h2>
+              <div id="PastEventsList"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
 
-  <!-- <div id="primnary_edit_profile_container">
-    <section include_file_path="./general/user_profile_edit.html" id="sub_edit_profile_page_container"></section>
-  </div> -->
-<!-- 
+  <div id="primnary_edit_profile_container">
+    <section id="sub_edit_profile_page_container"><img src="../assets/_general/zestx_icon.svg" alt=""
+        id="zestxlogoeditpage" />
+
+      <h2 id="BackEditButton1">
+        <img src="../assets/home_page/User_Profile/arrow_profile.svg" alt="back btn"
+          id="back_btn_from_edit_profile_page" />
+        <a href="#">Edit Profile</a>
+      </h2>
+      <section class="Main_Edit_Container">
+        <div class="UserEditContainer">
+          <div class="form-label">
+            <input type="text" name="Name" id="edit_name" class="UserDetailsInput" required />
+            <div class="floating">name</div>
+          </div>
+          <div class="form-label">
+            <input type="number" name="Phone Number" id="edit_phone_number" class="UserDetailsInput" required />
+            <div class="floating">Phone number</div>
+          </div>
+
+          <div class="form-label">
+            <input type="text" name="Email" id="edit_email" class="UserDetailsInput" required />
+            <div class="floating">Email</div>
+          </div>
+
+          <div class="form-label">
+            <input type="password" name="password" id="password" class="UserDetailsInput" required />
+            <div class="floating">password</div>
+          </div>
+
+          <button id="SaveButton">SAVE</button>
+          <div id="forgot_password_at_edit_profile_page">FORGOT PASSWORD?</div>
+        </div>
+        <div id="user_edit_profile_anim_container"></div>
+
+      </section>
+    </section>
+  </div>
+
   <div id="primnary_change_password_container">
-    <section include_file_path="./general/change_user_password.html" id="sub_change_password_container"></section>
+    <section id="sub_change_password_container"><img src="../assets/_general/zestx_icon.svg" alt=""
+        id="zestxlogoeditpage" />
+
+      <h2 id="back_edit_button_from_change_pswd_page">
+        <img src="../assets/home_page/User_Profile/arrow_profile.svg" alt="back btn"
+          id="back_btn_from_change_password_page" />
+        <a href="#">Change Password</a>
+      </h2>
+      <section class="main_edit_container_edit_pswd">
+        <div class="user_edit_container_change_password_page">
+          <div class="form-label-change-password-page">
+            <input type="password" name="current_password" id="current_password"
+              class="user-datail-input-change-password-page" required />
+            <div class="floating-labels-change-password-page">Current password</div>
+          </div>
+
+          <div class="form-label-change-password-page">
+            <input type="password" name="password" id="new_password" class="user-datail-input-change-password-page"
+              required />
+            <div class="floating-labels-change-password-page">New password</div>
+          </div>
+
+          <div class="form-label-change-password-page">
+            <input type="password" name="confirm password" id="confirm_new_password"
+              class="user-datail-input-change-password-page" required />
+            <div class="floating-labels-change-password-page">confirm New password</div>
+          </div>
+
+          <button id="UpdateButton">Update</button>
+          <div id="forgot_password_at_change_password_page">FORGOT PASSWORD?</div>
+        </div>
+        <div id="change_user_password_page_anim_container"></div>
+      </section>
+    </section>
   </div>
 
   <div id="primnary_toast_container">
-    <section include_file_path="./general/toast.html" id="sub_toast_container"></section>
-  </div> -->
+    <section id="sub_toast_container">
+      <div id="toastAlertMessage">
+        <div id="toastFrontMessage"><img src="" id="toastImage" alt="" /></div>
+        <div id="toastDescriptionMessage"></div>
+      </div>
+    </section>
+  </div>
   <div id="Progressbar"></div>
   <div id="scrollPath"></div>
 
-  <!-- <script>
-    includehtmlbyID("preloader_container")
-    includehtmlbyID("animation_container")
-    includehtmlbyID("sponser_container")
-    includehtmlbyID("faqsec")
-    includehtmlbyID("sub_event_details_page_container")
-    includehtmlbyID("sub_profile_details_page_container")
-    includehtmlbyID("sub_edit_profile_page_container")
-    includehtmlbyID("slider_container")
-    includehtmlbyID("footersection")
-    includehtmlbyID("hamburger_menu")
-    includehtmlbyID("sub_change_password_container")
-    includehtmlbyID("sub_toast_container")
-    includehtmlbyID("team_container")
-  </script> -->
-<!-- 
-  <script src="./javascript/home.js"></script>
-  <script src="./javascript/event.js"></script>
-  <script src="./javascript/hamburger.js"></script>
-  <script src="./javascript/lazysizes.min.js" async=""></script>
-  <script src="./javascript/faq.js" async=""></script>
-  <script src="./javascript/progressbar_home_page.js"></script>
-  <script src="./javascript/team.js"></script>
-  <script src="./javascript/user_edit_prtofile_anim_include.js" defer></script>
-  <script src="./javascript/change_user_password_anim_include.js" defer></script>
+  <script src="./javascript/homepage.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="./javascript/password_validator.js"></script> -->
 </body>
 
 </html>
