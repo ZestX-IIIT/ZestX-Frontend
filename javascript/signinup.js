@@ -27,56 +27,51 @@ function setUpSignInSignUpPage() {
     const email = document.getElementById("signinemail").value;
     const password = document.getElementById("signinpassword").value;
 
-    if (email && password) {
-      try {
+    if (!(email && password))
+      return show_toast(2, "Please fill all the details properly!");
 
-        const signinRes = await fetch(`${apiURL}/auth/signin`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, password }),
-        });
+    try {
+      const signinRes = await fetch(`${apiURL}/auth/signin`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-        const signinData = await signinRes.json();
+      const signinData = await signinRes.json();
 
-        if (signinRes.status == 400) {
-          show_toast(2, "User does not exists, Please sign up!");
-          preloader.style.display = "none";
-        } else if (signinRes.status == 444) {
-          show_toast(2, "Enter correct password!");
-          preloader.style.display = "none";
-
-        } else if (signinRes.status == 500) {
-          show_toast(0, "Internal server error please re-try!");
-          preloader.style.display = "none";
-        } else {
-
-          const { token } = signinData;
-
-          localStorage.setItem("jwt", token);
-          const userDataRes = await fetch(`${apiURL}/user/getdetails`, {
-            method: "GET",
-            headers: {
-              authorization: token,
-            },
-          });
-
-          const userDetails = await userDataRes.json();
-          userData = userDetails.data;
-
-          if (userData.is_admin)
-            window.location.href = "./general/admin_main_page.html";
-          else window.location.href = "./homepage.html";
-
-        }
-      } catch (error) {
-        console.log(error);
+      if (signinRes.status == 400) {
+        show_toast(2, "User does not exists, Please sign up!");
+        preloader.style.display = "none";
+      } else if (signinRes.status == 444) {
+        show_toast(2, "Enter correct password!");
+        preloader.style.display = "none";
+      } else if (signinRes.status == 500) {
         show_toast(0, "Internal server error please re-try!");
         preloader.style.display = "none";
+      } else {
+
+        const { token } = signinData;
+
+        localStorage.setItem("jwt", token);
+        const userDataRes = await fetch(`${apiURL}/user/getdetails`, {
+          method: "GET",
+          headers: {
+            authorization: token,
+          },
+        });
+
+        const userDetails = await userDataRes.json();
+        userData = userDetails.data;
+
+        if (userData.is_admin)
+          window.location.href = "./general/admin_main_page.html";
+        else window.location.href = "./homepage.html";
+
       }
-    } else {
-      show_toast(2, "Please fill all the details properly!");
+    } catch (error) {
+      show_toast(0, "Internal server error please re-try!");
       preloader.style.display = "none";
     }
   });
@@ -137,7 +132,7 @@ function setUpSignInSignUpPage() {
 
     const email = document.getElementById("signinemail").value;
 
-    const res4 = await fetch(`${apiURL}/auth/forgotpasswordsignin`, {
+    const forgotPassRes = await fetch(`${apiURL}/auth/forgotpasswordsignin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -145,10 +140,10 @@ function setUpSignInSignUpPage() {
       body: JSON.stringify({ email }),
     });
 
-    if (res4.status == 400) {
+    if (forgotPassRes.status == 400) {
       preloader.style.display = "none";
       show_toast(2, "Please enter registered email-id!");
-    } else if (res4.status == 500) {
+    } else if (forgotPassRes.status == 500) {
       preloader.style.display = "none";
       show_toast(0, "Error occured re-try!");
       console.log(err);
