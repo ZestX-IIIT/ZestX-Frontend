@@ -1,4 +1,4 @@
-let regularExpression = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/;
+let regularExpression = /^(?=.*[!@#$%-^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/;
 
 function passValidator(password) {
     let boolValue = false;
