@@ -6,8 +6,12 @@ setTimeout(function () {
   let windowWidth = window.innerWidth;
   let limit = windowWidth - 100;
   let limit2 = windowWidth - 20;
-  let coloer_grediet_value_1;
-  let coloer_grediet_value_2;
+  let color_grediet_value_1 = [50, 15, 60];
+  let color_grediet_value_2 = [40, 15, 100];
+  let color_grediet_value_1_min_arr = [50, 15, 60]
+  let color_grediet_value_1_max_arr = [250, 155, 160]
+  let color_grediet_value_2_min_arr = [40, 15, 100]
+  let color_grediet_value_2_max_arr = [250, 115, 160]
 
   updateProgressBar()
   window.onscroll = function () {
@@ -18,10 +22,16 @@ setTimeout(function () {
     totalHeight = document.body.scrollHeight - window.innerHeight;
     let progressHeight = (window.pageYOffset / totalHeight) * 100;
     progress.style.height = progressHeight + "%";
-    coloer_grediet_value_1 = (210 - 150 * window.pageYOffset / totalHeight) + "," + (14 + 250) + "," + 236
-    coloer_grediet_value_2 = 11 + "," + 189 + "," + 202
-    progress.style.background = "linear-gradient(to top, rgb(" + coloer_grediet_value_1 + "), rgb(" + coloer_grediet_value_2 + "))";
+    // progress.style.background = "linear-gradient(to top, rgb(210, 14, 236), rgb(11, 189, 202))";
+    updateGredientByIndex(window.pageYOffset / totalHeight)
+    // progress.style.background = "linear-gradient(to top, rgb(" + color_grediet_value_1 + "), rgb(" + color_grediet_value_2 + "))";
 
+  }
+  function updateGredientByIndex(viewportFrectionIndex) {
+    for (let i = 0; i < color_grediet_value_1.length; i++) {
+      console.log(viewportFrectionIndex * (color_grediet_value_1_max_arr[i]));
+      color_grediet_value_1[i] = color_grediet_value_1_min_arr[i] + (viewportFrectionIndex * (color_grediet_value_1_max_arr[i]))
+    }
   }
 
   var y = 0;
