@@ -29,7 +29,7 @@ setTimeout(function () {
   }
   function updateGredientByIndex(viewportFrectionIndex) {
     for (let i = 0; i < color_grediet_value_1.length; i++) {
-      console.log(viewportFrectionIndex * (color_grediet_value_1_max_arr[i]));
+      // console.log(viewportFrectionIndex * (color_grediet_value_1_max_arr[i]));
       color_grediet_value_1[i] = color_grediet_value_1_min_arr[i] + (viewportFrectionIndex * (color_grediet_value_1_max_arr[i]))
     }
   }
