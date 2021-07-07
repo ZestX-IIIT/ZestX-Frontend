@@ -43,14 +43,14 @@ window.addEventListener("load", () => {
 async function setUpLandingPage() {
 
     try {
-        const res1 = await fetch(`${apiURL}/admin/ongoingevents`, {
+        const ongoingEventsRes = await fetch(`${apiURL}/admin/ongoingevents`, {
             method: "GET",
         });
-        if (res1.status == 500) {
+        if (ongoingEventsRes.status == 500) {
             show_toast(0, "Internal server error please re-try!");
         } else {
-            const data1 = await res1.json();
-            ongoingEvents = data1.data;
+            const ongoingEventsData = await ongoingEventsRes.json();
+            ongoingEvents = ongoingEventsData.data;
             event_id = ongoingEvents[0].fest_id;
             setOngoingEvents(ongoingEvents);
             setEventDetails(ongoingEvents[0]);
@@ -108,48 +108,56 @@ async function setUpLandingPage() {
                 return show_toast(2, "Please Enter a valid email!");
             }
 
-            if (exUsername && (exEmail || exMobile)) {
-                displayPreloder();
-                const res2 = await fetch(`${apiURL}/admin/adduser`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        authorization: token,
-                    },
-                    body: JSON.stringify({ event_id, username: exUsername, email: exEmail, mobile: exMobile }),
-                });
-                if (res2.status == 400) {
-                    show_toast(2, "You have not access to admin panel!");
-                    displayAdminAddUserPage();
-                } else if (res2.status == 500) {
-                    show_toast(0, "Internal server error please re-try!");
-                    displayAdminAddUserPage();
-                } else {
-                    const res3 = await fetch(`${apiURL}/admin/ongoingevents`, {
-                        method: "GET",
-                    })
-                    if (res3.status == 500) {
-                        show_toast(0, "Internal server error please re-try!");
-                    } else {
-                        const data2 = await res3.json();
-                        ongoingEvents = data2.data;
-
-                        const event = ongoingEvents.find(
-                            (item) => item.fest_id == event_id
-                        );
-                        externalUsersEventClickRequestStack++;
-                        getExternalUserDetails(event.external_user_id);
-                        show_toast(1, "User added successfully!");
-                        setTimeout(function () {
-                            displayAdminMainpage();
-                        }, 2500);
-                    }
-                }
-            } else if (exUsername.length == 0) {
-                show_toast(2, "Please fill name!");
-            } else {
-                show_toast(2, "Please fill atleast one of email and phone number!");
+            if (exUsername.length == 0) {
+                return show_toast(2, "Please fill name!");
             }
+
+            if (!(exUsername && (exEmail || exMobile))) {
+                return show_toast(2, "Please fill atleast one of email and phone number!");
+            }
+
+            displayPreloder();
+            const addUserRes = await fetch(`${apiURL}/admin/adduser`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    authorization: token,
+                },
+                body: JSON.stringify({ event_id, username: exUsername, email: exEmail, mobile: exMobile }),
+            });
+
+            if (addUserRes.status == 400) {
+                show_toast(2, "You have not access to admin panel!");
+                displayAdminAddUserPage();
+                return;
+            }
+
+            if (addUserRes.status == 500) {
+                show_toast(0, "Internal server error please re-try!");
+                displayAdminAddUserPage();
+                return;
+            }
+
+            const ongoingEventRes = await fetch(`${apiURL}/admin/ongoingevents`, {
+                method: "GET",
+            });
+
+            if (ongoingEventRes.status == 500) {
+                return show_toast(0, "Internal server error please re-try!");
+            }
+
+            const ongoingEventsData = await ongoingEventRes.json();
+            ongoingEvents = ongoingEventsData.data;
+
+            const event = ongoingEvents.find(
+                (item) => item.fest_id == event_id
+            );
+            externalUsersEventClickRequestStack++;
+            getExternalUserDetails(event.external_user_id);
+            show_toast(1, "User added successfully!");
+            setTimeout(function () {
+                displayAdminMainpage();
+            }, 2500);
 
         })
 
@@ -219,10 +227,7 @@ function setOngoingEvents(array) {
 
         if (i == current_ongoing_festivals_list_length - 1) {
             eventListArray[i].style.borderBottom = "none";
-
         }
-
-
     });
 }
 
@@ -241,7 +246,7 @@ function setEventDetails(data) {
 async function getInternalUserDetails(array1) {
     try {
         if (array1 != null && array1.length != 0) {
-            const res1 = await fetch(`${apiURL}/admin/userdetails`, {
+            const userDetailsRes = await fetch(`${apiURL}/admin/userdetails`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -249,24 +254,26 @@ async function getInternalUserDetails(array1) {
                 },
                 body: JSON.stringify({ ids: array1.toString() }),
             });
-            if (res1.status == 400) {
-                show_toast(2, "You have not access to admin panel!");
-            } else if (res1.status == 500) {
-                show_toast(0, "Internal server error please re-try!");
-            } else {
 
-                const data1 = await res1.json();
-                setInternalUserDetails(data1.data, array1);
-
-
-                internalUsersEventClickRequestStack--
-                // console.log("min ", internalUsersEventClickRequestStack);
-
-                if (internalUsersEventClickRequestStack == 0) {
-                    checkAndCloseContainer(internalUsersListLoader)
-                    checkAndDisplayContainer(internalUserContainer);
-                }
+            if (userDetailsRes.status == 400) {
+                return show_toast(2, "You have not access to admin panel!");
             }
+
+            if (userDetailsRes.status == 500) {
+                return show_toast(0, "Internal server error please re-try!");
+            }
+
+            const userDetails = await userDetailsRes.json();
+            setInternalUserDetails(userDetails.data, array1);
+
+            internalUsersEventClickRequestStack--;
+            // console.log("min ", internalUsersEventClickRequestStack);
+
+            if (internalUsersEventClickRequestStack == 0) {
+                checkAndCloseContainer(internalUsersListLoader)
+                checkAndDisplayContainer(internalUserContainer);
+            }
+
         } else {
             internalUserContainer.innerHTML = "";
 
@@ -290,7 +297,7 @@ async function getInternalUserDetails(array1) {
 async function getExternalUserDetails(array2) {
     try {
         if (array2 != null && array2.length != 0) {
-            const res2 = await fetch(`${apiURL}/admin/exuserdetails`, {
+            const exuserDetailsRes = await fetch(`${apiURL}/admin/exuserdetails`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -298,39 +305,39 @@ async function getExternalUserDetails(array2) {
                 },
                 body: JSON.stringify({ ids: array2.toString() }),
             });
-            if (res2.status == 400) {
-                show_toast(2, "You have not access to admin panel!");
-            } else if (res2.status == 500) {
-                show_toast(0, "Internal server error please re-try!");
+
+            if (exuserDetailsRes.status == 400) {
+                return show_toast(2, "You have not access to admin panel!");
+            }
+
+            if (exuserDetailsRes.status == 500) {
+                return show_toast(0, "Internal server error please re-try!");
+            }
+
+            const exuserDetails = await exuserDetailsRes.json();
+            setExternalUserDetails(exuserDetails.data, array2);
+
+            externalUsersEventClickRequestStack--
+            // console.log("ext", externalUsersEventClickRequestStack);
+
+            if (isFirstTime) {
+                setTimeout(function () {
+                    displayAdminMainpage();
+                }, 100);
+                isFirstTime = false;
             } else {
 
-                const data2 = await res2.json();
-                setExternalUserDetails(data2.data, array2);
-
-                externalUsersEventClickRequestStack--
-                // console.log("ext", externalUsersEventClickRequestStack);
-
-                if (isFirstTime) {
-                    setTimeout(function () {
-                        displayAdminMainpage();
-                    }, 100);
-                    isFirstTime = false;
-                } else {
-
-                    if (externalUsersEventClickRequestStack == 0) {
-                        checkAndCloseContainer(externalUsersListLoader)
-                        checkAndDisplayContainer(externalUserContainer);
-                    }
+                if (externalUsersEventClickRequestStack == 0) {
+                    checkAndCloseContainer(externalUsersListLoader)
+                    checkAndDisplayContainer(externalUserContainer);
                 }
             }
 
         } else {
             externalUserContainer.innerHTML = "";
 
-
             externalUsersEventClickRequestStack--
             // console.log("ext", externalUsersEventClickRequestStack);
-
 
             if (isFirstTime) {
                 setTimeout(function () {
@@ -394,7 +401,7 @@ function setInternalUserDetails(data, array1) {
         internalUserDeleteBtnList[i].addEventListener("click", async () => {
             displayPreloder();
             try {
-                const res = await fetch(`${apiURL}/admin/removeuser`, {
+                const removeUserRes = await fetch(`${apiURL}/admin/removeuser`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -402,20 +409,26 @@ function setInternalUserDetails(data, array1) {
                     },
                     body: JSON.stringify({ eventId: event_id, userId: array1[i] }),
                 });
-                if (res.status == 400) {
+
+                if (removeUserRes.status == 400) {
                     show_toast(2, "You have not access to admin panel!");
                     displayAdminMainpage();
-                } else if (res.status == 500) {
+                    return;
+                }
+
+                if (removeUserRes.status == 500) {
                     show_toast(0, "Internal server error please re-try!");
                     displayAdminMainpage();
-                } else {
-                    internalUserList[i].style.display = "none";
-                    if (i > -1) {
-                        array1.splice(i, 1);
-                    }
-                    show_toast(1, "User removed successfully!");
-                    displayAdminMainpage();
+                    return;
                 }
+
+                internalUserList[i].style.display = "none";
+                if (i > -1) {
+                    array1.splice(i, 1);
+                }
+                show_toast(1, "User removed successfully!");
+                displayAdminMainpage();
+
             } catch (err) {
                 show_toast(0, "Internal server error please re-try!");
                 console.log(err);
@@ -470,7 +483,7 @@ function setExternalUserDetails(data, array2) {
         externalUserDeleteBtnList[i].addEventListener("click", async () => {
             displayPreloder();
             try {
-                const res = await fetch(`${apiURL}/admin/removeexuser`, {
+                const removeExuserRes = await fetch(`${apiURL}/admin/removeexuser`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -478,20 +491,26 @@ function setExternalUserDetails(data, array2) {
                     },
                     body: JSON.stringify({ eventId: event_id, userId: array2[i] }),
                 });
-                if (res.status == 400) {
+
+                if (removeExuserRes.status == 400) {
                     show_toast(2, "You have not access to admin panel!");
                     displayAdminMainpage();
-                } else if (res.status == 500) {
+                    return;
+                }
+
+                if (removeExuserRes.status == 500) {
                     show_toast(0, "Internal server error please re-try!");
                     displayAdminMainpage();
-                } else {
-                    externalUserList[i].style.display = "none";
-                    if (i > -1) {
-                        array2.splice(i, 1);
-                    }
-                    show_toast(1, "User removed successfully!");
-                    displayAdminMainpage();
+                    return;
                 }
+
+                externalUserList[i].style.display = "none";
+                if (i > -1) {
+                    array2.splice(i, 1);
+                }
+                show_toast(1, "User removed successfully!");
+                displayAdminMainpage();
+
             } catch (err) {
                 show_toast(0, "Internal server error please re-try!");
                 console.log(err);
