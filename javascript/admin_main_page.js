@@ -352,14 +352,16 @@ async function getExternalUserDetails(array2) {
 function setInternalUserDetails(data, array1) {
     internalUserContainer.innerHTML = "";
 
+    let tempActualDataLength = data.length;
     for (let item of data) {
-        const { user_name, email, mobile } = item;
+        if (item != null) {
+            const { user_name, email, mobile } = item;
 
-        const user = document.createElement("div");
-        user.classList.add("inner_list_content");
-        user.classList.add("registered_internal_user");
+            const user = document.createElement("div");
+            user.classList.add("inner_list_content");
+            user.classList.add("registered_internal_user");
 
-        const insideHtml = `<div class="inner_list">
+            const insideHtml = `<div class="inner_list">
     <div class="inner_list_content internal_user_list_element">
         <h3 class="innerList_h3" id="user_name">${user_name}</h3>
         <h4 class="innerList_h4" id="user_details">${email} || ${mobile}</h4>
@@ -368,12 +370,15 @@ function setInternalUserDetails(data, array1) {
 </div>
     `;
 
-        user.innerHTML = insideHtml;
+            user.innerHTML = insideHtml;
 
-        internalUserContainer.appendChild(user);
+            internalUserContainer.appendChild(user);
+        }else{
+            tempActualDataLength--;
+        }
     };
 
-    document.getElementsByClassName("registered_internal_user")[data.length - 1].getElementsByClassName("inner_list")[0].style.borderBottom = "none"
+    document.getElementsByClassName("registered_internal_user")[tempActualDataLength - 1].getElementsByClassName("inner_list")[0].style.borderBottom = "none"
 
     let internalUserList = document.getElementsByClassName("registered_internal_user");
     let internalUserDeleteBtnList = document.getElementsByClassName("internal_user_delete_button");
