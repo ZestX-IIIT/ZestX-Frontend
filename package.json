@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon ./javascript/landing.js",
-    "start": "node index.js",
-    "begin": "parcel index.html",
-    "build": "parcel build index.html"
+    "dev": "nodemon prod/javascript/landing.js",
+    "start": "node prod/index.js",
+    "begin": "parcel prod/index.html",
+    "build": "parcel build  prod/index.html"
   },
   "repository": {
     "type": "git",
