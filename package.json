@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node prod/index.html",
+    "build": "parcel build prod/index.html"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^2.0.9"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
   }
 }
