@@ -664,6 +664,7 @@ a {
   font-weight: 400;
   font-style: normal;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 .links,
 .tc,
