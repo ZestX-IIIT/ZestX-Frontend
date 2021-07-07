@@ -2,6 +2,10 @@
 
 ZestX: Futuristic Fest Website
 
+Hosted Link : http://zestx.netlify.app/
+
+ZestX Backend Repository: https://github.com/ZestX-IIIT/ZestX-Backend
+
 <p  style="text-align: center;">
 </p>
 
@@ -53,6 +57,41 @@ Admin would have a single user management page containing information for all th
 <br>
 <br>
 </ul>
+
+## Features
+
+### Security Features
+<ol>
+<li>Our website is more focused on security, and for that, we will be sending a verification mail to the visitor. Visitors can register only when the verification gets completed.
+</li>
+<li>Later, if the user tries to change the mail, a verification mail would be sent to the visitor’s new mail address.
+</li>
+<li>Similarly, we send a mail if a visitor forgets the password. There too, we send a link for the new webpage where users can change their passwords.
+</li>
+<li>Passwords too have constraints, which is, it’s mandatory to add one lowercase letter, one uppercase letter, one digit, one unique character with a minimum length of six characters.
+</li>
+<li>Redirection is also an essential factor in our website. If a visitor tries to open the main admin page, he would be automatically redirected to the homepage. Similar redirection is on the sign-in page, where the web page is opened according to the login credentials. Other necessary redirections too are added.
+</li>
+<li>We haven’t used any passwords in our code. We tried to keep our security intact.</li>
+
+
+</ol>
+
+### Utilization Features
+<ol>
+<li>Our pages are fully responsive for all the devices to add the functionality of opening our website on any device.
+</li>
+<li>We have done DOM manipulation and tried to open all the pages of the homepage without refreshing the page. 
+</li>
+<li>Visitors can go through all the events, get all the information about the event by clicking the posters, and register. </li>
+<li>Users can change their personal information, including the password.
+</li>
+<li>Admin can add/remove any user from any event, and admin credentials are directly linked to the database.
+</li>
+<li>We have added some incredible animations and UI enhancing features to our website, like a scrollable progress bar.
+</li>
+
+</ol>
 
 ## Tech Stack Used
 
