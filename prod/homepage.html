@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZESTX</title>
+  
+  <link rel="stylesheet" href="./assets/fonts/now/stylesheet.css">
+  <link rel="stylesheet" href="./styles/">
+
+  <link rel="stylesheet" href="./styles/homepage_styles/navbar_styles/navbar.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/navbar_styles/navbar_responsive_850.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/navbar_styles/navbar_responsive_750.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/navbar_styles/navbar_responsive_650.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/navbar_styles/navbar_responsive_415.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_1500.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_1370.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_1300.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_1170.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_1110.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_750.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_555.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_505.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_420.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_320.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_290.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/home_responsive_270.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/progressbar_home_page.css">
+  <link rel="stylesheet" href="./styles/homepage_styles/main_styles/primary_container_home_page_responsive.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <script src="../javascript/redirect.js">
+  </script>
+  <script src="./javascript/html_include.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"
+    integrity="sha512-jbTBHn1aXqglu6As1bUWxdPYc9b1uMHtreBM30oW3HbNFDS/eO1n+f98l4qcmw2l7CAdjWSbu3wVjm9SKISOaw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer>
+    </script>
+  <script src="./javascript/mail_verifier.js"></script>
+  <link rel="stylesheet" href="./styles/homepage.css">
+</head>
+
+<body>
+  <!-- <div id="bg_blend"></div> -->
+  <div include_file_path="./general/loader.html" style="position: fixed; width: 100vw; z-index: 50000"
+    id="preloader_container"></div>
+
+
+  <nav class="navbar" id="nabar_container">
+    <section include_file_path="./general/hamburger_menu.html" id="hamburger_menu"></section>
+    <div class="logo">
+      <img src="./assets/_general/zestx_icon.svg" alt="navlogo" />
+    </div>
+    <div class="navelements" id="navelements">
+      <ul>
+        <li class="navactive" id="home"><a>home</a> </li>
+        <li id="events"><a>events</a> </li>
+        <li id="team"><a>team</a> </li>
+        <li id="sponsers"><a>sponsers</a> </li>
+        <li id="faq"><a>FAQ</a> </li>
+        <div class="dot" id="dot"></div>
+      </ul>
+      <div class="profile">
+        <div class="character-container" id="profile_button">U</div>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <div id="primary_container_for_home_page_content">
+
+    <section class="home" id="homesec">
+      <div class="front">
+        <div class="frontleft" data-aos="fade-up" data-aos-duration="800">
+          <h2 data-aos="fade-right" data-aos-duration="800" data-aos-delay="250">Feel Something Zesty</h2>
+          <div class="leftcontent" data-aos="fade-right" data-aos-duration="800" data-aos-delay="350">
+            With ZestX get a platform to show your hidden talent and a chance to live one of remarkable moments of your
+            college life.
+          </div>
+          <div class="image-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
+            <img src="./assets/_events_assets/posters/2x/100/h_hot_stepper.webp" id="poster1" alt="photo1" />
+            <img src="./assets/_events_assets/posters/2x/100/h_raise_your_mic.webp" id="poster2" class="fade-class"
+              alt="photo2" />
+            <img src="./assets/_events_assets/posters/2x/100/h_rangshla.webp" id="poster3" class="fade-class"
+              alt="photo3" />
+          </div>
+        </div>
+        <div class="frontright">
+          <div include_file_path="./general/primary_home_animation.html" id="animation_container" data-aos="zoom-in"
+            data-aos-duration="800" data-aos-delay="250"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Include -->
+    <!-- <section class="events" id="eventssec">
+      <h2 class="home_section_heading">
+        Our Events
+      </h2>
+      <div include_file_path="./general/slider_event.html" id="slider_container"></div>
+    </section> -->
+
+    <!-- Team Include -->
+    <!-- <section class="teams" id="teamsec">
+      <h2 class="home_section_heading">
+        Our Team
+      </h2>
+      <div include_file_path="./general/team.html" id="team_container"></div>
+    </section> -->
+
+    <!-- Sponsers Include -->
+    <!-- <h2 class="home_section_heading">
+      Our Sponsers
+    </h2>
+    <div include_file_path="./general/sponser_page.html" id="sponser_container"></div> -->
+
+    <!-- FAQ Include -->
+    <!-- <h2 class="home_section_heading" data-aos="fade-up">
+      Faqs
+    </h2>
+    <section include_file_path="./general/faq_page.html" id="faqsec"></section> -->
+
+    <!-- footer Include -->
+    <!-- <section include_file_path="./general/footer.html" id="footersection"></section> -->
+  </div>
+
+  <!-- <div id="primnary_event_details_container">
+    <section include_file_path="./general/event_details.html" id="sub_event_details_page_container"></section>
+  </div> -->
+
+  <!-- <div id="primnary_profile_details_container">
+    <section include_file_path="./general/user_profile.html" id="sub_profile_details_page_container"></section>
+  </div> -->
+
+  <!-- <div id="primnary_edit_profile_container">
+    <section include_file_path="./general/user_profile_edit.html" id="sub_edit_profile_page_container"></section>
+  </div> -->
+<!-- 
+  <div id="primnary_change_password_container">
+    <section include_file_path="./general/change_user_password.html" id="sub_change_password_container"></section>
+  </div>
+
+  <div id="primnary_toast_container">
+    <section include_file_path="./general/toast.html" id="sub_toast_container"></section>
+  </div> -->
+  <div id="Progressbar"></div>
+  <div id="scrollPath"></div>
+
+  <!-- <script>
+    includehtmlbyID("preloader_container")
+    includehtmlbyID("animation_container")
+    includehtmlbyID("sponser_container")
+    includehtmlbyID("faqsec")
+    includehtmlbyID("sub_event_details_page_container")
+    includehtmlbyID("sub_profile_details_page_container")
+    includehtmlbyID("sub_edit_profile_page_container")
+    includehtmlbyID("slider_container")
+    includehtmlbyID("footersection")
+    includehtmlbyID("hamburger_menu")
+    includehtmlbyID("sub_change_password_container")
+    includehtmlbyID("sub_toast_container")
+    includehtmlbyID("team_container")
+  </script> -->
+<!-- 
+  <script src="./javascript/home.js"></script>
+  <script src="./javascript/event.js"></script>
+  <script src="./javascript/hamburger.js"></script>
+  <script src="./javascript/lazysizes.min.js" async=""></script>
+  <script src="./javascript/faq.js" async=""></script>
+  <script src="./javascript/progressbar_home_page.js"></script>
+  <script src="./javascript/team.js"></script>
+  <script src="./javascript/user_edit_prtofile_anim_include.js" defer></script>
+  <script src="./javascript/change_user_password_anim_include.js" defer></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="./javascript/password_validator.js"></script> -->
+</body>
+
+</html>
