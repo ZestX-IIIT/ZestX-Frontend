@@ -92,54 +92,11 @@
     left: 39%;
     width: 11%;
   }
-  .follow img {
-    width: 28px;
-  }
   .arrow {
     position: absolute;
     width: 10%;
     height: auto;
     bottom: 4%;
     left: 45%;
-  }
-  .footer-content {
-    margin: 6vw 0px 0px 5vw;
-    width: fit-content;
-    justify-content: unset;
-  }
-  .footer {
-    height: 33vw;
-  }
-  .follow img {
-    margin-left: 1.35vw;
-    width: 4.5vw;
-  }
-  a {
-    font-size: 2vw;
-    margin-bottom: 1.3vw;
-  }
-  .footer h2 {
-    margin-bottom: 4vw;
-    font-size: 3vw;
-  }
-  .follow {
-    width: 18vw;
-    height: fit-content;
-    margin: 6vw 5vw;
-    margin-left: 0;
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    flex-wrap: wrap;
-  }
-  .tc {
-    margin-left: 5vw;
-    width: 33vw;
-  }
-  .help {
-    margin-left: 8%;
-  }
-  body > div.footer > div.follow > h2 {
-    text-align: end;
   }
 }
