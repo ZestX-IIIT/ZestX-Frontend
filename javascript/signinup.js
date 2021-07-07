@@ -27,9 +27,10 @@ function setUpSignInSignUpPage() {
     const email = document.getElementById("signinemail").value;
     const password = document.getElementById("signinpassword").value;
 
-    if (!(email && password))
+    if (!(email && password)) {
       return show_toast(2, "Please fill all the details properly!");
-      
+    }
+
     if (!validateEmail(email)) {
       return show_toast(2, "Please Enter a valid email!");
     }
@@ -90,23 +91,27 @@ function setUpSignInSignUpPage() {
     const confirmPassword = document.getElementById("confirm").value;
 
 
-    if (!(email && password && user_name && mobile))
+    if (!(email && password && user_name && mobile)) {
       return show_toast(2, "Please fill all the details properly!");
+    }
 
     if (!validateEmail(email)) {
       return show_toast(2, "Please Enter a valid email!");
     }
 
-    if (mobile.length != 10)
+    if (mobile.length != 10) {
       return show_toast(2, "Mobile no. should be of 10 length!");
+    }
 
-    if (password != confirmPassword)
+    if (password != confirmPassword) {
       return show_toast(2, "Passwords not matched with confirm password!");
+    }
 
     let passwordValidator = passValidator(password);
 
-    if (!passwordValidator[0])
+    if (!passwordValidator[0]) {
       return show_toast(2, `${passwordValidator[1]}`);
+    }
 
     preloader.style.display = "block";
 
