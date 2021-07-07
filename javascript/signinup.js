@@ -90,28 +90,20 @@ function setUpSignInSignUpPage() {
     const mobile = document.getElementById("mobile").value;
     const confirmPassword = document.getElementById("confirm").value;
 
-    if (!(email && password && user_name && mobile)) {
-      show_toast(2, "Please fill all the details properly!");
-      preloader.style.display = "none";
-      return;
-    }
+    if (!(email && password && user_name && mobile))
+      return show_toast(2, "Please fill all the details properly!");
 
-    if (mobile.length != 10) {
-      show_toast(2, "Mobile no. should be of 10 length!");
-      return;
-    }
+    if (mobile.length != 10)
+      return show_toast(2, "Mobile no. should be of 10 length!");
 
-    if (password != confirmPassword) {
-      show_toast(2, "Passwords not matched with confirm password!");
-      return;
-    }
+    if (password != confirmPassword)
+      return show_toast(2, "Passwords not matched with confirm password!");
 
     let passwordValidator = passValidator(password);
 
-    if (!passwordValidator[0]) {
-      show_toast(2, `${passwordValidator[1]}`);
-      return;
-    }
+    if (!passwordValidator[0])
+      return show_toast(2, `${passwordValidator[1]}`);
+
     preloader.style.display = "block";
 
     const signupRes = await fetch(`${apiURL}/auth/signup`, {
