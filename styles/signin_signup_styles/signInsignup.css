@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   overflow: hidden;
 }
 .main {
@@ -233,7 +233,7 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-#sign-up-msg-container-sign-in-up-page{
+#sign-up-msg-container-sign-in-up-page {
   width: 100vw;
   position: fixed;
   top: 0px;
@@ -243,17 +243,18 @@ input:-webkit-autofill:active {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  z-index: 400;padding-top: 21vw;
+  z-index: 400;
+  padding-top: 60vh;
 }
 
-#sign-up-msg-title-sign-in-up-page{
+#sign-up-msg-title-sign-in-up-page {
   font-size: 2rem;
   font-family: "now";
   font-weight: 600;
   color: white;
 }
 
-#sign-up-msg-description-sign-in-up-page{
+#sign-up-msg-description-sign-in-up-page {
   font-size: 1.4rem;
   font-family: "now";
   font-weight: 500;
