@@ -352,38 +352,47 @@ function setUpViews() {
           "confirm_new_password"
         ).value;
 
-        if (newPassword != confirmNewPassword) {
-          show_toast(2, "Both passwords should be same!");
-        } else if (newPassword.length < 6) {
-          show_toast(2, "Password should be minimum of 6 length!");
-        } else if (oldPassword && newPassword && confirmNewPassword) {
-          displayPreloder();
+        let passwordValidator = passValidator(newPassword);
 
-          const res6 = await fetch(`${apiURL}/user/changepassword`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              authorization: localStorage.getItem("jwt"),
-            },
-            body: JSON.stringify({
-              oldPassword,
-              newPassword,
-            }),
-          });
+        if (newPassword != confirmNewPassword)
+          return show_toast(2, "Both passwords should be same!");
 
-          if (res6.status == 400) {
-            displayChangePasswordpage();
-            show_toast(2, "Incorrect current password!");
-          } else if (res6.status == 500) {
-            displayChangePasswordpage();
-            show_toast(0, "Internal server error please re-try!");
-          } else {
-            show_toast(1, "Your password updated successfully!");
-            displayProfilepage();
-          }
+        if (!passwordValidator[0])
+          return show_toast(2, `${passwordValidator[1]}`);
+
+        if (!(oldPassword && newPassword && confirmNewPassword))
+          return show_toast(2, "Please fill all details properly!");
+
+        displayPreloder();
+
+        const res6 = await fetch(`${apiURL}/user/changepassword`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: localStorage.getItem("jwt"),
+          },
+          body: JSON.stringify({
+            oldPassword,
+            newPassword,
+          }),
+        });
+
+        const changePassData = res6.json();
+
+        if (res6.status == 400) {
+          displayChangePasswordpage();
+          show_toast(2, "Incorrect current password!");
+        } else if (res6.status == 444) {
+          displayChangePasswordpage();
+          show_toast(2, `${changePassData.error}`);
+        } else if (res6.status == 500) {
+          displayChangePasswordpage();
+          show_toast(0, "Internal server error please re-try!");
         } else {
-          show_toast(2, "Please enter all details properly!");
+          show_toast(1, "Your password updated successfully!");
+          displayProfilepage();
         }
+
       });
 
       saveBtn.addEventListener("click", async () => {
