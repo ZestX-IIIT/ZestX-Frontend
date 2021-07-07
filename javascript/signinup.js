@@ -1,5 +1,5 @@
-let signup = document.getElementById("signup");
-let signin = document.getElementById("signin");
+let signUpToggle = document.getElementById("signup");
+let signInToggle = document.getElementById("signin");
 let signincontainer = document.getElementById("signincontainer");
 let signupcontainer = document.getElementById("signupcontainer");
 let signupBtn = document.getElementById("signupButton");
@@ -29,6 +29,10 @@ function setUpSignInSignUpPage() {
 
     if (!(email && password))
       return show_toast(2, "Please fill all the details properly!");
+      
+    if (!validateEmail(email)) {
+      return show_toast(2, "Please Enter a valid email!");
+    }
 
     try {
       const signinRes = await fetch(`${apiURL}/auth/signin`, {
@@ -85,8 +89,13 @@ function setUpSignInSignUpPage() {
     const mobile = document.getElementById("mobile").value;
     const confirmPassword = document.getElementById("confirm").value;
 
+
     if (!(email && password && user_name && mobile))
       return show_toast(2, "Please fill all the details properly!");
+
+    if (!validateEmail(email)) {
+      return show_toast(2, "Please Enter a valid email!");
+    }
 
     if (mobile.length != 10)
       return show_toast(2, "Mobile no. should be of 10 length!");
@@ -168,7 +177,7 @@ function setUpSignInSignUpPage() {
     bg4.classList.toggle("display-class");
   }
 
-  signin.addEventListener("click", () => {
+  signInToggle.addEventListener("click", () => {
     signupcontainer.classList.toggle("opacity-class");
     signincontainer.classList.toggle("opacity-class");
     signupcontainer.classList.toggle("display-class");
@@ -182,7 +191,7 @@ function setUpSignInSignUpPage() {
     bg3.classList.toggle("display-class");
     bg4.classList.toggle("display-class");
   });
-  signup.addEventListener("click", () => {
+  signUpToggle.addEventListener("click", () => {
     signupcontainer.classList.toggle("opacity-class");
     signincontainer.classList.toggle("opacity-class");
     signupcontainer.classList.toggle("display-class");
