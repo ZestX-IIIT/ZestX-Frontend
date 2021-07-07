@@ -1,0 +1,9 @@
+@media screen and (max-width: 1024px) {
+  #sign-up-msg-title-sign-in-up-page {
+    font-size: 3vw;
+  }
+  #sign-up-msg-description-sign-in-up-page {
+    font-size: 2vw;
+    margin-top: 3vw;
+  }
+}
