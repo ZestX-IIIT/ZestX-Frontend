@@ -19,6 +19,8 @@ Next comes the admin mode. Admin log-in credentials are directly linked to the d
 
 ## How does it work?
 
+We will be attaching screenshots for phone, tablet and desktop in a single poster
+
 When you open our website, a remarkable landing page would is displayed, giving you the option for the sign in and sign up:
 <br>
 <br>
