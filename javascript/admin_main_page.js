@@ -101,8 +101,14 @@ async function setUpLandingPage() {
             exMobile = document.getElementById("phone_number").value;
 
             if (exMobile && exMobile.length != 10) {
-                show_toast(2, "Mobile no. should be of 10 length!");
-            } else if (exUsername && (exEmail || exMobile)) {
+                return show_toast(2, "Mobile no. should be of 10 length!");
+            }
+
+            if (exEmail && !validateEmail(exEmail)) {
+                return show_toast(2, "Please Enter a valid email!");
+            }
+
+            if (exUsername && (exEmail || exMobile)) {
                 displayPreloder();
                 const res2 = await fetch(`${apiURL}/admin/adduser`, {
                     method: "POST",
@@ -373,7 +379,7 @@ function setInternalUserDetails(data, array1) {
             user.innerHTML = insideHtml;
 
             internalUserContainer.appendChild(user);
-        }else{
+        } else {
             tempActualDataLength--;
         }
     };
