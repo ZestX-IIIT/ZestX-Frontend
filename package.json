@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon ./javascript/landing.js",
+    "dev": "nodemon index.js",
     "start": "node index.js",
     "begin": "parcel index.html",
     "build": "parcel build index.html"
