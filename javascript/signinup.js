@@ -2,6 +2,7 @@ let signUpToggle = document.getElementById("signup");
 let signInToggle = document.getElementById("signin");
 let signincontainer = document.getElementById("signincontainer");
 let signupcontainer = document.getElementById("signupcontainer");
+let signUpSuccessContainer = document.getElementById("sign-up-msg-container-sign-in-up-page");
 let signupBtn = document.getElementById("signupButton");
 let signinBtn = document.getElementById("signinButton");
 let forgotPasswordBtn = document.getElementById("forgot_password");
@@ -23,7 +24,6 @@ function setUpSignInSignUpPage() {
 
   signinBtn.addEventListener("click", async (event) => {
     event.preventDefault();
-    preloader.style.display = "block";
     const email = document.getElementById("signinemail").value;
     const password = document.getElementById("signinpassword").value;
 
@@ -34,6 +34,8 @@ function setUpSignInSignUpPage() {
     if (!validateEmail(email)) {
       return show_toast(2, "Please Enter a valid email!");
     }
+
+    preloader.style.display = "block";
 
     try {
       const signinRes = await fetch(`${apiURL}/auth/signin`, {
@@ -49,8 +51,11 @@ function setUpSignInSignUpPage() {
       if (signinRes.status == 400) {
         show_toast(2, "User does not exists, Please sign up!");
         preloader.style.display = "none";
+      } else if (signinRes.status == 404) {
+        show_toast(2, "Please Enter a valid email!");
+        preloader.style.display = "none";
       } else if (signinRes.status == 444) {
-        show_toast(2, "Enter correct password!");
+        show_toast(2, "PLease Enter valid password!");
         preloader.style.display = "none";
       } else if (signinRes.status == 500) {
         show_toast(0, "Internal server error please re-try!");
@@ -128,7 +133,11 @@ function setUpSignInSignUpPage() {
     if (signupRes.status == 400) {
       show_toast(2, "User already exists, Please sign in!");
       preloader.style.display = "none";
-    } else if (signupRes.status == 444) {
+    } else if (signupRes.status == 404) {
+      show_toast(2, "Please Enter a valid email!");
+      preloader.style.display = "none";
+    }
+    else if (signupRes.status == 444) {
       show_toast(2, `${signupData.error}`);
       preloader.style.display = "none";
     } else if (signupRes.status == 500) {
@@ -137,7 +146,9 @@ function setUpSignInSignUpPage() {
     } else {
       const token = signupData.data;
       localStorage.setItem("jwt", token);
-      window.location.href = "./homepage.html";
+      console.log("hehe");
+      // window.location.href = "./homepage.html";
+      signUpSuccessContainer.style.display = "flex"
     }
   });
 
@@ -157,6 +168,9 @@ function setUpSignInSignUpPage() {
     if (forgotPassRes.status == 400) {
       preloader.style.display = "none";
       show_toast(2, "Please enter registered email-id!");
+    } else if (forgotPassRes.status == 404) {
+      show_toast(2, "Please Enter a valid email!");
+      preloader.style.display = "none";
     } else if (forgotPassRes.status == 500) {
       preloader.style.display = "none";
       show_toast(0, "Error occured re-try!");
