@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Black.woff2') format('woff2'),
+        url('NowAlt-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Thin.woff2') format('woff2'),
+        url('NowAlt-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Medium.woff2') format('woff2'),
+        url('Now-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Light.woff2') format('woff2'),
+        url('Now-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Bold.woff2') format('woff2'),
+        url('NowAlt-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Light.woff2') format('woff2'),
+        url('NowAlt-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Regular.woff2') format('woff2'),
+        url('NowAlt-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Black.woff2') format('woff2'),
+        url('Now-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Regular.woff2') format('woff2'),
+        url('Now-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Thin.woff2') format('woff2'),
+        url('Now-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('NowAlt-Medium.woff2') format('woff2'),
+        url('NowAlt-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url('Now-Bold.woff2') format('woff2'),
+        url('Now-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
