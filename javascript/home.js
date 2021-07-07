@@ -177,32 +177,45 @@ function setUpViews() {
             },
             body: JSON.stringify({ id: eventId }),
           });
+
           if (registerRes.status == 400) {
             displayEvenetspage();
             show_toast(2, "Please verify your email!");
-          } else if (registerRes.status == 404) {
+            return;
+          }
+
+          if (registerRes.status == 404) {
             displayEvenetspage();
             show_toast(2, "User already registered please refresh!");
-          } else if (registerRes.status == 500) {
+            return;
+          }
+
+          if (registerRes.status == 500) {
             displayEvenetspage();
             show_toast(0, "Error occured Please re-try!");
-          } else {
-            displayEvenetspage();
-            show_toast(1, "User registered successfully!");
-            let userarray = festData.find(
-              (event) => event.fest_id == eventId
-            ).user_id;
-            if (userarray == null)
-              userarray = [userData.user_id];
-            else
-              userarray[userarray.length] = userData.user_id;
-            if (userData.fest_id == null)
-              userData.fest_id = [`${eventId}`];
-            else
-              userData.fest_id[userData.fest_id.length] = `${eventId}`;
-            registerBtn.innerHTML = `Unregister`;
-            registerBtn.style.animation = "none";
+            return;
           }
+
+          displayEvenetspage();
+          show_toast(1, "User registered successfully!");
+          let userarray = festData.find(
+            (event) => event.fest_id == eventId
+          ).user_id;
+          if (userarray == null) {
+            userarray = [userData.user_id];
+          }
+          else {
+            userarray[userarray.length] = userData.user_id;
+          }
+          if (userData.fest_id == null) {
+            userData.fest_id = [`${eventId}`];
+          }
+          else {
+            userData.fest_id[userData.fest_id.length] = `${eventId}`;
+          }
+          registerBtn.innerHTML = `Unregister`;
+          registerBtn.style.animation = "none";
+
         } else {
           const unregisterRes = await fetch(`${apiURL}/fest/unregister`, {
             method: "POST",
@@ -212,31 +225,40 @@ function setUpViews() {
             },
             body: JSON.stringify({ id: eventId }),
           });
+
           if (unregisterRes.status == 400) {
             displayEvenetspage();
             show_toast(2, "Please verify your email!");
-          } else if (unregisterRes.status == 404) {
+            return;
+          }
+
+          if (unregisterRes.status == 404) {
             displayEvenetspage();
             show_toast(2, "User not registered please refresh!");
-          } else if (unregisterRes.status == 500) {
+            return;
+          }
+
+          if (unregisterRes.status == 500) {
             displayEvenetspage();
             show_toast(0, "Error occured Please re-try!");
-          } else {
-            displayEvenetspage();
-            let userarray = festData.find(
-              (event) => event.fest_id == eventId
-            ).user_id;
-            const userIndex = userarray.indexOf(userData.user_id);
-            const eventIndex = userData.fest_id.indexOf(`${eventId}`);
-            if (userIndex > -1) {
-              userarray.splice(userIndex, 1);
-            }
-            if (eventIndex > -1) {
-              userData.fest_id.splice(eventIndex, 1);
-            }
-            show_toast(1, "User unregistered successfully!");
-            setRegisterBtnText(eventId);
+            return;
           }
+
+          displayEvenetspage();
+          let userarray = festData.find(
+            (event) => event.fest_id == eventId
+          ).user_id;
+          const userIndex = userarray.indexOf(userData.user_id);
+          const eventIndex = userData.fest_id.indexOf(`${eventId}`);
+          if (userIndex > -1) {
+            userarray.splice(userIndex, 1);
+          }
+          if (eventIndex > -1) {
+            userData.fest_id.splice(eventIndex, 1);
+          }
+          show_toast(1, "User unregistered successfully!");
+          setRegisterBtnText(eventId);
+
         }
       });
 
@@ -326,17 +348,16 @@ function setUpViews() {
               authorization: token,
             },
           });
+
           if (forgotPassRes.status == 500) {
             show_toast(0, "Error occured re-try!");
             displayEditProfilepage();
-            // console.log(err);
-          } else {
-            show_toast(
-              1,
-              "Link to reset password has been sent to your email-id!!"
-            );
-            displayEditProfilepage();
+            return;
           }
+
+          show_toast(1, "Link to reset password has been sent to your email-id!!");
+          displayEditProfilepage();
+
         }
       );
 
@@ -354,14 +375,17 @@ function setUpViews() {
 
         let passwordValidator = passValidator(newPassword);
 
-        if (newPassword != confirmNewPassword)
+        if (newPassword != confirmNewPassword) {
           return show_toast(2, "Both passwords should be same!");
+        }
 
-        if (!passwordValidator[0])
+        if (!passwordValidator[0]) {
           return show_toast(2, `${passwordValidator[1]}`);
+        }
 
-        if (!(oldPassword && newPassword && confirmNewPassword))
+        if (!(oldPassword && newPassword && confirmNewPassword)) {
           return show_toast(2, "Please fill all details properly!");
+        }
 
         displayPreloder();
 
@@ -382,16 +406,23 @@ function setUpViews() {
         if (changePassRes.status == 400) {
           displayChangePasswordpage();
           show_toast(2, "Incorrect current password!");
-        } else if (changePassRes.status == 444) {
+          return;
+        }
+
+        if (changePassRes.status == 444) {
           displayChangePasswordpage();
           show_toast(2, `${changePassData.error}`);
-        } else if (changePassRes.status == 500) {
+          return;
+        }
+
+        if (changePassRes.status == 500) {
           displayChangePasswordpage();
           show_toast(0, "Internal server error please re-try!");
-        } else {
-          show_toast(1, "Your password updated successfully!");
-          displayProfilepage();
+          return;
         }
+
+        show_toast(1, "Your password updated successfully!");
+        displayProfilepage();
 
       });
 
@@ -428,25 +459,35 @@ function setUpViews() {
         if (updateDetailsRes.status == 400) {
           displayEditProfilepage();
           show_toast(2, "Incorrect Password!");
-        } else if (updateDetailsRes.status == 500) {
+          return;
+        }
+
+        if (updateDetailsRes.status == 404) {
+          show_toast(2, "Please Enter a valid email!");
+          preloader.style.display = "none";
+          return;
+        }
+
+        if (updateDetailsRes.status == 500) {
           displayEditProfilepage();
           show_toast(0, "Internal server error please re-try!");
-        } else if (updateDetailsRes.status == 200) {
+          return;
+        }
+
+        if (updateDetailsRes.status == 200) {
           show_toast(1, "Your details updated successfully!");
           userData.user_name = user_name;
           userData.mobile = mobile;
           displayProfilepage();
-        } else {
-          show_toast(
-            1,
-            "Your details updated successfully! Please verify your updated email-id!"
-          );
-
-          userData.user_name = user_name;
-          userData.email = email;
-          userData.mobile = mobile;
-          displayProfilepage();
+          return;
         }
+
+        show_toast(1, "Your details updated successfully! Please verify your updated email-id!");
+
+        userData.user_name = user_name;
+        userData.email = email;
+        userData.mobile = mobile;
+        displayProfilepage();
 
         const updateDetailsData = await updateDetailsRes.json();
         if (updateDetailsData.token) {
@@ -454,12 +495,14 @@ function setUpViews() {
         }
 
       });
+
       displayMainContainer();
+
       AOS.init({
-        once: false,
         easing: "ease-in-out",
         once: true,
       });
+
     } catch (err) {
       show_toast(0, "Error occured re-try!");
       console.log(err);
@@ -656,7 +699,10 @@ function setRegisterBtnText(id) {
 
 function isRegister(id) {
   const data = festData.find((item) => item.fest_id == id).user_id;
-  if (data == null || !data.includes(userData.user_id)) return false;
+
+  if (data == null || !data.includes(userData.user_id)) {
+    return false;
+  }
   return true;
 }
 
