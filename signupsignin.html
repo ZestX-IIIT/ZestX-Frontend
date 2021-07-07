@@ -14,23 +14,27 @@
         media="screen and (min-width: 500px) and (max-width: 600px)" />
     <link rel="stylesheet" href="./styles/signin_signup_styles/signInsignup_media_q_426-500.css"
         media="screen and (min-width: 426px) and (max-width: 500px)" />
-    <link rel="stylesheet" href="./styles/signin_signup_styles/signInsignup_media_q_426.css" media="screen and (max-width: 426px)" />
-    <link rel="stylesheet" href="./styles/signin_signup_styles/signInsignup_media_q_376.css" media="screen and (max-width: 376px)" />
+    <link rel="stylesheet" href="./styles/signin_signup_styles/signInsignup_media_q_426.css"
+        media="screen and (max-width: 426px)" />
+    <link rel="stylesheet" href="./styles/signin_signup_styles/signInsignup_media_q_376.css"
+        media="screen and (max-width: 376px)" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="./javascript/html_include.js"></script>
     <script src="./javascript/redirect.js"></script>
     <script src="./javascript/mail_verifier.js"></script>
+    <script src="./javascript/password_validator.js"></script>
+
 
 </head>
 
 <body background-image="../assets/signin_signup_Page/background.jpg">
 
-    <div include_file_path="./general/loader.html" style="position: fixed; width: 100vw; z-index: 50000;"
+    <div include_file_path="./general/loader.html" style="position: fixed; width: 100vw; z-index: 200;"
         id="preloader_container"></div>
 
     <div id="primnary_toast_container">
         <section include_file_path="./general/toast.html" id="sub_toast_container"></section>
-        </div>
+    </div>
 
     <section class="main">
         <div class="background opacity-class" id="bg1">
@@ -56,10 +60,13 @@
                     <input type="password" name="password" id="signinpassword" required />
                     <div class="floating">PASSWORD</div>
                 </div>
-                <button type="submit" class="btn" id="signinButton" data-aos="fade-up" data-aos-delay="300" data-aos-offset="10">CONTINUE</button>
+                <button type="submit" class="btn" id="signinButton" data-aos="fade-up" data-aos-delay="300"
+                    data-aos-offset="10">CONTINUE</button>
             </form>
-            <div id="swap_form_to_signup_text_container" data-aos="fade-up" data-aos-delay="400" data-aos-offset="10">DON'T HAVE A ACCOUNT? <span id="signup">SIGN UP</span></div>
-            <div id="forgot_password" data-aos="fade-up" data-aos-delay="500" data-aos-offset="10">FORGOT PASSWORD?</div>
+            <div id="swap_form_to_signup_text_container" data-aos="fade-up" data-aos-delay="400" data-aos-offset="10">
+                DON'T HAVE A ACCOUNT? <span id="signup">SIGN UP</span></div>
+            <div id="forgot_password" data-aos="fade-up" data-aos-delay="500" data-aos-offset="10">FORGOT PASSWORD?
+            </div>
         </div>
         </div>
         <div class="form-container opacity-class" id="signupcontainer">
@@ -85,18 +92,29 @@
                     <input type="password" name="confirmpassword" id="confirm" required />
                     <div class="floating">CONFIRM PASSWORD</div>
                 </div>
-                <button type="submit" class="btn" id="signupButton" data-aos="fade-up" data-aos-delay="500" data-aos-offset="10">CONTINUE</button>
+                <button type="submit" class="btn" id="signupButton" data-aos="fade-up" data-aos-delay="500"
+                    data-aos-offset="10">CONTINUE</button>
             </form>
-            <div id="swap_form_to_signin_text_container" data-aos="fade-up" data-aos-delay="600" data-aos-offset="10">ALREADY HAVE AN ACCOUNT? <span id="signin">SIGN IN</span></div>
+            <div id="swap_form_to_signin_text_container" data-aos="fade-up" data-aos-delay="600" data-aos-offset="10">
+                ALREADY HAVE AN ACCOUNT? <span id="signin">SIGN IN</span></div>
         </div>
     </section>
+    <div id="sign-up-msg-container-sign-in-up-page">
+        <h3 id="sign-up-msg-title-sign-in-up-page">
+            USER REGISTERED SUCCESSFULLY!!
+        </h3>
+        <p id="sign-up-msg-description-sign-in-up-page">
+            Thank you for signing up.
+            we have sent you a verification mail
+            we request you to verify and start your ZestX Journey
+        </p>
+    </div>
     <script src="./javascript/signinup.js"></script>
     <script>
         includehtmlbyID("preloader_container");
         includehtmlbyID("sub_toast_container");
-        </script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="./javascript/password_validator.js"></script>
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   overflow: hidden;
 }
 .main {
@@ -231,4 +231,36 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-text-fill-color: #efd5ff;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+#sign-up-msg-container-sign-in-up-page {
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 400;
+  padding-top: 60vh;
+}
+
+#sign-up-msg-title-sign-in-up-page {
+  font-size: 2rem;
+  font-family: "now";
+  font-weight: 600;
+  color: white;
+}
+
+#sign-up-msg-description-sign-in-up-page {
+  font-size: 1.4rem;
+  font-family: "now";
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+  width: 60vw;
+  text-align: center;
+  margin-top: 2rem;
 }
