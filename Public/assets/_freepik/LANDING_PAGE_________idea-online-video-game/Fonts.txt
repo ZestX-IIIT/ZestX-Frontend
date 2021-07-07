@@ -1,9 +1,0 @@
-Fonts used in this design:
-
-Font: WebHostingHub Glyphs
-Author: Web Hosting Hub
-Url: http://www.fontsquirrel.com/fonts/webhostinghub-glyphs
-
-Font: Poppins
-Author: Indian Type Foundry
-Url: https://www.fontsquirrel.com/fonts/poppins
