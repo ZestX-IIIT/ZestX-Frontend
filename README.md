@@ -18,6 +18,8 @@ Next comes the admin mode. Admin log-in credentials are directly linked to the d
 When you open our website, a remarkable landing page would is displayed, giving you the option for the sign in and sign up:
 <br>
 <br>
+![Landing Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/1.png)
+<br>
 
 Then comes the sign-in, sign-up page.
 <br>
