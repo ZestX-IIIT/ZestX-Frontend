@@ -252,6 +252,7 @@ input:-webkit-autofill:active {
   font-family: "now";
   font-weight: 600;
   color: white;
+  color: #fff1ff;
 }
 
 #sign-up-msg-description-sign-in-up-page {
@@ -259,8 +260,9 @@ input:-webkit-autofill:active {
   font-family: "now";
   font-weight: 500;
   text-transform: uppercase;
-  color: white;
+  color: #ffecfd;
   width: 60vw;
   text-align: center;
   margin-top: 2rem;
+  opacity: 0.6;
 }
