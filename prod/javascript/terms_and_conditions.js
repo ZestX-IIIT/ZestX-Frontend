@@ -5,8 +5,18 @@ let privacyPolicy = document.getElementById("privacy-policy");
 let cookiePolicy = document.getElementById("cookie-policy");
 let activeTabTnCPage = 0;
 
+let terms_conditon_landing_index = 0;
 let urlLink = new URL(location.href);
-let terms_conditon_landing_index = urlLink.searchParams.get("id");
+let section = window.location.href.toString().split('/')[3];
+
+if (section == 'privacypolicy') {
+    terms_conditon_landing_index = 1;
+}
+
+if (section == 'cookiepolicy') {
+    terms_conditon_landing_index = 2;
+}
+
 if (terms_conditon_landing_index == 1 || terms_conditon_landing_index == 2) {
     terms_conditon_landing[terms_conditon_landing_index].scrollIntoView({ behavior: "smooth" });
 }
