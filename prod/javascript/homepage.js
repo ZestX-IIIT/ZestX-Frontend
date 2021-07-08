@@ -824,13 +824,13 @@ function show_toast(isSuccess, message) {
             .style.setProperty("--foo", `${msgLength}ch`);
 
         if (isSuccess == 1) {
-            toastImage.src = "../assets/_general/success_tick.svg";
+            toastImage.src = "./assets/_general/success_tick.svg";
             toastFrontMessage.style.backgroundColor = "green";
         } else if (isSuccess == 0) {
-            toastImage.src = "../assets/_general/error_cross.svg";
+            toastImage.src = "./assets/_general/error_cross.svg";
             toastFrontMessage.style.backgroundColor = "red";
         } else {
-            toastImage.src = "../assets/_general/neutral_exclamation.svg";
+            toastImage.src = "./assets/_general/neutral_exclamation.svg";
             toastFrontMessage.style.backgroundColor = "black";
         }
         toastDescriptionMessage.innerText = " ";
@@ -886,23 +886,23 @@ function setEventDetails(id) {
     switch (id) {
         case 8:
             detailsContainer.style.backgroundImage =
-                "url('../assets/home_page/events_details/compressed_event_details_webp/hot_stepper_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
+                "url('./assets/home_page/events_details/compressed_event_details_webp/hot_stepper_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
             break;
         case 7:
             detailsContainer.style.background =
-                "url('../assets/home_page/events_details/compressed_event_details_webp/raise_your_mic_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
+                "url('./assets/home_page/events_details/compressed_event_details_webp/raise_your_mic_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
             break;
         case 6:
             detailsContainer.style.background =
-                "url('../assets/home_page/events_details/compressed_event_details_webp/rangshala_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
+                "url('./assets/home_page/events_details/compressed_event_details_webp/rangshala_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
             break;
         case 9:
             detailsContainer.style.background =
-                "url('../assets/home_page/events_details/compressed_event_details_webp/one_mic_stand_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
+                "url('./assets/home_page/events_details/compressed_event_details_webp/one_mic_stand_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
             break;
         case 10:
             detailsContainer.style.background =
-                "url('../assets/home_page/events_details/compressed_event_details_webp/strokes_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
+                "url('./assets/home_page/events_details/compressed_event_details_webp/strokes_bg.webp'), linear-gradient(180deg, #0e1391 0%, #0e0045 100%)";
             break;
     }
 
@@ -1111,8 +1111,6 @@ setTimeout(function () {
     let index_slider = 0;
     var isNotHovering = true;
     let event_poster_image = document.getElementsByClassName("event_poster_image");
-    let event_poster_image =
-    document.getElementsByClassName("event_poster_image");
 
     
   let imageContainer = document.getElementsByClassName("image-container");
