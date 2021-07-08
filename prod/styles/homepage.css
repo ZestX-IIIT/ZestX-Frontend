@@ -2415,7 +2415,7 @@ body {
   top: 1.3vw;
 }
 #MainUserContainer {
-  background: url("../../../assets/home_page/events_details/rangshala_bg.svg"),
+  background: url("../../assets/home_page/events_details/rangshala_bg.svg"),
     Linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
   width: 100%;
   height: 100vh;
@@ -2847,7 +2847,7 @@ body {
   height: auto;
 }
 .Main_Edit_Container {
-  background: url("../../../assets/admin_page/add_user_bg.png"),
+  background: url("../../assets/admin_page/add_user_bg.png"),
     Linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
   width: 100vw;
   height: 100vh;
