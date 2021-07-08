@@ -28,7 +28,13 @@ app.get("/home", (req, res) => {
     res.sendFile(path.join(__dirname, './homepage.html'));
 });
 
-app.get("/tandc", (req, res) => {
+app.get("/termsandconditions", (req, res) => {
+    res.sendFile(path.join(__dirname, './terms_and_conditions.html'));
+});
+app.get("/privacypolicy", (req, res) => {
+    res.sendFile(path.join(__dirname, './terms_and_conditions.html'));
+});
+app.get("/cookiepolicy", (req, res) => {
     res.sendFile(path.join(__dirname, './terms_and_conditions.html'));
 });
 
