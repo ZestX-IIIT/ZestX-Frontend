@@ -19,6 +19,14 @@ app.get("/signin", (req, res) => {
     res.sendFile(path.join(__dirname, './dist/signupsignin.html'));
 });
 
+app.get("/signup", (req, res) => {
+    res.sendFile(path.join(__dirname, './dist/signupsignin.html'));
+});
+
+app.get("/home", (req, res) => {
+    res.sendFile(path.join(__dirname, './dist/homepage.html'));
+});
+
 app.listen(port, () => {
     console.log("server running at port " + port);
 });
