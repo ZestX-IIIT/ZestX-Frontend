@@ -30,7 +30,9 @@ When you open our website, a remarkable landing page would is displayed, giving 
 <br>
 
 Then comes the sign-in, sign-up page.
+
 ![Sign-in page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/2.webp)
+
 <br>
 <br>
 
@@ -42,21 +44,29 @@ The next page would be loaded based on your credentials. As mentioned above, we 
 
 <ul>
  If the visitor logins, a respective home page would be opened. The home page contains all the details for our fest.
+
  ![Home Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/3.webp)
+
 <br>
 <br>
 After that, we have the event details page having all the information for each event and a button to register.
+
 ![Event Details Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/4.webp)
 <br>
 <br>
 Then we have a user dashboard containing your information and the events you are associated with in fest.
 ![User Profile Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/5.webp)
+
 <br>
 <br>
 We, too, have to edit information and change password pages for the user.
+
 ![Edit Information Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/6.webp)
+
 <br>
+
 ![Change password Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/7.webp)
+
 <br>
 <br>
 </ul>
@@ -65,9 +75,11 @@ We, too, have to edit information and change password pages for the user.
 
 <ul>
 Admin would have a single user management page containing information for all the events and a list of all the users registered in that event, whether added by admin or registered through the website.
+
 ![ Admin Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/8.webp)
 
 <br>
+
 ![ Add user Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/9.webp)
 
 
