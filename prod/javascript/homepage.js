@@ -1935,14 +1935,14 @@ setTimeout(function () {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '../anim/user_edit_profile_page_anim/user_edit_profile_page_anim.json'
+        path: './anim/user_edit_profile_page_anim/user_edit_profile_page_anim.json'
     })
     var userChangePasswordAnimation = bodymovin.loadAnimation({
         container: document.getElementById('change_user_password_page_anim_container'),
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '../anim/security_anim_edit_password_page/security_anim_data.json'
+        path: './anim/security_anim_edit_password_page/security_anim_data.json'
     })
 
 }, 500);
