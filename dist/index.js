@@ -40,6 +40,10 @@ app.get("/cookiepolicy", (req, res) => {
     res.sendFile(path.join(__dirname, './terms_and_conditions.html'));
 });
 
+app.get("/events", (req, res) => {
+    res.sendFile(path.join(__dirname, './events.html'));
+});
+
 app.get("/team", (req, res) => {
     res.sendFile(path.join(__dirname, './team.html'));
 });
