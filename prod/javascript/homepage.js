@@ -1110,7 +1110,6 @@ setTimeout(function () {
     var slider = document.getElementsByClassName("slide");
     let index_slider = 0;
     var isNotHovering = true;
-    let event_poster_image = document.getElementsByClassName("event_poster_image");
 
     
   let imageContainer = document.getElementsByClassName("image-container");
