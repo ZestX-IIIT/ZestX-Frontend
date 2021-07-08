@@ -1,6 +1,112 @@
+
 @media only screen and (max-width: 1200px) {
   .tnc_progressbar,
   .tnc_scrollpath {
     display: none !important;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .scrolling_terms_condition_content {
+    font-size: 1.5vw;
+  }
+  .scrolling_terms_condition_content_active {
+    font-size: 1.6vw;
+  }
+  .terms_conditon_landing > h1:first-child {
+    font-size: 2.4vw;
+  }
+  section h1 {
+    font-size: 1.6vw;
+  }
+  section h2 {
+    font-size: 1.5vw;
+  }
+  section h3 {
+    font-size: 1.4vw;
+  }
+  section h4 {
+    font-size: 1.3vw;
+  }
+  section h5 {
+    font-size: 1.2vw;
+  }
+  section h6 {
+    font-size: 1.1vw;
+  }
+  section p {
+    font-size: 1.5vw;
+  }
+  section ul {
+    font-size: 1.5vw;
+  }
+}
+@media only screen and (max-width: 625px) {
+  .scrolling_terms_condition_content {
+    font-size: 1.7vw;
+  }
+  .scrolling_terms_condition_content_active {
+    font-size: 1.8vw;
+  }
+  .terms_conditon_landing > h1:first-child {
+    font-size: 2.6vw;
+  }
+  section h1 {
+    font-size: 1.8vw;
+  }
+  section h2 {
+    font-size: 1.7vw;
+  }
+  section h3 {
+    font-size: 1.6vw;
+  }
+  section h4 {
+    font-size: 1.5vw;
+  }
+  section h5 {
+    font-size: 1.4vw;
+  }
+  section h6 {
+    font-size: 1.3vw;
+  }
+  section p {
+    font-size: 1.7vw;
+  }
+  section ul {
+    font-size: 1.7vw;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .scrolling_terms_condition_content {
+    font-size: 2.5vw;
+  }
+  .scrolling_terms_condition_content_active {
+    font-size: 2.6vw;
+  }
+  .terms_conditon_landing > h1:first-child {
+    font-size: 3.6vw;
+  }
+  section h1 {
+    font-size: 3.2vw;
+  }
+  section h2 {
+    font-size: 3.1vw;
+  }
+  section h3 {
+    font-size: 3vw;
+  }
+  section h4 {
+    font-size: 2.9vw;
+  }
+  section h5 {
+    font-size: 2.8vw;
+  }
+  section h6 {
+    font-size: 2.7vw;
+  }
+  section p {
+    font-size: 3.1vw;
+  }
+  section ul {
+    font-size: 3.1vw;
   }
 }
