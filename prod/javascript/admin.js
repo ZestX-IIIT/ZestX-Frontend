@@ -674,7 +674,7 @@ setTimeout(function () {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '../anim/admin_add_user_page_anim/admin_add_user_page_anim.json'
+        path: './anim/admin_add_user_page_anim/high_res/admin_add_user_page_anim.json'
     })
 }, 200);
 function validateEmail(email) {

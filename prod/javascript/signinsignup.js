@@ -11,7 +11,7 @@ let bg1 = document.getElementById("bg1");
 let bg2 = document.getElementById("bg2");
 let bg3 = document.getElementById("bg3");
 let bg4 = document.getElementById("bg4");
-let text = window.location.hash.substring(1);
+let text = window.location.href.toString().split('/')[3];
 let userData;
 let lastToastTimestamp = Date.now();
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
