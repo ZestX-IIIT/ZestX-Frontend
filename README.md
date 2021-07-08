@@ -6,11 +6,10 @@ Hosted Link : http://zestx.netlify.app/
 
 <br>
 
-<center>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d14b602c-8e13-4e58-9c11-0c1226124b82/deploy-status)](https://app.netlify.com/sites/zestx/deploys)
 
-</center>
+
 
 <br>
 
