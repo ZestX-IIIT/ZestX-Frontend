@@ -17,7 +17,7 @@ let lastToastTimestamp = Date.now();
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
 
 setTimeout(() => {
-  redirect(0 ,setUpSignInSignUpPage)
+  redirect(0, setUpSignInSignUpPage)
 }, 200);
 
 function setUpSignInSignUpPage() {
@@ -76,8 +76,8 @@ function setUpSignInSignUpPage() {
         userData = userDetails.data;
 
         if (userData.is_admin)
-          window.location.href = "./general/admin_main_page.html";
-        else window.location.href = "./homepage.html";
+          window.location.href = "/admin";
+        else window.location.href = "/home";
 
       }
     } catch (error) {
@@ -147,7 +147,7 @@ function setUpSignInSignUpPage() {
       const token = signupData.data;
       localStorage.setItem("jwt", token);
       console.log("hehe");
-      // window.location.href = "./homepage.html";
+      // window.location.href = "/home";
       signUpSuccessContainer.style.display = "flex"
     }
   });
@@ -241,64 +241,64 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
   const token = localStorage.getItem("jwt");
   if (token && token != null) {
 
-      fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
-          method: "GET",
-          headers: {
-              authorization: token,
-          },
-      })
-          .then((res) => res.json())
-          .then((data) => {
-              let isAdmin = data.data.is_admin;
-              switch (redirectWithoutTokenChk) {
-                  case 0:
-                      redirectToHomeOrAdminPageAccToToken(isAdmin);
-                      break;
-                  case 1:
-                      redirectToHomePageAccToToken(isAdmin, setUpFun);
-                      break;
-                  case 2:
-                      redirectToAdminPageAccToToken(isAdmin, setUpFun);
-                      break;
+    fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
+      method: "GET",
+      headers: {
+        authorization: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        let isAdmin = data.data.is_admin;
+        switch (redirectWithoutTokenChk) {
+          case 0:
+            redirectToHomeOrAdminPageAccToToken(isAdmin);
+            break;
+          case 1:
+            redirectToHomePageAccToToken(isAdmin, setUpFun);
+            break;
+          case 2:
+            redirectToAdminPageAccToToken(isAdmin, setUpFun);
+            break;
 
-                  default:
-                      break;
-              }
-          })
-          .catch((err) => {
-              console.log(err);
-          });
+          default:
+            break;
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
 
   } else {
-      if (redirectWithoutTokenChk > 0) {
-          window.location.href = "../signupsignin.html";
-      }
-      else {
-          setUpFun()
+    if (redirectWithoutTokenChk > 0) {
+      window.location.href = "/signup";
+    }
+    else {
+      setUpFun()
 
-      }
+    }
   }
 }
 
 function redirectToHomeOrAdminPageAccToToken(isAdmin) {
   if (isAdmin)
-      window.location.href = "./general/admin_main_page.html";
-  else window.location.href = "./homepage.html";
+    window.location.href = "/admin";
+  else window.location.href = "/home";
 }
 
 function redirectToHomePageAccToToken(isAdmin, setUpFun) {
   if (!isAdmin)
-      window.location.href = "../homepage.html";
+    window.location.href = "/home";
   else
-      setUpFun()
+    setUpFun()
 }
 
 function redirectToAdminPageAccToToken(isAdmin, setUpFun) {
   if (isAdmin)
-      window.location.href = "./general/admin_main_page.html";
+    window.location.href = "/admin";
   else
-      setUpFun()
+    setUpFun()
 }
 
 
@@ -346,52 +346,52 @@ function show_toast(isSuccess, message) {
 
 // mail-verifier
 function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
 }
 
 // password validator
 let regularExpression = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/;
 
 function passValidator(password) {
-    let boolValue = false;
-    let message;
+  let boolValue = false;
+  let message;
 
-    if (password.length < 6) {
-        message = 'Password should be minimum of 6 length!';
-        return [boolValue, message];
-    }
+  if (password.length < 6) {
+    message = 'Password should be minimum of 6 length!';
+    return [boolValue, message];
+  }
 
-    if (password.length > 20) {
-        message = 'Password should be maximum of 20 length!';
-        return [boolValue, message];
-    }
+  if (password.length > 20) {
+    message = 'Password should be maximum of 20 length!';
+    return [boolValue, message];
+  }
 
-    if (password.search(/[A-Z]/) < 0) {
-        message = 'Password should contain atleast 1 uppercase letter!';
-        return [boolValue, message];
-    }
+  if (password.search(/[A-Z]/) < 0) {
+    message = 'Password should contain atleast 1 uppercase letter!';
+    return [boolValue, message];
+  }
 
-    if (password.search(/[a-z]/) < 0) {
-        message = 'Password should contain atleast 1 lowercase letter!';
-        return [boolValue, message];
-    }
+  if (password.search(/[a-z]/) < 0) {
+    message = 'Password should contain atleast 1 lowercase letter!';
+    return [boolValue, message];
+  }
 
-    if (password.search(/[0-9]/) < 0) {
-        message = 'Password should contain atleast 1 digit!';
-        return [boolValue, message];
-    }
+  if (password.search(/[0-9]/) < 0) {
+    message = 'Password should contain atleast 1 digit!';
+    return [boolValue, message];
+  }
 
-    if (password.search(' ') != -1) {
-        message = 'Password should not contain any spaces!';
-        return [boolValue, message];
-    }
+  if (password.search(' ') != -1) {
+    message = 'Password should not contain any spaces!';
+    return [boolValue, message];
+  }
 
-    if (!regularExpression.test(password)) {
-        message = 'Password should contain atleast 1 special character!';
-        return [boolValue, message];
-    }
+  if (!regularExpression.test(password)) {
+    message = 'Password should contain atleast 1 special character!';
+    return [boolValue, message];
+  }
 
-    return [true, "Success"];
+  return [true, "Success"];
 
 }

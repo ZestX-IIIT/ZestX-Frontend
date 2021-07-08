@@ -603,6 +603,7 @@ function show_toast(isSuccess, message) {
         }, 5500 - (Date.now() - lastToastTimestamp))
     }
 }
+
 var redirect = function (redirectWithoutTokenChk, setUpFun) {
 
     const token = localStorage.getItem("jwt");
@@ -639,7 +640,7 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
 
     } else {
         if (redirectWithoutTokenChk > 0) {
-            window.location.href = "../signupsignin.html";
+            window.location.href = "/signup";
         }
         else {
             setUpFun()
@@ -650,20 +651,20 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
 
 function redirectToHomeOrAdminPageAccToToken(isAdmin) {
     if (isAdmin)
-        window.location.href = "./general/admin_main_page.html";
-    else window.location.href = "./homepage.html";
+        window.location.href = "/admin";
+    else window.location.href = "/home";
 }
 
 function redirectToHomePageAccToToken(isAdmin, setUpFun) {
     if (!isAdmin)
-        window.location.href = "../homepage.html";
+        window.location.href = "/home";
     else
         setUpFun()
 }
 
 function redirectToAdminPageAccToToken(isAdmin, setUpFun) {
     if (isAdmin)
-        window.location.href = "./general/admin_main_page.html";
+        window.location.href = "/admin";
     else
         setUpFun()
 }
