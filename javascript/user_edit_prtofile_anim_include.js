@@ -1,4 +1,4 @@
-var user_edit_profile_anim = bodymovin.loadAnimation({
+var userEditProfileAnim = bodymovin.loadAnimation({
     container: document.getElementById('user_edit_profile_anim_container'),
     renderer: 'svg',
     loop: true,
