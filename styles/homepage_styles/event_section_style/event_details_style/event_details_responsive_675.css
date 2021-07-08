@@ -1,4 +1,7 @@
 @media only screen and (max-width: 675px) {
+  #EventDescription{
+    width: 100%;
+  }
   #EventDetailsContent {
     flex-direction: column;
     height: 100vh;
