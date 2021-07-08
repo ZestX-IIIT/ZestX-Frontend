@@ -198,6 +198,13 @@ html::-webkit-scrollbar {
   opacity: 1;
   transition: opacity 1000ms ease-in-out;
 }
+.image-container:hover{
+  cursor: pointer;
+}
+.homepage_front_left_img{
+  z-index: 10;
+}
 .fade-class {
+  z-index: 5;
   opacity: 0 !important;
 }
