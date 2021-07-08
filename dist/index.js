@@ -52,6 +52,10 @@ app.get("/faq", (req, res) => {
     res.sendFile(path.join(__dirname, './faq.html'));
 });
 
+app.get("*", (req, res) => {
+    res.sendFile((path.join(__dirname, './error_page.html')));
+});
+
 app.listen(port, () => {
     console.log("server running at port " + port);
 });
