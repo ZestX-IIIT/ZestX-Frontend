@@ -11,8 +11,8 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, './dist/index.html'));
 });
 
-app.get("/signup", (req, res) => {
-    res.sendFile(path.join(__dirname, './dist/signupsignin.html'));
+app.get("/admin", (req, res) => {
+    res.sendFile(path.join(__dirname, './dist/admin.html'));
 });
 
 app.get("/signin", (req, res) => {

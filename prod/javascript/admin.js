@@ -379,7 +379,7 @@ function setInternalUserDetails(data, array1) {
         <h3 class="innerList_h3" id="user_name">${user_name}</h3>
         <h4 class="innerList_h4" id="user_details">${email} || ${mobile}</h4>
     </div>
-    <img class="internal_user_delete_button" src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
+    <img class="internal_user_delete_button" src="./assets/delete_user_btn.svg" alt="">
 </div>
     `;
 
@@ -455,7 +455,7 @@ function setExternalUserDetails(data, array2) {
             <h3 class="innerList_h3" id="user_name">${username}</h3>
             <h4 class="innerList_h4" id="user_details">${email} || ${mobile}</h4>
         </div>
-        <img class="external_user_delete_button" src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
+        <img class="external_user_delete_button" src="./assets/delete_user_btn.svg" alt="">
     </div>
         `;
         } else {
@@ -464,7 +464,7 @@ function setExternalUserDetails(data, array2) {
             <h3 class="innerList_h3" id="user_name">${username}</h3>
             <h4 class="innerList_h4" id="user_details">${email} ${mobile}</h4>
         </div>
-        <img class="external_user_delete_button" src="../assets/home_page/Admin_page/delete_user_btn.svg" alt="">
+        <img class="external_user_delete_button" src="./assets/delete_user_btn.svg" alt="">
     </div>
         `;
         }
@@ -574,15 +574,15 @@ function show_toast(isSuccess, message) {
         document.getElementById("toastAlertMessage").style.setProperty("--foo", `${msgLength}ch`);
 
         if (isSuccess == 1) {
-            toastImage.src = "../assets/_general/success_tick.svg"
+            toastImage.src = "./assets/success_tick.svg"
             toastFrontMessage.style.backgroundColor = "green"
         }
         else if (isSuccess == 0) {
-            toastImage.src = "../assets/_general/error_cross.svg"
+            toastImage.src = "./assets/error_cross.svg"
             toastFrontMessage.style.backgroundColor = "red"
         }
         else {
-            toastImage.src = "../assets/_general/neutral_exclamation.svg"
+            toastImage.src = "./assets/neutral_exclamation.svg"
             toastFrontMessage.style.backgroundColor = "black"
         }
         toastDescriptionMessage.innerText = " ";
