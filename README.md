@@ -165,6 +165,12 @@ Admin would have a single user management page containing information for all th
 <li> HTML </li>
 <li> CSS</li>
  <li>Javascript</li>
+ <li>Node-Modules
+ <ul>
+ <li>Parcel-Bundler</li>
+ <li>Express</li>
+ </ul>
+</li>
 <li>External Libraries:</li>
 <ul>
 <li> <a href="https://lottiefiles.com/">Lottie</a>
