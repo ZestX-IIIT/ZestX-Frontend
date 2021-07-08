@@ -26,7 +26,7 @@ We will be attaching screenshots for phone, tablet and desktop in a single poste
 When you open our website, a remarkable landing page would is displayed, giving you the option for the sign in and sign up:
 <br>
 <br>
-![Landing Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/1.png)
+![Landing Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/1.webp)
 <br>
 
 Then comes the sign-in, sign-up page.
