@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
     "start": "node prod/index.html",
-    "build": "parcel build prod/javascript/signinsignup.js"
+    "build": "parcel build prod/homepage.html"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
   },
-  "browserslist":[
+  "browserslist": [
     "last 1 chrome versions"
   ]
 }
