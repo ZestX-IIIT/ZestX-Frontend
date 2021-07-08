@@ -31,11 +31,25 @@ app.get("/home", (req, res) => {
 app.get("/termsandconditions", (req, res) => {
     res.sendFile(path.join(__dirname, './terms_and_conditions.html'));
 });
+
 app.get("/privacypolicy", (req, res) => {
     res.sendFile(path.join(__dirname, './terms_and_conditions.html'));
 });
+
 app.get("/cookiepolicy", (req, res) => {
     res.sendFile(path.join(__dirname, './terms_and_conditions.html'));
+});
+
+app.get("/events", (req, res) => {
+    res.sendFile(path.join(__dirname, './events.html'));
+});
+
+app.get("/team", (req, res) => {
+    res.sendFile(path.join(__dirname, './team.html'));
+});
+
+app.get("/faq", (req, res) => {
+    res.sendFile(path.join(__dirname, './faq.html'));
 });
 
 app.listen(port, () => {

@@ -305,12 +305,38 @@ function setUpViews() {
             });
 
             editBtn.addEventListener("click", () => {
-                displayEditProfilepage();
+                checkAndDisplayContainer(preloader);
+                setTimeout(() => {
+                    checkAndDisplayContainer(primaryEditProfileContainer);
+                }, 200);
+                checkAndCloseContainer(primaryChangePasswordContainer);
+                checkAndCloseContainer(primaryContainer);
+                checkAndCloseContainer(primaryEventsPageContainer);
+                checkAndCloseContainer(primaryProfilePageContainer);
+                checkAndCloseContainer(nabar_container);
+                checkAndCloseContainer(scrollPath);
+                checkAndCloseContainer(Progressbar);
+                setTimeout(() => {
+                    checkAndCloseContainer(preloader);
+                }, 1500);
                 setUserDetailsInEditPage(userData);
             });
 
             changePasswordBtn.addEventListener("click", () => {
-                displayChangePasswordpage();
+                checkAndDisplayContainer(preloader);
+                setTimeout(() => {
+                    checkAndDisplayContainer(primaryChangePasswordContainer)
+                }, 200);
+                checkAndCloseContainer(primaryChangePasswordContainer);
+                checkAndCloseContainer(primaryContainer);
+                checkAndCloseContainer(primaryEventsPageContainer);
+                checkAndCloseContainer(primaryProfilePageContainer);
+                checkAndCloseContainer(nabar_container);
+                checkAndCloseContainer(scrollPath);
+                checkAndCloseContainer(Progressbar);
+                setTimeout(() => {
+                    checkAndCloseContainer(preloader);
+                }, 1500);
                 clearDataInChangePasswordpage();
             });
 
