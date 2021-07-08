@@ -4,12 +4,19 @@ ZestX: Futuristic Fest Website
 
 Hosted Link : http://zestx.netlify.app/
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d14b602c-8e13-4e58-9c11-0c1226124b82/deploy-status)](https://app.netlify.com/sites/zestx/deploys)<br>
+<br>
+
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d14b602c-8e13-4e58-9c11-0c1226124b82/deploy-status)](https://app.netlify.com/sites/zestx/deploys)
+
+
+
+<br>
 
 ZestX Backend Repository: https://github.com/ZestX-IIIT/ZestX-Backend
 
-<p  style="text-align: center;">
-</p>
+
+<br>
 
 ## Overview
 
@@ -24,12 +31,19 @@ Next comes the admin mode. Admin log-in credentials are directly linked to the d
 We will be attaching screenshots for phone, tablet and desktop in a single poster
 
 When you open our website, a remarkable landing page would is displayed, giving you the option for the sign in and sign up:
+
 <br>
-<br>
-![Landing Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/1.png)
+
+![Landing Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/1.webp)
+
 <br>
 
 Then comes the sign-in, sign-up page.
+
+<br>
+
+![Sign-in page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/2.webp)
+
 <br>
 <br>
 
@@ -41,25 +55,70 @@ The next page would be loaded based on your credentials. As mentioned above, we 
 
 <ul>
  If the visitor logins, a respective home page would be opened. The home page contains all the details for our fest.
+
 <br>
 <br>
+
+ ![Home Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/3.webp)
+
+<br>
+<br>
+
 After that, we have the event details page having all the information for each event and a button to register.
+
 <br>
 <br>
+
+![Event Details Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/4.webp)
+
+<br>
+<br>
+
 Then we have a user dashboard containing your information and the events you are associated with in fest.
+
 <br>
 <br>
+
+![User Profile Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/5.webp)
+
+<br>
+<br>
+
 We, too, have to edit information and change password pages for the user.
+
 <br>
 <br>
+
+![Edit Information Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/6.webp)
+
+<br>
+<br>
+
+![Change password Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/7.webp)
+
+<br>
+<br>
+
 </ul>
 
 ### Admin Login:
 
 <ul>
 Admin would have a single user management page containing information for all the events and a list of all the users registered in that event, whether added by admin or registered through the website.
+
 <br>
 <br>
+
+![ Admin Page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/8.webp)
+
+<br>
+<br>
+
+![ Add user Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/9.webp)
+
+<br>
+<br>
+
 </ul>
 
 ## Features

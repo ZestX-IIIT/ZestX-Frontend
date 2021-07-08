@@ -41,6 +41,7 @@
 .teamMembers_active {
   opacity: 1;
   height: 90%;
+  padding-bottom: 4vw;
 }
 .teamMembers::-webkit-scrollbar {
   display: none;
