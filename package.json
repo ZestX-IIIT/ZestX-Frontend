@@ -2,12 +2,12 @@
   "name": "zestx",
   "version": "1.0.0",
   "description": "ZestX: Futuristic Fest Website",
-  "main": "index1.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "node prod/index.html",
-    "build": "parcel build prod/signupsignin.html"
+    "dev": "nodemon dist/index.js",
+    "start": "node dist/index.html",
+    "build": "parcel build prod/homepage.html"
   },
   "repository": {
     "type": "git",

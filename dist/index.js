@@ -8,23 +8,27 @@ app.use(express.json());
 app.use(express.static('dist'));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, './dist/index.html'));
+    res.sendFile(path.join(__dirname, './index.html'));
 });
 
 app.get("/admin", (req, res) => {
-    res.sendFile(path.join(__dirname, './dist/admin.html'));
+    res.sendFile(path.join(__dirname, './admin.html'));
 });
 
 app.get("/signin", (req, res) => {
-    res.sendFile(path.join(__dirname, './dist/signupsignin.html'));
+    res.sendFile(path.join(__dirname, './signupsignin.html'));
 });
 
 app.get("/signup", (req, res) => {
-    res.sendFile(path.join(__dirname, './dist/signupsignin.html'));
+    res.sendFile(path.join(__dirname, './signupsignin.html'));
 });
 
 app.get("/home", (req, res) => {
-    res.sendFile(path.join(__dirname, './dist/homepage.html'));
+    res.sendFile(path.join(__dirname, './homepage.html'));
+});
+
+app.get("/tandc", (req, res) => {
+    res.sendFile(path.join(__dirname, './terms_and_conditions.html'));
 });
 
 app.listen(port, () => {
