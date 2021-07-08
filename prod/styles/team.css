@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bg_blend_of_home {
+  height: 200vh;
+  width: 100%;
+  position: fixed;
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+  z-index: -500;
+}
+.team {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 125px;
+}
+.teamPanel {
+  width: 30%;
+  height: 90%;
+  border-right: 1px solid #ffffff;
+}
+.teamMembers {
+  width: 60vw;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 273px 3px 196px rgba(255, 242, 250, 0.1);
+  border-radius: 2.6vw;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  opacity: 0;
+  height: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.teamMembers_active {
+  opacity: 1;
+  height: 90%;
+  padding-bottom: 4vw;
+}
+.teamMembers::-webkit-scrollbar {
+  display: none;
+}
+.team_Outer_container {
+  overflow: hidden;
+}
+.teamContent {
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.7vw;
+  text-align: right;
+  text-transform: uppercase;
+  color: #cdcee6;
+  margin: 31px 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  transition: color 200ms ease-in-out, font-size 200ms ease-in-out;
+  cursor: pointer;
+}
+.teamContentActive {
+  color: #f1bbff;
+  font-size: 1.9vw;
+}
+.topContainer {
+  width: auto;
+  height: auto;
+  margin-top: 4.2vw;
+}
+.topContainer h2 {
+  font-family: "Now";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6vw;
+  text-transform: uppercase;
+  color: #cdcee6;
+  z-index: 1;
+  text-align: center;
+  margin-top: 20px;
+}
+.outerContainer {
+  display: inline-block;
+  /* width: 100%; */
+  /* height: 90%; */
+  height: auto;
+  width: auto;
+  background: rgba(196, 196, 196, 0.2);
+  box-shadow: 0px 3px 39px rgba(0, 0, 0, 0.25),
+    inset 273px 3px 196px rgba(255, 242, 250, 0.1);
+  border-radius: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.imageHolder {
+  /* width: calc(100% - 20px); */
+  /* width: auto; */
+  width: 20vw;
+  /* height: calc(100% - 20px); */
+  height: auto;
+  border-radius: 5.2vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0.56vw;
+  filter: brightness(100%);
+  transition: filter 400ms ease-in-out;
+}
+.imageHolder_toggle {
+  filter: brightness(30%);
+}
+.team_section_info_icons {
+  position: absolute;
+  width: 3.86vw;
+  height: 3.86vw;
+  top: 0;
+  opacity: 0;
+  transition: all 400ms ease-in-out;
+}
+.team_section_info_icons:hover {
+  cursor: pointer;
+}
+.team_section_github {
+  top: 41.5%;
+}
+.team_section_linkedin {
+  top: 68%;
+}
+.team_section_mail {
+  top: 14%;
+}
+#bg_blend {
+  height: 200vh;
+  width: 100%;
+  position: fixed;
+  z-index: -100;
+  background: linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+}
+@media only screen and (max-width: 1350px) {
+  .teamContent {
+    margin-left: 10px;
+  }
+}
+@media only screen and (max-width: 1170px) {
+  .team {
+    padding-top: 50px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .teamContent {
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+
+  .teamPanel {
+    width: 25%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .team {
+    height: 88vh;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .team {
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 730px) {
+  .team {
+    height: 70vh;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .teamContent {
+    margin: 0;
+    margin-top: 20px;
+    margin-right: 5px;
+    text-align: center;
+  }
+
+  .team {
+    height: 50vh;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .team {
+    height: 40vh;
+  }
+}
