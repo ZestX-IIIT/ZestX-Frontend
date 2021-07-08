@@ -1111,25 +1111,25 @@ setTimeout(function () {
     let index_slider = 0;
     var isNotHovering = true;
 
-    
-  let imageContainer = document.getElementsByClassName("image-container");
-  let poster1 = document.getElementById("poster1");
-  let poster2 = document.getElementById("poster2");
-  let poster3 = document.getElementById("poster3");
-  imageContainer[0].addEventListener("click", () => {
-    eventsSection.scrollIntoView({ behavior: "smooth" });
-    poster1.addEventListener("click" , ()=>{
-      slider[0].checked = true;
-      isNotHovering = false;
+
+    let imageContainer = document.getElementsByClassName("image-container");
+    let poster1 = document.getElementById("poster1");
+    let poster2 = document.getElementById("poster2");
+    let poster3 = document.getElementById("poster3");
+    imageContainer[0].addEventListener("click", () => {
+        eventsSection.scrollIntoView({ behavior: "smooth" });
+        poster1.addEventListener("click", () => {
+            slider[0].checked = true;
+            isNotHovering = false;
+        });
+        poster2.addEventListener("click", () => {
+            slider[2].checked = true;
+            isNotHovering = false;
+        }); poster3.addEventListener("click", () => {
+            slider[3].checked = true;
+            isNotHovering = false;
+        });
     });
-    poster2.addEventListener("click" , ()=>{
-      slider[2].checked = true;
-      isNotHovering = false;
-    });poster3.addEventListener("click" , ()=>{
-      slider[3].checked = true;
-      isNotHovering = false;
-    });
-  });
 
 
 
@@ -1951,20 +1951,6 @@ setTimeout(function () {
             }
         });
     }
-    var userEditProfileAnimation = bodymovin.loadAnimation({
-        container: document.getElementById('user_edit_profile_anim_container'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: './anim/user_edit_profile_page_anim/user_edit_profile_page_anim.json'
-    })
-    var userChangePasswordAnimation = bodymovin.loadAnimation({
-        container: document.getElementById('change_user_password_page_anim_container'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: './anim/security_anim_edit_password_page/security_anim_data.json'
-    })
 
 }, 500);
 setTimeout(function () {
@@ -2100,3 +2086,18 @@ function passValidator(password) {
     return [true, "Success"];
 
 }
+
+var userEditProfileAnimation = bodymovin.loadAnimation({
+    container: document.getElementById('user_edit_profile_anim_container'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: './anim/user_edit_profile_page_anim/high_res/user_edit_profile_page_anim.json'
+})
+var userChangePasswordAnimation = bodymovin.loadAnimation({
+    container: document.getElementById('change_user_password_page_anim_container'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: './anim/security_anim_edit_password_page/high-res/security_anim_data.json'
+})
