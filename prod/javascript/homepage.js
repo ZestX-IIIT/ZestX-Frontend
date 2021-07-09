@@ -53,8 +53,6 @@ let backBtnFromEventsPage;
 let backBtnFromProfilePage;
 let backBtnFromEditProfilePage;
 let backBtnFromChangePasswordPage;
-let forgotPasswordBtnFromChangePasswordPage;
-let forgotPasswordBtnFromEditProfilePage;
 let editBtn;
 let saveBtn;
 let updateBtn;
@@ -122,13 +120,6 @@ function setUpViews() {
         );
         backBtnFromChangePasswordPage = document.getElementById(
             "back_btn_from_change_password_page"
-        );
-
-        forgotPasswordBtnFromChangePasswordPage = document.getElementById(
-            "forgot_password_at_change_password_page"
-        );
-        forgotPasswordBtnFromEditProfilePage = document.getElementById(
-            "forgot_password_at_edit_profile_page"
         );
 
         ongoingEventContainer = document.getElementById("OngoingEventsList");
@@ -340,53 +331,6 @@ function setUpViews() {
                 clearDataInChangePasswordpage();
             });
 
-            forgotPasswordBtnFromChangePasswordPage.addEventListener(
-                "click",
-                async () => {
-                    displayPreloder();
-                    const forgotPassRes = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
-                        method: "GET",
-                        headers: {
-                            authorization: token,
-                        },
-                    });
-                    if (forgotPassRes.status == 500) {
-                        show_toast(0, "Error occured re-try!");
-                        displayChangePasswordpage();
-                        // console.log(err);
-                    } else {
-                        show_toast(
-                            1,
-                            "Link to reset password has been sent to your email-id!"
-                        );
-                        displayChangePasswordpage();
-                    }
-                }
-            );
-
-            forgotPasswordBtnFromEditProfilePage.addEventListener(
-                "click",
-                async () => {
-                    displayPreloder();
-                    const forgotPassRes = await fetch(`${apiURL}/auth/forgotpasswordhomepage`, {
-                        method: "GET",
-                        headers: {
-                            authorization: token,
-                        },
-                    });
-
-                    if (forgotPassRes.status == 500) {
-                        show_toast(0, "Error occured re-try!");
-                        displayEditProfilepage();
-                        return;
-                    }
-
-                    show_toast(1, "Link to reset password has been sent to your email-id!!");
-                    displayEditProfilepage();
-
-                }
-            );
-
             logoutBtn.addEventListener("click", () => {
                 localStorage.removeItem("jwt");
                 location.href = "/";
@@ -499,7 +443,7 @@ function setUpViews() {
                     show_toast(2, "User already exist!");
                     return;
                 }
-                
+
                 if (updateDetailsRes.status == 500) {
                     displayEditProfilepage();
                     show_toast(0, "Internal server error please re-try!");
