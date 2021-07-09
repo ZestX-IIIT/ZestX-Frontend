@@ -1,2 +1,10 @@
-/home              /
-/*                 /error_page.html
+/home                                   /homepage.html
+/admin                                  /admin.html
+/signin                                 /signupsignin.html
+/signun                                 /signupsignin.html
+/signupsignin                           /signupsignin.html
+/signinsignup                           /signupsignin.html
+/about                                  /footer_links.html
+/tnc                                    /terms_and_conditions.html
+/terms_and_conditions                   /terms_and_conditions.html
+/*                                      /error_page.html
