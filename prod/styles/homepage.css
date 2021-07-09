@@ -1921,6 +1921,7 @@ div.spinner i:nth-child(8) {
     padding-top: 50px;
     height: 90vh;
   }
+  
 }
 @media only screen and (max-width: 1000px) {
   .FAQQuestion {
@@ -1970,6 +1971,12 @@ div.spinner i:nth-child(8) {
   .FAQMainContainer {
     height: 65vh;
   }
+  .FAQQuestion{
+    padding-left: 1rem;
+  }
+  .FAQAnswer{
+    margin-left: 1rem;
+  }
 }
 @media only screen and (max-width: 370px) {
   .FAQMainContainer {
@@ -1977,7 +1984,7 @@ div.spinner i:nth-child(8) {
   }
   .FAQQuestion {
     font-size: 0.5rem;
-    padding-left: 1rem;
+    padding-left: 0.7rem;
   }
   .FAQAnswer {
     font-size: 0.5rem;
@@ -1986,7 +1993,7 @@ div.spinner i:nth-child(8) {
     width: 1.7rem;
   }
   .FAQAnswer {
-    margin-left: 1rem;
+    margin-left: 0.7rem;
   }
 }
 @media only screen and (max-width: 300px) {

@@ -11,4 +11,10 @@
   .FAQMainContainer {
     height: 65vh;
   }
+  .FAQQuestion{
+    padding-left: 1rem;
+  }
+  .FAQAnswer{
+    margin-left: 1rem;
+  }
 }

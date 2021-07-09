@@ -4,7 +4,7 @@
   }
   .FAQQuestion {
     font-size: 0.5rem;
-    padding-left: 1rem;
+    padding-left: 0.7rem;
   }
   .FAQAnswer {
     font-size: 0.5rem;
@@ -13,6 +13,6 @@
     width: 1.7rem;
   }
   .FAQAnswer {
-    margin-left: 1rem;
+    margin-left: 0.7rem;
   }
 }
