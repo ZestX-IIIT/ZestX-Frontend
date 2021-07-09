@@ -1,1 +1,2 @@
 /*  /error_page.html
+/home  /homepage.html
