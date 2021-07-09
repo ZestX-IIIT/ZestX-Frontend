@@ -14,8 +14,7 @@
     height: 6rem;
   }
   .Main_Edit_Container {
-    background: url("../../../assets/home_page/events_details/rangshala_bg.svg"),
-      Linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+    background: Linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
     width: 100%;
     height: 100vh;
     padding-top: 4rem;

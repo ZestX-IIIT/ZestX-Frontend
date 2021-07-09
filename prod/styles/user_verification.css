@@ -8,8 +8,7 @@ body {
   overflow: hidden;
   width: 100%;
   height: 120vh;
-  background: url("../../../assets/home_page/events_details/rangshala_bg.svg"),
-    Linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+  background: Linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
 }
 #zestxlogoeditpageverification {
   position: absolute;
