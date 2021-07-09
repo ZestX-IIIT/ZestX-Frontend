@@ -5,6 +5,11 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+#bg-error-page {
   background: conic-gradient(
     from 130deg at 27.66% 52.25%,
     #05662b 0deg,
@@ -12,6 +17,8 @@ body {
   );
   width: 100vw;
   height: 100vh;
+  position: fixed;
+  z-index: -50;
 }
 
 #primary-container-for-error-page {
@@ -28,11 +35,11 @@ body {
   height: auto;
   left: 46vw;
   margin: auto;
-  top: 4vh;
+  top: 4%;
 }
 
 #error-text-container-error-page {
-  height: 100vh;
+  height: 100%;
   width: 50vw;
   position: relative;
 }
@@ -40,7 +47,7 @@ body {
 #error-text-sub-container-error-page {
   position: relative;
   width: 100%;
-  height: 88vh;
+  height: 88%;
 }
 
 #text-404-error-page {
@@ -51,7 +58,8 @@ body {
   font-size: 6.5vw;
   position: absolute;
   margin-right: 2.7vw;
-  top: 34vh;
+  top: 43%;
+  margin-top: -4vw;
   left: 12vw;
 }
 
@@ -59,16 +67,16 @@ body {
   position: relative;
   width: fit-content;
   height: fit-content;
-  top: 43vh;
+  top: 43%;
   left: 8vw;
   background: rgba(40, 255, 61, 0.07);
   box-shadow: inset 0px 3.62941px 168.767px rgba(239, 239, 239, 0.25);
   backdrop-filter: blur(16px);
   border-radius: 2vw;
-  margin-top: -5.5vh;
-  padding-top: 9vh;
+  margin-top: -5.5%;
+  padding-top: 5vw;
   padding-left: 3vw;
-  padding-bottom: 6vh;
+  padding-bottom: 2.8vw;
   padding-right: 2vw;
   z-index: -10;
 }
@@ -87,7 +95,7 @@ body {
   color: #e9ffeb;
   width: 28vw;
   font-weight: 400;
-  margin-top: 4vh;
+  margin-top: 1.6vw;
 }
 
 #error-page-redirect-link-container {
@@ -108,9 +116,6 @@ body {
   font-weight: 400;
 }
 
-  
-
-
 #anim-assets-container-error-page {
   height: 100vh;
   width: 50vw;
@@ -120,21 +125,32 @@ body {
   justify-content: center;
 }
 
-#anim-assets-sub-container-error-page{
-  height: 60vh;
+#anim-assets-sub-container-error-page {
+  height: 30vw;
   width: 32vw;
   position: relative;
   margin-right: 2.75vw;
 }
 
-#man-img-error-page{
+#man-img-error-page {
   position: absolute;
+  width: 80%;
+  top: 33%;
+  right: 25%;
 }
 
-#football-img-error-page{
+#football-img-error-page {
   position: absolute;
+  width: 11%;
+  height: auto;
+  top: 22%;
+  left: 65%;
 }
 
-#anim-bg-img-error-page{
+#anim-bg-img-error-page {
   position: absolute;
+  height: auto;
+  width: 141%;
+  top: -17%;
+  right: -29%;
 }

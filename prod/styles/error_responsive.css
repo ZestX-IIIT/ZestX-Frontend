@@ -1,0 +1,146 @@
+@media screen and (max-width: 850px) {
+  body {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  #bg-error-page {
+    background: conic-gradient(
+      from 130deg at 46.66% 65.25%,
+      #05662b 0deg,
+      #000f04 360deg
+    );
+  }
+  #anim-assets-container-error-page {
+    height: 20rem;
+    width: fit-content;
+  }
+
+  #error-text-container-error-page {
+    height: 14rem;
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  #error-page-redirect-link-container {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  #error-text-sub-container-error-page {
+    position: relative;
+    width: 18rem;
+    height: 10.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #primary-container-for-error-page {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 5vh;
+    height: auto;
+  }
+  #redirect-link-text-error-page {
+    font-size: 0.8rem;
+  }
+  #redirect-link-error-page {
+    font-size: 0.8rem;
+  }
+  #zestx-logo-error-page {
+    width: 4rem;
+    position: unset;
+  }
+
+  #anim-assets-sub-container-error-page {
+    height: 15rem;
+    width: 16rem;
+    margin-right: 0;
+  }
+  #error-description-container-error-page {
+    top: 30%;
+  }
+
+  #text-404-error-page {
+    top: 34%;
+    left: 10%;
+    font-size: 3rem;
+    margin-top: -2rem;
+    margin-right: 0;
+  }
+
+  #error-description-container-error-page {
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    padding-left: 1.5rem;
+    padding-top: 2.75rem;
+  }
+
+  #error-title-text-error-page {
+    font-size: 1.3rem;
+  }
+
+  #error-description-text-error-page {
+    font-size: 0.7rem;
+    margin-right: 0.7rem;
+    width: fit-content;
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  #error-text-sub-container-error-page {
+    width: 71vw;
+    height: 42vw;
+  }
+  #zestx-logo-error-page {
+    width: 17vw;
+  }
+  #anim-assets-sub-container-error-page {
+    height: 66vw;
+    width: 70.4vw;
+  }
+  #anim-assets-container-error-page {
+    height: 80vw;
+  }
+  #error-text-container-error-page {
+    height: 58vw;
+    width: 72vw;
+  }
+  #text-404-error-page {
+    font-size: 11vw;
+    margin-top: -7vw;
+  }
+  #error-title-text-error-page {
+    font-size: 4.7vw;
+  }
+  #error-description-container-error-page {
+    padding-left: 6vw;
+    padding-top: 11vw;
+  }
+  #error-description-text-error-page {
+    font-size: 2.5vw;
+    margin-right: 2.5vw;
+    width: fit-content;
+    margin-top: 4vw;
+  }
+  #redirect-link-error-page {
+    font-size: 2.9vw;
+  }
+  #redirect-link-text-error-page {
+    font-size: 2.9vw;
+  }
+  #anim-bg-img-error-page {
+    position: absolute;
+    height: auto;
+    width: 125%;
+    top: -11%;
+    right: -18%;
+  }
+}
