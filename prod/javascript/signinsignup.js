@@ -157,6 +157,10 @@ function setUpSignInSignUpPage() {
 
     const email = document.getElementById("signinemail").value;
 
+    if (!validateEmail(email)) {
+      return show_toast(2, "Please Enter a valid email!");
+    }
+
     const forgotPassRes = await fetch(`${apiURL}/auth/forgotpasswordsignin`, {
       method: "POST",
       headers: {
@@ -241,64 +245,64 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
   const token = localStorage.getItem("jwt");
   if (token && token != null) {
 
-      fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
-          method: "GET",
-          headers: {
-              authorization: token,
-          },
-      })
-          .then((res) => res.json())
-          .then((data) => {
-              let isAdmin = data.data.is_admin;
-              switch (redirectWithoutTokenChk) {
-                  case 0:
-                      redirectToHomeOrAdminPageAccToToken(isAdmin);
-                      break;
-                  case 1:
-                      redirectToHomePageAccToToken(isAdmin, setUpFun);
-                      break;
-                  case 2:
-                      redirectToAdminPageAccToToken(isAdmin, setUpFun);
-                      break;
+    fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
+      method: "GET",
+      headers: {
+        authorization: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        let isAdmin = data.data.is_admin;
+        switch (redirectWithoutTokenChk) {
+          case 0:
+            redirectToHomeOrAdminPageAccToToken(isAdmin);
+            break;
+          case 1:
+            redirectToHomePageAccToToken(isAdmin, setUpFun);
+            break;
+          case 2:
+            redirectToAdminPageAccToToken(isAdmin, setUpFun);
+            break;
 
-                  default:
-                      break;
-              }
-          })
-          .catch((err) => {
-              console.log(err);
-          });
+          default:
+            break;
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
 
   } else {
-      if (redirectWithoutTokenChk > 0) {
-          window.location.href = "./signupsignin.html#signin";
-      }
-      else {
-          setUpFun()
+    if (redirectWithoutTokenChk > 0) {
+      window.location.href = "./signupsignin.html#signin";
+    }
+    else {
+      setUpFun()
 
-      }
+    }
   }
 }
 
 function redirectToHomeOrAdminPageAccToToken(isAdmin) {
   if (isAdmin)
-      window.location.href = "./admin.html";
+    window.location.href = "./admin.html";
   else window.location.href = "./homepage.html";
 }
 
 function redirectToHomePageAccToToken(isAdmin, setUpFun) {
   if (!isAdmin)
-      window.location.href = "./homepage.html";
+    window.location.href = "./homepage.html";
   else
-      setUpFun()
+    setUpFun()
 }
 
 function redirectToAdminPageAccToToken(isAdmin, setUpFun) {
   if (isAdmin)
-      window.location.href = "./admin.html";
+    window.location.href = "./admin.html";
   else
-      setUpFun()
+    setUpFun()
 }
 
 function show_toast(isSuccess, message) {
