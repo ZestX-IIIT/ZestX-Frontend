@@ -1,6 +1,6 @@
 setTimeout(() => {
 
-    let activeTab = 1;
+  let activeTab = 1;
   let events = document.getElementById("events");
   let team = document.getElementById("team");
   let faq = document.getElementById("faq");
@@ -9,10 +9,24 @@ setTimeout(() => {
   let eventsSection = document.getElementById("eventssec");
   let teamSection = document.getElementById("teamsec");
   let faqSection = document.getElementById("faqsec");
-  let Progressbar = document.getElementById("Progressbar");
-  let scrollPath = document.getElementById("scrollPath");
 
-  
+  let urlLink = new URL(location.href);
+  let section_index = urlLink.searchParams.get("id");
+
+  if (section_index == 1) {
+    teamSection.scrollIntoView({ behavior: "smooth" });
+  }
+
+  if (section_index == 2) {
+    faqSection.scrollIntoView({ behavior: "smooth" });
+  }
+
+  for (let i = 0; i < scrolling_terms_condition_content.length; i++) {
+    scrolling_terms_condition_content[i].addEventListener("click", () => {
+      terms_conditon_landing[i].scrollIntoView({ behavior: "smooth" });
+    })
+  }
+
   events.addEventListener("click", () => {
     eventsSection.scrollIntoView({ behavior: "smooth" });
   });
@@ -20,7 +34,7 @@ setTimeout(() => {
     teamSection.scrollIntoView({ behavior: "smooth" });
     console.log("hello");
   });
- 
+
   faq.addEventListener("click", () => {
     faqSection.scrollIntoView({ behavior: "smooth" });
   });
@@ -48,7 +62,7 @@ setTimeout(() => {
         deActive(3);
       }
     }
-    
+
     else {
       if (activeTab != 3) {
         activeTab = 3;
@@ -58,10 +72,10 @@ setTimeout(() => {
     }
   });
 
-   
+
   function deActive(tabIndex) {
     switch (tabIndex) {
-     
+
       case 1:
         dot.classList.remove("dotevents");
         events.classList.remove("navactive");
@@ -69,19 +83,19 @@ setTimeout(() => {
       case 2:
         dot.classList.remove("dotteam");
         team.classList.remove("navactive");
-  
+
         break;
-    
+
       case 3:
         dot.classList.remove("dotfaq");
         faq.classList.remove("navactive");
-  
+
         break;
     }
   }
   function setActive(tabIndex) {
     switch (tabIndex) {
-      
+
       case 1:
         events.classList.add("navactive");
         dot.classList.add("dotevents");
@@ -379,10 +393,10 @@ setTimeout(function () {
           }
         }
       })(),
-      !D || !D.getElementsByClassName)
+        !D || !D.getElementsByClassName)
     ) {
       return {
-        init: function () {},
+        init: function () { },
         cfg: H,
         noSupport: true,
       };
@@ -493,15 +507,15 @@ setTimeout(function () {
       te = function (a, e) {
         return e
           ? function () {
-              ee(a);
-            }
+            ee(a);
+          }
           : function () {
-              var e = this;
-              var t = arguments;
-              ee(function () {
-                a.apply(e, t);
-              });
-            };
+            var e = this;
+            var t = arguments;
+            ee(function () {
+              a.apply(e, t);
+            });
+          };
       },
       ae = function (e) {
         var a;
@@ -516,16 +530,16 @@ setTimeout(function () {
         var s =
           o && n > 49
             ? function () {
-                o(t, {
-                  timeout: n,
-                });
-                if (n !== H.ricTimeout) {
-                  n = H.ricTimeout;
-                }
+              o(t, {
+                timeout: n,
+              });
+              if (n !== H.ricTimeout) {
+                n = H.ricTimeout;
               }
+            }
             : te(function () {
-                I(t);
-              }, true);
+              I(t);
+            }, true);
         return function (e) {
           var t;
           if ((e = e === true)) {
