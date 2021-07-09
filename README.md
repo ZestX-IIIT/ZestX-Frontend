@@ -122,6 +122,14 @@ Admin would have a single user management page containing information for all th
 
 </ul>
 
+We, too, have a custom error page.  If mistakenly you went to a page not suppose to visit, there you will find an error page with an  option to go at the sign-in page
+
+<br>
+
+![ Error page Image](https://github.com/ZestX-IIIT/ZestX/blob/main/assets/_readme_assets/Compressed_readme_assests/10.webp)
+
+<br>
+
 ## Features
 
 ### Backend Features
@@ -147,6 +155,7 @@ Admin would have a single user management page containing information for all th
 </li>
 <li>We have done DOM manipulation and tried to open all the pages of the homepage without refreshing the page. 
 </li>
+<li>We also have a custom error page to enhance the UI</li>
 <li>Visitors can go through all the events, get all the information about the event by clicking the posters, and register. </li>
 <li>Users can change their personal information, including the password.
 </li>
