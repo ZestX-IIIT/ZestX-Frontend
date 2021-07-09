@@ -21,11 +21,11 @@ setTimeout(() => {
     faqSection.scrollIntoView({ behavior: "smooth" });
   }
 
-  for (let i = 0; i < scrolling_terms_condition_content.length; i++) {
-    scrolling_terms_condition_content[i].addEventListener("click", () => {
-      terms_conditon_landing[i].scrollIntoView({ behavior: "smooth" });
-    })
-  }
+//   for (let i = 0; i < scrolling_terms_condition_content.length; i++) {
+//     scrolling_terms_condition_content[i].addEventListener("click", () => {
+//       terms_conditon_landing[i].scrollIntoView({ behavior: "smooth" });
+//     })
+//   }
 
   events.addEventListener("click", () => {
     eventsSection.scrollIntoView({ behavior: "smooth" });
