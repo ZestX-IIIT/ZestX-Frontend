@@ -608,7 +608,7 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
 
     const token = localStorage.getItem("jwt");
     if (token && token != null) {
-
+  
         fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
             method: "GET",
             headers: {
@@ -628,7 +628,7 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
                     case 2:
                         redirectToAdminPageAccToToken(isAdmin, setUpFun);
                         break;
-
+  
                     default:
                         break;
                 }
@@ -636,38 +636,38 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
             .catch((err) => {
                 console.log(err);
             });
-
-
+  
+  
     } else {
         if (redirectWithoutTokenChk > 0) {
-            window.location.href = "/signup";
+            window.location.href = "./signupsignin.html#signin";
         }
         else {
             setUpFun()
-
+  
         }
     }
-}
-
-function redirectToHomeOrAdminPageAccToToken(isAdmin) {
+  }
+  
+  function redirectToHomeOrAdminPageAccToToken(isAdmin) {
     if (isAdmin)
-        window.location.href = "/admin";
-    else window.location.href = "/home";
-}
-
-function redirectToHomePageAccToToken(isAdmin, setUpFun) {
+        window.location.href = "./admin.html";
+    else window.location.href = "./homepage.html";
+  }
+  
+  function redirectToHomePageAccToToken(isAdmin, setUpFun) {
     if (!isAdmin)
-        window.location.href = "/home";
+        window.location.href = "./homepage.html";
     else
         setUpFun()
-}
-
-function redirectToAdminPageAccToToken(isAdmin, setUpFun) {
+  }
+  
+  function redirectToAdminPageAccToToken(isAdmin, setUpFun) {
     if (isAdmin)
-        window.location.href = "/admin";
+        window.location.href = "./admin.html";
     else
         setUpFun()
-}
+  }
 setTimeout(function () {
     var adminAddUserAnimation = bodymovin.loadAnimation({
         container: document.getElementById('admin_add_user_anim_container'),
