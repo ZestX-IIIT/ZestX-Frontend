@@ -60,6 +60,7 @@
   #anim-assets-sub-container-error-page {
     height: 15rem;
     width: 16rem;
+    margin-right: 0;
   }
   #error-description-container-error-page {
     top: 30%;
@@ -97,5 +98,42 @@
   #error-text-sub-container-error-page {
     width: 71vw;
     height: 42vw;
+  }
+  #zestx-logo-error-page {
+    width: 17vw;
+  }
+  #anim-assets-sub-container-error-page {
+    height: 66vw;
+    width: 70.4vw;
+  }
+  #anim-assets-container-error-page {
+    height: 80vw;
+  }
+  #error-text-container-error-page {
+    height: 58vw;
+    width: 72vw;
+  }
+  #text-404-error-page {
+    font-size: 11vw;
+    margin-top: -7vw;
+  }
+  #error-title-text-error-page {
+    font-size: 4.7vw;
+  }
+  #error-description-container-error-page {
+    padding-left: 6vw;
+    padding-top: 11vw;
+  }
+  #error-description-text-error-page {
+    font-size: 2.5vw;
+    margin-right: 2.5vw;
+    width: fit-content;
+    margin-top: 4vw;
+  }
+  #redirect-link-error-page {
+    font-size: 2.9vw;
+  }
+  #redirect-link-text-error-page {
+    font-size: 2.9vw;
   }
 }
