@@ -213,6 +213,11 @@ We, too, have a custom error page.  If mistakenly you went to a page not suppose
 2. Open your Editior , preferably VS code
 3. Open Index.html with Live Server and you can access all the functionality of our Website
 
+### Visitors Credentials : 
+
+Email : 404ironman404@gmail.com
+<br>
+Password : 2W5wYY3JZ1LE8V16@
 
 ## Developers
 
