@@ -9,9 +9,10 @@ Hosted Link : http://zestx.netlify.app/
 <div align="center" width="100%">
  
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d14b602c-8e13-4e58-9c11-0c1226124b82/deploy-status)](https://app.netlify.com/sites/zestx/deploys)
+![License MIT](https://img.shields.io/github/license/zestx-iiit/zestx)
+![COntributors](https://img.shields.io/github/contributors/zestx-iiit/zestx)
+
 </div>
-
-
 
 
 <br>
