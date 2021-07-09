@@ -124,7 +124,7 @@ Admin would have a single user management page containing information for all th
 
 ## Features
 
-### Security Features
+### Backend Features
 <ol>
 <li>Our website is more focused on security, and for that, we will be sending a verification mail to the visitor. Visitors can register only when the verification gets completed.
 </li>
@@ -141,7 +141,7 @@ Admin would have a single user management page containing information for all th
 
 </ol>
 
-### Utilization Features
+### Front-End Features
 <ol>
 <li>Our pages are fully responsive for all the devices to add the functionality of opening our website on any device.
 </li>
@@ -165,7 +165,7 @@ Admin would have a single user management page containing information for all th
 <li> HTML </li>
 <li> CSS</li>
  <li>Javascript</li>
- <li>Node-Modules
+ <li>NPM-Packages
  <ul>
  <li>Parcel-Bundler</li>
  <li>Express</li>
@@ -187,7 +187,6 @@ Admin would have a single user management page containing information for all th
 <li>bcrypt</li>
 <li>cors</li>
 <li>dotenv</li>
-<li>heroku</li>
 <li>jsonwebtoken</li>
 <li>nodemailer</li>
 <li>nodemon</li>
@@ -195,11 +194,19 @@ Admin would have a single user management page containing information for all th
 <li>pg</li>
 </ul>
 </li>
+<li>heroku</li>
 <li>Express </li>
 <li>PostgreSQL</li>
 
 
-## Authors
+## How to Set-Up?
+
+1. Clone the Repository 
+2. Open your Editior , preferably VS code
+3. Open Index.html with Live Server and you can access all the functionality of our Website
+
+
+## Developers
 
 - [Akash Gupta](https://github.com/akashgupta1909)
 - [Harshil Mendpara](https://github.com/HarshilMendpara)
