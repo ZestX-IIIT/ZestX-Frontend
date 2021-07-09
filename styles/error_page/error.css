@@ -90,22 +90,51 @@ body {
   margin-top: 4vh;
 }
 
-#error-page-redirect-link-container{
+#error-page-redirect-link-container {
   margin-left: 8vw;
 }
 
+#redirect-link-error-page {
+  text-decoration: none;
+  color: rgba(31, 148, 255, 0.8);
+  font-family: "now";
+  font-weight: 500;
+  cursor: pointer;
+}
 
+#redirect-link-text-error-page {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "now";
+  font-weight: 400;
+}
 
-
-
-
-
-
-
+  
 
 
 #anim-assets-container-error-page {
   height: 100vh;
-  width: fit-content;
+  width: 50vw;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#anim-assets-sub-container-error-page{
+  height: 60vh;
+  width: 32vw;
+  position: relative;
+  margin-right: 2.75vw;
+}
+
+#man-img-error-page{
+  position: absolute;
+}
+
+#football-img-error-page{
+  position: absolute;
+}
+
+#anim-bg-img-error-page{
+  position: absolute;
 }
