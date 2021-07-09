@@ -195,7 +195,6 @@ Admin would have a single user management page containing information for all th
 </ul>
 </li>
 <li>heroku</li>
-<li>Express </li>
 <li>PostgreSQL</li>
 
 
