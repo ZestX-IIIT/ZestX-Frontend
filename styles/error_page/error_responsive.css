@@ -93,3 +93,9 @@
     margin-top: 1rem;
   }
 }
+@media screen and (max-width: 420px) {
+  #error-text-sub-container-error-page {
+    width: 71vw;
+    height: 42vw;
+  }
+}
