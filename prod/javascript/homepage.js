@@ -494,6 +494,12 @@ function setUpViews() {
                     return;
                 }
 
+                if (updateDetailsRes.status == 444) {
+                    displayEditProfilepage();
+                    show_toast(2, "User already exist!");
+                    return;
+                }
+                
                 if (updateDetailsRes.status == 500) {
                     displayEditProfilepage();
                     show_toast(0, "Internal server error please re-try!");
@@ -2122,14 +2128,14 @@ setTimeout(() => {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '/user_edit_profile_page_anim/high_res/user_edit_profile_page_anim.json'
+        path: './anim/user_edit_profile_page_anim/high_res/user_edit_profile_page_anim.json'
     })
     var userChangePasswordAnimation = bodymovin.loadAnimation({
         container: document.getElementById('change_user_password_page_anim_container'),
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '/security_anim_edit_password_page/high-res/security_anim_data.json'
+        path: './anim/security_anim_edit_password_page/high-res/security_anim_data.json'
     })
 
 }, 500);
