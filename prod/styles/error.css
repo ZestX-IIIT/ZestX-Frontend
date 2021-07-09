@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: conic-gradient(
+    from 130deg at 27.66% 52.25%,
+    #05662b 0deg,
+    #000f04 360deg
+  );
+  width: 100vw;
+  height: 100vh;
+}
+
+#primary-container-for-error-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+#zestx-logo-error-page {
+  position: absolute;
+  width: 8vw;
+  height: auto;
+  left: 46vw;
+  margin: auto;
+  top: 4vh;
+}
+
+#error-text-container-error-page {
+  height: 100vh;
+  width: 50vw;
+  position: relative;
+}
+
+#error-text-sub-container-error-page {
+  position: relative;
+  width: 100%;
+  height: 88vh;
+}
+
+#text-404-error-page {
+  color: #b3e8c8;
+  font-family: "now";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 6.5vw;
+  position: absolute;
+  margin-right: 2.7vw;
+  top: 34vh;
+  left: 12vw;
+}
+
+#error-description-container-error-page {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  top: 43vh;
+  left: 8vw;
+  background: rgba(40, 255, 61, 0.07);
+  box-shadow: inset 0px 3.62941px 168.767px rgba(239, 239, 239, 0.25);
+  backdrop-filter: blur(16px);
+  border-radius: 2vw;
+  margin-top: -5.5vh;
+  padding-top: 9vh;
+  padding-left: 3vw;
+  padding-bottom: 6vh;
+  padding-right: 2vw;
+  z-index: -10;
+}
+
+#error-title-text-error-page {
+  font-family: "now";
+  font-size: 3vw;
+  color: #e9ffeb;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#error-description-text-error-page {
+  font-family: "now";
+  font-size: 1.4vw;
+  color: #e9ffeb;
+  width: 28vw;
+  font-weight: 400;
+  margin-top: 4vh;
+}
+
+#error-page-redirect-link-container {
+  margin-left: 8vw;
+}
+
+#redirect-link-error-page {
+  text-decoration: none;
+  color: rgba(31, 148, 255, 0.8);
+  font-family: "now";
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#redirect-link-text-error-page {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "now";
+  font-weight: 400;
+}
+
+  
+
+
+#anim-assets-container-error-page {
+  height: 100vh;
+  width: 50vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#anim-assets-sub-container-error-page{
+  height: 60vh;
+  width: 32vw;
+  position: relative;
+  margin-right: 2.75vw;
+}
+
+#man-img-error-page{
+  position: absolute;
+}
+
+#football-img-error-page{
+  position: absolute;
+}
+
+#anim-bg-img-error-page{
+  position: absolute;
+}

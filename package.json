@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon dist/index.js",
     "start": "node dist/index.html",
-    "build": "parcel build prod/index.html",
-    "parcel": "parcel prod/homepage.html"
+    "build": "parcel build prod/error_page.html",
+    "parcel": "parcel prod/index.html"
   },
   "repository": {
     "type": "git",
