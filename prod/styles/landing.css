@@ -1061,7 +1061,7 @@ a {
 @media screen and (max-width: 626px) {
   .arrow {
     position: absolute;
-    width: 10%;
+    width: 15%;
     height: auto;
     bottom: 4%;
     left: 45%;
@@ -1210,7 +1210,7 @@ a {
   }
   .arrow {
     position: absolute;
-    width: 10%;
+    width: 15%;
     height: auto;
     bottom: 4%;
     left: 45%;
@@ -1338,7 +1338,7 @@ a {
   }
   .arrow {
     position: absolute;
-    width: 10%;
+    width: 15%;
     height: auto;
     bottom: 4%;
     left: 45%;
@@ -1632,10 +1632,10 @@ a {
   }
   .arrow {
     position: absolute;
-    width: 10%;
+    width: 18%;
     height: auto;
     bottom: 3%;
-    left: 45%;
+    left: 42%;
   }
 }
 
@@ -1758,7 +1758,7 @@ a {
   }
   .arrow {
     position: absolute;
-    width: 10%;
+    width: 12%;
     height: auto;
     bottom: 3%;
     left: 45%;
