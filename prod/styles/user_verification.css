@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 120vh;
+  background: url("../../../assets/home_page/events_details/rangshala_bg.svg"),
+    Linear-gradient(180deg, #0e1391 0%, #0e0045 100%);
+}
+#zestxlogoeditpageverification {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 6rem;
+  height: 6rem;
+}
+.Main_Edit_Container_verification {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.Main_Edit_Container_verification h2 {
+  margin: 4vw;
+  text-decoration: none;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.5vw;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.Main_Edit_Container_verification h4 {
+  text-decoration: none;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5vw;
+  margin: 0.5vw;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.Main_Edit_Container_verification #redirect_msg {
+  text-decoration: none;
+  font-family: "Now";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+#redirect_msg,
+#secs {
+  display: inline;
+}
+.Main_Edit_Container_verification a {
+  color: pink;
+}
+@media only screen and (max-width: 900px) {
+  .Main_Edit_Container_verification h2 {
+    font-size: 7vw;
+  }
+  .Main_Edit_Container_verification h4,
+  .Main_Edit_Container_verification #redirect_msg {
+    font-size: 3vw;
+  }
+}
+@media only screen and (max-width: 420px) {
+  #redirect_msg,
+  #secs {
+    display: block;
+  }
+  .Main_Edit_Container_verification h2 {
+    font-size: 8vw;
+    text-align: center;
+  }
+  .Main_Edit_Container_verification h4,
+  .Main_Edit_Container_verification #redirect_msg {
+    font-size: 4vw;
+  }
+}
