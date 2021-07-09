@@ -1,0 +1,63 @@
+@media screen and (max-width: 850px) {
+  body {
+    background: conic-gradient(
+      from 130deg at 46.66% 65.25%,
+      #05662b 0deg,
+      #000f04 360deg
+    );
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  #anim-assets-container-error-page {
+    height: 24rem;
+  }
+  #error-text-container-error-page {
+    height: 14rem;
+  }
+  #error-page-redirect-link-container {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #primary-container-for-error-page {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 5vh;
+    height: auto;
+  }
+  #redirect-link-text-error-page {
+    font-size: 2vw;
+  }
+  #redirect-link-error-page {
+    font-size: 2vw;
+  }
+  #text-404-error-page {
+    top: 30%;
+  }
+  #anim-assets-sub-container-error-page {
+    height: 15rem;
+    width: 16rem;
+  }
+  #error-description-container-error-page {
+    top: 30%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  body {
+    background: conic-gradient(
+      from 130deg at 46.66% 65.25%,
+      #05662b 0deg,
+      #000f04 360deg
+    );
+  }
+
+  #text-404-error-page {
+    top: 30%;
+  }
+
+  #error-description-container-error-page {
+    top: 30%;
+  }
+}
