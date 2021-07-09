@@ -494,6 +494,12 @@ function setUpViews() {
                     return;
                 }
 
+                if (updateDetailsRes.status == 444) {
+                    displayEditProfilepage();
+                    show_toast(2, "User already exist!");
+                    return;
+                }
+                
                 if (updateDetailsRes.status == 500) {
                     displayEditProfilepage();
                     show_toast(0, "Internal server error please re-try!");
