@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon dist/index.js",
     "start": "node dist/index.html",
-    "build": "parcel build prod/index.html",
+    "build": "parcel build prod/footer_links.html",
     "parcel": "parcel prod/homepage.html"
   },
   "repository": {

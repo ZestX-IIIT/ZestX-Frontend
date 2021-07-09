@@ -41,15 +41,15 @@ app.get("/cookiepolicy", (req, res) => {
 });
 
 app.get("/events", (req, res) => {
-    res.sendFile(path.join(__dirname, './events.html'));
+    res.sendFile(path.join(__dirname, './footer_links.html'));
 });
 
 app.get("/team", (req, res) => {
-    res.sendFile(path.join(__dirname, './team.html'));
+    res.sendFile(path.join(__dirname, './footer_links.html'));
 });
 
 app.get("/faq", (req, res) => {
-    res.sendFile(path.join(__dirname, './faq.html'));
+    res.sendFile(path.join(__dirname, './footer_links.html'));
 });
 
 app.get("*", (req, res) => {
