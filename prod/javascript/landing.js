@@ -19,13 +19,13 @@ function setUpLandingPage() {
   signupButton.addEventListener("click", () => {
     // preloader.style.display = "block";
     displayPreloaderContainerLandingPage()
-    window.location.href = "/signup";
+    window.location.href = "./signupsignin.html#signup";
   });
 
   signinButton.addEventListener("click", () => {
     // preloader.style.display = "block";
     displayPreloaderContainerLandingPage()
-    window.location.href = "/signin";
+    window.location.href = "./signupsignin.html#signin";
   });
 
 
@@ -94,7 +94,7 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
 
   } else {
       if (redirectWithoutTokenChk > 0) {
-          window.location.href = "/signup";
+          window.location.href = "./signupsignin.html#signin";
       }
       else {
           setUpFun()
@@ -105,20 +105,20 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
 
 function redirectToHomeOrAdminPageAccToToken(isAdmin) {
   if (isAdmin)
-      window.location.href = "/admin";
-  else window.location.href = "/home";
+      window.location.href = "./admin.html";
+  else window.location.href = "./homepage.html";
 }
 
 function redirectToHomePageAccToToken(isAdmin, setUpFun) {
   if (!isAdmin)
-      window.location.href = "/home";
+      window.location.href = "./homepage.html";
   else
       setUpFun()
 }
 
 function redirectToAdminPageAccToToken(isAdmin, setUpFun) {
   if (isAdmin)
-      window.location.href = "/admin";
+      window.location.href = "./admin.html";
   else
       setUpFun()
 }

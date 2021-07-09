@@ -11,7 +11,7 @@ let bg1 = document.getElementById("bg1");
 let bg2 = document.getElementById("bg2");
 let bg3 = document.getElementById("bg3");
 let bg4 = document.getElementById("bg4");
-let text = window.location.href.toString().split('/')[3];
+let text = window.location.hash.substring(1);
 let userData;
 let lastToastTimestamp = Date.now();
 const apiURL = "https://whispering-ridge-40670.herokuapp.com";
@@ -76,8 +76,8 @@ function setUpSignInSignUpPage() {
         userData = userDetails.data;
 
         if (userData.is_admin)
-          window.location.href = "/admin";
-        else window.location.href = "/home";
+          window.location.href = "./admin.html";
+        else window.location.href = "./homepage.html";
 
       }
     } catch (error) {
@@ -241,66 +241,65 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
   const token = localStorage.getItem("jwt");
   if (token && token != null) {
 
-    fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
-      method: "GET",
-      headers: {
-        authorization: token,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        let isAdmin = data.data.is_admin;
-        switch (redirectWithoutTokenChk) {
-          case 0:
-            redirectToHomeOrAdminPageAccToToken(isAdmin);
-            break;
-          case 1:
-            redirectToHomePageAccToToken(isAdmin, setUpFun);
-            break;
-          case 2:
-            redirectToAdminPageAccToToken(isAdmin, setUpFun);
-            break;
-
-          default:
-            break;
-        }
+      fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
+          method: "GET",
+          headers: {
+              authorization: token,
+          },
       })
-      .catch((err) => {
-        console.log(err);
-      });
+          .then((res) => res.json())
+          .then((data) => {
+              let isAdmin = data.data.is_admin;
+              switch (redirectWithoutTokenChk) {
+                  case 0:
+                      redirectToHomeOrAdminPageAccToToken(isAdmin);
+                      break;
+                  case 1:
+                      redirectToHomePageAccToToken(isAdmin, setUpFun);
+                      break;
+                  case 2:
+                      redirectToAdminPageAccToToken(isAdmin, setUpFun);
+                      break;
+
+                  default:
+                      break;
+              }
+          })
+          .catch((err) => {
+              console.log(err);
+          });
 
 
   } else {
-    if (redirectWithoutTokenChk > 0) {
-      window.location.href = "/signup";
-    }
-    else {
-      setUpFun()
+      if (redirectWithoutTokenChk > 0) {
+          window.location.href = "./signupsignin.html#signin";
+      }
+      else {
+          setUpFun()
 
-    }
+      }
   }
 }
 
 function redirectToHomeOrAdminPageAccToToken(isAdmin) {
   if (isAdmin)
-    window.location.href = "/admin";
-  else window.location.href = "/home";
+      window.location.href = "./admin.html";
+  else window.location.href = "./homepage.html";
 }
 
 function redirectToHomePageAccToToken(isAdmin, setUpFun) {
   if (!isAdmin)
-    window.location.href = "/home";
+      window.location.href = "./homepage.html";
   else
-    setUpFun()
+      setUpFun()
 }
 
 function redirectToAdminPageAccToToken(isAdmin, setUpFun) {
   if (isAdmin)
-    window.location.href = "/admin";
+      window.location.href = "./admin.html";
   else
-    setUpFun()
+      setUpFun()
 }
-
 
 function show_toast(isSuccess, message) {
 

@@ -138,7 +138,7 @@ function setUpViews() {
             if (token) displayProfilepage();
             else {
                 show_toast(2, "Please sign-in first!");
-                window.location.href = "/signin";
+                window.location.href = "./signupsignin.html#signin";
             }
         });
 
@@ -270,7 +270,7 @@ function setUpViews() {
                             setEventDetails(event_ids[i]);
                             displayEvenetspage();
                         } else {
-                            window.location.href = "/signup";
+                            window.location.href = "./signupsignin.html#signup";
                             show_toast(2, "Please sign-in first!");
                         }
                     }
@@ -1095,7 +1095,7 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
 
     } else {
         if (redirectWithoutTokenChk > 0) {
-            window.location.href = "/signup";
+            window.location.href = "./signupsignin.html#signin";
         }
         else {
             setUpFun()
@@ -1106,24 +1106,23 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
 
 function redirectToHomeOrAdminPageAccToToken(isAdmin) {
     if (isAdmin)
-        window.location.href = "/admin";
-    else window.location.href = "/home";
+        window.location.href = "./admin.html";
+    else window.location.href = "./homepage.html";
 }
 
 function redirectToHomePageAccToToken(isAdmin, setUpFun) {
     if (!isAdmin)
-        window.location.href = "/home";
+        window.location.href = "./homepage.html";
     else
         setUpFun()
 }
 
 function redirectToAdminPageAccToToken(isAdmin, setUpFun) {
     if (isAdmin)
-        window.location.href = "/admin";
+        window.location.href = "./admin.html";
     else
         setUpFun()
 }
-
 function validateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
