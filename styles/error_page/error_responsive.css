@@ -136,4 +136,11 @@
   #redirect-link-text-error-page {
     font-size: 2.9vw;
   }
+  #anim-bg-img-error-page {
+    position: absolute;
+    height: auto;
+    width: 125%;
+    top: -11%;
+    right: -18%;
+  }
 }
