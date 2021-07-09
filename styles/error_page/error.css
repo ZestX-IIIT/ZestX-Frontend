@@ -5,6 +5,11 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+#bg-error-page {
   background: conic-gradient(
     from 130deg at 27.66% 52.25%,
     #05662b 0deg,
@@ -12,6 +17,8 @@ body {
   );
   width: 100vw;
   height: 100vh;
+  position: fixed;
+  z-index: -50;
 }
 
 #primary-container-for-error-page {
