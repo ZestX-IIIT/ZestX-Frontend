@@ -1,7 +1,7 @@
 
 let second = document.getElementById("secs");
 let timeLeft = 5;
-const apiURL = "https://whispering-ridge-40670.herokuapp.com/user/verifyuser";
+const apiURL = "https://zestx.centralindia.cloudapp.azure.com/user/verifyuser";
 let params = new URLSearchParams(location.search);
 const userToken = params.get('token');
 const token = localStorage.getItem("jwt");

@@ -4,7 +4,7 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
     const token = localStorage.getItem("jwt");
     if (token && token != null) {
 
-        fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
+        fetch(`https://zestx.centralindia.cloudapp.azure.com/user/getdetails`, {
             method: "GET",
             headers: {
                 authorization: token,

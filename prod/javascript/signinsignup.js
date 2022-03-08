@@ -14,7 +14,7 @@ let bg4 = document.getElementById("bg4");
 let text = window.location.hash.substring(1);
 let userData;
 let lastToastTimestamp = Date.now();
-const apiURL = "https://whispering-ridge-40670.herokuapp.com";
+const apiURL = "https://zestx.centralindia.cloudapp.azure.com";
 
 setTimeout(() => {
   redirect(0, setUpSignInSignUpPage)
@@ -245,7 +245,7 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
   const token = localStorage.getItem("jwt");
   if (token && token != null) {
 
-    fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
+    fetch(`https://zestx.centralindia.cloudapp.azure.com/user/getdetails`, {
       method: "GET",
       headers: {
         authorization: token,

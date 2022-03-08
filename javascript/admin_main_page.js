@@ -1,4 +1,4 @@
-const apiURL = "https://whispering-ridge-40670.herokuapp.com";
+const apiURL = "https://zestx.centralindia.cloudapp.azure.com";
 let token = localStorage.getItem("jwt");
 
 let ongoingEventContainer = document.getElementById(

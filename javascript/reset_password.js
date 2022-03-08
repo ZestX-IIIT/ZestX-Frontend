@@ -1,5 +1,5 @@
 let resetBtn = document.getElementById("ResetButton");
-const apiURL = "https://whispering-ridge-40670.herokuapp.com";
+const apiURL = "https://zestx.centralindia.cloudapp.azure.com";
 let params = new URLSearchParams(location.search);
 const userToken = params.get('token');
 let lastToastTimestamp = Date.now();

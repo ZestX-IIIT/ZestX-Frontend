@@ -4,11 +4,11 @@ let footer = document.getElementsByClassName("footer");
 let preloader = document.getElementById("preloader_container");
 let arrow = document.getElementsByClassName("arrow");
 let main = document.getElementsByClassName("main");
-const apiURL = "https://whispering-ridge-40670.herokuapp.com";
+const apiURL = "https://zestx.centralindia.cloudapp.azure.com";
 let down = true;
 
 setTimeout(() => {
-  redirect(0 , setUpLandingPage)
+  redirect(0, setUpLandingPage)
 }, 200);
 
 
@@ -49,13 +49,13 @@ function setUpLandingPage() {
 
   // preloader.style.display = "none";
   displayMainContainerLandingPage();
-setTimeout(() => {
-  AOS.init({
-    easing: 'ease-in-out',
-    duration: 600,
-    once: true,
-  });
-}, 100);
+  setTimeout(() => {
+    AOS.init({
+      easing: 'ease-in-out',
+      duration: 600,
+      once: true,
+    });
+  }, 100);
 }
 
 var redirect = function (redirectWithoutTokenChk, setUpFun) {
@@ -63,64 +63,64 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
   const token = localStorage.getItem("jwt");
   if (token && token != null) {
 
-      fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
-          method: "GET",
-          headers: {
-              authorization: token,
-          },
-      })
-          .then((res) => res.json())
-          .then((data) => {
-              let isAdmin = data.data.is_admin;
-              switch (redirectWithoutTokenChk) {
-                  case 0:
-                      redirectToHomeOrAdminPageAccToToken(isAdmin);
-                      break;
-                  case 1:
-                      redirectToHomePageAccToToken(isAdmin, setUpFun);
-                      break;
-                  case 2:
-                      redirectToAdminPageAccToToken(isAdmin, setUpFun);
-                      break;
+    fetch(`https://zestx.centralindia.cloudapp.azure.com/user/getdetails`, {
+      method: "GET",
+      headers: {
+        authorization: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        let isAdmin = data.data.is_admin;
+        switch (redirectWithoutTokenChk) {
+          case 0:
+            redirectToHomeOrAdminPageAccToToken(isAdmin);
+            break;
+          case 1:
+            redirectToHomePageAccToToken(isAdmin, setUpFun);
+            break;
+          case 2:
+            redirectToAdminPageAccToToken(isAdmin, setUpFun);
+            break;
 
-                  default:
-                      break;
-              }
-          })
-          .catch((err) => {
-              console.log(err);
-          });
+          default:
+            break;
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
 
   } else {
-      if (redirectWithoutTokenChk > 0) {
-          window.location.href = "./signupsignin.html#signin";
-      }
-      else {
-          setUpFun()
+    if (redirectWithoutTokenChk > 0) {
+      window.location.href = "./signupsignin.html#signin";
+    }
+    else {
+      setUpFun()
 
-      }
+    }
   }
 }
 
 function redirectToHomeOrAdminPageAccToToken(isAdmin) {
   if (isAdmin)
-      window.location.href = "./admin.html";
+    window.location.href = "./admin.html";
   else window.location.href = "./homepage.html";
 }
 
 function redirectToHomePageAccToToken(isAdmin, setUpFun) {
   if (!isAdmin)
-      window.location.href = "./homepage.html";
+    window.location.href = "./homepage.html";
   else
-      setUpFun()
+    setUpFun()
 }
 
 function redirectToAdminPageAccToToken(isAdmin, setUpFun) {
   if (isAdmin)
-      window.location.href = "./admin.html";
+    window.location.href = "./admin.html";
   else
-      setUpFun()
+    setUpFun()
 }
 
 function toggleFooterStates() {
@@ -171,11 +171,11 @@ function expandFooter() {
     }
   }, 8);
 }
-function displayMainContainerLandingPage(){
+function displayMainContainerLandingPage() {
   checkAndDisplayContainer(main[0]);
   checkAndCloseContainer(preloader);
 }
-function displayPreloaderContainerLandingPage(){
+function displayPreloaderContainerLandingPage() {
   checkAndCloseContainer(main[0]);
   checkAndDisplayContainer(preloader);
 }
@@ -198,7 +198,7 @@ function checkAndCloseContainer(container) {
 function checkAndDisplayContainer(container) {
   if (container == footer[0]) {
     container.style.display = "flex";
-  } 
+  }
   else {
     container.style.display = "block";
   }

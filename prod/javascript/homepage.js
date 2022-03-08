@@ -25,7 +25,7 @@ let poster1 = document.getElementById("poster1");
 let poster2 = document.getElementById("poster2");
 let poster3 = document.getElementById("poster3");
 
-const apiURL = "https://whispering-ridge-40670.herokuapp.com";
+const apiURL = "https://zestx.centralindia.cloudapp.azure.com";
 let token = localStorage.getItem("jwt");
 
 let home = document.getElementById("home");
@@ -1014,7 +1014,7 @@ var redirect = function (redirectWithoutTokenChk, setUpFun) {
     const token = localStorage.getItem("jwt");
     if (token && token != null) {
 
-        fetch(`https://whispering-ridge-40670.herokuapp.com/user/getdetails`, {
+        fetch(`https://zestx.centralindia.cloudapp.azure.com/user/getdetails`, {
             method: "GET",
             headers: {
                 authorization: token,

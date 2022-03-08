@@ -4,7 +4,7 @@ let footer = document.getElementsByClassName("footer");
 let preloader = document.getElementById("preloader_container");
 let arrow = document.getElementsByClassName("arrow");
 let main = document.getElementsByClassName("main");
-const apiURL = "https://whispering-ridge-40670.herokuapp.com";
+const apiURL = "https://zestx.centralindia.cloudapp.azure.com";
 let down = true;
 
 setTimeout(() => {
@@ -49,13 +49,13 @@ function setUpLandingPage() {
 
   // preloader.style.display = "none";
   displayMainContainerLandingPage();
-setTimeout(() => {
-  AOS.init({
-    easing: 'ease-in-out',
-    duration: 600,
-    once: true,
-  });
-}, 100);
+  setTimeout(() => {
+    AOS.init({
+      easing: 'ease-in-out',
+      duration: 600,
+      once: true,
+    });
+  }, 100);
 }
 
 
@@ -107,11 +107,11 @@ function expandFooter() {
     }
   }, 8);
 }
-function displayMainContainerLandingPage(){
+function displayMainContainerLandingPage() {
   checkAndDisplayContainer(main[0]);
   checkAndCloseContainer(preloader);
 }
-function displayPreloaderContainerLandingPage(){
+function displayPreloaderContainerLandingPage() {
   checkAndCloseContainer(main[0]);
   checkAndDisplayContainer(preloader);
 }
@@ -134,7 +134,7 @@ function checkAndCloseContainer(container) {
 function checkAndDisplayContainer(container) {
   if (container == footer[0]) {
     container.style.display = "flex";
-  } 
+  }
   else {
     container.style.display = "block";
   }
